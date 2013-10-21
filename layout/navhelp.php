@@ -11,6 +11,7 @@ require_once('../../../config.php');
 require_once($CFG->libdir.'/filelib.php');
 require_once($CFG->libdir.'/resourcelib.php');
 
+$PAGE->set_context(context_system::instance());
 $hasnavhelp = $PAGE->theme->settings->navhelp;
 $navhelptype = optional_param('type', 0, PARAM_INT);
 
@@ -60,7 +61,7 @@ switch ($navhelptype) {
 }
 
 // Contexto general de la página
-$PAGE->set_context(context_system::instance());
+//$PAGE->set_context(context_system::instance());
 $PAGE->set_url(new moodle_url('/theme/aigne/layout/navhelp.php'));
 $PAGE->set_popup_notification_allowed(false);
 $PAGE->set_pagelayout('navhelppage');
@@ -129,6 +130,7 @@ switch ($navhelptype) {
         echo get_string('securitypage','theme_aigne');
         break;
     case 9:
+        $data = new stdClass;
         $data->supportemail = get_config('moodle','supportemail');
         $data->sendadminemail = get_string('sendadminemail','theme_aigne');
         echo get_string('accessibilitypage','theme_aigne', $data);

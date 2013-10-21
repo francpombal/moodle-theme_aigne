@@ -7,7 +7,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *   
  * CSS is configured here to better and free configuration.
- * Fell free to modifie the appearance here, to meet your needs.
+ * Feel free to modifie the appearance here, to meet your needs.
  * 
  * Follow the next Template to insert Flash movies:
  * <object id="obj1" width="100%" height="100%" codebase="http: *download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0">

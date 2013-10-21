@@ -1,16 +1,15 @@
-/*
-Modules: Calendar
------------------------*/
+/*----- ----- ----- theme_aigne -> MODS & PLUGINS & ... -----*/
+/*----- Calendar -----*/
 .calendartable {
     width: 100%;
-    font-size: 85%;
+    font-size: 0.85em;
 }
 .calendartable th,
 .calendartable td {
     width:14%;
     vertical-align:top;
     text-align: center;
-    border-width:0px;
+    border: 0px 0px 0px 0px;
 }
 .path-calendar .calendar-controls .previous,
 .path-calendar .calendar-controls .next,
@@ -29,12 +28,15 @@ Modules: Calendar
 .path-calendar .calendar-controls .next {
     text-align: right;
 }
-.path-calendar {}
+.path-calendar {
+}
 .path-calendar .maincalendar {
-    vertical-align: top;padding:0;
+    vertical-align: top;
+    padding: 0px 0px 0px 0px;
 }
 .path-calendar .maincalendar .bottom {
-    text-align: center;padding:5px 0 0 0;
+    text-align: center;
+    padding:5px 0px 0px 0px;
 }
 .path-calendar .maincalendar .heightcontainer {
     height: 100%;position: relative;
@@ -43,7 +45,7 @@ Modules: Calendar
     width:98%;margin:10px auto;
 }
 .path-calendar .maincalendar .calendarmonth ul {
-    margin:0;
+    margin: 0px 0px 0px 0px;
 }
 .path-calendar .maincalendar .calendarmonth ul li {
     list-style-type:none;margin-top: 4px;
@@ -102,10 +104,10 @@ Modules: Calendar
 .block .minicalendar th,
 .block .minicalendar td {
     padding: 2px;
-    font-size: 10px;
+    font-size: 0.95em;
 }
 .block .minicalendar td.weekend {
-    color: #A00;
+    color: #AA0000;
 }
 .block .calendar-controls .previous {
     text-align: left;
@@ -135,9 +137,7 @@ Modules: Calendar
     margin-bottom:0;
 }
 .block .calendar_filters li { padding: 0; }
-/*
-Colors for Calendar Events
------------------------*/
+/*----- Colors for Calendar Events -----*/
 #calendar .event_global,
 .minicalendar .event_global,
 .block_calendar_month .event_global,
@@ -169,13 +169,11 @@ Colors for Calendar Events
 table.minicalendar tr td.weekend {
     color: #f00;
 }
-/*
-Modules: Forum
------------------------*/
+/*----- Forum -----*/
 .forumpost {
     border-collapse:separate;
     border-style:solid;
-    border-width:0;
+    border: 0px 0px 0px 0px;
     margin-top:10px;
     width: 100%;
 }
@@ -223,9 +221,7 @@ Modules: Forum
     border-style: solid;
     border-width: 1px 0 0;
 }
-/*
-Grader Report
------------------------*/
+/*----- Grader Report -----*/
 .user-grade td.oddd1 {
     background-color: #def
 }
@@ -241,10 +237,10 @@ Grader Report
 .user-grade td.b1t, .user-grade td.b2t {
     border-top: 2px solid #369;
 }
-tr.discussion td.replies { text-align: center;}
-/*
-AJAX User Enroller Panel
------------------------*/
+tr.discussion td.replies { 
+    text-align: center;
+    }
+/*----- AJAX User Enroller Panel -----*/
 .user-enroller-panel {
     width:400px;
     background-color: #666;
@@ -254,17 +250,4 @@ AJAX User Enroller Panel
     border:1px solid #666;
     border-width:0 5px 5px 0;
     z-index: 99999!important;
-}
-/*----- ----- ----- ###   Login (Front Page)   ### ----- ----- -----*/
-.block_login {
-    margin: 0;
-    padding: 0;
-}
-.block_login .footer {
-    text-align: right;
-    clear: both
-}
-.block_login .loginform .c1 {
-    margin: 0.3em 15px;
-    text-align: left;
 }

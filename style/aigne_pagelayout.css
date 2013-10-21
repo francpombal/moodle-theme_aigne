@@ -1,8 +1,4 @@
-/****
- * Three column floating div layout with 2,1,3 column order
- * Based on: http://matthewjamestaylor.com/blog/holy-grail-no-quirks-mode.htm
- * And:  http://matthewjamestaylor.com/blog/ultimate-3-column-holy-grail-pixels.htm
- *
+/*----- ----- ----- theme_aigne -> LAYOUT STRUCTURE
  * BODY
  * #page
  *   #page-header
@@ -13,8 +9,7 @@
  *   #navcontainer
  *   |  #custommenu
  *   |  #navbar
- *   |  |  .breadcrumb
- *   |  |  .navbutton
+ *   |  |  .breadcrumb + .navbutton
  *   |  #course-header
  *   #page-content
  *   |  #region-pre
@@ -27,29 +22,24 @@
  *   |  #bottom_1
  *   |  #bottom_2
  *   |  #standardfooter (bottom_3)
- *   |  |  .navhelp
- *   |  |  .contact
- *   |  |  .credits
+ *   |  |  .navhelp + .contact + .credits
  *   |  #bottom_4
  *   |  #copyright (bottom_5)
  * 
- * DELETED: 
- * [page-wrapper], page-header-wrapper,  
- * page-content-wrapper, [region-main-box], region-pre-box, region-post-box, region-main-wrapper, 
- * footer-wrapper, page-footer-content
+ * DELETED: [page-wrapper], page-header-wrapper, page-content-wrapper, [region-main-box], 
+ * region-pre-box, region-post-box, region-main-wrapper, footer-wrapper, page-footer-content
  *   
- * The body tag may also contain one of three layout specific classes that describe
+ * The body tag may also contain one of three layout specific classes that describe 
  * the regions of the page and allow us to theme more easily.
- *
  *   default (no class) = Content + side pre + side post
  *   side-pre-only      = Content + side pre
  *   side-post-only     = Content + side post
  *   content-only       = Content
- *
- ****/
+ ----- ----- -----*/
+ 
 #page {
     top: 0px;
-    width: 90%;
+    width: 95%;
     min-width: 775px;    
     margin: 0px auto 0px auto;
     padding: 0px 0px 0px 0px;
@@ -65,8 +55,8 @@
 #page-header {
     clear: both;
     width: 100%;
-    height: 53px;
-    padding: 25px 0px 0px 0px;
+    height: 51px;
+    padding: 24px 0px 0px 0px;
     background-color: #FFFFFF;
 }
 #headerlogo {
@@ -80,8 +70,8 @@
     position: relative;
     top: 0px;
     float: right;
-    width: 78%;
-    height: 50px;
+    width: 80%;
+    height: 51px;
     font-size: 0.95em;
     text-align: right;
 }
@@ -95,7 +85,7 @@
 }
 #navcontainer {
     clear: both;
-    margin: 0.5% 0px 0.5% 0px; /*<- BODY with BACKGROUND COLOR or IMAGE */
+    margin: 3px 0px 3px 0px; /*<- BODY with BACKGROUND COLOR or IMAGE */
     /*margin: 0px 0px 0px 0px; /*<- BODY without BACKGROUND COLOR or #FFFFFF color or NO IMAGE */
 }
 #custommenu { /* -> more customizable options in aigne_menu.css */
@@ -138,7 +128,7 @@
     border-color: #322C65;
 }
 #region-main .region-content {
-    padding: 0.5% 5px 5% 10px;
+    padding: 3px 5px 5% 10px;
     background-color: #FFFFFF;
 }
 #region-post {
@@ -158,7 +148,7 @@
     clear: both;
     float: left;
     width: 100%;
-    margin: 0.5% 0px 0px 0px;
+    margin: 3px 0px 0px 0px;
     background-color: #CCDDEE;
     border-width: 1px 0px 1px 0px;
     border-style: solid;

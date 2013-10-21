@@ -1,4 +1,4 @@
-/*----- ----- ----- ###   CSS to prevent content print   ### ----- ----- -----*/
+/*----- ----- ----- theme_aigne -> prevent content print ----- ----- -----*/
 #page {
     display: block;
 }
@@ -27,5 +27,3 @@
 #standardfooter {
     display: none;
 }
-
-/*----- ----- ----- ###   END OF CSS   ### ----- ----- -----*/

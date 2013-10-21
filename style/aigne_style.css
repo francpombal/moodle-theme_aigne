@@ -1,4 +1,32 @@
-/*----- ----- ----- Etiquetas CSS por orden alfabetico ----- ----- -----*/
+/*----- ----- ----- theme_aigne -> PRINCIPAL CSS ----- ----- -----*/
+@font-face {
+    font-family: 'afta_sansregular';
+    src: url('[[setting:fontroot]]aftasans.eot');
+    src: url('[[setting:fontroot]]aftasans.eot?#iefix') format('embedded-opentype'),
+         url('[[setting:fontroot]]aftasans.woff') format('woff'),
+         url('[[setting:fontroot]]aftasans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/*
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('[[setting:fontroot]]fontawesome.eot?v=3.2.1');
+    src: url('[[setting:fontroot]]fontawesome.eot?#iefix&v=3.2.1') format('embedded-opentype'), 
+         url('[[setting:fontroot]]fontawesome.woff?v=3.2.1') format('woff'), 
+         url('[[setting:fontroot]]fontawesome.ttf?v=3.2.1') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'titilliumregular';
+    src: url('[[setting:fontroot]]titillium.eot');
+    src: url('[[setting:fontroot]]titillium.eot?#iefix') format('embedded-opentype'),
+         url('[[setting:fontroot]]titillium.woff') format('woff'),
+         url('[[setting:fontroot]]titillium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}*/
 /*----- A - Enlaces -----*/
 A:link, 
 A:visited {
@@ -42,8 +70,7 @@ BODY {
     background: url([[setting:backbody]]) [[setting:bgposition]] 0 0;
     background-color:[[setting:backcolor]];
     color: #3C3C3C;
-    font-family: "eras Bk BT", "Eras ITC", "Microsoft Sans Serif", sans-serif;
-    /*font-family: "eras Bk BT", "Eras ITC", "Microsoft Sans Serif", sans-serif;*/
+    font-family: "eras Bk BT", "afta_sansregular", sans-serif;
     font-size: [[setting:bodyfont]];
     font-style: normal;
     font-weight: normal;
@@ -54,7 +81,7 @@ INPUT,
 SELECT {
     margin: 0px 0px 0px 0px;
     background-color: #D5E1DD;
-    font-family: "eras Bk BT", "Eras ITC", "Microsoft Sans Serif", sans-serif;  
+    font-family: "eras Bk BT", "afta_sansregular", sans-serif;  
     cursor: pointer;
     }
 BUTTON {
@@ -81,14 +108,6 @@ SELECT {
     background-color: #EEEEEE;
     color: #003366;
     }
-/*----- ----- ----- Botones de REDIRECT + CONTINUE ----- ----- -----*/
-.redirectmessage, 
-.continuebutton {
-    padding-bottom: 10px;
-    color: #C3C3C3;
-    text-align: center;
-    font-size: 1.2em;
-    }
 /*----- Login options ------*/
 .loginform {
     margin: 5px 0px 5px 0px;
@@ -112,30 +131,46 @@ INPUT#password,
 INPUT[type="text"], 
 INPUT[type="password"] {
     margin: 0px 0px 5px 5px;
-    background-color: white;
+    background-color: #FFFFFF;
     border-width: 1px 1px 1px 1px;
     border-style: inset;   
     color: #3C3C3C;
     cursor: default;
     }
-/*----- Añadido para desactivar la configuración en course/renderer.php #476 + #480 + #484 */
-INPUT#navsearchbox {
-    width: 20ex;
-    margin: 1px 0px 0px 0px;
+.loginhead {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 20px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
     }
-INPUT#shortsearchbox {
-    width: 40ex;
+.loginhead .loginform {
+    display: inline;
     }
-INPUT#coursesearchbox {
-    width: 50ex;
+.userinfohead {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 15px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    }
+.userinfohead .userpic {
+    position: relative;
+    float: right;
+    top: -13px;
+    width: 35px;
+    height: 35px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    border: 1px #322C65 solid;
     }
 /*----- DIV - Divisor de Formatos -----*/
 DIV {
     display: block;
     }
-DIV.notifysuccess {
-    color: #004040;
-}  
+  
 /*----- DL - -----*/
 DL {
     }
@@ -278,36 +313,45 @@ TABLE.headerop TD {
     border-width: 1px;
     border-color: #FFFFFF;
     border-style: solid;
-    text-align: center; 
+    text-align: center;
     }
 TABLE.headerop BUTTON {
-    width: 22px;
-    height: 22px;
+    width: 21px;
+    height: 21px;
     padding: 0px 0px 0px 0px;
     background: none;
     border-style: none;
-    font-family: "eras Bk BT", "Eras ITC", "Microsoft Sans Serif", sans-serif;
+    font-family: "eras Bk BT", "afta_sansregular", sans-serif;
     }
 /*----- TEXTAREA - Campos de texto, desplegables, etc... -----*/
 TEXTAREA {
     width: auto;
     padding: 0px 0px 0px 0px;
-    background-color: FFFFFF;
-    /*border: 1px inset threedface;*/
+    background-color: #FFFFFF;
     border-width: 1px 1px 1px 1px;
     border-style: inset;
     color: #3C3C3C;
     text-decoration: none;
     cursor: default;
     }
-/*----- Prevent some base theme interferences in AIGNE design ------*/
+    
+/*----- Prevent some interferences of the base theme -----*/
+DIV.notifysuccess {color: #004040;}
 TABLE.flexible .r0, TABLE.generaltable .r0 {background-color: #CCDDEE;}
 TABLE.flexible .r1, TABLE.generaltable .r1 {background-color: #F3F7FF;}
-#page-admin-plugins #plugins-control-panel .disabled .availability {background-color: #007EBA; color: #FFFFFF}
-#page-admin-plugins #plugins-control-panel .extension .source {background-color: #007EBA; color: #FFFFFF}
+#page-admin-plugins #plugins-control-panel .disabled .availability {background-color: #007EBA; color: #FFFFFF;}
+#page-admin-plugins #plugins-control-panel .extension .source {background-color: #007EBA; color: #FFFFFF;}
 TABLE.flexible A:hover, TABLE.generaltable A:hover {letter-spacing: normal;}
 .clearfix:after {clear: both; content: ''; display: block; height: 0; min-width: 0; visibility: hidden;}
-/*----- ----- ----- Control de visualización de las partes de la página ----- ----- -----*/
+/*----- Corrige un error con el editor tiny_mce -----*/
+TABLE.mceLayout {display: inherit;} /* add min-width option 
+/*----- REDIRECT + CONTINUE -----*/
+.redirectmessage, .continuebutton {padding-bottom: 10px; color: #C3C3C3; text-align: center; font-size: 1.2em;}
+/*----- Customization of width defined in course/renderer.php L#476 + L#480 + L#484 ----*/
+INPUT#navsearchbox {width: 20ex; margin: 1px 0px 0px 0px;}
+INPUT#shortsearchbox {width: 40ex;}
+INPUT#coursesearchbox {width: 50ex;}
+/*----- Control de visualización de las partes de la página -----*/
 #page {
     display: block;
     }
@@ -332,7 +376,7 @@ TABLE.flexible A:hover, TABLE.generaltable A:hover {letter-spacing: normal;}
 #standardfooter {
     display: block;
 }
-/*----- ----- ----- Zona del logotipo ----- ----- -----*/
+/*----- Zona del logotipo -----*/
 .logo {
     width: 130px;   
     height: 50px;
@@ -344,16 +388,13 @@ TABLE.flexible A:hover, TABLE.generaltable A:hover {letter-spacing: normal;}
     margin: 0px 0px 0px 0px;
     padding: 0px 5px 0px 5px;
     color: #3C3C3C;
-    font-family: "eras Bk BT", "Eras ITC", "Microsoft Sans Serif", sans-serif;
+    font-family: "eras Bk BT", "afta_sansregular", sans-serif;
     font-size: 0.80em;
     font-style: normal;
     font-weight: normal;
     text-align: center;
     }  
-/*----- ----- ----- Texto estándar de identificación del usuario ----- ----- -----*/
-.logininfo {
-    }
-/*----- ----- ----- Selector de idiomas instalados ----- ----- -----*/
+/*----- Selector de idiomas instalados -----*/
 .langmenu {
     float: right;
     width: 98%;
@@ -363,7 +404,12 @@ TABLE.flexible A:hover, TABLE.generaltable A:hover {letter-spacing: normal;}
     border-style: none;
     color: #007EBA;
     }
-/*----- ----- ----- Barra de Navegación (Breadcrumb) y botones de la barra de navegación ----- ----- -----*/
+/*----- Barra de Navegación (Breadcrumb) y botones de la barra de navegación -----*/
+.breadcrumb li, 
+.navbutton div, 
+.navbutton form {
+    display: inline;
+    }
 .breadcrumb {
     float: left;
     color: #3C3C3C;
@@ -373,11 +419,20 @@ TABLE.flexible A:hover, TABLE.generaltable A:hover {letter-spacing: normal;}
     text-indent: 0;
     list-style: none;
     }
-.breadcrumb li, 
-.navbutton div, 
-.navbutton form {
-    display: inline;
-    }
+/* BREADCRUMB ARROW CUSTOMIZATION */
+.breadcrumb span.arrow {
+    display: none;
+}
+.breadcrumb li:after { 
+	content: "[[setting:bcsep]]";
+	font-size: 1.1em;
+	margin: 0px 0px 0px 10px;
+	color: #322C65;
+}
+.breadcrumb li:last-child:after { 
+	content: none; 
+}
+/* END BREADCRUMB ARROW CUSTOMIZATION */
 .navbutton {
     float: right;
 	margin: 0px 0px 0px 0px;
@@ -386,14 +441,14 @@ TABLE.flexible A:hover, TABLE.generaltable A:hover {letter-spacing: normal;}
 .navbutton .singlebutton input {
     padding: 3px 10px 2px 10px;
     background-color: #D5E1DD;
-    border-style: solid;
     border-width: 1px;
+    border-style: solid;
     border-color: #787878;
     color: #3C3C3C;
     font-size: 0.90em;
     cursor: pointer;
     }
-/*----- ----- ----- Banner de FrontPage ----- ----- -----*/
+/*----- Banner de FrontPage -----*/
 .info-banner {
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
@@ -401,12 +456,11 @@ TABLE.flexible A:hover, TABLE.generaltable A:hover {letter-spacing: normal;}
 #large_info {
     clear: both;
 	position: relative;
-	width: 100%;
-    margin: 0px auto 0.5% auto;
+    width: 100%;
+    margin: 0px auto 3px auto;
     padding: 0px 0px 0px 0px;
-    background: url([[setting:headerinfo]]) repeat-x center center;
+    /*background: url([[setting:headerinfo]]) repeat-x center center;*/
     background-color: transparent;
-    /*border: 1px #990000 solid;*/
     }
 #large_info img {
     display: block;
@@ -427,7 +481,7 @@ TABLE.flexible A:hover, TABLE.generaltable A:hover {letter-spacing: normal;}
 	float: left;
 	left: 0%;
     }
-/*----- ----- ----- Pié de Página ----- ----- -----*/
+/*----- Footer -----*/
 DIV.navhelp {
     clear: both;
     line-height: 3em;
@@ -450,6 +504,12 @@ DIV.contact#right {
     float: right;
     width: 30%   
     }
+DIV.fisicalsite {
+	position: relative;
+	float: left;
+	left: 0%;
+    padding: 0px 5px 0px 0px;
+    }
 DIV.credits {
     clear: both;
     background-color: #007EBA;
@@ -460,11 +520,11 @@ DIV.credits {
 DIV.credits A {
     color: #DDDDDD;
     }
-/*----- ----- ----- General Box ----- ----- -----*/
+/*----- General Box -----*/
 .generalbox {
     border: 0 none;
 }
-/*----- ----- ----- Courses and categories lists ----- ----- -----*/
+/*----- Courses and categories lists -----*/
 .coursebox .content .summary {
     width: 100%;
     float: left;
@@ -481,7 +541,7 @@ DIV.credits A {
 #page-course-index-category .generalbox.info {
     padding: 5px;
 }
-/*----- ----- ----- Course Section Topic & Weekly ----- ----- -----*/
+/*----- Course Section Topic & Weekly -----*/
 .course-content ul.topics li.section, 
 .course-content ul.weeks li.section {
     border: 1px solid #DDDDDD;
@@ -496,7 +556,7 @@ DIV.credits A {
     display: none; /* hides topic items title or weekly itens title */
     margin-bottom: 9px;
 }
-/*----- ----- ----- Coursebox Info & Summary ----- ----- -----*/
+/*----- Coursebox Info & Summary -----*/
 .coursebox h3, 
 .coursebox .info, 
 .coursebox .summary {
@@ -523,7 +583,7 @@ DIV.credits A {
 .category_label {
     padding-left: 20px;
 }
-/*----- ----- ----- Collapse All - Expand All ----- ----- -----*/
+/*----- Collapse All - Expand All -----*/
 div.controls .expandall, 
 div.controls .collapseall {
     background-color: #D5E1DD;
@@ -540,7 +600,7 @@ div.controls .collapseall {
     text-transform: capitalize;
     font-variant: small-caps;    
 }    
-/*----- ----- ----- Theme Selector ----- ----- -----*/
+/*----- Theme Selector -----*/
 #page-admin-theme-index .generalbox {
     border: none;
 }
@@ -557,7 +617,7 @@ div.controls .collapseall {
 .theme_description h2 {
     padding-top: 0.5em;
 }
-/*----- ----- ----- Tabs ----- ----- -----*/
+/*----- Tabs -----*/
 .tabtree ul {
     text-align:center;
 }
@@ -596,7 +656,7 @@ div.controls .collapseall {
     font-weight: normal;
     background-image:url([[pix:theme|tab/tabrow1]]);
     background-position:0% 50%;
-    border-top: 1px dotted #eee;
+    border-top: 1px dotted #EEEEEE;
     padding: 0.25em 0px;
     margin:0px;
 }
@@ -628,7 +688,7 @@ div.controls .collapseall {
     color: black;
     text-decoration: none;
 }
-/*----- ----- ----- tab styles for ie6 & ie7 ----- ----- -----*/
+/*----- tab styles for ie6 & ie7 -----*/
 .ie7 .tabtree .tabrow0 li {
     margin-left: 0;
 }
@@ -688,7 +748,7 @@ div.controls .collapseall {
     top: 3.5em;
     padding: 0.2em 0;
 }
-/*----- ----- ----- Filemanager ----- ----- -----*/
+/*----- Filemanager -----*/
 .filemanager select, 
 .filemanager input, 
 .filemanager button, 
@@ -699,14 +759,14 @@ div.controls .collapseall {
 .file-picker textarea {
     background-color: #EEEEEE;
 }
-/*----- ----- ----- Important z-index fixes ----- ----- -----*/
+/*----- Important z-index fixes -----*/
 .yui-skin-sam .yui-panel-container {
     z-index: 999999!important;
 }
 body#page-course-view-topics.path-course div.moodle-dialogue-base div.yui3-widget{
     z-index: 600!important;
 }
-/*----- ----- ----- Moodle forms ----- ----- -----*/
+/*----- Moodle forms -----*/
 .mform .btn-cancel {
     color: #007EBA;
     text-decoration: none;
@@ -716,4 +776,3 @@ body#page-course-view-topics.path-course div.moodle-dialogue-base div.yui3-widge
     color: #CC3300;
     text-decoration: underline;
 }
-/*----- ----- ----- END OF CSS ----- ----- -----*/

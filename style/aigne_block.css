@@ -1,105 +1,105 @@
-/* ----- Block ----- */
+/*----- ----- ----- theme_aigne -> BLOCKS ----- ----- -----*/
+/*----- Block -----*/
 .block {
-    margin: 0px 0px 2% 0px;
+    margin: 0px 0px 3px 0px;
     padding: 0px 0px 0px 0px;
     border-width: 0px 0px 0px 0px;
     border-style: solid;
     border-color: #322C65;
     background-color: #FFFFFF;
-}
+    }
+    
 .block-region {
     font-size: 0.95em;    
     font-style: normal;
     font-weight: normal;
-}
+    }
 .block-region ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
-}
+    }
 .block-region li {
     padding: 0 0 20px 0;
-}
-.block-region li ul {
-}
+    }
 .block-region li li {
     margin: 0px 20px 0px 10px;
     padding: 8px 0px;
-}
+    }
+    
 .block .region-content {
     width: 100%;
     margin: 0;
     padding: 0;
-}
+    }
 .block .content {
     padding: 0px 10px 10px 10px;
-}
+    }
 .block.hidden .content {
     display: none;
-}
+    }
 .block .content .userpicture {
     width:16px;
     height:16px;
     margin-right:4px;
-}
+    }
 .block .content .list li.listentry {
     clear:both;
-}
+    }
 .block .content .list .c0 {
     display:inline;
-}
+    }
 .block .content .list .c1 {
     margin-left:5px;
     display:inline;
-}
-/* ----- Block Head ----- */
+    }
+/*----- Block Head -----*/
 .block .header {
     border:none;
     padding: 0px 0px 0px 0px;
     width: 100%;
-}
+    }
 .block .header div.commands {
     margin-left: 10px;
-}
+    }
 #region-pre .block .header {
     background-color: #777777;
     color: #FFFFFF;
-    /*border-width: 0px 0px 0px 0px;
+    border-width: 1px 0px 0px 0px;
     border-style: solid;
-    border-color: #000000;*/
-}
+    border-color: #000000;
+    }
 #region-post .block .header {
     background-color: #007EBA;
     color: #FFFFFF;
-    /*border-width: 0px 0px 0px 0px;
+    border-width: 1px 0px 0px 0px;
     border-style: solid;
-    border-color: #322C65;*/
-}
+    border-color: #322C65;
+    }
 .block .header .title h2 {
     font-size: 1.20em;
-    margin: 1px 0 2px 10px;
+    margin: 0px 0px 5px 10px;
     padding: 0px 0px 0px 0px;
-}
-
-/* ----- Block Head _ Controles de MINIMIZAR ----- */
+    }
+/*----- Block Head _ Controles de MINIMIZAR -----*/
 .block .header .block_action {
     margin: 0px 2px 0px 0px;
     padding: 2px 0px 0px 0px;
     background-color: transparent;
-}
-/* ----- Block Head _ Controles de DOCK ----- */
+    }
+/*----- Block Head _ Controles de DOCK -----*/
 .block .header .block_action input {
     margin: 0px 2px 0px 0px;
     padding: 2px 0px 0px 0px;
     background-color: transparent;
     border: 0;
-}
-/* ----- Block Foot ----- */
+    }
+/*----- Block Foot -----*/
 .block .footer {
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
-}
-/* ----- other Block's regions ----- */
+    }
+/*----- other Block's regions -----*/
 .block .blockannotation {
     font-size:0.75em;
     margin: -1em 0 1em;
@@ -126,7 +126,7 @@
 .block.hidden .block-hider-show {
     display:inline;
 }
-/** List block contents **/
+/*----- List block contents -----*/
 .block .list .c0 {
     display:inline;
 }
@@ -137,7 +137,7 @@
     margin-left:5px;
     display:inline;
 }
-/** Bugfixes Smallicon & Navicon **/
+/*----- Bugfixes Smallicon & Navicon -----*/
 .block_settings .block_tree li.item_with_icon > p img,
 .block_navigation .block_tree li.item_with_icon > p img {
     left:0;
@@ -158,3 +158,129 @@
     bottom: 0px;
     position:absolute;
 }
+/*----- ----- ----- theme_aigne -> BLOCKS DOCK ----- ----- -----*/
+/*----- Docking Module -----*/
+#dock {
+    width: 30px;
+    position:fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 11000;
+    }
+#dock.nothingdocked {
+    visibility: hidden;
+    display:none;
+    }
+#dock .dockeditem.firstdockitem {
+    margin-top: 2.3em;
+    -webkit-border-top-right-radius: 6px;
+    -moz-border-radius-topright: 6px;
+    border-top-right-radius: 6px;
+    }
+#dock .dockeditem {
+    background-color: #DDDDDD;
+    padding: 2px;
+    padding-left: 0px;
+    }
+#dock .dockedtitle {
+    padding-bottom: 5px;
+    cursor:pointer;
+    background-color: #AAAAAA;
+    -webkit-border-top-right-radius: 6px;
+    -moz-border-radius-topright: 6px;
+    border-top-right-radius: 6px;
+    -webkit-border-bottom-right-radius: 6px;
+    -moz-border-radius-bottomright: 6px;
+    border-bottom-right-radius: 6px;
+    }
+#dock .dockedtitle h2 {
+    margin: 0px 0px 0px 0px;
+    padding: 10px 3px;
+    color: #FFFFFF;
+    }
+.dockedtitle.activeitem h2 {
+    color: #FFFFFF;
+    }
+#dock .dockedtitle.activeitem {
+    background-color: #AABBCC;
+    width: 35px;
+    -webkit-border-top-right-radius: 0;
+    -moz-border-radius-topright: 0;
+    border-top-right-radius: 0;
+    -webkit-border-bottom-right-radius: 0;
+    -moz-border-radius-bottomright: 0;
+    border-bottom-right-radius: 0;
+    }
+#dock .controls {
+    bottom: auto;
+    background-color: #DDDDDD;
+    -webkit-border-bottom-right-radius: 6px;
+    -moz-border-radius-bottomright: 6px;
+    border-bottom-right-radius: 6px;
+    }
+#dock .controls img {
+    cursor:pointer;
+    margin: 0px 10px 0px 0px;
+    }
+
+/*----- Docked Item Panel -----*/
+#dockeditempanel {
+    width: 180px;
+    position: relative;
+    z-index: 12000;
+    left: 100%;
+    }
+#dockeditempanel.dockitempanel_hidden {
+    display:none;
+    }
+#dockeditempanel .dockeditempanel_content {
+    background-color: #FFFFFF;
+    margin: 0 3px;
+    position: relative;
+    min-height: 100px;
+    border-color: #AABBCC;
+    border-style: solid;
+    border-width: 5px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-border-top-left-radius: 0;
+    -moz-border-radius-topleft: 0;
+    border-top-left-radius: 0;
+    }
+#dockeditempanel .dockeditempanel_hd {
+    border-width: 0px 0px 0px 0px;
+    background-color: #AABBCC;
+    padding: 2px;
+    }
+#dockeditempanel .dockeditempanel_bd .block_docked {
+    margin: 10px;
+    }
+#dockeditempanel .block_calendar_month.block_docked {
+    text-align: center;
+    }
+#dockeditempanel .dockeditempanel_hd {
+    border-bottom:1px dotted #AAAAAA;
+    text-align: left;
+    }
+#dockeditempanel .dockeditempanel_hd h2 {
+    display:inline;
+    margin: 0px 0px 0px 0px;
+    padding-left: 1em;
+    color: #FFFFFF;
+    }
+#dockeditempanel .dockeditempanel_hd .commands {
+    display:inline;
+    }
+#dockeditempanel .dockeditempanel_hd .commands img {
+    margin-left: 3px;
+    vertical-align: middle;
+    }
+#dockeditempanel .dockeditempanel_bd {
+    overflow: auto;
+    width: auto; /* adds scroll to dock panel */
+    }
+#dockeditempanel .dockeditempanel_bd .block_navigation .block_tree li {
+    overflow: visible;
+    }

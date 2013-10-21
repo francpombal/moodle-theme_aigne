@@ -1,18 +1,21 @@
-/* Custom Menu */
+/*----- ----- ----- theme_aigne -> CUSTOM MENU ----- ----- -----*/
 #custommenu ul {
-    border-left: 1px solid #CCDDEE;
+    border-width: 0px 0px 0px 1px;
+    border-style: solid;
+    border-color:[[setting:menucolorhl]];
 }
 #custommenu ul li {
-    border-right: 1px solid #CCDDEE;
+    border-width: 0px 1px 0px 0px;
+    border-style: solid;
+    border-color:[[setting:menucolorhl]];
 }
-/* Dropdown Menu - CSS from DeCaf Theme by Lei Zhang */
 ul.dropdown span.customitem {
-    padding:0;
-    border:0;
+    padding: 0px 0px 0px 0px;
+    border: 0px 0px 0px 0px;
     width: 100%;
 }
 ul.dropdown span.customitem {
-    padding:0;
+    padding: 0px 0px 0px 0px;
     width: 100%;
 }
 ul.dropdown li a,
@@ -20,10 +23,10 @@ ul.dropdown span.customitem a {
     padding: 4px 20px 4px 20px;
 }
 ul.dropdown span.customitem a:hover {
-    border: 0;
+    border: 0px 0px 0px 0px;
 }
 #custommenu ul.dropdown ul {
-    padding:0;
+    padding: 0px 0px 0px 0px;
     width:auto;
 }
 #custommenu ul.dropdown ul a {
@@ -36,15 +39,15 @@ ul.dropdown,
 ul.dropdown li,
 ul.dropdown ul {
     list-style:none;
-    margin:0;
-    padding:0;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
 }
 ul.dropdown {
-    position:relative;
-    top:0px;
-    z-index:597;
-    float:left;
-    font:13px  "eras Bk BT", "Eras ITC", "Microsoft Sans Serif", sans-serif;
+    position: relative;
+    top: 0px;
+    z-index: 597;
+    float: left;
+    font-size: 13px;
 }
 ul.dropdown li {
     float:left;
@@ -67,15 +70,15 @@ ul.dropdown ul {
     left:0;
     right:auto;
     margin-top: 0px;
-    font:100%  "eras Bk BT", "Eras ITC", "Microsoft Sans Serif", sans-serif;
+    font-size: 100%;
 }
 ul.dropdown ul li {
     float:none;
     background-color:[[setting:menucolor]];
     border-width: 1px;
     border-style: solid;
-    border-color: #CCDDEE;
-    padding:0;
+    border-color:[[setting:menucolorhl]];
+    padding: 0px 0px 0px 0px;
 }
 ul.dropdown ul ul {
     top:0;
@@ -119,7 +122,7 @@ ul.dropdown a:link, ul.dropdown a:visited {
     text-decoration: none;
 }
 ul.dropdown a:hover {
-    border:0;
+    border: 0px 0px 0px 0px;
     background-color:[[setting:menucolorhl]];
     color:[[setting:menucolor]];
 }
@@ -132,23 +135,23 @@ ul.dropdown ul ul ul li {
 ul.dropdown li a,
 ul.dropdown span,
 ul.dropdown span a {
-    border: none;
+    border: 0px 0px 0px 0px;
     background-color: transparent;
 }
 ul.dropdown ul li a,
 ul.dropdown ul span,
 ul.dropdown ul span a {
-    border: 0;
+    border: 0px 0px 0px 0px;
 }
 ul.dropdown ul ul li a,
 ul.dropdown ul ul span,
 ul.dropdown ul ul span a {
-    border:0
+    border: 0px 0px 0px 0px;
 }
 ul.dropdown ul ul ul li a,
 ul.dropdown ul ul ul span,
 ul.dropdown ul ul ul span a {
-    border:0;
+    border: 0px 0px 0px 0px;
 }
 ul.dropdown a,ul.dropdown span{
     display:block;

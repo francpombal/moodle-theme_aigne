@@ -1,21 +1,5 @@
-/** Overide for RTL layout **/
-
-.dir-rtl .block .header .block_action {
-    float:left;
-}
-.dir-rtl .block .header .commands {
-    text-align: right;
-}
-.dir-rtl .block .header .title h2 {
-    margin-right: 10px;
-}
-
-.dir-rtl .course_category_tree .category > .header .name {
-    padding-left:0;
-    padding-right:20px;
-}
-.dir-rtl .coursebox .summary {float:right;}
-
+/*----- ----- ----- theme_aigne -> Overide for RTL layout ----- ----- -----*/
+/*----- RTL header + logo -----*/
 .dir-rtl a.logo {
     float: right;
 }
@@ -33,10 +17,41 @@
 .dir-rtl .langmenu select.select.menulang {
     margin-left: 0;
 }
-.dir-rtl .loginbox .loginform .form-label {float:left;text-align:right;width:44%;direction:ltr; white-space:nowrap;}
+.dir-rtl .loginbox .loginform .form-label {
+    float:left;
+    text-align:right;
+    width:44%;
+    direction:ltr;
+    white-space:nowrap;
+}
+/*----- RTL block -----*/
+.dir-rtl .block .header .block_action {
+    float:left;
+}
+.dir-rtl .block .header .commands {
+    text-align: right;
+}
+.dir-rtl .block .header .title h2 {
+    margin: 0px 10px 5px 0px;
+}
+.dir-rtl #region-pre .block .header {
+    background-color: #007EBA;
+    color: #FFFFFF;
+    border-color: #322C65;
+    }
+.dir-rtl #region-post .block .header {
+    background-color: #777777;
+    color: #FFFFFF;
+    border-color: #000000;
+    }
+/*----- RTL course category -----*/
+.dir-rtl .course_category_tree .category > .header .name {
+    padding-left:0;
+    padding-right:20px;
+}
+.dir-rtl .coursebox .summary {float:right;}
 
-/* right align CUSTOMMENU
--------------------------*/
+/*----- RTL CUSTOMMENU -----*/
 .dir-rtl #custommenu ul.dropdown {
     float: right;
 }
@@ -57,17 +72,14 @@
 }
 .dir-rtl #custommenu ul.dropdown ul li:hover > span,
 .dir-rtl #custommenu ul.dropdown ul li:hover > span a {
-    background-color: #fff;
+    background-color:[[setting:menucolorhl]];
     background-image: url([[pix:theme|menu/nav-arrowover-left]]);
-    color: #036;
+    color:[[setting:menucolor]];
 }
 .dir-rtl #custommenu ul.dropdown li.clickable-with-children:hover > a {
     background-image: url([[pix:theme|menu/nav-arrowover-left]]);
 }
-
-/* RTL Docking Module
---------------------*/
-
+/*----- RTL Docking Module -----*/
 .dir-rtl #dock {
     top: 0;
     left: auto;
@@ -101,11 +113,8 @@
     border-bottom-left-radius: 6px;
 }
 .dir-rtl #dock .controls img {
-    margin-right: 10px;
+    margin: 0px 10px 0px 0px;
 }
-/*
-Docked Item Panel
------------------------*/
 .dir-rtl #dockeditempanel {
     right: 100%;
 }
@@ -117,4 +126,6 @@ Docked Item Panel
     -moz-border-radius-topright: 0;
     border-top-right-radius: 0;
 }
-.dir-rtl.has_dock.side-post-only  #region-main {margin-left:0;}
+.dir-rtl.has_dock.side-post-only  #region-main {
+    margin-left:0;
+}

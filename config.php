@@ -12,40 +12,30 @@ defined('MOODLE_INTERNAL') || die;
 // Name of the theme. Most likely the name of the directory in which this file resides.
 $THEME->name = 'aigne';
 
-// Which existing theme(s) in the /theme/ directory do you want this theme to extend. A theme can
-// extend any number of themes. Rather than creating an entirely new theme and copying all 
-// of the CSS, you can simply create a new theme, extend the theme you like and just add the
-// changes you want to your theme.
+// Which existing theme(s) in the /theme/ directory do you want this theme to extend.
 $THEME->parents = array('base');
 
+// An array of stylesheets not to inherit from the themes parents (We don't want these)
+$THEME->parents_exclude_sheets = array('base'=>array('pagelayout', 'dock'));
+
+// Color Schema defined in Admin -> Apperance -> Themes -> AIGNE -> colorsch
+    $colorschema = 'aigne_style_';
+    if (empty($THEME->settings->colorsch)) {
+        $colorschema .= '1';
+    } else {
+        $colorschema .= $THEME->settings->colorsch;
+    }
+    
 // Name of the stylesheet(s) you've including in this theme's /styles/ directory.
 $THEME->sheets = array(
-    //'aigne_fonts',     /** pending **/
-    'aigne_pagelayout',  /** Must come first: page layout **/
-    'aigne_style',       /** Must come second: default styles **/
-    //'aigne_style_'.$THEME->settings->colorsch, /** Aplicación del formato según la configuración en Admin -> Apperance -> Themes -> AIGNE
-    //'admin',
-    'aigne_block',
-    'aigne_mod',
-    //'calendar',        /** -> in aigne_mod **/
-    //'grade',           /** -> in aigne_mod **/
-    //'course',
-    'aigne_dock',
-    //'message',
-    //'question',
-    //'user',
-    //'filemanager',
+    'aigne_pagelayout',  // Must come first: page layout
+    'aigne_style',       // Must come second: default styles, including 'course', 'filemanager',
     'aigne_menu',
+    'aigne_block',
+    'aigne_mod',         // including 'calendar', 'forum', 'grade', (pending 'message', 'question',)
     'aigne_rtl',
+    $colorschema,
     'aigne_custom'
-);
-
-// An array of stylesheets not to inherit from the themes parents (We don't want these)
-$THEME->parents_exclude_sheets = array(
-    'base'=>array(
-        'pagelayout',
-        'dock'
-    ),
 );
 
 // An array of stylesheets to include within the body of the editor.
@@ -54,9 +44,7 @@ $THEME->editor_sheets = array('editor');
 // Do you want to use the new navigation dock?
 $THEME->enable_dock = true;
 
-// These are all of the possible layouts in Moodle. The simplest way to do this is to keep the theme and file
-// variables the same for every layout. Including them all in this way allows some flexibility down the road
-// if you want to add a different layout template to a specific page.
+// These are all of the possible layouts in Moodle.
 $THEME->layouts = array(
     // ► LOGIN_LOGOUT MESSAGE Most backwards compatible layout without the blocks
     'base' => array(
@@ -79,7 +67,7 @@ $THEME->layouts = array(
         'file' => 'default.php',
         'regions' => array(),
         'options' => array('langmenu'=>true, 'nologininfo'=>true, 'nocustommenu'=>true, 'nonavbar'=>true,
-                           'noblocks'=>true, 'nocourseheaderfooter'=>true, 'nofooter'=>false, 'infobanner'=>true),
+                           'noblocks'=>true, 'nocourseheaderfooter'=>true, 'nofooter'=>false, 'infobanner'=>false),
     ),
     // FRONTPAGE _ The site home page when not logged in.
     'frontpagesite' => array(
@@ -149,7 +137,7 @@ $THEME->layouts = array(
         'file' => 'default.php',
         'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
-        'options' => array('langmenu'=>false, 'nologininfo'=>true, 'nocustommenu'=>true, 'nonavbar'=>false,
+        'options' => array('langmenu'=>true, 'nologininfo'=>true, 'nocustommenu'=>false, 'nonavbar'=>false,
                            'noblocks'=>false, 'nocourseheaderfooter'=>false, 'nofooter'=>true, 'infobanner'=>false),
     ),
     // POPUP _ ADMIN -> REPORTS _ Pages that appear in pop-up windows 
@@ -173,11 +161,9 @@ $THEME->layouts = array(
         'options' => array('langmenu'=>false, 'nologininfo'=>true, 'nocustommenu'=>true, 'nonavbar'=>true,
                            'noblocks'=>true, 'nocourseheaderfooter'=>true, 'nofooter'=>true, 'infobanner'=>false),
     ),
-    // POPUP _ Used during upgrade and install, and for the 'This site is undergoing maintenance' message.
-    // This must not have any blocks, and it is good idea if it does not have links to
-    // other places - for example there should not be a home link in the footer...
-    'maintenance' => array(
-        'file' => 'default.php',
+    // DEFAULT _ The pagelayout used when a redirection is occuring.
+    'redirect' => array(
+        'file' => 'embedded.php',
         'regions' => array(),
         'options' => array('langmenu'=>false, 'nologininfo'=>true, 'nocustommenu'=>true, 'nonavbar'=>true,
                            'noblocks'=>true, 'nocourseheaderfooter'=>true, 'nofooter'=>true, 'infobanner'=>false),
@@ -189,13 +175,6 @@ $THEME->layouts = array(
         'options' => array('langmenu'=>false, 'nologininfo'=>true, 'nocustommenu'=>true, 'nonavbar'=>true,
                            'noblocks'=>true, 'nocourseheaderfooter'=>true, 'nofooter'=>false, 'infobanner'=>false),
     ),
-    // DEFAULT _ The pagelayout used when a redirection is occuring.
-    'redirect' => array(
-        'file' => 'embedded.php',
-        'regions' => array(),
-        'options' => array('langmenu'=>false, 'nologininfo'=>true, 'nocustommenu'=>true, 'nonavbar'=>true,
-                           'noblocks'=>true, 'nocourseheaderfooter'=>true, 'nofooter'=>true, 'infobanner'=>false),
-    ),     
     // ► REPORTS _ ADMIN -> REPORTS _ The pagelayout used for reports.
     'report' => array(
         'file' => 'default.php',
@@ -204,6 +183,13 @@ $THEME->layouts = array(
         'options' => array('langmenu'=>false, 'nologininfo'=>true, 'nocustommenu'=>true, 'nonavbar'=>false,
                            'noblocks'=>false, 'nocourseheaderfooter'=>true, 'nofooter'=>false, 'infobanner'=>false),
     ),
+    // POPUP _ Used during upgrade and install, and for the 'This site is undergoing maintenance' message.
+    'maintenance' => array(
+        'file' => 'default.php',
+        'regions' => array(),
+        'options' => array('langmenu'=>false, 'nologininfo'=>true, 'nocustommenu'=>true, 'nonavbar'=>true,
+                           'noblocks'=>true, 'nocourseheaderfooter'=>true, 'nofooter'=>true, 'infobanner'=>false),
+    ),
     // DEFAULT _ The pagelayout used for safebrowser and securewindow.
     'secure' => array(
         'file' => 'default.php',
@@ -211,14 +197,13 @@ $THEME->layouts = array(
         'defaultregion' => 'side-post',
         'options' => array('langmenu'=>false, 'nologininfo'=>true, 'nocustommenu'=>true, 'nonavbar'=>true,
                            'noblocks'=>false, 'nocourseheaderfooter'=>true, 'nofooter'=>false, 'infobanner'=>false),
-    ),
+    )
 );
 
-// We don't want the base theme to be shown on the theme selection screen, by setting
-// this to true it will only be shown if theme designer mode is switched on.
+// By setting this to true this theme will be shown in Select Themes.
 $THEME->hidefromselector = false;
 
-// An array containing the names of JavaScript files located in /javascript/ to include in the theme. (gets included in the head)
+// An array containing the names of JavaScript files located in /javascript/ to include in the theme.
 // $THEME->javascripts = array();
 
 // As above but will be included in the page footer.

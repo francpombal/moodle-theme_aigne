@@ -1,6 +1,7 @@
 <?php
 /**
  * frontpage and standard page.
+ * TODO: make two files -> frontpage and default (courses) 
  *
  * @package    theme_aigne
  * @copyright  2013 Franc Pombal (www.aigne.com)
@@ -46,6 +47,10 @@ if ($showsidepre && !$showsidepost) {
 if ($hascustommenu) {
     $bodyclasses[] = 'has_custom_menu';
 }
+
+$hasheadbanner = (!empty($PAGE->theme->settings->headbanner));
+$hasquadrobanner = (!empty($PAGE->theme->settings->quadrobanner));
+
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes() ?>>
 <head>
@@ -92,10 +97,12 @@ echo $OUTPUT->doctype() ?>
         <?php } 
               } ?> 
     </div>
+    <?php if ($hasheadbanner) { ?>
     <?php if (!isloggedin() or isguestuser()) { ?>
         <div class="info-banner">
             <?php include('frontinfoup.php') ?>
         </div>
+    <?php } ?>
     <?php } ?>
 
 <!-- START OF CONTENT --><!-- onselect + ondragstart: to prevent content copies -->
@@ -114,11 +121,13 @@ echo $OUTPUT->doctype() ?>
         <?php } ?>        
 <!-- main center content -->           
         <div id="region-main">
+            <?php if ($hasquadrobanner) { ?>
             <?php if (!isloggedin() or isguestuser()) { ?>
-            <div class="info-banner">
-                <?php include('frontinfo.php') ?>
-            </div>
-            <?php } ?>         
+                <div class="info-banner">
+                    <?php include('frontinfo.php') ?>
+                </div>
+            <?php } ?>
+            <?php } ?>
             <div class="region-content">
                 <?php echo $coursecontentheader; ?>
                 <?php echo $OUTPUT->main_content() ?>
