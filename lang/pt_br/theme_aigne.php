@@ -242,16 +242,19 @@ $string['backlogo'] = 'Fondo do logotipo';
 $string['backlogodesc'] = 'Se você quiser puede añadir uma imagem de fondo para el logotipo.<br />
 Debe ser uma imagem JPG/PNG/GIF con 200px de largo y 75px de alto';
 /* Strings para etiquetas META do HEAD de cada página WEB _ KEYWORDS = 20 palavras */
-$string['metakeywords'] = 'aigne,formação,treinamento,educação,ensino,didática,pedagogia,conhecimento,instrução,serviços,eLearning,desenvolvimento,habilidades,pessoas,instrutor,professor,treinador,empresas,firmas,produção,gestão';
-$string['metadescription'] = '{$a->sitename} nasce para divulgar e desenvolver a formação das pessoas.';
+$string['metakeywords'] = 'aigne, treinamento, educação, ensino, pedagogia';
+$string['metadescription'] = 'Bem-vindo {$a->sitename}.';
 $string['mtaghead'] = 'Opciones de las Meta Etiquetas';
-$string['mtagheaddesc'] = '';
+$string['mtagheaddesc'] = 'Las Meta Etiquetas pueden ser utilizadas para mejorar el posicionamiento en algunos buscadores, así como ofrecer 
+información fiable sobre nuestro sitio a multitud de servicios de indexación y clasificación que rondan por Internet.';
 $string['mtkeywords'] = 'Meta Etiqueta Keywords';
 $string['mtkeywordsdesc'] = 'Se você quiser puede escribir un contenido personalizado para la Meta Etiqueta "keywords".<br />
-Por favor, tenga en cuenta el formato y el contenido, separando las palabras por coma y añadiendo un máximo de 25 palabras';
+Por favor, tenga en cuenta el formato y el contenido, separando las palabras por coma y añadiendo un máximo de 25 palabras.<br />
+Si deja en blanco esta opción, se generará una expresión automática con 5 palabras según el idioma';
 $string['mtdescription'] = 'Meta Etiqueta Description';
 $string['mtdescriptiondesc'] = 'Se você quiser puede escribir un contenido personalizado para la Meta Etiqueta "description".<br />
-Por favor, tenga en cuenta el formato y el contenido, añadiendo un máximo de 250 caracteres';
+Por favor, tenga en cuenta el formato y el contenido, añadiendo un máximo de 250 caracteres.<br />
+Si deja en blanco esta opción, se generará una expresión de bienvenida según el idioma';
 $string['optionalmtag'] = 'Meta Etiquetas Opcionales';
 $string['optionalmtagdesc'] = 'Habilitando esta opção, se generarán Meta Etiquetas adicionales, con información automática sobre su sitio.';
 $string['custommtag'] = 'Meta Etiquetas Personales';
@@ -266,6 +269,7 @@ $string['dublinmtag'] = 'Meta Etiquetas Dublin Core ';
 $string['dublinmtagdesc'] = 'Habilitando esta opção, se generarán 3 etiquetas básicas (language, description, publisher) compatibles com o estándar "Dublin Core Metadata Initiative"';
 /**/
 $string['marketinghead'] = 'Opciones de desenho na página de presentación do sitio (frontpage _ marketing)';
+$string['marketingheaddesc'] = '::: sem terminar :::';
 $string['headbanner'] = 'Mostrar Banner do Encabezado';
 $string['headbannerdesc'] = 'Habilitando esta opção, se mostrará uma imagem na cabecera da página principal, antes que los usuarios se identifiquen.';
 $string['headerinfo'] = 'Encabezado de presentación';

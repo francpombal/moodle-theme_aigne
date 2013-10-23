@@ -149,7 +149,7 @@ $settings->add(new admin_setting_heading('sep2', new lang_string('sep_hr','theme
 // CEO Settings
     $name = 'theme_aigne/mtaghead';
     $heading = get_string('mtaghead', 'theme_aigne');
-    $information = '';
+    $information = get_string('mtagheaddesc', 'theme_aigne');
     $setting = new admin_setting_heading($name, $heading, $information);
     $settings->add($setting);
     // Keywords Meta Tag Setting
@@ -197,7 +197,7 @@ $settings->add(new admin_setting_heading('sep3', new lang_string('sep_hr','theme
 // Marketing Settings
     $name = 'theme_aigne/marketinghead';
     $heading = get_string('marketinghead', 'theme_aigne');
-    $information = '';
+    $information = get_string('marketingheaddesc', 'theme_aigne');
     $setting = new admin_setting_heading($name, $heading, $information);
     $settings->add($setting);
     // Header Information Image _ Show

@@ -242,16 +242,19 @@ $string['backlogo'] = 'Background image of logo';
 $string['backlogodesc'] = 'If you wish you can add a background image for the logo. <br /> 
 This image must be a JPG / PNG / GIF with 200px wide by 75px high';
 /* HEAD META TAGS _ KEYWORDS = 20 words */
-$string['metakeywords'] = 'aigne, training, education, learning, teaching, didactics, pedagogy, knowledge, services, eLearning, development, skills, people, trainer, teacher, business, production, management';
-$string['metadescription'] = '{$a->sitename} was created to promote and develop the skills of people.';
+$string['metakeywords'] = 'aigne, education, learning, didactics, pedagogy';
+$string['metadescription'] = 'Welcome {$a->sitename}.';
 $string['mtaghead'] = 'Meta Tags options';
-$string['mtagheaddesc'] = '';
+$string['mtagheaddesc'] = '
+';
 $string['mtkeywords'] = 'Keywords Meta Tag';
 $string['mtkeywordsdesc'] = 'Please add the custom content for "keywords" Meta Tag.<br />
-Please be care about the format and the content, words separated with comma and up to 25 words long.';
+Please be care about the format and the content, words separated with comma and up to 25 words long..<br />
+Living blank this option, will generate an automatic expression with 5 words.';
 $string['mtdescription'] = 'Description Meta Tag';
 $string['mtdescriptiondesc'] = 'Please add the custom content for "description" Meta Tag.<br />
-Please be care about the format and the content, and add up to 250 characters long.';
+Please be care about the format and the content, and add up to 250 characters long.br />
+Living blank this option, will generate an welcome expression.';
 $string['optionalmtag'] = 'Optional Meta Tags';
 $string['optionalmtagdesc'] = 'If enabled, generates Optional Meta Tags, with automated information over this site.';
 $string['custommtag'] = 'Custom Meta Tags';
@@ -266,6 +269,7 @@ $string['dublinmtag'] = 'Dublin Core Meta Tags';
 $string['dublinmtagdesc'] = 'If enabled, displays COMPATIBILITY WITH "Dublin Core Metadata Initiative" META TAGs.';
 /**/
 $string['marketinghead'] = 'Layout options for the site frontpage (marketing)';
+$string['marketingheaddesc'] = '::: under construction :::';
 $string['headbanner'] = 'Header Banner Show';
 $string['headbannerdesc'] = 'If enabled, displays a Banner in the header of the frontpage, before users logged in.';
 $string['headerinfo'] = 'Header Banner';

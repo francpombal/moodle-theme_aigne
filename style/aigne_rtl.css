@@ -35,13 +35,13 @@
     margin: 0px 10px 5px 0px;
 }
 .dir-rtl #region-pre .block .header {
-    background-color: #007EBA;
-    color: #FFFFFF;
-    border-color: #322C65;
+    background-color: [[setting:corsch_2]];
+    color: [[setting:corsch_B]];
+    border-color: [[setting:corsch_1]];
     }
 .dir-rtl #region-post .block .header {
     background-color: #777777;
-    color: #FFFFFF;
+    color: [[setting:corsch_B]];
     border-color: #000000;
     }
 /*----- RTL course category -----*/

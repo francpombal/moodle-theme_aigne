@@ -27,23 +27,31 @@
     font-weight: normal;
     font-style: normal;
 }*/
+/*----- ABBR ACRONYM - Abreviaturas -----*/
+abbr,acronym {
+	/*indicating to users that more info is available -> border-bottom: 1px dotted #000000;*/
+	border: 0;
+	cursor: help;
+}
 /*----- A - Enlaces -----*/
-A:link, 
-A:visited {
+A, 
+A:link {
     background-color: inherit;
     text-decoration: none;
-    color: #007EBA;
+    color: [[setting:corsch_2]];
+    }
+A:visited {
+    background-color: inherit;
+    color: [[setting:corsch_2]];
     }
 A:active {
     background-color: inherit;
-    text-decoration: none;
     color: #0099CC;
     }
-
 A:hover {
     background-color: inherit;
     letter-spacing: 1px;
-    color: #CC3300;
+    color: #CC0000;
     }
 A.logoutbtn {
     padding: 1px 10px 1px 10px;
@@ -51,8 +59,8 @@ A.logoutbtn {
     background-color: #D5E1DD;
     border-style: solid;
     border-width: 1px;
-    border-color: #787878;
-    color: #3C3C3C;
+    border-color: #777777;
+    color: [[setting:corsch_T]];
     text-decoration: none;
     cursor: pointer;
     }
@@ -69,7 +77,7 @@ BODY {
     padding: 0px 0px 0px 0px;
     background: url([[setting:backbody]]) [[setting:bgposition]] 0 0;
     background-color:[[setting:backcolor]];
-    color: #3C3C3C;
+    color: [[setting:corsch_T]];
     font-family: "eras Bk BT", "afta_sansregular", sans-serif;
     font-size: [[setting:bodyfont]];
     font-style: normal;
@@ -80,28 +88,23 @@ BUTTON,
 INPUT, 
 SELECT {
     margin: 0px 0px 0px 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #777777;
     background-color: #D5E1DD;
     font-family: "eras Bk BT", "afta_sansregular", sans-serif;  
     cursor: pointer;
     }
 BUTTON {
     padding: 2px 10px 1px 10px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #787878;
     text-decoration: none;
     }
 INPUT {
     padding: 2px 10px 1px 10px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #787878;
     text-decoration: none;
     }
 SELECT {
-    padding: 1px 1px 1px 3px;
-    border-width: 1px;
-    border-style: groove;
+    padding: 1px 1px 1px 5px;
     text-decoration: none;
     }
 .ie7 SELECT { /* fixes compatibility view */
@@ -114,28 +117,23 @@ SELECT {
     text-align:left;
     }
 .loginform .form-label {
-    float:left;
-    width:40%;
-    text-align:right;
-    white-space:nowrap;
-    }
-.loginform .form-input {
-    float:right;
-    width:60%;
-    }
-.loginform .form-input input {
-    width: 6em;
+    float: left;
+    width: 30%;
+    margin: 0px 10px 0px 0px;
+    text-align: right;
+    white-space: nowrap;
     }
 INPUT#username, 
 INPUT#password, 
 INPUT[type="text"], 
 INPUT[type="password"] {
-    margin: 0px 0px 5px 5px;
-    background-color: #FFFFFF;
+    margin: 0px 5px 5px 0px;
+    background-color: [[setting:corsch_B]];
     border-width: 1px 1px 1px 1px;
     border-style: inset;   
-    color: #3C3C3C;
+    color: [[setting:corsch_T]];
     cursor: default;
+    vertical-align: baseline;
     }
 .loginhead {
     position: relative;
@@ -164,7 +162,7 @@ INPUT[type="password"] {
     height: 35px;
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
-    border: 1px #322C65 solid;
+    border: 1px [[setting:corsch_1]] solid;
     }
 /*----- DIV - Divisor de Formatos -----*/
 DIV {
@@ -220,7 +218,7 @@ HR {
     margin: 3px 0px 3px 0px;
     background-color: inherit;
     border-top: 0px;
-    border-bottom: 1px dotted #007EBA;
+    border-bottom: 1px dotted [[setting:corsch_2]];
     }
 /*----- HTML -----*/
 HTML {
@@ -306,6 +304,8 @@ TFOOT {
     }
 TABLE.headerop {
     width: 100%;
+    font-size: 14px; /* 'em' excep. <-DESIGN, when highest font size selected */
+
     }
 TABLE.headerop TD {
     padding: 0px 0px 0px 0px;
@@ -316,37 +316,38 @@ TABLE.headerop TD {
     text-align: center;
     }
 TABLE.headerop BUTTON {
-    width: 21px;
-    height: 21px;
+    width: 23px;
+    height: 20px;
     padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
     background: none;
     border-style: none;
-    font-family: "eras Bk BT", "afta_sansregular", sans-serif;
     }
 /*----- TEXTAREA - Campos de texto, desplegables, etc... -----*/
 TEXTAREA {
     width: auto;
     padding: 0px 0px 0px 0px;
-    background-color: #FFFFFF;
+    background-color: [[setting:corsch_B]];
     border-width: 1px 1px 1px 1px;
-    border-style: inset;
-    color: #3C3C3C;
+    border-style: solid;
+    border-color: #777777;
+    color: [[setting:corsch_T]];
     text-decoration: none;
     cursor: default;
     }
     
 /*----- Prevent some interferences of the base theme -----*/
-DIV.notifysuccess {color: #004040;}
-TABLE.flexible .r0, TABLE.generaltable .r0 {background-color: #CCDDEE;}
-TABLE.flexible .r1, TABLE.generaltable .r1 {background-color: #F3F7FF;}
-#page-admin-plugins #plugins-control-panel .disabled .availability {background-color: #007EBA; color: #FFFFFF;}
-#page-admin-plugins #plugins-control-panel .extension .source {background-color: #007EBA; color: #FFFFFF;}
+DIV.notifysuccess {color: #009999; text-align: center; font-size: 1.85em; font-weight: bold;}
+TABLE.flexible .r0, TABLE.generaltable .r0 {background-color: [[setting:corsch_3]];}
+TABLE.flexible .r1, TABLE.generaltable .r1 {background-color: [[setting:corsch_4]];}
+#page-admin-plugins #plugins-control-panel .disabled .availability {background-color: [[setting:corsch_2]]; color: [[setting:corsch_B]];}
+#page-admin-plugins #plugins-control-panel .extension .source {background-color: [[setting:corsch_2]]; color: [[setting:corsch_B]];}
 TABLE.flexible A:hover, TABLE.generaltable A:hover {letter-spacing: normal;}
 .clearfix:after {clear: both; content: ''; display: block; height: 0; min-width: 0; visibility: hidden;}
 /*----- Corrige un error con el editor tiny_mce -----*/
-TABLE.mceLayout {display: inherit;} /* add min-width option 
+TABLE.mceLayout {display: inherit; min-width: 500px; min-height: 135px} /* ampliar min-height 
 /*----- REDIRECT + CONTINUE -----*/
-.redirectmessage, .continuebutton {padding-bottom: 10px; color: #C3C3C3; text-align: center; font-size: 1.2em;}
+.redirectmessage, .continuebutton {padding-bottom: 10px; color: [[setting:corsch_T]]; text-align: center; font-size: 1.2em;}
 /*----- Customization of width defined in course/renderer.php L#476 + L#480 + L#484 ----*/
 INPUT#navsearchbox {width: 20ex; margin: 1px 0px 0px 0px;}
 INPUT#shortsearchbox {width: 40ex;}
@@ -387,7 +388,7 @@ INPUT#coursesearchbox {width: 50ex;}
     display: block;
     margin: 0px 0px 0px 0px;
     padding: 0px 5px 0px 5px;
-    color: #3C3C3C;
+    color: [[setting:corsch_T]];
     font-family: "eras Bk BT", "afta_sansregular", sans-serif;
     font-size: 0.80em;
     font-style: normal;
@@ -398,11 +399,11 @@ INPUT#coursesearchbox {width: 50ex;}
 .langmenu {
     float: right;
     width: 98%;
-    margin: 0;
-    padding: 2px 3px 2px 0px;
-    background-color: #CCDDEE;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 3px 0px 0px;
+    background-color: [[setting:corsch_3]];
     border-style: none;
-    color: #007EBA;
+    color: [[setting:corsch_2]];
     }
 /*----- Barra de Navegación (Breadcrumb) y botones de la barra de navegación -----*/
 .breadcrumb li, 
@@ -412,7 +413,7 @@ INPUT#coursesearchbox {width: 50ex;}
     }
 .breadcrumb {
     float: left;
-    color: #3C3C3C;
+    color: [[setting:corsch_T]];
     }
 .breadcrumb ul {
     margin-top: 2px;
@@ -427,7 +428,7 @@ INPUT#coursesearchbox {width: 50ex;}
 	content: "[[setting:bcsep]]";
 	font-size: 1.1em;
 	margin: 0px 0px 0px 10px;
-	color: #322C65;
+	color: [[setting:corsch_1]];
 }
 .breadcrumb li:last-child:after { 
 	content: none; 
@@ -443,8 +444,8 @@ INPUT#coursesearchbox {width: 50ex;}
     background-color: #D5E1DD;
     border-width: 1px;
     border-style: solid;
-    border-color: #787878;
-    color: #3C3C3C;
+    border-color: #777777;
+    color: [[setting:corsch_T]];
     font-size: 0.90em;
     cursor: pointer;
     }
@@ -497,8 +498,8 @@ DIV.contact#left {
     }
 DIV.contact#center {
     float: left;
-    left: 30%;
-    width: 38%;
+    left: 32%;
+    width: 36%;
     }
 DIV.contact#right {
     float: right;
@@ -512,8 +513,8 @@ DIV.fisicalsite {
     }
 DIV.credits {
     clear: both;
-    background-color: #007EBA;
-    color: #EEEEEE;
+    background-color: [[setting:corsch_2]];
+    color: #DDDDDD;
     line-height: 3em;
     text-align: center;
     }
@@ -524,19 +525,44 @@ DIV.credits A {
 .generalbox {
     border: 0 none;
 }
-/*----- Courses and categories lists -----*/
-.coursebox .content .summary {
-    width: 100%;
+/*----- Coursebox Info & Summary -----*/
+.coursebox {
+    margin: 10px auto 0px auto;
+    padding: 0px auto 0px 0px;
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-color: #E0E0E0;
+}
+.coursebox .info {
     float: left;
+    width: 98%;
+    margin: 0px auto 0px 0px;
+    padding: 5px auto 0px 5px;
 }
-.coursebox .content .coursecat {
-    width: 47%;
+.coursebox .info  h3.name{
+    text-align: left;
 }
-.coursebox > .info > .name, 
-.coursebox .content .teachers, 
+.coursebox .content {
+    width: 98%;
+    margin: 0px auto 0px 0px;
+    padding: 0px auto 0px 0px;
+}
+.coursebox .content .coursecat, 
+.coursebox .content .summary, 
 .coursebox .content .courseimage, 
-.coursebox .content .coursefile {
-    width: 47%;
+.coursebox .content .coursefile, 
+.coursebox .content .teachers {
+    float: left;
+    width: 80%;
+    margin: 0px auto 0px auto;
+    padding: 5px 10px 0px 20px;
+}
+.coursebox .content .teachers li {
+    display: list-item;
+    text-align: left;
+    padding: 0px 0px 0px 9px;
+    margin: 0px 0px 0px 25px;
+    list-style-image: url(/moodle/theme/image.php?theme=aigne&component=core&image=t%2Fteacher);
 }
 #page-course-index-category .generalbox.info {
     padding: 5px;
@@ -544,7 +570,7 @@ DIV.credits A {
 /*----- Course Section Topic & Weekly -----*/
 .course-content ul.topics li.section, 
 .course-content ul.weeks li.section {
-    border: 1px solid #DDDDDD;
+    border: 1px solid #E0E0E0;
     list-style: none outside none;
     margin: 5px 0 0;
     padding: 0;
@@ -555,25 +581,6 @@ DIV.credits A {
 .path-course-view .headingblock {
     display: none; /* hides topic items title or weekly itens title */
     margin-bottom: 9px;
-}
-/*----- Coursebox Info & Summary -----*/
-.coursebox h3, 
-.coursebox .info, 
-.coursebox .summary {
-    text-align: left;
-    width: 100%;
-    height: auto;
-}
-.coursebox .info {
-    float: left;
-}
-.coursebox .summary {
-    float: right;
-}
-.coursebox .summary p { margin: 5px 0 0;}
-.coursebox .info h3.name {
-    padding: 0;
-    margin: 5px 0 0;
 }
 /* CAMBIO AÑADIDO */
 .jsenabled .course_category_tree .controls {
@@ -587,11 +594,11 @@ DIV.credits A {
 div.controls .expandall, 
 div.controls .collapseall {
     background-color: #D5E1DD;
-    color: #3C3C3C;
+    color: [[setting:corsch_T]];
     font-size: 0.90em;    
     border-style: solid;
     border-width: 1px;
-    border-color: #787878;
+    border-color: #777777;
     padding: 1px 10px 1px 10px;
 	margin: 2px 0px 0px 5px;
 	float: right;
@@ -678,14 +685,14 @@ div.controls .collapseall {
 .tabtree .here ul a.nolink, 
 .tabtree a.nolink:hover, 
 .tabtree .here ul a.nolink:hover {
-    color: #888888;
+    color: #CC0000;
     text-decoration: none;
 }
 .tabtree .here a.nolink, 
 .tabtree .here ul .here a.nolink, 
 .tabtree .here a.nolink:hover, 
 .tabtree .here ul .here a.nolink:hover {
-    color: black;
+    color: CC0000;
     text-decoration: none;
 }
 /*----- tab styles for ie6 & ie7 -----*/
@@ -768,11 +775,11 @@ body#page-course-view-topics.path-course div.moodle-dialogue-base div.yui3-widge
 }
 /*----- Moodle forms -----*/
 .mform .btn-cancel {
-    color: #007EBA;
+    color: [[setting:corsch_2]];
     text-decoration: none;
 }
 .mform .btn-cancel:hover, 
 .mform .btn-cancel:focus {
-    color: #CC3300;
+    color: #CC0000;
     text-decoration: underline;
 }

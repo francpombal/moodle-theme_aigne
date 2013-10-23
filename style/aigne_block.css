@@ -5,35 +5,11 @@
     padding: 0px 0px 0px 0px;
     border-width: 0px 0px 0px 0px;
     border-style: solid;
-    border-color: #322C65;
-    background-color: #FFFFFF;
-    }
-    
-.block-region {
-    font-size: 0.95em;    
-    font-style: normal;
-    font-weight: normal;
-    }
-.block-region ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    }
-.block-region li {
-    padding: 0 0 20px 0;
-    }
-.block-region li li {
-    margin: 0px 20px 0px 10px;
-    padding: 8px 0px;
-    }
-    
-.block .region-content {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+    border-color: [[setting:corsch_1]];
+    background-color: [[setting:corsch_B]];
     }
 .block .content {
-    padding: 0px 10px 10px 10px;
+    padding: 0px 3% 3% 3%;
     }
 .block.hidden .content {
     display: none;
@@ -53,6 +29,28 @@
     margin-left:5px;
     display:inline;
     }
+.block-region {
+    font-size: 0.95em;    
+    font-style: normal;
+    font-weight: normal;
+    }
+.block-region ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    }
+.block-region li {
+    padding: 0 0 20px 0;
+    }
+.block-region li li {
+    margin: 0px 20px 0px 10px;
+    padding: 8px 0px;
+    }
+.block .region-content {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    }
 /*----- Block Head -----*/
 .block .header {
     border:none;
@@ -64,17 +62,17 @@
     }
 #region-pre .block .header {
     background-color: #777777;
-    color: #FFFFFF;
+    color: [[setting:corsch_B]];
     border-width: 1px 0px 0px 0px;
     border-style: solid;
     border-color: #000000;
     }
 #region-post .block .header {
-    background-color: #007EBA;
-    color: #FFFFFF;
+    background-color: [[setting:corsch_2]];
+    color: [[setting:corsch_B]];
     border-width: 1px 0px 0px 0px;
     border-style: solid;
-    border-color: #322C65;
+    border-color: [[setting:corsch_1]];
     }
 .block .header .title h2 {
     font-size: 1.20em;
@@ -114,6 +112,10 @@
     margin-bottom: 1em;
     border-width: 2px;
     border-style: dashed;
+}
+.block-region .invisible {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
 }
 .block .block-hider-show,
 .block .block-hider-hide {
@@ -197,13 +199,15 @@
 #dock .dockedtitle h2 {
     margin: 0px 0px 0px 0px;
     padding: 10px 3px;
-    color: #FFFFFF;
+    /*color: #FFFFFF;*/
+    color: [[setting:corsch_B]];
     }
 .dockedtitle.activeitem h2 {
-    color: #FFFFFF;
+    /*color: #FFFFFF;*/
+    color: [[setting:corsch_B]];
     }
 #dock .dockedtitle.activeitem {
-    background-color: #AABBCC;
+    background-color: #abc;
     width: 35px;
     -webkit-border-top-right-radius: 0;
     -moz-border-radius-topright: 0;
@@ -235,11 +239,12 @@
     display:none;
     }
 #dockeditempanel .dockeditempanel_content {
-    background-color: #FFFFFF;
+    /*background-color: #FFFFFF;*/
+    background-color: [[setting:corsch_B]];
     margin: 0 3px;
     position: relative;
     min-height: 100px;
-    border-color: #AABBCC;
+    border-color: #abc;
     border-style: solid;
     border-width: 5px;
     -webkit-border-radius: 6px;
@@ -251,7 +256,7 @@
     }
 #dockeditempanel .dockeditempanel_hd {
     border-width: 0px 0px 0px 0px;
-    background-color: #AABBCC;
+    background-color: #abc;
     padding: 2px;
     }
 #dockeditempanel .dockeditempanel_bd .block_docked {
@@ -268,7 +273,8 @@
     display:inline;
     margin: 0px 0px 0px 0px;
     padding-left: 1em;
-    color: #FFFFFF;
+    /*color: #FFFFFF;*/
+    color: [[setting:corsch_B]];
     }
 #dockeditempanel .dockeditempanel_hd .commands {
     display:inline;

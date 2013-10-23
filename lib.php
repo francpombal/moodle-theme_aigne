@@ -166,8 +166,78 @@ function theme_aigne_set_bodyfont($css, $bodyfont) {
 
     // Set the color Schema
 function theme_aigne_set_colorsch($css, $colorsch) {
+    switch ($colorsch) {
+        case 1:
+            $corsch_1 = '#322C65';
+            $corsch_2 = '#007EBA';
+            $corsch_3 = '#CCDDEE';
+            $corsch_4 = '#F3F7FF';
+            $corsch_5 = '#FFFFFF';
+            $corsch_B = '#FFFFFF';
+            $corsch_T = '#3C3C3C';
+            break;
+        case 2:
+            $corsch_1 = '#F3F7FF';
+            $corsch_2 = '#CCDDEE';
+            $corsch_3 = '#322C65';
+            $corsch_4 = '#000033';
+            $corsch_5 = '#322C65';
+            $corsch_B = '#322C65';
+            $corsch_T = '#FFFFFF';
+            break;
+        case 3:
+            $corsch_1 = '#001A1A';
+            $corsch_2 = '#004040';
+            $corsch_3 = '#4CA9BC';
+            $corsch_4 = '#F2FFEB';
+            $corsch_5 = '#FFFFFF';
+            $corsch_B = '#FFFFFF';
+            $corsch_T = '#3C3C3C';
+            break;
+        case 4:
+            $corsch_1 = '#522500';
+            $corsch_2 = '#EB8324';
+            $corsch_3 = '#F6CC87';
+            $corsch_4 = '#FFFFCC';
+            $corsch_5 = '#FFFFFF';
+            $corsch_B = '#FFFFFF';
+            $corsch_T = '#3C3C3C';
+            break;
+        case 5:
+            $corsch_1 = '#520000';
+            $corsch_2 = '#AA0000';
+            $corsch_3 = '#FFA6A6';
+            $corsch_4 = '#FFF2F2';
+            $corsch_5 = '#FFFFFF';
+            $corsch_B = '#FFFFFF';
+            $corsch_T = '#3C3C3C';
+            break;
+        default:
+            $corsch_1 = '#322C65';
+            $corsch_2 = '#007EBA';
+            $corsch_3 = '#CCDDEE';
+            $corsch_4 = '#F3F7FF';
+            $corsch_5 = '#FFFFFF';
+            $corsch_B = '#FFFFFF';
+            $corsch_T = '#3C3C3C';
+            break;
+    }
     $tag = '[[setting:colorsch]]';
+    $tagcs1 = '[[setting:corsch_1]]';
+    $tagcs2 = '[[setting:corsch_2]]';
+    $tagcs3 = '[[setting:corsch_3]]';
+    $tagcs4 = '[[setting:corsch_4]]';
+    $tagcs5 = '[[setting:corsch_5]]';
+    $tagcsB = '[[setting:corsch_B]]';
+    $tagcsT = '[[setting:corsch_T]]';
     $css = str_replace($tag, $colorsch, $css);
+    $css = str_replace($tagcs1, $corsch_1, $css);
+    $css = str_replace($tagcs2, $corsch_2, $css);
+    $css = str_replace($tagcs3, $corsch_3, $css);
+    $css = str_replace($tagcs4, $corsch_4, $css);
+    $css = str_replace($tagcs5, $corsch_5, $css);
+    $css = str_replace($tagcsB, $corsch_B, $css);
+    $css = str_replace($tagcsT, $corsch_T, $css);
     return $css;
 }
 

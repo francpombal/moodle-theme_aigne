@@ -16,15 +16,19 @@ $THEME->name = 'aigne';
 $THEME->parents = array('base');
 
 // An array of stylesheets not to inherit from the themes parents (We don't want these)
-$THEME->parents_exclude_sheets = array('base'=>array('pagelayout', 'dock'));
+$THEME->parents_exclude_sheets = array('base'=>array(
+    'pagelayout', 
+    'calendar', 
+    'dock'
+));
 
 // Color Schema defined in Admin -> Apperance -> Themes -> AIGNE -> colorsch
-    $colorschema = 'aigne_style_';
-    if (empty($THEME->settings->colorsch)) {
-        $colorschema .= '1';
-    } else {
-        $colorschema .= $THEME->settings->colorsch;
-    }
+    //$colorschema = 'aigne_style_';
+    //if (empty($THEME->settings->colorsch)) {
+    //    $colorschema .= '1';
+    //} else {
+    //    $colorschema .= $THEME->settings->colorsch;
+    //}
     
 // Name of the stylesheet(s) you've including in this theme's /styles/ directory.
 $THEME->sheets = array(
@@ -34,7 +38,6 @@ $THEME->sheets = array(
     'aigne_block',
     'aigne_mod',         // including 'calendar', 'forum', 'grade', (pending 'message', 'question',)
     'aigne_rtl',
-    $colorschema,
     'aigne_custom'
 );
 

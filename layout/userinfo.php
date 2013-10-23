@@ -49,6 +49,12 @@
     } else {
         $username = s($cookiename);
     }
+
+    if (!empty($CFG->loginpasswordautocomplete)) {
+        $autocomplete = 'autocomplete="off"';
+    } else {
+        $autocomplete = '';
+    }
     
     //TODO -> Birthday greetings
     // Crear campo de 'birthday' en la ficha de alumno
@@ -79,52 +85,50 @@
             $salut = get_string('night_greeting', 'theme_aigne');              
         }
     }
+
+    // User Information Area: greeting on the block title <- ISSUE -> No coje el título, porque lo define mucho antes
+    //if ($hasusernavsalut) {
+    //    $this->title = $salut;
+    //} else {
+    //    $this->title = get_string('pluginname', $this->blockname);
+    //}
   
     // User not loggedin or guest user
         if (!isloggedin() or isguestuser()) {
             $loginlogout .= html_writer::start_tag('div', array('class'=>'loginhead'));
             $loginlogout .= html_writer::start_tag('form', array('class'=>'loginform', 'id'=>'login', 'method'=>'post', 'action'=>get_login_url()));
 
+            $loginlogout .= html_writer::empty_tag('input', array('class'=>'form-input', 'type'=>'text', 'size'=>'20', 'name'=>'username', 'id'=>'login_username', 'placeholder'=>$userph, 'value'=>$username));
+            
+            $loginlogout .= html_writer::empty_tag('input', array('class'=>'form-input', 'type'=>'password', 'size'=>'20', 'name'=>'password', 'id'=>'login_password', 'placeholder'=>$passph, 'value'=>'', $autocomplete));
 
-            $loginlogout .= html_writer::empty_tag('input', array('class'=>'form-input', 'type'=>'text', 'name'=>'username', 'id'=>'login_username', 'placeholder'=>$userph, 'value'=>$username));
-
-
-
-            if (!empty($CFG->loginpasswordautocomplete)) {
-                $loginlogout .= html_writer::empty_tag('input', array('class'=>'form-input', 'type'=>'password', 'name'=>'password', 'id'=>'login_password', 'placeholder'=>$passph, 'value'=>'', 'autocomplete'=>'off'));
-            } else {
-                $loginlogout .= html_writer::empty_tag('input', array('class'=>'form-input', 'type'=>'password', 'name'=>'password', 'id'=>'login_password', 'placeholder'=>$passph, 'value'=>''));
+            if (isset($CFG->rememberusername) and $CFG->rememberusername == 2) {
+                if ($username) {
+                    $loginlogout .= html_writer::empty_tag('input', array('type'=>'checkbox', 'title'=>get_string('rememberusername', 'admin'), 'name'=>'rememberusername', 'id'=>'rememberusername', 'value'=>'1', 'checked'=>'checked'));
+                } else {
+                    $loginlogout .= html_writer::empty_tag('input', array('type'=>'checkbox', 'title'=>get_string('rememberusername', 'admin'), 'name'=>'rememberusername', 'id'=>'rememberusername', 'value'=>'1'));
+                }
+                //$loginlogout .= html_writer::tag('label', get_string('rememberusername', 'admin'), array('for'=>'rememberusername'));
             }
 
-
-
-
-
-
-
-
-
-
-
-
             $loginlogout .= html_writer::empty_tag('input', array('type'=>'submit', 'value'=>get_string('login')));
-
             $loginlogout .= html_writer::end_tag('form');
             $loginlogout .= html_writer::end_tag('div');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
+            //$loginlogout .= html_writer::empty_tag('HR');
+    // User not loggedin but forgot password
+            //if (!empty($forgot)) {
+                //$loginlogout .= html_writer::start_tag('div');
+                //$loginlogout .= html_writer::link(new moodle_url($forgot), get_string('forgotten'));
+                //$loginlogout .= html_writer::end_tag('div');
+            //}
+    // User not loggedin but want sign up
+            //if (!empty($signup)) {
+                //$loginlogout .= html_writer::start_tag('div');
+                //$loginlogout .= html_writer::link(new moodle_url($signup), get_string('startsignup'));
+                //$loginlogout .= html_writer::end_tag('div');
+            //}
+        //$loginlogout .= html_writer::empty_tag('HR');
     // User loggedin
 		} else {
             $loginlogout .= html_writer::start_tag('div', array('class'=>'userinfohead'));
@@ -136,9 +140,8 @@
         // User Information Area: user name
         if ($hasusernavinfo) {
             $loginlogout .= '<a href="'. $wwwroot .'/user/editadvanced.php?id='.$USER->id.'" title="'.get_string('updatemyprofile').'">'.fullname($USER).'</a>';
-            $loginlogout .= '&nbsp;&nbsp;&nbsp;';
         }
-
+            $loginlogout .= '&nbsp;&nbsp;&nbsp;';
         //  User Information Area: user picture
         if ($hasusernavpic) {
             $loginlogout .= html_writer::start_tag('div', array('class'=>'userpic'));

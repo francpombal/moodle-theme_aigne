@@ -1,31 +1,43 @@
 /*----- ----- ----- theme_aigne -> MODS & PLUGINS & ... -----*/
 /*----- Calendar -----*/
+/* Main Content Calendar */
 .calendartable {
-    width: 100%;
-    font-size: 0.85em;
+    font-size: 1.1em;
+    border-width: 0px 0px 1px 0px;
+    border-style: solid;
+    border-color: [[setting:corsch_1]];
 }
 .calendartable th,
 .calendartable td {
-    width:14%;
-    vertical-align:top;
+    width: 14%;
+    vertical-align: top;
     text-align: center;
-    border: 0px 0px 0px 0px;
+    padding: 5px 0px 0px 0px;
+}
+.calendartable td {
+    border-width: 1px 0px 0px 0px;
+    border-style: solid;
+    border-color: [[setting:corsch_3]];
+    /*background-color: [[setting:corsch_4]];*/
 }
 .path-calendar .calendar-controls .previous,
 .path-calendar .calendar-controls .next,
 .path-calendar .calendar-controls .current {
     display: block;
     float: left;
-    width: 12%;
 }
 .path-calendar .calendar-controls .previous {
+    width: 12%;
     text-align: left;
 }
 .path-calendar .calendar-controls .current {
-    text-align: center;
     width: 76%;
+    text-align: center;
+    font-size: 2em;
 }
 .path-calendar .calendar-controls .next {
+    float: right;
+    width: 12%;
     text-align: right;
 }
 .path-calendar {
@@ -36,78 +48,112 @@
 }
 .path-calendar .maincalendar .bottom {
     text-align: center;
-    padding:5px 0px 0px 0px;
+    padding: 10px 0px 10px 0px;
 }
 .path-calendar .maincalendar .heightcontainer {
-    height: 100%;position: relative;
+    height: 100%;
+    position: relative;
 }
 .path-calendar .maincalendar .calendarmonth {
-    width:98%;margin:10px auto;
+    width: 98%;
+    margin: 10px auto 10px auto;
 }
 .path-calendar .maincalendar .calendarmonth ul {
     margin: 0px 0px 0px 0px;
 }
 .path-calendar .maincalendar .calendarmonth ul li {
-    list-style-type:none;margin-top: 4px;
+    list-style-type: none;
+    margin-top: 5px;
 }
 .path-calendar .maincalendar .calendarmonth td {
     height: 5em;
+}
+.path-calendar .maincalendar .calendarmonth td.weekend {
+    color: #CC0000;
+}
+.path-calendar .maincalendar .calendarmonth th {
+    padding: 5px 0px 5px 0px;
+    border-width: 1px 0px 2px 0px;
+    border-style: solid;
+    border-color: [[setting:corsch_1]];
+    background-color: [[setting:corsch_3]];
 }
 .path-calendar .maincalendar .calendar-controls .previous,
 .path-calendar .maincalendar .calendar-controls .next {
     width: 30%;
 }
 .path-calendar .maincalendar .calendar-controls .current {
-    width: 39.95%;
+    width: 35%;
 }
 .path-calendar .maincalendar .controls {
-    width:98%;margin:10px auto;
+    width:98%;
+    margin: 10px auto 0px auto;
 }
 .path-calendar .maincalendar .eventlist .event {
-    width:100%;
-    margin-bottom:10px;
-    border-spacing:0px;
-    border-collapse:separate;
-    border-width:1px;
-    border-style:solid;
+    width: 100%;
+    margin-bottom: 10px;
+    border-spacing: 0px;
+    border-collapse: separate;
+    border-width: 1px;
+    border-style: solid;
 }
 .path-calendar .maincalendar .eventlist .event .topic .name {
-    float:left;
+    float: left;
 }
 .path-calendar .maincalendar .eventlist .event .topic .date {
-    float:right;
+    float: right;
 }
-.path-calendar .maincalendar .eventlist .event .course {
+.path-calendar .maincalendar .eventlist .event .subscription {
     float:left;
     clear:left;
 }
+.path-calendar .maincalendar .eventlist .event .course {
+    float: left;
+    clear: left;
+}
 .path-calendar .maincalendar .eventlist .event .side {
-    width:32px;
+    width: 32px;
 }
 .path-calendar .maincalendar .header {
-    overflow:hidden;
+    overflow: hidden;
 }
 .path-calendar .maincalendar .header .buttons {
     float: right;
 }
 .path-calendar .filters table {
-    border-collapse:separate;
-    border-spacing: 2px;width: 100%;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 2px;
 }
 #page-calendar-export .indent {
     padding-left: 20px;
 }
+.path-calendar .cal_courses_flt label { 
+    margin-right: .45em;
+}
+/* Block Calendar */
 .block .minicalendar {
-    width:100%;
-    margin:10px auto;
+    width: 100%;
+    margin: 10px auto 10px auto;
+    border-width: 0px 0px 0px 0px;
 }
 .block .minicalendar th,
 .block .minicalendar td {
-    padding: 2px;
-    font-size: 0.95em;
+    font-size: 0.85em;
+    padding: 3px 3px 3px 3px;
+    border-width: 0px 0px 0px 0px;
+    background-color: [[setting:corsch_B]];
+}
+.block .minicalendar th {
+    border-width: 1px 0px 2px 0px;
+    border-style: solid;
+    border-color: [[setting:corsch_3]];
 }
 .block .minicalendar td.weekend {
-    color: #AA0000;
+    color: #CC0000;
+}
+.block .minicalendar .weekdays {
+    color: [[setting:corsch_2]];
 }
 .block .calendar-controls .previous {
     text-align: left;
@@ -116,10 +162,10 @@
     width: 12%;
 }
 .block .calendar-controls .current {
-    float:left;
+    float: left;
     text-align: center;
     display: block;
-    width:76%;
+    width: 76%;
 }
 .block .calendar-controls .next {
     text-align: right;
@@ -128,47 +174,67 @@
     width: 12%;
 }
 .block .filters table {
-    border-collapse:separate;
+    border-collapse: separate;
     border-spacing: 2px;
-    padding: 2px;width: 100%;
+    padding: 2px;
+    width: 100%;
+}
+.block .calendar_filters ul {
+    list-style: none; 
+    margin: 0;
+}
+.block .calendar_filters li { 
+    margin-bottom: 0.2em;
+    padding: 0;
+}
+.block .calendar_filters li span img {
+    padding: 0 .2em;
+}
+.block .calendar_filters .eventname {
+    padding-left: .2em;
 }
 .block .content h3.eventskey {
-    margin-top:0.5em;
-    margin-bottom:0;
+    margin-top: 0.5em;
+    margin-bottom: 0;
 }
-.block .calendar_filters li { padding: 0; }
-/*----- Colors for Calendar Events -----*/
+/*  Calendar Events Colours */
 #calendar .event_global,
 .minicalendar .event_global,
 .block_calendar_month .event_global,
 .calendar_event_global {
     border-color: #def2ba !important;
-    background-color: #def2ba;
+    background-color: #D6F8CD;
 }
 #calendar .event_course,
 .minicalendar .event_course,
 .block_calendar_month .event_course,
 .calendar_event_course {
     border-color: #c6dfeb !important;
-    background-color: #c6dfeb;
+    background-color: #FFD3BD;
 }
 #calendar .event_group,
 .minicalendar .event_group,
 .block_calendar_month .event_group,
 .calendar_event_group {
     border-color: #feffc2 !important;
-    background-color: #feffc2;
+    background-color: #FEE7AE;
 }
 #calendar .event_user,
 .minicalendar .event_user,
 .block_calendar_month .event_user,
 .calendar_event_user {
     border-color: #d9c6e2 !important;
-    background-color: #d9c6e2;
+    background-color: #DCE7EC;
 }
-table.minicalendar tr td.weekend {
-    color: #f00;
-}
+/* CALENDAR RTL */
+.dir-rtl.path-calendar .maincalendar .eventlist .event .topic .name {float: right;}
+.dir-rtl.path-calendar .maincalendar .eventlist .event .topic .date {float: left;}
+.dir-rtl.path-calendar .maincalendar .eventlist .event .subscription {float: right; clear: right;}
+.dir-rtl.path-calendar .maincalendar .eventlist .event .course {float: right; clear: right;}
+.dir-rtl.path-calendar .maincalendar .header .buttons {float: left;}
+.dir-rtl.path-calendar .cal_courses_flt label { margin-left: 0.45em; margin-right: 0; }
+.dir-rtl .block .calendar_filters .eventname { padding-right: 0.2em; padding-left: 0; }
+
 /*----- Forum -----*/
 .forumpost {
     border-collapse:separate;

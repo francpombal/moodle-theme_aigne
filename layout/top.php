@@ -31,7 +31,7 @@ $haslangmenu = (!empty($PAGE->layout_options['langmenu']));
     </div>    
 -->
     <table class="headerop">
-         <tr Style="height:24px">
+         <tr Style="height:25px">
             <td Style="width:20%; background-color:#322C65" colspan=5>&nbsp;</td>
             <td Style="width:16%; background-color:#007EBA" colspan=4>&nbsp;</td>
             <td Style="width:16%; background-color:#CCDDEE" colspan=4>
@@ -58,7 +58,7 @@ $haslangmenu = (!empty($PAGE->layout_options['langmenu']));
             } ?>
             </td>
         </tr>
-        <tr Style="height:24px">
+        <tr Style="height:25px">
             <td Style="width:8%;" colspan=2>&nbsp;</td>
             <td Style="width:4%; background-color:#CCDDEE" colspan=1>&nbsp;</td>
             <td Style="width:4%; background-color:#CCDDEE; font-size: 90%" colspan=1>
@@ -73,10 +73,10 @@ $haslangmenu = (!empty($PAGE->layout_options['langmenu']));
             <td Style="width:4%; background-color:#CCDDEE" colspan=1>&nbsp;</td>
             <td Style="width:16%" colspan=4>&nbsp;</td>
             <td Style="width:4%; background-color:#CCDDEE" colspan=1>
-                <button id="style2" title="<?php echo get_string('styletxt','theme_aigne'); ?>" onclick="alert('<?php echo get_string('noimplemented','theme_aigne'); ?>')">   </button>
+                <button id="style1" title="<?php echo get_string('defaultstyletxt','theme_aigne'); ?>" onclick="alert('<?php echo get_string('noimplemented','theme_aigne'); ?>')">   </button>
             </td>
             <td Style="width:4%; background-color:#322C65" colspan=1>
-                <button id="defaultstyle" title="<?php echo get_string('defaultstyletxt','theme_aigne'); ?>" onclick="alert('<?php echo get_string('noimplemented','theme_aigne'); ?>')">   </button>
+                <button id="style2" title="<?php echo get_string('styletxt','theme_aigne'); ?>" onclick="alert('<?php echo get_string('noimplemented','theme_aigne'); ?>')">   </button>
             </td>
             <td Style="width:4%; background-color:#004040" colspan=1>
                 <button id="style3" title="<?php echo get_string('styletxt','theme_aigne'); ?>" onclick="alert('<?php echo get_string('noimplemented','theme_aigne'); ?>')">   </button>

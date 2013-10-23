@@ -1,4 +1,4 @@
-﻿AIGNE THEME _ Version 1.4.0
+﻿AIGNE THEME _ Version 1.5.0
 
 ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- 
 
@@ -26,10 +26,19 @@ Thanks to all and best regards to somes... :P
 
 ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- 
 
+
+ 1.5.0
+ =======================
+ - Re-Stylized of Calendar and correct some minor issues
+ - Re-Stylized of coursebox
+ - New code aplication to Colour Schema Option
+ - Set to work reduce code volume
+ - Set to work new icons/graphics
+
  1.4.0
  =======================
  - Configured the @font-face css options (3 types included)
- - Installed Color Schema Option
+ - Installed Colour Schema Option
  - Totally reconfigured Social Links
      - Brand News Icons
      - Links groupped by the subject of the social network

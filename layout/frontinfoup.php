@@ -10,5 +10,5 @@
 ?>
 
 <div id="large_info">
-    <img src="<?php echo $OUTPUT->pix_url('carroussel/03', 'theme')?>" alt="banner">
+    <img src="<?php echo $OUTPUT->pix_url('carroussel/04', 'theme')?>" alt="banner">
 </div>

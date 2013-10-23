@@ -242,8 +242,8 @@ $string['backlogo'] = 'Background image of logo';
 $string['backlogodesc'] = 'If you wish you can add a background image for the logo. <br /> 
 This image must be a JPG / PNG / GIF with 200px wide by 75px high';
 /* HEAD META TAGS _ KEYWORDS = 20 words */
-$string['metakeywords'] = 'aigne, training, education, learning, teaching, didactics, pedagogy, knowledge, services, eLearning, development, skills, people, trainer, teacher, business, production, management';
-$string['metadescription'] = '{$a->sitename} was created to promote and develop the skills of people.';
+$string['metakeywords'] = 'aigne, education, learning, teaching, pedagogy';
+$string['metadescription'] = 'Bienvenu a {$a->sitename}.';
 $string['mtaghead'] = 'Meta Tags options';
 $string['mtagheaddesc'] = '';
 $string['mtkeywords'] = 'Keywords Meta Tag';
@@ -266,6 +266,7 @@ $string['dublinmtag'] = 'Dublin Core Meta Tags';
 $string['dublinmtagdesc'] = 'If enabled, displays COMPATIBILITY WITH "Dublin Core Metadata Initiative" META TAGs.';
 /**/
 $string['marketinghead'] = 'Layout options for the site frontpage (marketing)';
+$string['marketingheaddesc'] = '::: en constrution :::';
 $string['headbanner'] = 'Header Banner Show';
 $string['headbannerdesc'] = 'If enabled, displays a Banner in the header of the frontpage, before users logged in.';
 $string['headerinfo'] = 'Header Banner';

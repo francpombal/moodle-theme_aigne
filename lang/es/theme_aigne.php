@@ -242,16 +242,19 @@ $string['backlogo'] = 'Fondo del logotipo';
 $string['backlogodesc'] = 'Si lo desea puede añadir una imagen de fondo para el logotipo.<br />
 Debe ser una imagen JPG/PNG/GIF con 200px de largo y 75px de alto';
 /* Strings para las etiquetas META del HEAD de cada página WEB _ KEYWORDS = 20 palabras */
-$string['metakeywords'] = 'aigne,formación,adiestramiento,educación,aprendizaje,enseñanza,didáctica,pedagogía,conocimiento,instrucción,servicios,eLearning,desarrollo,habilidades,personas,formador,profesor,empresas,producción,gestión';
-$string['metadescription'] = '{$a->sitename} nace para promocionar y desarrollar la formación de las personas.';
+$string['metakeywords'] = 'aigne, formación, educación, enseñanza, pedagogía';
+$string['metadescription'] = 'Bienvenido a {$a->sitename}.';
 $string['mtaghead'] = 'Opciones de las Meta Etiquetas';
-$string['mtagheaddesc'] = '';
+$string['mtagheaddesc'] = 'Las Meta Etiquetas pueden ser utilizadas para mejorar el posicionamiento en algunos buscadores, así como ofrecer 
+información fiable sobre nuestro sitio a multitud de servicios de indexación y clasificación que rondan por Internet.';
 $string['mtkeywords'] = 'Meta Etiqueta Keywords';
 $string['mtkeywordsdesc'] = 'Si lo desea puede escribir un contenido personalizado para la Meta Etiqueta "keywords".<br />
-Por favor, tenga en cuenta el formato y el contenido, separando las palabras por coma y añadiendo un máximo de 25 palabras';
+Por favor, tenga en cuenta el formato y el contenido, separando las palabras por coma y añadiendo un máximo de 25 palabras.<br />
+Si deja en blanco esta opción, se generará una expresión automática con 5 palabras según el idioma';
 $string['mtdescription'] = 'Meta Etiqueta Description';
 $string['mtdescriptiondesc'] = 'Si lo desea puede escribir un contenido personalizado para la Meta Etiqueta "description".<br />
-Por favor, tenga en cuenta el formato y el contenido, añadiendo un máximo de 250 caracteres';
+Por favor, tenga en cuenta el formato y el contenido, añadiendo un máximo de 250 caracteres<br />
+Si deja en blanco esta opción, se generará una expresión de bienvenida según el idioma';
 $string['optionalmtag'] = 'Meta Etiquetas Opcionales';
 $string['optionalmtagdesc'] = 'Si activa esta opción, se generarán Meta Etiquetas adicionales, con información automática sobre su sitio.';
 $string['custommtag'] = 'Meta Etiquetas Personales';
@@ -266,6 +269,7 @@ $string['dublinmtag'] = 'Meta Etiquetas Dublin Core ';
 $string['dublinmtagdesc'] = 'Si activa esta opción, se generarán 3 etiquetas básicas (language, description, publisher) compatibles con el estándar "Dublin Core Metadata Initiative"';
 /**/
 $string['marketinghead'] = 'Opciones de diseño en la página de presentación del sitio (frontpage _ marketing)';
+$string['marketingheaddesc'] = '::: en construcción :::';
 $string['headbanner'] = 'Mostrar Banner del Encabezado';
 $string['headbannerdesc'] = 'Si activa esta opción, se mostrará una imagen en la cabecera de la página principal, antes que los usuarios se identifiquen.';
 $string['headerinfo'] = 'Encabezado de presentación';
@@ -302,7 +306,8 @@ $string['userblock'] = 'En el bloque de Navegación, al estilo aigne (login + sa
 $string['usermoodle'] = 'En el Encabezado, al estilo estándar de moodle (login + usuario + logout)';
 $string['usernone'] = 'Sin ningún tipo de información del usuario';
 $string['usernavheaddesc'] = 'Las siguientes opciones configuran la información que aparecerá en el area de Información del Usuario, si selecciona el estilo aigne.  
-Recuerde que el Area de Información del Usuario al estilo moodle es estándar y tiene un formato fijo.';
+Recuerde que el Area de Información del Usuario al estilo moodle es estándar y tiene un formato fijo.<br />
+Si desea que además aparezca la casilla para recordar usuario, vaya a Administración del sitio ► Seguridad ► Políticas del sitio ► "rememberusername"';
 $string['usernavsalut'] = 'Saludo';
 $string['usernavsalutdesc'] = 'Si activa esta opción, aparecerá un saludo condicional en el area de Información del Usuario en el encabezado.';
 $string['welcomemsg'] = 'Mensaje de bienvenida personalizado';

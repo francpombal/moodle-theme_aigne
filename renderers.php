@@ -405,32 +405,26 @@ public function theme_aigne_user_info() {
     // User not loggedin or guest user
         if (!isloggedin() or isguestuser()) {
             $loginlogout .= html_writer::start_tag('div', array('class'=>'loginform'));
-            //$loginlogout .= html_writer::start_tag('form', array('class'=>'loginform', 'id'=>'login', 'method'=>'post', 'action'=>get_login_url()));
-            $loginlogout .= html_writer::start_tag('form', array('class'=>'loginform', 'id'=>'login', 'method'=>'post', 'action'=>$wwwroot.'/login/index.php'));
-
+            $loginlogout .= html_writer::start_tag('form', array('class'=>'loginform', 'id'=>'login', 'method'=>'post', 'action'=>get_login_url()));
             //$loginlogout .= html_writer::tag('label', get_string('username'), array('class'=>'form-label', 'for'=>'login_username'));
-            $loginlogout .= html_writer::empty_tag('input', array('class'=>'form-input', 'type'=>'text', 'name'=>'username', 'id'=>'login_username', 'placeholder'=>$userph, 'value'=>$username));
-            $loginlogout .= '<DIV class="clearer"><!-- --></DIV>';
-
+            $loginlogout .= html_writer::empty_tag('input', array('class'=>'form-input', 'type'=>'text', 'size'=>'25', 'name'=>'username', 'id'=>'login_username', 'placeholder'=>$userph, 'value'=>$username));
             //$loginlogout .= html_writer::tag('label', get_string('password'), array('class'=>'form-label', 'for'=>'login_password'));
-            $loginlogout .= html_writer::empty_tag('input', array('class'=>'form-input', 'type'=>'password', 'name'=>'password', 'id'=>'login_password', 'placeholder'=>$passph, 'value'=>'', $autocomplete));
+            $loginlogout .= html_writer::empty_tag('input', array('class'=>'form-input', 'type'=>'password', 'size'=>'25', 'name'=>'password', 'id'=>'login_password', 'placeholder'=>$passph, 'value'=>'', $autocomplete));
             $loginlogout .= '<DIV class="clearer"><!-- --></DIV>';
-            
             if (isset($CFG->rememberusername) and $CFG->rememberusername == 2) {
                 if ($username) {
-                    $loginlogout .= html_writer::empty_tag('input', array('type'=>'checkbox', 'name'=>'rememberusername', 'id'=>'rememberusername', 'value'=>'1', 'checked'=>'checked'));
+                    $loginlogout .= html_writer::empty_tag('input', array('type'=>'checkbox', 'title'=>get_string('rememberusername', 'admin'), 'name'=>'rememberusername', 'id'=>'rememberusername', 'value'=>'1', 'checked'=>'checked'));
                 } else {
-                    $loginlogout .= html_writer::empty_tag('input', array('type'=>'checkbox', 'name'=>'rememberusername', 'id'=>'rememberusername', 'value'=>'1'));
+                    $loginlogout .= html_writer::empty_tag('input', array('type'=>'checkbox', 'title'=>get_string('rememberusername', 'admin'), 'name'=>'rememberusername', 'id'=>'rememberusername', 'value'=>'1'));
                 }
                 $loginlogout .= html_writer::tag('label', get_string('rememberusername', 'admin'), array('for'=>'rememberusername'));
             }
-            
             $loginlogout .= '<DIV class="clearer"><!-- --></DIV>';
             $loginlogout .= html_writer::empty_tag('input', array('type'=>'submit', 'value'=>get_string('login')));
-            $loginlogout .= '<DIV class="clearer"><!-- --></DIV>';
             $loginlogout .= html_writer::end_tag('form');
             $loginlogout .= html_writer::end_tag('div');
-            $loginlogout .= html_writer::tag('HR','');
+            $loginlogout .= '<DIV class="clearer"><!-- --></DIV>';
+            $loginlogout .= html_writer::empty_tag('HR');
     // User not loggedin but forgot password
             if (!empty($forgot)) {
                 $loginlogout .= html_writer::start_tag('div');
@@ -443,7 +437,7 @@ public function theme_aigne_user_info() {
                 $loginlogout .= html_writer::link(new moodle_url($signup), get_string('startsignup'));
                 $loginlogout .= html_writer::end_tag('div');
             }
-        $loginlogout .= html_writer::tag('HR','');
+        $loginlogout .= html_writer::empty_tag('HR');
     // User loggedin
 		} else {
             $loginlogout .= html_writer::start_tag('div', array('class'=>'userinfo'));
@@ -455,26 +449,25 @@ public function theme_aigne_user_info() {
         // User Information Area: user name
         if ($hasusernavinfo) {
             $loginlogout .= '<a href="'. $wwwroot .'/user/editadvanced.php?id='.$USER->id.'" title="'.get_string('updatemyprofile').'">'.fullname($USER).'</a>';
-
         }
-            $loginlogout .= html_writer::end_tag('br');
+            $loginlogout .= html_writer::empty_tag('br');
         //  User Information Area: user picture
         if ($hasusernavpic) {
 
             $loginlogout .= $OUTPUT->user_picture($USER, array('size'=>70, 'class'=>'profilepicture'));
-            $loginlogout .= html_writer::end_tag('br');
+            $loginlogout .= html_writer::empty_tag('br');
         }
         // Enlace para editar el perfil del usuario en modo avanzado
             //$loginlogout .= html_writer::link(new moodle_url('/user/editadvanced.php', array('id'=>$USER->id)), get_string('updatemyprofile'));
-            //$loginlogout .= html_writer::end_tag('br');
+            //$loginlogout .= html_writer::empty_tag('br');
         // Información de la última sesión (Se podría mostrar el tiempo que lleva conectado)
             //if($USER->lastlogin){
                 //$lastloginfo ='('.get_string('lastlogin').': '.userdate($USER->lastlogin, get_string('strftimerecent')).')';
                 //$loginlogout .= html_writer::tag('div', $lastloginfo, array('class'=>'lastloginfo'));
             //}
-            //$loginlogout .= html_writer::end_tag('br');
+            //$loginlogout .= html_writer::empty_tag('br');
         // Logout option, select over three cases
-            $loginlogout .= html_writer::tag('HR','');
+            $loginlogout .= html_writer::empty_tag('HR');
         switch ($usernavout) {
             case 1:
                 // Logout option in button style
@@ -494,7 +487,7 @@ public function theme_aigne_user_info() {
                 break;
             }
             $loginlogout .= html_writer::end_tag('div');
-            $loginlogout .= html_writer::tag('HR','');
+            $loginlogout .= html_writer::empty_tag('HR');
         }
         return $loginlogout;
     }

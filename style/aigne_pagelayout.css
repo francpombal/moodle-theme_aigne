@@ -57,7 +57,7 @@
     width: 100%;
     height: 51px;
     padding: 24px 0px 0px 0px;
-    background-color: #FFFFFF;
+    background-color: [[setting:corsch_B]];
 }
 #headerlogo {
     position: absolute;
@@ -72,8 +72,6 @@
     float: right;
     width: 80%;
     height: 51px;
-    font-size: 0.95em;
-    text-align: right;
 }
 /*----- NAVIGATION ------*/
 #navcontainer,
@@ -85,22 +83,21 @@
 }
 #navcontainer {
     clear: both;
-    margin: 3px 0px 3px 0px; /*<- BODY with BACKGROUND COLOR or IMAGE */
-    /*margin: 0px 0px 0px 0px; /*<- BODY without BACKGROUND COLOR or #FFFFFF color or NO IMAGE */
+    margin: 3px 0px 3px 0px;
 }
 #custommenu { /* -> more customizable options in aigne_menu.css */
-    height: 24px;
+    height: 1.7em;
     padding: 2px 5px 0px 10px;
     background-color:[[setting:menucolor]];
 }
 #navbar {
-    height: 24px;
+    height: 1.7em;
     padding: 2px 5px 0px 10px;
-    background-color: #CCDDEE;
+    background-color: [[setting:corsch_3]];
 }
 #course-header {
-    height: 24px;
-    background-color: #F3F7FF;
+    height: 1.7em;
+    background-color: [[setting:corsch_4]];
 }
 /*----- CONTENT _ 3 Column Page Layout ------*/
 #page-content,
@@ -122,14 +119,14 @@
 }
 #region-main {
     width: 58%;
-    margin: 0px 0.5% 0px 0.5%;
+    margin: 0px 1% 0px 1%;
     border-width: 1px 0px 0px 0px;
     border-style: solid;
-    border-color: #322C65;
+    border-color: [[setting:corsch_1]];
 }
 #region-main .region-content {
-    padding: 3px 5px 5% 10px;
-    background-color: #FFFFFF;
+    padding: 3px 5px 5% 5px;
+    background-color: [[setting:corsch_B]];
 }
 #region-post {
     width: 20%;
@@ -149,10 +146,10 @@
     float: left;
     width: 100%;
     margin: 3px 0px 0px 0px;
-    background-color: #CCDDEE;
+    background-color: [[setting:corsch_3]];
     border-width: 1px 0px 1px 0px;
     border-style: solid;
-    border-color: #322C65;
+    border-color: [[setting:corsch_1]];
     font-size: 0.95em;
 }
 #bottom_1 {
