@@ -10,12 +10,19 @@
 defined('MOODLE_INTERNAL') || die;
 
 if ($CFG->branch > 24) {
-    $version = true;
+    $versioned = true;
 } else {
-    $version = false;
+    $versioned = false;
 }
 
 if ($ADMIN->fulltree) {
+
+//Theme admin page
+    //$name = 'theme_aigne';
+    //$heading = '';
+    //$information = get_string('configtitle','theme_aigne');
+    //$setting = new admin_settingpage($name, $heading, $information);
+    //$settings->add($setting);
 
 //Theme note box for all the settings pages
     $name = 'theme_aigne/notes';
@@ -70,7 +77,7 @@ if ($ADMIN->fulltree) {
         $name = 'theme_aigne/backbody';
         $title = get_string('backbody','theme_aigne');
         $description = get_string('backbodydesc', 'theme_aigne');
-        if ($version) { 
+        if ($versioned) { 
             $setting = new admin_setting_configstoredfile($name, $title, $description, 'backbody');
         } else { 
             $default = '';
@@ -116,7 +123,7 @@ $settings->add(new admin_setting_heading('sep1', new lang_string('sep_bhr','them
         $name = 'theme_aigne/logo';
         $title = get_string('logo', 'theme_aigne');
         $description = get_string('logodesc', 'theme_aigne');
-        if ($version) { 
+        if ($versioned) { 
             $setting = new admin_setting_configstoredfile($name, $title, $description, 'logo');
         } else { 
             $default = '';
@@ -129,14 +136,14 @@ $settings->add(new admin_setting_heading('sep1', new lang_string('sep_bhr','them
         $title = get_string('slogan', 'theme_aigne');
         $description = get_string('slogandesc', 'theme_aigne');
         $default = get_string('sloganaigne', 'theme_aigne');
-        $setting = new admin_setting_configtext($name, $title, $description, $default);  
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_TEXT, 35);  
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);        
     // Background Logo file setting
         $name = 'theme_aigne/backlogo';
         $title = get_string('backlogo', 'theme_aigne');
         $description = get_string('backlogodesc', 'theme_aigne');
-        if ($version) { 
+        if ($versioned) { 
             $setting = new admin_setting_configstoredfile($name, $title, $description, 'backlogo');
         } else { 
             $default = '';
@@ -157,7 +164,7 @@ $settings->add(new admin_setting_heading('sep2', new lang_string('sep_hr','theme
         $title = get_string('mtkeywords', 'theme_aigne');
         $description = get_string('mtkeywordsdesc', 'theme_aigne');
         $default = '';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);  
+        $setting = new admin_setting_configtextarea($name, $title, $description, $default, PARAM_TEXT, 100, 3);  
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
     // Description Meta Tag Setting
@@ -165,7 +172,7 @@ $settings->add(new admin_setting_heading('sep2', new lang_string('sep_hr','theme
         $title = get_string('mtdescription', 'theme_aigne');
         $description = get_string('mtdescriptiondesc', 'theme_aigne');
         $default = '';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);  
+        $setting = new admin_setting_configtextarea($name, $title, $description, $default, PARAM_TEXT, 100, 3);  
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
     // OPTIONAL META TAGs _ Show
@@ -181,7 +188,7 @@ $settings->add(new admin_setting_heading('sep2', new lang_string('sep_hr','theme
         $title = get_string('custommtag', 'theme_aigne');
         $description = get_string('custommtagdesc', 'theme_aigne');
         $default = '';
-        $setting = new admin_setting_configtextarea($name, $title, $description, $default);
+        $setting = new admin_setting_configtextarea($name, $title, $description, $default, PARAM_TEXT, 100, 5);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
     // COMPATIBILITY WITH 'Dublin Core Metadata Initiative' META TAGs _ Show
@@ -212,7 +219,7 @@ $settings->add(new admin_setting_heading('sep3', new lang_string('sep_hr','theme
         $name = 'theme_aigne/headerinfo';
         $title = get_string('headerinfo', 'theme_aigne');
         $description = get_string('headerinfodesc', 'theme_aigne');
-        if ($version) { 
+        if ($versioned) { 
             $setting = new admin_setting_configstoredfile($name, $title, $description, 'headerinfo');
         } else { 
             $default = '';
@@ -252,6 +259,14 @@ $settings->add(new admin_setting_heading('sep4', new lang_string('sep_bhr','them
         $default = '#CCDDEE';
         $previewconfig = NULL;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $settings->add($setting);
+    // logout option in custom menu _ Show
+        $name = 'theme_aigne/menulogout';
+        $title = get_string('menulogout','theme_aigne');
+        $description = get_string('menulogoutdesc', 'theme_aigne');
+        $default = '0';
+        $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
         
@@ -317,7 +332,7 @@ $settings->add(new admin_setting_heading('sep6', new lang_string('sep_bhr','them
         $title = get_string('welcomemsg','theme_aigne');
         $description = get_string('welcomemsgdesc', 'theme_aigne');
         $default = '';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_TEXT, 35);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
     // User information in User Login Area _ Show
@@ -367,7 +382,7 @@ $settings->add(new admin_setting_heading('sep22', new lang_string('sep_hr','them
         $title = get_string('navhelp','theme_aigne');
         $description = get_string('navhelpdesc', 'theme_aigne');
         $default = '/theme/aigne/layout/navhelp.php';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_PATH, 35);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
     //TODO: Make all the following options ONE -> admin_setting_configmulticheckbox2
@@ -456,14 +471,14 @@ $settings->add(new admin_setting_heading('sep23', new lang_string('sep_bhr','the
         $title = get_string('corpweb', 'theme_aigne');
         $description = get_string('corpwebdesc', 'theme_aigne');
         $default = '';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
     // email image setting _ To prevent spam copy of email info
         $name = 'theme_aigne/emailimg';
         $title = get_string('emailimg','theme_aigne');
         $description = get_string('emailimgdesc', 'theme_aigne');
-        if ($version) { 
+        if ($versioned) { 
             $setting = new admin_setting_configstoredfile($name, $title, $description, 'emailimg');
         } else { 
             $default = '';
@@ -484,7 +499,7 @@ $settings->add(new admin_setting_heading('sep23', new lang_string('sep_bhr','the
         $title = get_string('contactnote','theme_aigne');
         $description = get_string('contactnotedesc', 'theme_aigne');
         $default = '';
-        $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+        $setting = new admin_setting_confightmleditor($name, $title, $description, $default, PARAM_RAW, 80, 15);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
 
@@ -514,7 +529,7 @@ $settings->add(new admin_setting_heading('sep24', new lang_string('sep_bhr','the
         $title = get_string('dayviews','theme_aigne');
         $description = get_string('dayviewsdesc','theme_aigne');
         $default = '';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
     // LOGO Flickr url setting <-moodle repository -> http://www.flickr.com -> CANAL
@@ -522,7 +537,7 @@ $settings->add(new admin_setting_heading('sep24', new lang_string('sep_bhr','the
         $title = get_string('flickr','theme_aigne');
         $description = get_string('flickrdesc','theme_aigne');
         $default = 'http://www.flickr.com/photos/my_college';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
     // LOGO FotoLog url setting (France) -> http://www.fotolog.com
@@ -530,7 +545,7 @@ $settings->add(new admin_setting_heading('sep24', new lang_string('sep_bhr','the
         $title = get_string('fotolog','theme_aigne');
         $description = get_string('fotologdesc','theme_aigne');
         $default = '';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
     // LOGO Instagram url setting  -> http://instagram.com
@@ -538,7 +553,7 @@ $settings->add(new admin_setting_heading('sep24', new lang_string('sep_bhr','the
         $title = get_string('instagram','theme_aigne');
         $description = get_string('instagramdesc','theme_aigne');
         $default = '';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
     // LOGO Picasa url setting <-moodle repository -> http://picasa.google.com/
@@ -546,7 +561,7 @@ $settings->add(new admin_setting_heading('sep24', new lang_string('sep_bhr','the
         $title = get_string('picasa','theme_aigne');
         $description = get_string('picasadesc','theme_aigne');
         $default = '';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
     // LOGO PixaBay url setting (Deutschland) -> http://pixabay.com/ -> CANAL
@@ -554,7 +569,7 @@ $settings->add(new admin_setting_heading('sep24', new lang_string('sep_bhr','the
         $title = get_string('pixabay','theme_aigne');
         $description = get_string('pixabaydesc','theme_aigne');
         $default = '';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
     // photobucket.com -> http://www.photobucket.com
@@ -567,7 +582,7 @@ $settings->add(new admin_setting_heading('sep24d', new lang_string('sep_hr2','th
         $title = get_string('dailymotion','theme_aigne');
         $description = get_string('dailymotiondesc','theme_aigne');
         $default = '';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
     // LOGO SchoolTube url setting (USA) -> https://www.schooltube.com
@@ -575,7 +590,7 @@ $settings->add(new admin_setting_heading('sep24d', new lang_string('sep_hr2','th
         $title = get_string('schooltube','theme_aigne');
         $description = get_string('schooltubedesc','theme_aigne');
         $default = '';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
     // VideoLog url setting (Brasil) -> http://videolog.tv
@@ -583,7 +598,7 @@ $settings->add(new admin_setting_heading('sep24d', new lang_string('sep_hr2','th
         $title = get_string('videolog','theme_aigne');
         $description = get_string('videologdesc','theme_aigne');
         $default = '';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
     // LOGO Vimeo url setting -> https://vimeo.com/
@@ -591,7 +606,7 @@ $settings->add(new admin_setting_heading('sep24d', new lang_string('sep_hr2','th
         $title = get_string('vimeo','theme_aigne');
         $description = get_string('vimeodesc','theme_aigne');
         $default = '';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
     // YouTube url setting -> http://www.youtube.com/ -> CANAL
@@ -599,7 +614,7 @@ $settings->add(new admin_setting_heading('sep24d', new lang_string('sep_hr2','th
         $title = get_string('youtube','theme_aigne');
         $description = get_string('youtubedesc','theme_aigne');
         $default = 'http://www.youtube.com/my_college';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
     // archive.org
@@ -615,7 +630,7 @@ $settings->add(new admin_setting_heading('sep24e', new lang_string('sep_hr2','th
         $title = get_string('deviantart','theme_aigne');
         $description = get_string('deviantartdesc','theme_aigne');
         $default = 'http://www.deviantart.com/my_college';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
     // myspace url setting
@@ -623,7 +638,7 @@ $settings->add(new admin_setting_heading('sep24e', new lang_string('sep_hr2','th
         $title = get_string('myspace','theme_aigne');
         $description = get_string('myspacedesc','theme_aigne');
         $default = '';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
 
@@ -639,7 +654,7 @@ $settings->add(new admin_setting_heading('sep25', new lang_string('sep_bhr','the
         $title = get_string('linkedin','theme_aigne');
         $description = get_string('linkedindesc','theme_aigne');
         $default = 'http://www.linkedin.com/in/my_college';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
     // Yelp (Local Business)
@@ -651,7 +666,7 @@ $settings->add(new admin_setting_heading('sep25a', new lang_string('sep_hr2','th
         $title = get_string('facebook','theme_aigne');
         $description = get_string('facebookdesc','theme_aigne');
         $default = 'http://www.facebook.com/my_college';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
     // Twitter url setting
@@ -659,7 +674,7 @@ $settings->add(new admin_setting_heading('sep25a', new lang_string('sep_hr2','th
         $title = get_string('twitter','theme_aigne');
         $description = get_string('twitterdesc','theme_aigne');
         $default = 'http://twitter.com/my_college';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
     // Weibo (China)
@@ -671,7 +686,7 @@ $settings->add(new admin_setting_heading('sep25a', new lang_string('sep_hr2','th
         $title = get_string('vkontakte','theme_aigne');
         $description = get_string('vkontaktedesc','theme_aigne');
         $default = '';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
     // Ren Ren (Xiaonei)(China)
@@ -682,7 +697,7 @@ $settings->add(new admin_setting_heading('sep25a', new lang_string('sep_hr2','th
         $title = get_string('orkut','theme_aigne');
         $description = get_string('orkutdesc','theme_aigne');
         $default = '';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
     // NetLog (FaceBox/NetBox)
@@ -699,7 +714,7 @@ $settings->add(new admin_setting_heading('sep25a', new lang_string('sep_hr2','th
         $title = get_string('pinterest','theme_aigne');
         $description = get_string('pinterestdesc','theme_aigne');
         $default = '';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
     // Nimbuzz
@@ -709,7 +724,7 @@ $settings->add(new admin_setting_heading('sep25b', new lang_string('sep_hr2','th
         $title = get_string('googleplus','theme_aigne');
         $description = get_string('googleplusdesc', 'theme_aigne');
         $default = '';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
     // yahoo id
@@ -782,7 +797,7 @@ $settings->add(new admin_setting_heading('sep30', new lang_string('sep_bhr','the
         $title = get_string('footnote','theme_aigne');
         $description = get_string('footnotedesc', 'theme_aigne');
         $default = '';
-        $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+        $setting = new admin_setting_confightmleditor($name, $title, $description, $default, PARAM_RAW, 80, 15);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
 
@@ -798,7 +813,7 @@ $settings->add(new admin_setting_heading('sep31', new lang_string('sep_bhr','the
         $title = get_string('copyrightstg', 'theme_aigne');
         $description = get_string('copyrightstgdesc', 'theme_aigne');
         $default = '';
-        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_TEXT, 35);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);
     // sitelicensemsg message _ Show

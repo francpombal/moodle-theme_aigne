@@ -286,6 +286,8 @@ $string['menucolor'] = 'Cor do menú personalizado';
 $string['menucolordesc'] = 'Seleccione a cor de fondo do menú personalizado.';
 $string['menucolorhl'] = 'Cor de contraste do menú personalizado ';
 $string['menucolorhldesc'] = 'Seleccione a color de contraste do menú personalizado. Teña presente a combinación coa anterior cor para menter un deseño agradable';
+$string['menulogout'] = 'Saída';
+$string['menulogoutdesc'] = 'Si activa esta opción, mostraráse  un enlace no menú personalizado para saír/entrar da plataforma.';.
 /**/
 $string['breadcrumbhead'] = 'Opcións da Barra de navegación';
 $string['bcsep'] = 'Separador da Barra de Navegación';

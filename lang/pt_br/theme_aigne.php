@@ -286,6 +286,8 @@ $string['menucolor'] = 'Color do menú personalizado';
 $string['menucolordesc'] = 'Seleccione el color de fondo do menú personalizado. Las demás opciones deben ser configuradas directamente no archivos css (aigne_menu.css).';
 $string['menucolorhl'] = 'Color de contraste do menú personalizado';
 $string['menucolorhldesc'] = 'Seleccione el color de contraste do menú personalizado. Tenga en cuenta la combinación com o anterior color para mentener un desenho agradable';
+$string['menulogout'] = 'Saída';
+$string['menulogoutdesc'] = 'Se você quiser pode mostrar un link menú personalizado para saír/entrar da plataforma.';.
 /**/
 $string['breadcrumbhead'] = 'Opciones da Barra de navegación';
 $string['bcsep'] = 'Separador da Barra de Navegación';

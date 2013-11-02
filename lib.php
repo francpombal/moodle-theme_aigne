@@ -164,53 +164,59 @@ function theme_aigne_set_bodyfont($css, $bodyfont) {
     return $css;
 }
 
-    // Set the color Schema
+    // Set the colour Schema
+    // FIXED COLOURS:
+    // RED: #CC0000
+    // GREY_1: #777777
+    // GREY_2teal#006666: #CCCCCC
+    // GREY_3: #E0E0E0
+    // BUTTON BG: #D5E1DD
 function theme_aigne_set_colorsch($css, $colorsch) {
     switch ($colorsch) {
-        case 1:
+        case 1: //BLUE
             $corsch_1 = '#322C65';
             $corsch_2 = '#007EBA';
             $corsch_3 = '#CCDDEE';
             $corsch_4 = '#F3F7FF';
             $corsch_5 = '#FFFFFF';
             $corsch_B = '#FFFFFF';
-            $corsch_T = '#3C3C3C';
+            $corsch_T = '#333333';
             break;
-        case 2:
+        case 2: //CONTRAST BLUE
             $corsch_1 = '#F3F7FF';
             $corsch_2 = '#CCDDEE';
             $corsch_3 = '#322C65';
             $corsch_4 = '#000033';
-            $corsch_5 = '#322C65';
+            $corsch_5 = '#FFFFFF';
             $corsch_B = '#322C65';
             $corsch_T = '#FFFFFF';
             break;
-        case 3:
-            $corsch_1 = '#001A1A';
-            $corsch_2 = '#004040';
-            $corsch_3 = '#4CA9BC';
-            $corsch_4 = '#F2FFEB';
+        case 3: //GREEN
+            $corsch_1 = '#004040';
+            $corsch_2 = '#006666';
+            $corsch_3 = '#00CC00';
+            $corsch_4 = '#CCFFCC';
             $corsch_5 = '#FFFFFF';
             $corsch_B = '#FFFFFF';
-            $corsch_T = '#3C3C3C';
+            $corsch_T = '#333333';
             break;
-        case 4:
+        case 4: //ORANGE
             $corsch_1 = '#522500';
             $corsch_2 = '#EB8324';
             $corsch_3 = '#F6CC87';
             $corsch_4 = '#FFFFCC';
             $corsch_5 = '#FFFFFF';
             $corsch_B = '#FFFFFF';
-            $corsch_T = '#3C3C3C';
+            $corsch_T = '#333333';
             break;
-        case 5:
+        case 5: //RED
             $corsch_1 = '#520000';
             $corsch_2 = '#AA0000';
             $corsch_3 = '#FFA6A6';
             $corsch_4 = '#FFF2F2';
             $corsch_5 = '#FFFFFF';
             $corsch_B = '#FFFFFF';
-            $corsch_T = '#3C3C3C';
+            $corsch_T = '#333333';
             break;
         default:
             $corsch_1 = '#322C65';
@@ -219,7 +225,7 @@ function theme_aigne_set_colorsch($css, $colorsch) {
             $corsch_4 = '#F3F7FF';
             $corsch_5 = '#FFFFFF';
             $corsch_B = '#FFFFFF';
-            $corsch_T = '#3C3C3C';
+            $corsch_T = '#333333';
             break;
     }
     $tag = '[[setting:colorsch]]';

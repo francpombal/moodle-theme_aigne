@@ -286,6 +286,8 @@ $string['menucolor'] = 'Custom Menu Main Colour';
 $string['menucolordesc'] = 'Select the background colour of the custom menu. Other options should be set directly in the css files (aigne_menu.css).';
 $string['menucolorhl'] = 'Custom Menu Contrast Colour';
 $string['menucolorhldesc'] = 'Select the contrast background colour of the custom menu. Be carefull with background colour combinations to obtain a lovely design';
+$string['menulogout'] = 'Logout Link';
+$string['menulogoutdesc'] = 'If enabled, displays a logout/login link at the beggining of custom menu.';
 /**/
 $string['breadcrumbhead'] = 'Breadcrumb Bar options';
 $string['bcsep'] = 'Breadcrumb Spacer';

@@ -22,22 +22,14 @@ $haslangmenu = (!empty($PAGE->layout_options['langmenu']));
 </div>
 
 <div id="headeroptions">
-<!--
-    <div id="large_info">
-        <img src="<?php echo $OUTPUT->pix_url('images/headbara', 'theme')?>" alt="header bar 1">
-    </div>
-    <div id="large_info">
-        <img src="<?php echo $OUTPUT->pix_url('images/headbarb', 'theme')?>" alt="header bar 1">
-    </div>    
--->
     <table class="headerop">
          <tr Style="height:25px">
-            <td Style="width:20%; background-color:#322C65" colspan=5>&nbsp;</td>
-            <td Style="width:16%; background-color:#007EBA" colspan=4>&nbsp;</td>
-            <td Style="width:16%; background-color:#CCDDEE" colspan=4>
-            <?php echo ''; ?>
-            &nbsp;</td>
-            <td Style="width:48%; background-color:#F3F7FF; text-align:right; padding-right:10px" colspan=12>
+            <td class="color_01" Style="width:20%;" colspan=5>&nbsp;</td>
+            <td class="color_02" Style="width:16%;" colspan=4>&nbsp;</td>
+            <td class="color_03" Style="width:16%;" colspan=4>&nbsp;
+                <?php echo ''; ?>
+            </td>
+            <td class="color_04" Style="width:48%; text-align:right; padding-right:10px" colspan=12>
             <?php 
             switch ($hasusernav) {
                 case 1:
@@ -59,19 +51,19 @@ $haslangmenu = (!empty($PAGE->layout_options['langmenu']));
             </td>
         </tr>
         <tr Style="height:25px">
-            <td Style="width:8%;" colspan=2>&nbsp;</td>
-            <td Style="width:4%; background-color:#CCDDEE" colspan=1>&nbsp;</td>
-            <td Style="width:4%; background-color:#CCDDEE; font-size: 90%" colspan=1>
+            <td class="color_05" Style="width:8%;" colspan=2>&nbsp;</td>
+            <td class="color_03" Style="width:4%;" colspan=1>&nbsp;</td>
+            <td class="color_03" Style="width:4%; font-size: 90%" colspan=1>
                 <button id="decfontsize" title="<?php echo get_string('decfontsizetxt','theme_aigne'); ?>" onclick="alert('<?php echo get_string('noimplemented','theme_aigne'); ?>')">-A</button>
             </td>
-            <td Style="width:4%; background-color:#CCDDEE" colspan=1>
+            <td class="color_03"  Style="width:4%;" colspan=1>
                 <button id="defaultfontsize" title="<?php echo get_string('defaultfontsizetxt','theme_aigne'); ?>" onclick="alert('<?php echo get_string('noimplemented','theme_aigne'); ?>')">A</button>
             </td>
-            <td Style="width:4%; background-color:#CCDDEE; font-size: 110%" colspan=1>
+            <td class="color_03"  Style="width:4%; font-size: 110%" colspan=1>
                 <button id="incfontsize" title="<?php echo get_string('incfontsizetxt','theme_aigne'); ?>" onclick="alert('<?php echo get_string('noimplemented','theme_aigne'); ?>')">+A</button>
             </td>
-            <td Style="width:4%; background-color:#CCDDEE" colspan=1>&nbsp;</td>
-            <td Style="width:16%" colspan=4>&nbsp;</td>
+            <td class="color_03"  Style="width:4%;" colspan=1>&nbsp;</td>
+            <td class="color_05"  Style="width:16%" colspan=4>&nbsp;</td>
             <td Style="width:4%; background-color:#CCDDEE" colspan=1>
                 <button id="style1" title="<?php echo get_string('defaultstyletxt','theme_aigne'); ?>" onclick="alert('<?php echo get_string('noimplemented','theme_aigne'); ?>')">   </button>
             </td>
@@ -87,7 +79,7 @@ $haslangmenu = (!empty($PAGE->layout_options['langmenu']));
             <td Style="width:4%; background-color:#990000" colspan=1>
                 <button id="style5" title="<?php echo get_string('styletxt','theme_aigne'); ?>" onclick="alert('<?php echo get_string('noimplemented','theme_aigne'); ?>')">   </button>
             </td>
-            <td Style="width:20%; min-width:220px; background-color:#CCDDEE" colspan=5>
+            <td class="color_03" Style="width:20%; min-width:220px;" colspan=5>
                 <?php if ($haslangmenu) {
                     echo $OUTPUT->lang_menu();
                 } ?>

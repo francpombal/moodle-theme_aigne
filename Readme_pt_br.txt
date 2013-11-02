@@ -1,4 +1,4 @@
-﻿AIGNE THEME _ Version 1.5.0
+﻿AIGNE THEME _ Version 1.5.1
 
 ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- 
 

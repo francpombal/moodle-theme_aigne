@@ -60,8 +60,7 @@ switch ($navhelptype) {
         break;
 }
 
-// Contexto general de la página
-//$PAGE->set_context(context_system::instance());
+// Start the Page 
 $PAGE->set_url(new moodle_url('/theme/aigne/layout/navhelp.php'));
 $PAGE->set_popup_notification_allowed(false);
 $PAGE->set_pagelayout('navhelppage');
@@ -71,14 +70,18 @@ $PAGE->set_heading($strnavhelp);
 $PAGE->navbar->add($SITE->shortname);
 $PAGE->navbar->add(get_string('navhelppagetitle','theme_aigne'));
 $PAGE->navbar->add($strnavhelp);
-// Inciar publicación _ top.php
+// Inciar publicación
 echo $OUTPUT->header();
-// Título principal de la página
-// echo $OUTPUT->heading($strnavhelp);
+echo $OUTPUT->heading($strnavhelp);
 
-// Comprobar que si se ha identificado en el sitio o si es invitado. En tal caso, mostrar página con las políticas del sitio
+// Comprobar si se ha identificado o es 'invitado'. En tal caso, mostrar página con las políticas del sitio
 if ((!isloggedin()) or (isguestuser())) {
-	echo get_string('disclaimerpage','theme_aigne');
+    $data = new stdClass;
+    $data->sitenamelow = strtolower($SITE->shortname);
+    $data->sitename = format_string($SITE->shortname);
+    $data->supportemail = get_config('moodle','supportemail');
+    $data->sendadminemail = get_string('sendadminemail','theme_aigne');
+    echo get_string('disclaimerpage','theme_aigne', $data);
     break;
 }
 

@@ -1,4 +1,4 @@
-﻿AIGNE THEME _ Version 1.5.0
+﻿AIGNE THEME _ Version 1.5.1
 
 ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- 
 
@@ -26,6 +26,18 @@ Thanks to all and best regards to somes... :P
 
 ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- 
 
+ 1.5.1
+ =======================
+ - Re-Stylized of Moodle Message Base and correct some minor issues
+ - Re-Stylized of Glossary activity
+ - Re-Stylized of Forum activity
+ - Re-Stylized of TABS
+ - Re-Stylized of TABLE .rolecap
+ - Re-Stylized of custom menu and fixed a poor issue...
+ - Cleaned some code at layouts (bottom + navhelp + default)
+ - Cleaned some code here, there and anywhere...
+ - Cleaned some old-fashioned pix
+ - Decided to use the plugin original icons, instead customized.
 
  1.5.0
  =======================

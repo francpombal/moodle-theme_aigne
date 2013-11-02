@@ -87,7 +87,7 @@
 }
 #custommenu { /* -> more customizable options in aigne_menu.css */
     height: 1.7em;
-    padding: 2px 5px 0px 10px;
+    padding: 0px 5px 0px 10px;
     background-color:[[setting:menucolor]];
 }
 #navbar {
@@ -137,7 +137,7 @@
 #bottom_2, 
 #standardfooter,
 #bottom_4,
-#copyright {
+#bottom_5 {
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
 }
@@ -157,13 +157,14 @@
 #bottom_2 {
 }
 #standardfooter {
+    color: #E0E0E0;
+    background-color: [[setting:corsch_2]];
 }
 #bottom_4 {
 }
-#copyright {
-    line-height: 3em;
-    text-align: center;
+#bottom_5 {
 }
+
 
 /*----- SIDE-PRE-ONLY ------*/
 .side-pre-only #region-pre {width: 22%;}

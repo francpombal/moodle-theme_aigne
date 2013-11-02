@@ -28,7 +28,8 @@
     font-style: normal;
 }*/
 /*----- ABBR ACRONYM - Abreviaturas -----*/
-abbr,acronym {
+abbr, 
+acronym {
 	/*indicating to users that more info is available -> border-bottom: 1px dotted #000000;*/
 	border: 0;
 	cursor: help;
@@ -112,17 +113,6 @@ SELECT {
     color: #003366;
     }
 /*----- Login options ------*/
-.loginform {
-    margin: 5px 0px 5px 0px;
-    text-align:left;
-    }
-.loginform .form-label {
-    float: left;
-    width: 30%;
-    margin: 0px 10px 0px 0px;
-    text-align: right;
-    white-space: nowrap;
-    }
 INPUT#username, 
 INPUT#password, 
 INPUT[type="text"], 
@@ -135,6 +125,25 @@ INPUT[type="password"] {
     cursor: default;
     vertical-align: baseline;
     }
+INPUT[type="image"] {
+    margin: 0px 0px 0px 0px;
+    vertical-align: bottom;
+    }
+.loginform {
+    margin: 5px 0px 5px 0px;
+    text-align:left;
+    }
+.loginform .form-label {
+    float: left;
+    width: 30%;
+    margin: 0px 0px 0px 0px;
+    text-align: right;
+    white-space: nowrap;
+    }
+.dir-rtl .loginform .form-label {float: right; text-align:left; direction:ltr;}
+.loginform .form-input input {
+    width: 1em;
+    }
 .loginhead {
     position: relative;
     float: left;
@@ -143,6 +152,7 @@ INPUT[type="password"] {
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
     }
+.dir-rtl .loginhead {position: relative;float: right;}
 .loginhead .loginform {
     display: inline;
     }
@@ -168,7 +178,6 @@ INPUT[type="password"] {
 DIV {
     display: block;
     }
-  
 /*----- DL - -----*/
 DL {
     }
@@ -183,32 +192,38 @@ H6 {
     background-color: inherit;
     }
 H1 {
-    margin: .5em 0;
+    padding: 0.80em 0px 0.50em 0px;
+    margin: 0px 0px 0px 0px;
     font-weight: bold;
     font-size: 1.50em;
     }
 H2 {
-    margin: .7em 0;
+    padding: 0.70em 0px 0.50em 0px;
+    margin: 0px 0px 0px 0px;
     font-weight: bold;
     font-size: 1.30em;
     }
 H3 {
-    margin: .8em 0;
+    padding: 0.60em 0px 0.50em 0px;
+    margin: 0px 0px 0px 0px;
     font-weight: normal;
     font-size: 1.20em;
     }
 H4 {
-    margin: .9em 0;
+    padding: 0.50em 0px 0.40em 0px;
+    margin: 0px 0px 0px 0px;
     font-weight: normal;
     font-size: 1.10em;
     }
 H5 {
-    margin: 1em 0;
+    padding: 0.40em 0px 0.30em 0px;
+    margin: 0px 0px 0px 0px;
     font-weight: normal;
     font-size: 1em;
     }
 H6 {
-    margin: 1.2em 0;
+    padding: 0.30em 0px 0.20em 0px;
+    margin: 0px 0px 0px 0px;
     font-weight: normal;
     font-size: 0.80em;  
     }
@@ -293,19 +308,10 @@ P {
     text-align: justify;
     }
 /*----- TABLE - Tablas -----*/
-TABLE {
-    display: block;
-    }
-TBODY {
-	display: table-row-group;
-    }
-TFOOT {
-	display: table-footer-group;
-    }
 TABLE.headerop {
+    display: block;
     width: 100%;
     font-size: 14px; /* 'em' excep. <-DESIGN, when highest font size selected */
-
     }
 TABLE.headerop TD {
     padding: 0px 0px 0px 0px;
@@ -314,6 +320,21 @@ TABLE.headerop TD {
     border-color: #FFFFFF;
     border-style: solid;
     text-align: center;
+    }
+TABLE.headerop TD.color_01 {
+    background-color: [[setting:corsch_1]];
+    }
+TABLE.headerop TD.color_02 {
+    background-color: [[setting:corsch_2]];
+    }
+TABLE.headerop TD.color_03 {
+    background-color: [[setting:corsch_3]];
+    }
+TABLE.headerop TD.color_04 {
+    background-color: [[setting:corsch_4]];
+    }
+TABLE.headerop TD.color_05 {
+    background-color: [[setting:corsch_5]];
     }
 TABLE.headerop BUTTON {
     width: 23px;
@@ -335,23 +356,7 @@ TEXTAREA {
     text-decoration: none;
     cursor: default;
     }
-    
-/*----- Prevent some interferences of the base theme -----*/
-DIV.notifysuccess {color: #009999; text-align: center; font-size: 1.85em; font-weight: bold;}
-TABLE.flexible .r0, TABLE.generaltable .r0 {background-color: [[setting:corsch_3]];}
-TABLE.flexible .r1, TABLE.generaltable .r1 {background-color: [[setting:corsch_4]];}
-#page-admin-plugins #plugins-control-panel .disabled .availability {background-color: [[setting:corsch_2]]; color: [[setting:corsch_B]];}
-#page-admin-plugins #plugins-control-panel .extension .source {background-color: [[setting:corsch_2]]; color: [[setting:corsch_B]];}
-TABLE.flexible A:hover, TABLE.generaltable A:hover {letter-spacing: normal;}
-.clearfix:after {clear: both; content: ''; display: block; height: 0; min-width: 0; visibility: hidden;}
-/*----- Corrige un error con el editor tiny_mce -----*/
-TABLE.mceLayout {display: inherit; min-width: 500px; min-height: 135px} /* ampliar min-height 
-/*----- REDIRECT + CONTINUE -----*/
-.redirectmessage, .continuebutton {padding-bottom: 10px; color: [[setting:corsch_T]]; text-align: center; font-size: 1.2em;}
-/*----- Customization of width defined in course/renderer.php L#476 + L#480 + L#484 ----*/
-INPUT#navsearchbox {width: 20ex; margin: 1px 0px 0px 0px;}
-INPUT#shortsearchbox {width: 40ex;}
-INPUT#coursesearchbox {width: 50ex;}
+
 /*----- Control de visualización de las partes de la página -----*/
 #page {
     display: block;
@@ -384,6 +389,7 @@ INPUT#coursesearchbox {width: 50ex;}
     margin: 10px auto 0px auto;
     background: url([[setting:logo]]) no-repeat center center;
     }
+.dir-rtl .logo {float: right;}
 .slogan {
     display: block;
     margin: 0px 0px 0px 0px;
@@ -405,6 +411,8 @@ INPUT#coursesearchbox {width: 50ex;}
     border-style: none;
     color: [[setting:corsch_2]];
     }
+.dir-rtl .langmenu {float: left; padding: 0px 0px 0px 3px;}
+.dir-rtl .langmenu select.select.menulang {margin-left: 0;}
 /*----- Barra de Navegación (Breadcrumb) y botones de la barra de navegación -----*/
 .breadcrumb li, 
 .navbutton div, 
@@ -458,7 +466,7 @@ INPUT#coursesearchbox {width: 50ex;}
     clear: both;
 	position: relative;
     width: 100%;
-    margin: 0px auto 3px auto;
+    margin: 3px auto 3px auto;
     padding: 0px 0px 0px 0px;
     /*background: url([[setting:headerinfo]]) repeat-x center center;*/
     background-color: transparent;
@@ -489,7 +497,7 @@ DIV.navhelp {
     text-align: center;
     }
 DIV.contact {
-    padding: 0px 2px 0px 2px;
+    padding: 0.50em 2px 0px 2px;
     }
 DIV.contact#left {
     float: left;
@@ -505,6 +513,9 @@ DIV.contact#right {
     float: right;
     width: 30%   
     }
+DIV.contact img:hover {
+    background-color: [[setting:corsch_1]]; 
+    }
 DIV.fisicalsite {
 	position: relative;
 	float: left;
@@ -513,14 +524,16 @@ DIV.fisicalsite {
     }
 DIV.credits {
     clear: both;
-    background-color: [[setting:corsch_2]];
-    color: #DDDDDD;
-    line-height: 3em;
+    line-height: 2em;
     text-align: center;
     }
 DIV.credits A {
-    color: #DDDDDD;
+    color: #E0E0E0;
     }
+DIV.copyright {
+    line-height: 3em;
+    text-align: center;
+}
 /*----- General Box -----*/
 .generalbox {
     border: 0 none;
@@ -606,7 +619,7 @@ div.controls .collapseall {
     text-decoration: none;
     text-transform: capitalize;
     font-variant: small-caps;    
-}    
+}
 /*----- Theme Selector -----*/
 #page-admin-theme-index .generalbox {
     border: none;
@@ -624,75 +637,66 @@ div.controls .collapseall {
 .theme_description h2 {
     padding-top: 0.5em;
 }
-/*----- Tabs -----*/
+
+/*----- ----- ------ Tabs ----- ------ -----*/
+/* CAMBIADO .here POR .selected <- mas claro */
+.tabtree {
+    position: relative;
+    margin: 25px 0px 0px 0px;
+    padding: 4px 0px 4.50px 0px;
+    border-width: 0px 0px 2px 0px;
+    border-style: solid;
+    border-color: [[setting:corsch_1]];
+}
 .tabtree ul {
-    text-align:center;
+    text-align: center;
 }
-.tabtree .tabrow0 {
-    width:100%;margin:1em 0px;
+.tabtree ul li {
+    display: inline;
+    list-style: none;
+    margin: 0px 3px 1px 0px;
 }
-.tabtree .tabrow0 li {
-    margin-right:-4px;
+.tabtree ul li.selected {
 }
-.tabtree .tabrow0 li.here {
-    font-weight: bold;
+.tabtree ul li a {
+    background-color: [[setting:corsch_3]];
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-color: [[setting:corsch_1]];
+    padding: 10px 15px 10px 15px;
 }
-.tabtree .tabrow0 li.here a {
-    position:relative;z-index:102;
+.tabtree ul li a:hover { /* <- al pasar por las pestañas */
+    background-color: [[setting:corsch_4]];
 }
-.tabtree .tabrow0 li a {
-    background-image:url([[pix:theme|tab/left]]);
-    padding: 10px 0px 3px 14px;
-    background-repeat:no-repeat;
-    margin-bottom:-1px;
+.tabtree ul li.selected a {
+    position: relative;
+    z-index: 25;
+    background-color: [[setting:corsch_4]];
+    border-bottom: 2px solid transparent;
 }
-.tabtree .tabrow0 li a:hover {
-    background-image:url([[pix:theme|tab/left_hover]]);
+.tabtree ul li.selected a:hover {
+    letter-spacing: normal;
 }
-.tabtree .tabrow0 li a span {
-    background-image:url([[pix:theme|tab/right]]);
-    background-repeat:no-repeat;
-    background-position: 100% 0;
-    padding: 10px 14px 3px 0px;
+.tabtree ul li.selected .empty {
+    display: none;
 }
-.tabtree .tabrow0 li a:hover span {
-    background-image:url([[pix:theme|tab/right_hover]]);
-}
-.tabtree .tabrow0 ul, 
-.tabtree .tabrow0 div {
-    font-weight: normal;
-    background-image:url([[pix:theme|tab/tabrow1]]);
-    background-position:0% 50%;
-    border-top: 1px dotted #EEEEEE;
-    padding: 0.25em 0px;
-    margin:0px;
-}
-.tabtree .tabrow0 li.here .empty {
-    height:1px;
-    overflow:hidden;
-    padding: 0px;
-    position:absolute;
-    width:100%;
-    bottom:-4px;
-}
+/**/
 .tabtree .tabrow1 li a, 
 .tabtree .tabrow1 li a:hover, 
 .tabtree .tabrow1 li a span, 
 .tabtree .tabrow1 li a:hover span {
-    background-image: none !important;
+    background-image: none;
 }
 .tabtree a.nolink, 
-.tabtree .here ul a.nolink, 
+.tabtree .selected ul a.nolink, 
 .tabtree a.nolink:hover, 
-.tabtree .here ul a.nolink:hover {
-    color: #CC0000;
+.tabtree .selected ul a.nolink:hover {
     text-decoration: none;
 }
-.tabtree .here a.nolink, 
-.tabtree .here ul .here a.nolink, 
-.tabtree .here a.nolink:hover, 
-.tabtree .here ul .here a.nolink:hover {
-    color: CC0000;
+.tabtree .selected a.nolink, 
+.tabtree .selected ul .here a.nolink, 
+.tabtree .selected a.nolink:hover, 
+.tabtree .selected ul .here a.nolink:hover {
     text-decoration: none;
 }
 /*----- tab styles for ie6 & ie7 -----*/
@@ -755,6 +759,7 @@ div.controls .collapseall {
     top: 3.5em;
     padding: 0.2em 0;
 }
+
 /*----- Filemanager -----*/
 .filemanager select, 
 .filemanager input, 
@@ -766,13 +771,7 @@ div.controls .collapseall {
 .file-picker textarea {
     background-color: #EEEEEE;
 }
-/*----- Important z-index fixes -----*/
-.yui-skin-sam .yui-panel-container {
-    z-index: 999999!important;
-}
-body#page-course-view-topics.path-course div.moodle-dialogue-base div.yui3-widget{
-    z-index: 600!important;
-}
+
 /*----- Moodle forms -----*/
 .mform .btn-cancel {
     color: [[setting:corsch_2]];
@@ -783,3 +782,67 @@ body#page-course-view-topics.path-course div.moodle-dialogue-base div.yui3-widge
     color: #CC0000;
     text-decoration: underline;
 }
+/*----- TABLE.ROLECAP -> Site administration -> Users -> Permissions -> Define roles ----- */
+TABLE.rolecap { /* TODO -> alternate row color r0 r1 */
+    width: 90%;
+    background-color: [[setting:corsch_4]];
+}
+TABLE.rolecap .rolecapheading {
+    background-color: [[setting:corsch_2]];
+    color: [[setting:corsch_B]];    
+}
+TABLE.rolecap .riskconfig {
+    background-color: #F0F0F0;
+}
+TABLE.rolecap .riskxss {
+    background-color: #E8E8E8;
+}
+TABLE.rolecap .riskpersonal {
+    background-color: #E0E0E0;
+}
+TABLE.rolecap .riskspam {
+    background-color: #D0D0D0;
+}
+TABLE.rolecap TR.riskdataloss {
+    background-color: #C8C8C8;
+    #
+}
+
+/*----- Prevent some interferences of the base theme -----*/
+DIV.notifysuccess {color: #009999; text-align: center; font-size: 1.85em; font-weight: bold;}
+DIV.notifyproblem {color: #CC0000; text-align: center; font-size: 1.85em; font-weight: bold;}
+fieldset.error legend {color: #CC0000; font-weight: bold;}
+fieldset.error {font-weight: bold;}
+.clearfix:after {clear: both; content: ''; display: block; height: 0; min-width: 0; visibility: hidden;}
+#page-admin-plugins #plugins-control-panel .disabled .availability {background-color: [[setting:corsch_2]]; color: [[setting:corsch_B]];}
+#page-admin-plugins #plugins-control-panel .extension .source {background-color: [[setting:corsch_2]]; color: [[setting:corsch_B]];}
+/* A -> letter-spacing move elements */
+TABLE.flexible A:hover, 
+TABLE.generaltable A:hover {letter-spacing: normal;}
+/** Fix IE double margin + float bugs -> base CSS wrong **/
+.ie .mform .fitem .felement {margin-left:0;padding-left:0%;}
+/*----- Alternate colour in tables -----*/
+TABLE.flexible .r0, 
+TABLE.generaltable .r0, 
+TABLE.collection .r0 {background-color: [[setting:corsch_3]];}
+TABLE.calendarmonth .r0 {background-color: #FFFFFF;}
+TABLE.flexible .r1, 
+TABLE.generaltable .r1, 
+TABLE.collection .r1, 
+TABLE.calendarmonth .r1 {background-color: [[setting:corsch_4]];}
+/*----- Corrige un error con el editor tiny_mce -----*/
+TABLE.mceLayout {display: inherit;} 
+/*----- REDIRECT + CONTINUE -----*/
+.redirectmessage, .continuebutton {padding-bottom: 10px; color: [[setting:corsch_T]]; text-align: center; font-size: 1.2em;}
+/*----- Customization of width defined in course/renderer.php L#476 + L#480 + L#484 ----*/
+INPUT#navsearchbox {width: 20ex; margin: 1px 0px 0px 0px;}
+INPUT#shortsearchbox {width: 40ex;}
+INPUT#coursesearchbox {width: 50ex;}
+/*----- Important z-index fixes -----*/
+.yui-skin-sam .yui-panel-container {
+    z-index: 999999!important;
+}
+body#page-course-view-topics.path-course div.moodle-dialogue-base div.yui3-widget{
+    z-index: 700!important;
+}
+

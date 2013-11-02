@@ -48,9 +48,6 @@ if ($hascustommenu) {
     $bodyclasses[] = 'has_custom_menu';
 }
 
-$hasheadbanner = (!empty($PAGE->theme->settings->headbanner));
-$hasquadrobanner = (!empty($PAGE->theme->settings->quadrobanner));
-
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes() ?>>
 <head>
@@ -61,23 +58,17 @@ echo $OUTPUT->doctype() ?>
 </head>
 <body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join(' ', $bodyclasses)) ?>">
 
-<?php echo $OUTPUT->standard_top_of_body_html() ?>
+    <?php echo $OUTPUT->standard_top_of_body_html() ?>
     
 <div id="page">
+
 <!-- START OF HEADER -->
     <?php if ($hasheading) { ?>    
-        <div id="page-header">
-            <?php include('top.php') ?>
-        </div>
-    <?php } ?> 
-    <?php if ($hasheadbanner) { ?>
-    <?php if (!isloggedin() or isguestuser()) { ?>
-        <div class="info-banner">
-            <?php include('frontinfoup.php') ?>
-        </div>
+    <div id="page-header">
+        <?php include('top.php') ?>
+    </div>
     <?php } ?>
-    <?php } ?>
-    
+
 <!-- START CUSTOMMENU AND NAVBAR -->
     <div id="navcontainer">
         <?php if ($hascustommenu) { ?>
@@ -85,8 +76,8 @@ echo $OUTPUT->doctype() ?>
                 <?php echo $custommenu; ?>
             </div>
         <?php } 
-        if (isloggedin()) {       
-            if ($hasnavbar) { ?>
+              if (isloggedin()) {       
+              if ($hasnavbar) { ?>
             <div id="navbar">
                 <div class="breadcrumb">
                      <?php echo $OUTPUT->navbar(); ?>
@@ -95,13 +86,13 @@ echo $OUTPUT->doctype() ?>
                      <?php echo $PAGE->button; ?>
                 </div>
             </div>
-            <?php } 
-            if (!empty($courseheader)) { ?>
+        <?php } 
+              if (!empty($courseheader)) { ?>
             <div id="course-header">
                 <?php echo $courseheader; ?>
             </div>
-            <?php } 
-        } ?> 
+        <?php } 
+              } ?> 
     </div>
 
 <!-- START OF CONTENT --><!-- onselect + ondragstart: to prevent content copies -->
@@ -120,13 +111,6 @@ echo $OUTPUT->doctype() ?>
         <?php } ?>        
 <!-- main center content -->           
         <div id="region-main">
-            <?php if ($hasquadrobanner) { ?>
-            <?php if (!isloggedin() or isguestuser()) { ?>
-                <div class="info-banner">
-                    <?php include('frontinfo.php') ?>
-                </div>
-            <?php } ?>
-            <?php } ?>
             <div class="region-content">
                 <?php echo $coursecontentheader; ?>
                 <?php echo $OUTPUT->main_content() ?>

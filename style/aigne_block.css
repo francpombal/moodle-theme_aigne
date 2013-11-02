@@ -53,12 +53,28 @@
     }
 /*----- Block Head -----*/
 .block .header {
-    border:none;
+    border: none;
     padding: 0px 0px 0px 0px;
     width: 100%;
     }
-.block .header div.commands {
-    margin-left: 10px;
+.block .header H2 {
+    font-size: 1.20em;
+    margin: 0px 0px 5px 10px;
+    padding: 0px 0px 0px 0px;
+    }
+.dir-rtl .block .header H2 {text-align: right; margin: 0px 10px 5px 0px;}
+.block .header .commands {
+    margin-left: 10px; 
+    text-align: right; 
+    clear: both;
+    }
+.dir-rtl .block .header .commands {text-align: left;}
+.block .header .commands > a {
+    margin:0 3px; 
+    }
+.block .header .commands .icon img {
+    width:12px;
+    height:12px;
     }
 #region-pre .block .header {
     background-color: #777777;
@@ -67,6 +83,7 @@
     border-style: solid;
     border-color: #000000;
     }
+.dir-rtl #region-pre .block .header {background-color: [[setting:corsch_2]]; color: [[setting:corsch_B]]; border-color: [[setting:corsch_1]];}
 #region-post .block .header {
     background-color: [[setting:corsch_2]];
     color: [[setting:corsch_B]];
@@ -74,34 +91,49 @@
     border-style: solid;
     border-color: [[setting:corsch_1]];
     }
-.block .header .title h2 {
-    font-size: 1.20em;
-    margin: 0px 0px 5px 10px;
-    padding: 0px 0px 0px 0px;
-    }
-/*----- Block Head _ Controles de MINIMIZAR -----*/
+.dir-rtl #region-post .block .header {background-color: #777777; color: [[setting:corsch_B]]; border-color: #000000;}
+/*----- Controles de MINIMIZAR -----*/
 .block .header .block_action {
+    float: right;
     margin: 0px 2px 0px 0px;
     padding: 2px 0px 0px 0px;
     background-color: transparent;
+    vertical-align: baseline;
     }
-/*----- Block Head _ Controles de DOCK -----*/
+.dir-rtl .block .header .block_action {float: left; margin: 0px 0px 0px 2px;}
+/*----- Controles de DOCK -----*/
+.block .header .block_action img,
 .block .header .block_action input {
+    width: 12px; 
+    height: 12px;
     margin: 0px 2px 0px 0px;
     padding: 2px 0px 0px 0px;
     background-color: transparent;
-    border: 0;
+    border: 0px 0px 0px 0px;
+    vertical-align: baseline;
     }
+.dir-rtl .block .header .block_action img,
+.dir-rtl .block .header .block_action input {margin: 0px 0px 0px 2px;}
 /*----- Block Foot -----*/
 .block .footer {
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
     }
-/*----- other Block's regions -----*/
-.block .blockannotation {
-    font-size:0.75em;
-    margin: -1em 0 1em;
+/*----- List block contents -----*/
+.block .list .c0 {
+    display:inline;
 }
+.block .list .c0 img.icon {
+    vertical-align: middle
+}
+.block .list .c1 {
+    margin-left:5px;
+    display:inline;
+}
+/** block_list blocks need column stuffs **/
+.block.list_block .unlist > li > .column {display:inline-block;}
+.ie6 .block.list_block .unlist .column {display:inline;}
+/**/
 .block.beingmoved {
     border-width: 2px;
     border-style: dashed;
@@ -128,18 +160,20 @@
 .block.hidden .block-hider-show {
     display:inline;
 }
-/*----- List block contents -----*/
-.block .list .c0 {
-    display:inline;
+/*----- Particular blocks -----*/
+.block .blockannotation {
+    font-size: 0.75em;
+    margin: -1em 0 1em;
 }
-.block .list .c0 img.icon {
-    vertical-align: middle
-}
-.block .list .c1 {
-    margin-left:5px;
-    display:inline;
-}
-/*----- Bugfixes Smallicon & Navicon -----*/
+.block_navigation .block_tree li { 
+    overflow: hidden;
+    }
+.block_calendar_upcoming .footer {
+    margin-top: .5em;
+    }
+.block_completionstatus .generaltable { border: 0px; }
+.block_completionstatus .generaltable .cell { border: 0px; }
+
 .block_settings .block_tree li.item_with_icon > p img,
 .block_navigation .block_tree li.item_with_icon > p img {
     left:0;
@@ -181,14 +215,14 @@
     border-top-right-radius: 6px;
     }
 #dock .dockeditem {
-    background-color: #DDDDDD;
+    background-color: #E0E0E0;
     padding: 2px;
     padding-left: 0px;
     }
 #dock .dockedtitle {
     padding-bottom: 5px;
     cursor:pointer;
-    background-color: #AAAAAA;
+    background-color: #777777;
     -webkit-border-top-right-radius: 6px;
     -moz-border-radius-topright: 6px;
     border-top-right-radius: 6px;
@@ -218,7 +252,7 @@
     }
 #dock .controls {
     bottom: auto;
-    background-color: #DDDDDD;
+    background-color: #E0E0E0;
     -webkit-border-bottom-right-radius: 6px;
     -moz-border-radius-bottomright: 6px;
     border-bottom-right-radius: 6px;
@@ -266,7 +300,7 @@
     text-align: center;
     }
 #dockeditempanel .dockeditempanel_hd {
-    border-bottom:1px dotted #AAAAAA;
+    border-bottom:1px dotted #777777;
     text-align: left;
     }
 #dockeditempanel .dockeditempanel_hd h2 {

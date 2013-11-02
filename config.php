@@ -18,34 +18,29 @@ $THEME->parents = array('base');
 // An array of stylesheets not to inherit from the themes parents (We don't want these)
 $THEME->parents_exclude_sheets = array('base'=>array(
     'pagelayout', 
+    'blocks', 
     'calendar', 
-    'dock'
+    'dock', 
+    'editor'
 ));
 
-// Color Schema defined in Admin -> Apperance -> Themes -> AIGNE -> colorsch
-    //$colorschema = 'aigne_style_';
-    //if (empty($THEME->settings->colorsch)) {
-    //    $colorschema .= '1';
-    //} else {
-    //    $colorschema .= $THEME->settings->colorsch;
-    //}
-    
+// An array of plugin sheets to ignore and not include.
+// $THEME->plugins_exclude_sheets
+   
 // Name of the stylesheet(s) you've including in this theme's /styles/ directory.
 $THEME->sheets = array(
     'aigne_pagelayout',  // Must come first: page layout
     'aigne_style',       // Must come second: default styles, including 'course', 'filemanager',
     'aigne_menu',
     'aigne_block',
-    'aigne_mod',         // including 'calendar', 'forum', 'grade', (pending 'message', 'question',)
+    'aigne_mod',         // including 'calendar', 'glossary', 'forum', 'grade', (pending 'message', 'question',)
     'aigne_rtl',
+    'aigne_dialogue',    // Messages and Activities Selector
     'aigne_custom'
 );
 
 // An array of stylesheets to include within the body of the editor.
-$THEME->editor_sheets = array('editor');
-
-// Do you want to use the new navigation dock?
-$THEME->enable_dock = true;
+$THEME->editor_sheets = array('aigne_editor');
 
 // These are all of the possible layouts in Moodle.
 $THEME->layouts = array(
@@ -94,23 +89,7 @@ $THEME->layouts = array(
         'regions' => array(),
         'options' => array('langmenu'=>true, 'nologininfo'=>true, 'nocustommenu'=>true, 'nonavbar'=>false,
                            'noblocks'=>true, 'nocourseheaderfooter'=>true, 'nofooter'=>false, 'infobanner'=>false),
-    ), 
-    // ► My MOODLE _ My dashboard page
-    'mydashboard' => array(
-        'file' => 'default.php',
-        'regions' => array('side-post'),
-        'defaultregion' => 'side-post',
-        'options' => array('langmenu'=>true, 'nologininfo'=>true, 'nocustommenu'=>false, 'nonavbar'=>false,
-                           'noblocks'=>false, 'nocourseheaderfooter'=>false, 'nofooter'=>false, 'infobanner'=>false),
-    ),
-    // ► My public page
-    'mypublic' => array(
-        'file' => 'default.php',
-        'regions' => array('side-post'),
-        'defaultregion' => 'side-post',
-        'options' => array('langmenu'=>true, 'nologininfo'=>true, 'nocustommenu'=>false, 'nonavbar'=>false,
-                           'noblocks'=>false, 'nocourseheaderfooter'=>false, 'nofooter'=>false, 'infobanner'=>false),
-    ),    
+    ),   
     // ► COURSE CATEGORY PAGE _ only categories list or courses list in specific category    
     'coursecategory' => array(
         'file' => 'default.php',
@@ -135,6 +114,22 @@ $THEME->layouts = array(
         'options' => array('langmenu'=>false, 'nologininfo'=>true, 'nocustommenu'=>true, 'nonavbar'=>false,
                            'noblocks'=>false, 'nocourseheaderfooter'=>false, 'nofooter'=>true, 'infobanner'=>false),
     ),
+    // ► My MOODLE _ My dashboard page
+    'mydashboard' => array(
+        'file' => 'default.php',
+        'regions' => array('side-post'),
+        'defaultregion' => 'side-post',
+        'options' => array('langmenu'=>true, 'nologininfo'=>true, 'nocustommenu'=>false, 'nonavbar'=>false,
+                           'noblocks'=>false, 'nocourseheaderfooter'=>false, 'nofooter'=>false, 'infobanner'=>false),
+    ),
+    // ► My public page
+    'mypublic' => array(
+        'file' => 'default.php',
+        'regions' => array('side-post'),
+        'defaultregion' => 'side-post',
+        'options' => array('langmenu'=>true, 'nologininfo'=>true, 'nocustommenu'=>false, 'nonavbar'=>false,
+                           'noblocks'=>false, 'nocourseheaderfooter'=>false, 'nofooter'=>false, 'infobanner'=>false),
+    ), 
     // ► Server administration scripts.
     'admin' => array(
         'file' => 'default.php',
@@ -203,14 +198,11 @@ $THEME->layouts = array(
     )
 );
 
-// By setting this to true this theme will be shown in Select Themes.
+// If set to true the side dock is enabled for blocks 
+$THEME->enable_dock = true;
+
+// Used to hide a theme from the theme selector (unless theme designer mode is on). Accepts true or false.
 $THEME->hidefromselector = false;
-
-// An array containing the names of JavaScript files located in /javascript/ to include in the theme.
-// $THEME->javascripts = array();
-
-// As above but will be included in the page footer.
-// $THEME->javascripts_footer = array();
 
 // Overrides the left arrow image used throughout Moodle
 // $THEME->larrow
@@ -218,11 +210,20 @@ $THEME->hidefromselector = false;
 // Overrides the right arrow image used throughout Moodle
 // $THEME->rarrow
 
+// Used to control the colours used in the small media player for the filters
+// $THEME->filter_mediaplugin_colors
+
+// Controls the colours for the MP3 player
+// $THEME->resource_mp3player_colors
+
+// An array containing the names of JavaScript files located in /javascript/ to include in the theme.
+// $THEME->javascripts = array();
+
+// As above but will be included in the page footer.
+// $THEME->javascripts_footer = array();
+
 // An array of JavaScript files NOT to inherit from the themes parents
 // $THEME->parents_exclude_javascripts
-
-// An array of plugin sheets to ignore and not include.
-// $THEME->plugins_exclude_sheets
 
 // Sets a custom render factory to use with the theme, used when working with custom renderers.
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
