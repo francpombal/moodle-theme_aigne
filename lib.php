@@ -17,6 +17,7 @@ defined('MOODLE_INTERNAL') || die();
  * @return string
  */
 function theme_aigne_process_css($css, $theme) {
+    global $OUTPUT;
 // CSS Options
     // Set the font size -> body -> aigne_styles.css
     if (!empty($theme->settings->bodyfont)) {
@@ -25,6 +26,14 @@ function theme_aigne_process_css($css, $theme) {
         $bodyfont = '14';
     }
     $css = theme_aigne_set_bodyfont($css, $bodyfont);
+
+    // Set the font family -> body -> aigne_styles.css
+    if (!empty($theme->settings->fontfam)) {
+        $fontfam = $theme->settings->fontfam;  
+    } else {
+        $fontfam = '"Eras Bk BT", eras, Helvetica, sans-serif';
+    }
+    $css = theme_aigne_set_fontfam($css, $fontfam);
 
     // Set the color Schema
     if (!empty($theme->settings->colorsch)) {
@@ -35,7 +44,11 @@ function theme_aigne_process_css($css, $theme) {
     $css = theme_aigne_set_colorsch($css, $colorsch);
 
     // Set the background image for the body _ FILE
-    $backbody = $theme->setting_file_url('backbody', 'backbody');
+    if (!empty($theme->settings->backbody)) {
+        $backbody = $theme->setting_file_url('backbody', 'backbody');
+    } else {
+        $backbody = null;
+    }
     $css = theme_aigne_set_backbody($css, $backbody);
 
     // Set the background image position
@@ -54,6 +67,15 @@ function theme_aigne_process_css($css, $theme) {
     }
     $css = theme_aigne_set_backcolor($css, $backcolor);
 
+    // Set the letter-spacing -> a:hover -> aigne_styles.css
+    if (!empty($theme->settings->aletters)) {
+        $aletters = $theme->settings->aletters;  
+    } else {
+        $aletters = '1';
+    }
+    $css = theme_aigne_set_aletters($css, $aletters);
+
+
     // Set custom CSS
     if (!empty($theme->settings->customcss)) {
         $customcss = $theme->settings->customcss;
@@ -62,16 +84,7 @@ function theme_aigne_process_css($css, $theme) {
     }
     $css = theme_aigne_set_customcss($css, $customcss);
 
-// Logo Options
-    // Set the image for the logo _ FILE
-    $logo = $theme->setting_file_url('logo', 'logo');
-    $css = theme_aigne_set_logo($css, $logo);
-   
-    // Set the background image for the logo _ FILE
-    $backlogo = $theme->setting_file_url('backlogo', 'backlogo');
-    $css = theme_aigne_set_backlogo($css, $backlogo);
-
-// Meta Tags options
+// CEO Settings
     // Set Custom Meta Tags
     if (!empty($theme->settings->custommtag)) {
         $custommtag = $theme->settings->custommtag;
@@ -79,13 +92,51 @@ function theme_aigne_process_css($css, $theme) {
         $custommtag = null;
     }
     $css = theme_aigne_set_custommtag($css, $custommtag);
-    
-// Frontpage _ Marketing Options
+
+// Marketing Settings
     // Set the frontpage header info image _ FILE
-    $headerinfo = $theme->setting_file_url('headerinfo', 'headerinfo');
+    if (!empty($theme->settings->headerinfo)) {
+        $headerinfo = $theme->setting_file_url('headerinfo', 'headerinfo');
+    } else {
+        $headerinfo = $OUTPUT->pix_url('carroussel/04', 'theme');
+    }
     $css = theme_aigne_set_headerinfo($css, $headerinfo);
 
-// Custom Menu colours
+    // Set frontpage information style
+    /*if (!empty($theme->settings->infobanner)) {
+        $infobanner = $theme->settings->infobanner;  
+    } else {
+        $infobanner = '3';
+    }
+    $css = theme_aigne_set_infobanner($css, $infobanner);*/
+
+// Moodle Format Settings
+    // Set Grid Format for Categories List
+    if (!empty($theme->settings->catstyle)) {
+       $catstyle = $theme->settings->catstyle;
+    } else {
+       $catstyle = '0';
+    }
+    $css = theme_aigne_set_catstyle($css, $catstyle);
+
+// Logo Options
+    // Set the image for the logo _ FILE
+    if (!empty($theme->settings->logo)) {
+        $logo = $theme->setting_file_url('logo', 'logo');
+    } else {
+        $logo = $OUTPUT->pix_url('images/logo','theme');
+    }
+    $css = theme_aigne_set_logo($css, $logo);
+   
+    // Set the background image for the logo _ FILE
+    if (!empty($theme->settings->backlogo)) {
+        $backlogo = $theme->setting_file_url('backlogo', 'backlogo');
+    } else {
+        $backlogo = $OUTPUT->pix_url('images/backlogo','theme');
+    }
+    $css = theme_aigne_set_backlogo($css, $backlogo);
+
+// Custom Menu Settings
     // Set the custom menu color
     if (!empty($theme->settings->menucolor)) {
         $menucolor = $theme->settings->menucolor;
@@ -130,7 +181,11 @@ function theme_aigne_process_css($css, $theme) {
 
 // Contact Options
     // Set the eMail Image _ SPAM Protection _ FILE
-    $emailimg = $theme->setting_file_url('emailimg', 'emailimg');
+    if (!empty($theme->settings->emailimg)) {
+        $emailimg = $theme->setting_file_url('emailimg', 'emailimg');
+    } else {
+        $emailimg = null;
+    }
     $css = theme_aigne_set_emailimg($css, $emailimg);
 
 // Credits Options
@@ -156,24 +211,25 @@ function theme_aigne_process_css($css, $theme) {
  * @param string $logo The URL of the logo.
  * @return string The parsed CSS
  */
-// CSS Options
-    // Set the font size -> body -> aigne_styles.css
 function theme_aigne_set_bodyfont($css, $bodyfont) {
     $tag = '[[setting:bodyfont]]';
     $css = str_replace($tag, $bodyfont.'px', $css);
     return $css;
 }
 
-    // Set the colour Schema
-    // FIXED COLOURS:
-    // RED: #CC0000
+function theme_aigne_set_fontfam($css, $fontfam) {
+    $tag = '[[setting:fontfam]]';
+    $css = str_replace($tag, $fontfam, $css);
+    return $css;
+}
+    // FIXED COLOURS: RED_#CC0000 + BUTTON_BG_#D5E1DD
     // GREY_1: #777777
-    // GREY_2teal#006666: #CCCCCC
+    // GREY_2: #CCCCCC
     // GREY_3: #E0E0E0
-    // BUTTON BG: #D5E1DD
+    // DISABLED ITEM: #AAAAAA
 function theme_aigne_set_colorsch($css, $colorsch) {
     switch ($colorsch) {
-        case 1: //BLUE
+        case 1: //BLUE _ aigne default
             $corsch_1 = '#322C65';
             $corsch_2 = '#007EBA';
             $corsch_3 = '#CCDDEE';
@@ -182,34 +238,34 @@ function theme_aigne_set_colorsch($css, $colorsch) {
             $corsch_B = '#FFFFFF';
             $corsch_T = '#333333';
             break;
-        case 2: //CONTRAST BLUE
-            $corsch_1 = '#F3F7FF';
-            $corsch_2 = '#CCDDEE';
-            $corsch_3 = '#322C65';
-            $corsch_4 = '#000033';
-            $corsch_5 = '#FFFFFF';
-            $corsch_B = '#322C65';
-            $corsch_T = '#FFFFFF';
-            break;
-        case 3: //GREEN
+        case 2: //GREEN _ 
             $corsch_1 = '#004040';
             $corsch_2 = '#006666';
             $corsch_3 = '#00CC00';
-            $corsch_4 = '#CCFFCC';
+            $corsch_4 = '#EEFFDD';
             $corsch_5 = '#FFFFFF';
             $corsch_B = '#FFFFFF';
             $corsch_T = '#333333';
             break;
-        case 4: //ORANGE
+        case 3: //ORANGE _ SPRING
             $corsch_1 = '#522500';
             $corsch_2 = '#EB8324';
             $corsch_3 = '#F6CC87';
-            $corsch_4 = '#FFFFCC';
+            $corsch_4 = '#FFF7ED';
             $corsch_5 = '#FFFFFF';
             $corsch_B = '#FFFFFF';
             $corsch_T = '#333333';
             break;
-        case 5: //RED
+        case 4: //RED _ SUMMER
+            $corsch_1 = '#520000';
+            $corsch_2 = '#AA0000';
+            $corsch_3 = '#FFA6A6';
+            $corsch_4 = '#FFEEFF';
+            $corsch_5 = '#FFFFFF';
+            $corsch_B = '#FFFFFF';
+            $corsch_T = '#333333';
+            break;
+        case 5: //BROWN _ FALL _ WOOD
             $corsch_1 = '#520000';
             $corsch_2 = '#AA0000';
             $corsch_3 = '#FFA6A6';
@@ -217,6 +273,24 @@ function theme_aigne_set_colorsch($css, $colorsch) {
             $corsch_5 = '#FFFFFF';
             $corsch_B = '#FFFFFF';
             $corsch_T = '#333333';
+            break;
+        case 6: //GREY _ WINTER
+            $corsch_1 = '#222222';
+            $corsch_2 = '#666666';
+            $corsch_3 = '#AAAAAA';
+            $corsch_4 = '#F0F0F0';
+            $corsch_5 = '#FBFBFB';
+            $corsch_B = '#FFFFFF';
+            $corsch_T = '#000000';
+            break;
+        case 7: //CONTRAST BLUE _ 
+            $corsch_1 = '#F3F7FF';
+            $corsch_2 = '#CCDDEE';
+            $corsch_3 = '#322C65';
+            $corsch_4 = '#000033';
+            $corsch_5 = '#FFFFFF';
+            $corsch_B = '#322C65';
+            $corsch_T = '#FFFFFF';
             break;
         default:
             $corsch_1 = '#322C65';
@@ -228,7 +302,9 @@ function theme_aigne_set_colorsch($css, $colorsch) {
             $corsch_T = '#333333';
             break;
     }
+
     $tag = '[[setting:colorsch]]';
+
     $tagcs1 = '[[setting:corsch_1]]';
     $tagcs2 = '[[setting:corsch_2]]';
     $tagcs3 = '[[setting:corsch_3]]';
@@ -236,6 +312,7 @@ function theme_aigne_set_colorsch($css, $colorsch) {
     $tagcs5 = '[[setting:corsch_5]]';
     $tagcsB = '[[setting:corsch_B]]';
     $tagcsT = '[[setting:corsch_T]]';
+
     $css = str_replace($tag, $colorsch, $css);
     $css = str_replace($tagcs1, $corsch_1, $css);
     $css = str_replace($tagcs2, $corsch_2, $css);
@@ -246,154 +323,96 @@ function theme_aigne_set_colorsch($css, $colorsch) {
     $css = str_replace($tagcsT, $corsch_T, $css);
     return $css;
 }
-
-    // Set the background image for the body _ FILE
-function theme_aigne_set_backbody($css, $backbody) {
-    global $OUTPUT;
+function theme_aigne_set_backbody($css, $backbody) { // _ FILE
     $tag = '[[setting:backbody]]';
-    $replacement = $backbody;
-    if (is_null($replacement)) {
-        $replacement = $OUTPUT->pix_url('');
-    }
-    $css = str_replace($tag, $replacement, $css);
+    $css = str_replace($tag, $backbody, $css);
     return $css;
 }
-
-    // Set the background image position
 function theme_aigne_set_bgposition($css, $bgposition) {
     $tag = '[[setting:bgposition]]';
-    $replacement = $bgposition;
-    $css = str_replace($tag, $replacement, $css);
+    $css = str_replace($tag, $bgposition, $css);
     return $css;
 }
-
-    // Set the background color
 function theme_aigne_set_backcolor($css, $backcolor) {
     $tag = '[[setting:backcolor]]';
-    $replacement = $backcolor;
-    $css = str_replace($tag, $replacement, $css);
+    $css = str_replace($tag, $backcolor, $css);
     return $css;
 }
-
-    // Set custom CSS
+function theme_aigne_set_aletters($css, $aletters) {
+    $tag = '[[setting:aletters]]';
+    $css = str_replace($tag, $aletters.'px', $css);
+    return $css;
+}
 function theme_aigne_set_customcss($css, $customcss) {
     $tag = '[[setting:customcss]]';
     $css = str_replace($tag, $customcss, $css);
     return $css;
 }
-
-// Logo Options
-    // Set the image for the logo _ FILE
-function theme_aigne_set_logo($css, $logo) {
-    global $OUTPUT;
-    $tag = '[[setting:logo]]';
-    $replacement = $logo;
-    if (is_null($replacement)) {
-        $replacement = $OUTPUT->pix_url('images/logo','theme');
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-    
-    // Set the background image for the logo _ FILE
-function theme_aigne_set_backlogo($css, $backlogo) {
-    global $OUTPUT;
-    $tag = '[[setting:backlogo]]';
-    $replacement = $backlogo;
-    if (is_null($replacement)) {
-        $replacement = $OUTPUT->pix_url('images/backlogo','theme');
-    }
-    $css = str_replace($tag, $replacement, $css);
-    return $css;
-}
-
-// Meta Tags options
-    // Set Custom Meta Tags
 function theme_aigne_set_custommtag($css, $custommtag) {
     $tag = '[[setting:custommtag]]';
     $css = str_replace($tag, $custommtag, $css);
     return $css;
 }
-
-// Frontpage _ Marketing Options
-    // Set the frontpage header info image _ FILE
-function theme_aigne_set_headerinfo($css, $headerinfo) {
-    global $OUTPUT;
+function theme_aigne_set_headerinfo($css, $headerinfo) { // _ FILE
     $tag = '[[setting:headerinfo]]';
-    $replacement = $headerinfo;
-    if (is_null($replacement)) {
-        $replacement = $OUTPUT->pix_url('carroussel/trolley', 'theme');
-    }
-    $css = str_replace($tag, $replacement, $css);
+    $css = str_replace($tag, $headerinfo, $css);
     return $css;
 }
-
-// Custom Menu colours
-    // Set the custom menu color
+function theme_aigne_set_infobanner($css, $infobanner) {
+    $tag = '[[setting:infobanner]]';
+    $css = str_replace($tag, $infobanner, $css);
+    return $css;
+}
+function theme_aigne_set_catstyle($css, $catstyle) {
+    $tag = '[[setting:catstyle]]';
+    $css = str_replace($tag, $catstyle, $css);
+    return $css;
+}
+function theme_aigne_set_logo($css, $logo) { // _ FILE
+    $tag = '[[setting:logo]]';
+    $css = str_replace($tag, $logo, $css);
+    return $css;
+}
+function theme_aigne_set_backlogo($css, $backlogo) { // _ FILE
+    $tag = '[[setting:backlogo]]';
+    $css = str_replace($tag, $backlogo, $css);
+    return $css;
+}
 function theme_aigne_set_menucolor($css, $menucolor) {
     $tag = '[[setting:menucolor]]';
-    $replacement = $menucolor;
-    $css = str_replace($tag, $replacement, $css);
+    $css = str_replace($tag, $menucolor, $css);
     return $css;
 }
-    
-    // Set the highlight custom menu color
 function theme_aigne_set_menucolorhl($css, $menucolorhl) {
     $tag = '[[setting:menucolorhl]]';
-    $replacement = $menucolorhl;
-    $css = str_replace($tag, $replacement, $css);
+    $css = str_replace($tag, $menucolorhl, $css);
     return $css;
 }
-
-// NavBar Separator Options
-    // Set the BreadCrumb Navigation Separator
 function theme_aigne_set_bcsep($css, $bcsep) {
     $tag = '[[setting:bcsep]]';
-    $replacement = $bcsep;
-    $css = str_replace($tag, $replacement, $css);
+    $css = str_replace($tag, $bcsep, $css);
     return $css;
 }
-
-// User Information Area Options
-    // User Information Area Type
 function theme_aigne_set_usernav($css, $usernav) {
     $tag = '[[setting:usernav]]';
-    $replacement = $usernav;
-    $css = str_replace($tag, $replacement, $css);
+    $css = str_replace($tag, $usernav, $css);
     return $css;
 }
-
-    // Logout Options
 function theme_aigne_set_usernavout($css, $usernavout) {
     $tag = '[[setting:usernavout]]';
-    $replacement = $usernavout;
-    $css = str_replace($tag, $replacement, $css);
+    $css = str_replace($tag, $usernavout, $css);
     return $css;
 }
-
-// Contact Options
-    // Set the eMail Image _ SPAM Protection _ FILE
-function theme_aigne_set_emailimg($css, $emailimg) {
-    global $OUTPUT;
+function theme_aigne_set_emailimg($css, $emailimg) { // _ FILE
     $tag = '[[setting:emailimg]]';
-    $replacement = $emailimg;
-    if (is_null($replacement)) {
-        $replacement = $OUTPUT->pix_url('');
-    }
-    $css = str_replace($tag, $replacement, $css);
+    $css = str_replace($tag, $emailimg, $css);
     return $css;
 }
-
-// Credits Options
-    // Accessibility tested
 function theme_aigne_set_compatwai($css, $compatwai) {
     $tag = '[[setting:compatwai]]';
-    $replacement = $compatwai;
-    $css = str_replace($tag, $replacement, $css);
+    $css = str_replace($tag, $compatwai, $css);
     return $css;
 }
-
-// Set the path to @font-face in aigne_style.css.
 function theme_aigne_set_fontface($css) {
     global $CFG;
     $tag = '[[setting:fontroot]]';
@@ -401,6 +420,7 @@ function theme_aigne_set_fontface($css) {
     $css = str_replace($tag, $replacement, $css);
     return $css;
 }
+
 /**
  * Serves any files associated with the theme settings.
  *

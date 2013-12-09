@@ -8,15 +8,19 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 $hasheading = ($PAGE->heading);
+$hasnavbar = (empty($PAGE->layout_options['nonavbar']) && $PAGE->has_navbar());
+//$hasfooter = (empty($PAGE->layout_options['nofooter']));
+$hassidepre = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-pre', $OUTPUT));
+$hassidepost = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-post', $OUTPUT));
+//$haslogininfo = (empty($PAGE->layout_options['nologininfo']));
+$showsidepre = ($hassidepre && !$PAGE->blocks->region_completely_docked('side-pre', $OUTPUT));
+$showsidepost = ($hassidepost && !$PAGE->blocks->region_completely_docked('side-post', $OUTPUT));
 
 $custommenu = $OUTPUT->custom_menu();
 $hascustommenu = (empty($PAGE->layout_options['nocustommenu']) && !empty($custommenu));
-$hasnavbar = (empty($PAGE->layout_options['nonavbar']) && $PAGE->has_navbar());
 
-$hassidepre = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-pre', $OUTPUT));
-$hassidepost = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-post', $OUTPUT));
-$showsidepre = ($hassidepre && !$PAGE->blocks->region_completely_docked('side-pre', $OUTPUT));
-$showsidepost = ($hassidepost && !$PAGE->blocks->region_completely_docked('side-post', $OUTPUT));
+//$hasfootnote = (!empty($PAGE->theme->settings->footnote));
+$hasheadbanner = (!empty($PAGE->theme->settings->headbanner));
 
 $courseheader = $coursecontentheader = $coursecontentfooter = $coursefooter = '';
     if (empty($PAGE->layout_options['nocourseheaderfooter'])) {
@@ -29,39 +33,36 @@ $courseheader = $coursecontentheader = $coursecontentfooter = $coursefooter = ''
     }
 
 $bodyclasses = array();
-if ($showsidepre && !$showsidepost) {
-    if (!right_to_left()) {
-        $bodyclasses[] = 'side-pre-only';
-    } else {
-        $bodyclasses[] = 'side-post-only';
+    if ($showsidepre && !$showsidepost) {
+        if (!right_to_left()) {
+            $bodyclasses[] = 'side-pre-only';
+        } else {
+            $bodyclasses[] = 'side-post-only';
+        }
+    } else if ($showsidepost && !$showsidepre) {
+        if (!right_to_left()) {
+            $bodyclasses[] = 'side-post-only';
+        } else {
+            $bodyclasses[] = 'side-pre-only';
+        }
+    } else if (!$showsidepost && !$showsidepre) {
+        $bodyclasses[] = 'content-only';
     }
-} else if ($showsidepost && !$showsidepre) {
-    if (!right_to_left()) {
-        $bodyclasses[] = 'side-post-only';
-    } else {
-        $bodyclasses[] = 'side-pre-only';
+    if ($hascustommenu) {
+        $bodyclasses[] = 'has_custom_menu';
     }
-} else if (!$showsidepost && !$showsidepre) {
-    $bodyclasses[] = 'content-only';
-}
-if ($hascustommenu) {
-    $bodyclasses[] = 'has_custom_menu';
-}
-
-$hasheadbanner = (!empty($PAGE->theme->settings->headbanner));
-$hasquadrobanner = (!empty($PAGE->theme->settings->quadrobanner));
 
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes() ?>>
 <head>
-    <title><?php echo $PAGE->title ?></title> 
+    <title><?php echo $PAGE->title ?></title>
     <link href="<?php echo $OUTPUT->pix_url('favicon', 'theme')?>" rel="shortcut icon" />
     <?php echo $OUTPUT->standard_head_html() ?>
     <link href="<?php echo $CFG->wwwroot ?>/theme/aigne/style/aigne_print.css" rel="stylesheet" type="text/css" media="print" />
 </head>
 <body id="<?php p($PAGE->bodyid) ?>" class="<?php p($PAGE->bodyclasses.' '.join(' ', $bodyclasses)) ?>">
 
-<?php echo $OUTPUT->standard_top_of_body_html() ?>
+    <?php echo $OUTPUT->standard_top_of_body_html() ?>
     
 <div id="page">
 <!-- START OF HEADER -->
@@ -71,11 +72,9 @@ echo $OUTPUT->doctype() ?>
         </div>
     <?php } ?> 
     <?php if ($hasheadbanner) { ?>
-    <?php if (!isloggedin() or isguestuser()) { ?>
-        <div class="info-banner">
+        <?php if (!isloggedin() or isguestuser()) { ?>
             <?php include('frontinfoup.php') ?>
-        </div>
-    <?php } ?>
+        <?php } ?>
     <?php } ?>
     
 <!-- START CUSTOMMENU AND NAVBAR -->
@@ -85,7 +84,7 @@ echo $OUTPUT->doctype() ?>
                 <?php echo $custommenu; ?>
             </div>
         <?php } 
-        if (isloggedin()) {       
+        if (isloggedin()) {
             if ($hasnavbar) { ?>
             <div id="navbar">
                 <div class="breadcrumb">
@@ -118,14 +117,10 @@ echo $OUTPUT->doctype() ?>
             </div>
         </div>
         <?php } ?>        
-<!-- main center content -->           
+<!-- main center content -->
         <div id="region-main">
-            <?php if ($hasquadrobanner) { ?>
             <?php if (!isloggedin() or isguestuser()) { ?>
-                <div class="info-banner">
-                    <?php include('frontinfo.php') ?>
-                </div>
-            <?php } ?>
+                <?php include('frontinfo.php') ?>
             <?php } ?>
             <div class="region-content">
                 <?php echo $coursecontentheader; ?>

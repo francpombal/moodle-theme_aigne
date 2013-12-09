@@ -21,11 +21,13 @@
  *   #page-footer
  *   |  #bottom_1
  *   |  #bottom_2
+ *   |  |  .navhelp 
  *   |  #standardfooter (bottom_3)
- *   |  |  .navhelp + .contact + .credits
+ *   |  |  .contact + .credits
  *   |  #bottom_4
- *   |  #copyright (bottom_5)
- * 
+ *   |  #bottom_5
+ *   |  |  .copyright + .footerhtml
+ *  
  * DELETED: [page-wrapper], page-header-wrapper, page-content-wrapper, [region-main-box], 
  * region-pre-box, region-post-box, region-main-wrapper, footer-wrapper, page-footer-content
  *   
@@ -40,7 +42,7 @@
 #page {
     top: 0px;
     width: 95%;
-    min-width: 775px;    
+    min-width: 775px;
     margin: 0px auto 0px auto;
     padding: 0px 0px 0px 0px;
     /*background: ;*/
@@ -59,6 +61,7 @@
     padding: 24px 0px 0px 0px;
     background-color: [[setting:corsch_B]];
 }
+html[dir=rtl] #page-header {float: none;} /* catch core.css #1240 */
 #headerlogo {
     position: absolute;
     top: 0px;
@@ -70,34 +73,44 @@
     position: relative;
     top: 0px;
     float: right;
-    width: 80%;
-    height: 51px;
+    width: 74%;
 }
+.dir-rtl #headeroptions {float: left;}
 /*----- NAVIGATION ------*/
 #navcontainer,
 #custommenu, 
 #navbar, 
 #course-header {
+    clear: both;
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
 }
 #navcontainer {
-    clear: both;
     margin: 3px 0px 3px 0px;
 }
+#custommenu, 
+#navbar, 
+#course-header {
+    padding: 1px 5px 0px 1em;
+}
+.dir-rtl #custommenu, 
+.dir-rtl #navbar, 
+.dir-rtl #course-header {
+    padding: 1px 1em 0px 5px;
+}
 #custommenu { /* -> more customizable options in aigne_menu.css */
-    height: 1.7em;
-    padding: 0px 5px 0px 10px;
+    height: 1.6em;
     background-color:[[setting:menucolor]];
 }
-#navbar {
-    height: 1.7em;
-    padding: 2px 5px 0px 10px;
+#navbar { /* -> more customizable options in aigne_style.css #breadcrumb */
+    min-height: 1.6em;
     background-color: [[setting:corsch_3]];
+    overflow: auto;
 }
 #course-header {
-    height: 1.7em;
+    min-height: 1.6em;
     background-color: [[setting:corsch_4]];
+    overflow: auto;
 }
 /*----- CONTENT _ 3 Column Page Layout ------*/
 #page-content,
@@ -115,21 +128,22 @@
     width: 100%;
 }
 #region-pre {
-    width: 20%;
+    width: 19%;
 }
 #region-main {
-    width: 58%;
-    margin: 0px 1% 0px 1%;
+    width: 61%;
+    margin: 0px 0.5% 0px 0.5%;
     border-width: 1px 0px 0px 0px;
     border-style: solid;
     border-color: [[setting:corsch_1]];
 }
 #region-main .region-content {
-    padding: 3px 5px 5% 5px;
+    padding: 3px 5px 4em 5px;
     background-color: [[setting:corsch_B]];
 }
+/*#region-main .region-content BR {display:none;}*/
 #region-post {
-    width: 20%;
+    width: 19%;
 }
 /*----- FOOTER ------*/
 #page-footer,
@@ -145,6 +159,7 @@
     clear: both;
     float: left;
     width: 100%;
+    min-height: 3em;
     margin: 3px 0px 0px 0px;
     background-color: [[setting:corsch_3]];
     border-width: 1px 0px 1px 0px;
@@ -157,7 +172,6 @@
 #bottom_2 {
 }
 #standardfooter {
-    color: #E0E0E0;
     background-color: [[setting:corsch_2]];
 }
 #bottom_4 {
@@ -167,14 +181,16 @@
 
 
 /*----- SIDE-PRE-ONLY ------*/
-.side-pre-only #region-pre {width: 22%;}
-.side-pre-only #region-main {width: 77.5%; margin: 0px 0px 0px 0.5%;}
+.side-pre-only #region-pre {width: 19%;}
+.side-pre-only #region-main {width: 80.5%; margin: 0px 0px 0px 0.5%;}
+.dir-rtl .side-pre-only #region-main {margin: 0px 0.5% 0px 0px;}
 .side-pre-only #region-post {width: 0;}
 
 /*----- SIDE-POST-ONLY ------*/
 .side-post-only #region-pre {width: 0;}
-.side-post-only #region-main {width: 77.5%; margin: 0px 0.5% 0px 0px;}
-.side-post-only #region-post {width: 22%;}
+.side-post-only #region-main {width: 80.5%; margin: 0px 0.5% 0px 0px;}
+.dir-rtl .side-post-only #region-main {margin: 0px 0px 0px 0.5%;}
+.side-post-only #region-post {width: 19%;}
 .has_dock.side-post-only #region-main {margin-left: 0;}
 
 /*----- CONTENT ONLY - NO BLOCKS WHATSOEVER ------*/

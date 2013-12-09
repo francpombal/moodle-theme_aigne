@@ -41,11 +41,11 @@ $hasmoodlecredit = (!empty($PAGE->theme->settings->moodlecredit));
 $hascompatcredit = (!empty($PAGE->theme->settings->compatcredit));
 $compatwai = $PAGE->theme->settings->compatwai;
 $compattested = $PAGE->theme->settings->compattested;
-$compattested1 = (!empty($compattested[0]));
-$compattested2 = (!empty($compattested[1]));
-$compattested3 = (!empty($compattested[2]));
-$compattested4 = (!empty($compattested[3]));
-$compattested5 = (!empty($compattested[4]));
+$compattested0 = (!empty($compattested[0]));
+$compattested1 = (!empty($compattested[1]));
+$compattested2 = (!empty($compattested[2]));
+$compattested3 = (!empty($compattested[3]));
+$compattested4 = (!empty($compattested[4]));
         
 $hasfootnote = (!empty($PAGE->theme->settings->footnote));
 ?>
@@ -54,7 +54,7 @@ $hasfootnote = (!empty($PAGE->theme->settings->footnote));
             <div class="contact" id="left">
                 <?php echo get_string('contact','theme_aigne');?><br>
                 <!-- Corporation / Institution Web Site -->
-                <?php if ($hascorpweb) {?><a href="<?php echo $PAGE->theme->settings->corpweb;?>" title="::: corpweb :::" target="_blank">
+                <?php if ($hascorpweb) {?><a href="<?php echo $PAGE->theme->settings->corpweb;?>" title="&nbsp;:::&nbsp;corpweb&nbsp;:::&nbsp;" target="_blank">
                     <img src="<?php echo $OUTPUT->pix_url('social/corpweb', 'theme')?>" alt="corpweb"></a>
                 <?php } ?>
                 <!-- Official eMail -->
@@ -69,7 +69,7 @@ $hasfootnote = (!empty($PAGE->theme->settings->footnote));
                     </a>
                 <?php } ?>
                 <!-- Skype Contact User Name -->
-                <?php if ($hasskype) {?><a href="<?php echo $PAGE->theme->settings->skype;?>" title="::: skype :::" target="_blank">
+                <?php if ($hasskype) {?><a href="<?php echo $PAGE->theme->settings->skype;?>" title="&nbsp;:::&nbsp;skype&nbsp;:::&nbsp;" target="_blank">
                     <img src="<?php echo $OUTPUT->pix_url('social/skype', 'theme')?>" alt="skype"></a>
                 <?php } ?>
                 <?php if ($hascontactnote) { ?><?php } ?>
@@ -85,50 +85,50 @@ $hasfootnote = (!empty($PAGE->theme->settings->footnote));
             <div class="contact" id="right">
             <?php echo get_string('sociallinks','theme_aigne');?><br>
                 <!-- Web Site PHOTO Content Social Links -->
-                <?php if ($hasdayviews) {?><a href="<?php echo $PAGE->theme->settings->dayviews;?>" title="::: DayViews :::" target="_blank">
+                <?php if ($hasdayviews) {?><a href="<?php echo $PAGE->theme->settings->dayviews;?>" title="&nbsp;:::&nbsp;DayViews&nbsp;:::&nbsp;" target="_blank">
                 <img src="<?php echo $OUTPUT->pix_url('social/dayviews', 'theme')?>" alt="dayviews"></a> <?php } ?>
-                <?php if ($hasflickr) {?><a href="<?php echo $PAGE->theme->settings->flickr;?>" title="::: Flickr :::" target="_blank">
+                <?php if ($hasflickr) {?><a href="<?php echo $PAGE->theme->settings->flickr;?>" title="&nbsp;:::&nbsp;Flickr&nbsp;:::&nbsp;" target="_blank">
                 <img src="<?php echo $OUTPUT->pix_url('social/flickr', 'theme')?>" alt="flickr"></a> <?php } ?>
-                <?php if ($hasfotolog) {?><a href="<?php echo $PAGE->theme->settings->fotolog;?>" title="::: FotoLog :::" target="_blank">
+                <?php if ($hasfotolog) {?><a href="<?php echo $PAGE->theme->settings->fotolog;?>" title="&nbsp;:::&nbsp;FotoLog&nbsp;:::&nbsp;" target="_blank">
                 <img src="<?php echo $OUTPUT->pix_url('social/fotolog', 'theme')?>" alt="fotolog"></a> <?php } ?>
-                <?php if ($hasinstagram) {?><a href="<?php echo $PAGE->theme->settings->instagram;?>" title="::: Instagram :::" target="_blank">
+                <?php if ($hasinstagram) {?><a href="<?php echo $PAGE->theme->settings->instagram;?>" title="&nbsp;:::&nbsp;Instagram&nbsp;:::&nbsp;" target="_blank">
                 <img src="<?php echo $OUTPUT->pix_url('social/instagram', 'theme')?>" alt="instagram"></a> <?php } ?>
-                <?php if ($haspicasa) {?><a href="<?php echo $PAGE->theme->settings->picasa;?>" title="::: Picasa :::" target="_blank">
+                <?php if ($haspicasa) {?><a href="<?php echo $PAGE->theme->settings->picasa;?>" title="&nbsp;:::&nbsp;Picasa&nbsp;:::&nbsp;" target="_blank">
                 <img src="<?php echo $OUTPUT->pix_url('social/picasa', 'theme')?>" alt="picasa"></a> <?php } ?>
-                <?php if ($haspixabay) {?><a href="<?php echo $PAGE->theme->settings->pixabay;?>" title="::: PixaBay :::" target="_blank">
+                <?php if ($haspixabay) {?><a href="<?php echo $PAGE->theme->settings->pixabay;?>" title="&nbsp;:::&nbsp;PixaBay&nbsp;:::&nbsp;" target="_blank">
                 <img src="<?php echo $OUTPUT->pix_url('social/pixabay', 'theme')?>" alt="pixabay"></a> <?php } ?>
                 <!-- Web Site VIDEO Content Social Links -->
-                <?php if ($hasdailymotion) {?><a href="<?php echo $PAGE->theme->settings->dailymotion;?>" title="::: DailyMotion :::" target="_blank">
+                <?php if ($hasdailymotion) {?><a href="<?php echo $PAGE->theme->settings->dailymotion;?>" title="&nbsp;:::&nbsp;DailyMotion&nbsp;:::&nbsp;" target="_blank">
                 <img src="<?php echo $OUTPUT->pix_url('social/dailymotion', 'theme')?>" alt="dailymotion"></a> <?php } ?>
-                <?php if ($hasschooltube) {?><a href="<?php echo $PAGE->theme->settings->schooltube;?>" title="::: SchoolTube :::" target="_blank">
+                <?php if ($hasschooltube) {?><a href="<?php echo $PAGE->theme->settings->schooltube;?>" title="&nbsp;:::&nbsp;SchoolTube&nbsp;:::&nbsp;" target="_blank">
                 <img src="<?php echo $OUTPUT->pix_url('social/schooltube', 'theme')?>" alt="schooltube"></a> <?php } ?>
-                <?php if ($hasvideolog) {?><a href="<?php echo $PAGE->theme->settings->videolog;?>" title="::: VideoLog :::" target="_blank">
+                <?php if ($hasvideolog) {?><a href="<?php echo $PAGE->theme->settings->videolog;?>" title="&nbsp;:::&nbsp;VideoLog&nbsp;:::&nbsp;" target="_blank">
                 <img src="<?php echo $OUTPUT->pix_url('social/videolog', 'theme')?>" alt="videolog"></a> <?php } ?>
-                <?php if ($hasvimeo) {?><a href="<?php echo $PAGE->theme->settings->vimeo;?>" title="::: Vimeo :::" target="_blank">
+                <?php if ($hasvimeo) {?><a href="<?php echo $PAGE->theme->settings->vimeo;?>" title="&nbsp;:::&nbsp;Vimeo&nbsp;:::&nbsp;" target="_blank">
                 <img src="<?php echo $OUTPUT->pix_url('social/vimeo', 'theme')?>" alt="vimeo"></a> <?php } ?>
-                <?php if ($hasyoutube) {?><a href="<?php echo $PAGE->theme->settings->youtube;?>" title="::: YouTube :::" target="_blank">
+                <?php if ($hasyoutube) {?><a href="<?php echo $PAGE->theme->settings->youtube;?>" title="&nbsp;:::&nbsp;YouTube&nbsp;:::&nbsp;" target="_blank">
                 <img src="<?php echo $OUTPUT->pix_url('social/youtube', 'theme')?>" alt="youtube"></a> <?php } ?>
                 <!-- Web Site ART Content Social Links -->
-                <?php if ($hasdeviantart) {?><a href="<?php echo $PAGE->theme->settings->deviantart;?>" title="::: DeviantArt :::" target="_blank">
+                <?php if ($hasdeviantart) {?><a href="<?php echo $PAGE->theme->settings->deviantart;?>" title="&nbsp;:::&nbsp;DeviantArt&nbsp;:::&nbsp;" target="_blank">
                 <img src="<?php echo $OUTPUT->pix_url('social/deviantart', 'theme')?>" alt="deviantart"></a> <?php } ?>
-                <?php if ($hasmyspace) {?><a href="<?php echo $PAGE->theme->settings->myspace;?>" title="::: MySpace :::" target="_blank">
+                <?php if ($hasmyspace) {?><a href="<?php echo $PAGE->theme->settings->myspace;?>" title="&nbsp;:::&nbsp;MySpace&nbsp;:::&nbsp;" target="_blank">
                 <img src="<?php echo $OUTPUT->pix_url('social/myspace', 'theme')?>" alt="MySpace"> </a><?php }?>
                 <!-- Web Site Professional Social Links -->
-                <?php if ($haslinkedin) {?><a href="<?php echo $PAGE->theme->settings->linkedin;?>" title="::: Linked In :::" target="_blank">
+                <?php if ($haslinkedin) {?><a href="<?php echo $PAGE->theme->settings->linkedin;?>" title="&nbsp;:::&nbsp;Linked In&nbsp;:::&nbsp;" target="_blank">
                 <img src="<?php echo $OUTPUT->pix_url('social/linkedin', 'theme')?>" alt="linked in"></a> <?php } ?>
                 <!-- Web Site Social Links -->
-                <?php if ($hasfacebook) {?><a href="<?php echo $PAGE->theme->settings->facebook;?>" title="::: Facebook :::" target="_blank">
+                <?php if ($hasfacebook) {?><a href="<?php echo $PAGE->theme->settings->facebook;?>" title="&nbsp;:::&nbsp;Facebook&nbsp;:::&nbsp;" target="_blank">
                 <img src="<?php echo $OUTPUT->pix_url('social/facebook', 'theme')?>" alt="facebook"></a> <?php } ?>
-                <?php if ($hastwitter) {?><a href="<?php echo $PAGE->theme->settings->twitter;?>" title="::: Twitter :::" target="_blank">
+                <?php if ($hastwitter) {?><a href="<?php echo $PAGE->theme->settings->twitter;?>" title="&nbsp;:::&nbsp;Twitter&nbsp;:::&nbsp;" target="_blank">
                 <img src="<?php echo $OUTPUT->pix_url('social/twitter', 'theme')?>" alt="twitter"></a> <?php } ?>
-                <?php if ($hasgoogleplus) {?><a href="<?php echo $PAGE->theme->settings->googleplus;?>" title="::: Google+ :::" target="_blank">
+                <?php if ($hasgoogleplus) {?><a href="<?php echo $PAGE->theme->settings->googleplus;?>" title="&nbsp;:::&nbsp;Google+&nbsp;:::&nbsp;" target="_blank">
                 <img src="<?php echo $OUTPUT->pix_url('social/googleplus', 'theme')?>" alt="google+"> </a><?php }?>
-                <?php if ($hasvkontakte) {?><a href="<?php echo $PAGE->theme->settings->vkontakte;?>" title="::: VKontakte :::" target="_blank">
+                <?php if ($hasvkontakte) {?><a href="<?php echo $PAGE->theme->settings->vkontakte;?>" title="&nbsp;:::&nbsp;VKontakte&nbsp;:::&nbsp;" target="_blank">
                 <img src="<?php echo $OUTPUT->pix_url('social/vkontakte', 'theme')?>" alt="vkontakte"> </a><?php }?>
-                <?php if ($hasorkut) {?><a href="<?php echo $PAGE->theme->settings->orkut;?>" title="::: orkut :::" target="_blank">
+                <?php if ($hasorkut) {?><a href="<?php echo $PAGE->theme->settings->orkut;?>" title="&nbsp;:::&nbsp;orkut&nbsp;:::&nbsp;" target="_blank">
                 <img src="<?php echo $OUTPUT->pix_url('social/orkut', 'theme')?>" alt="orkut"> </a><?php }?>
 
-                <?php if ($haspinterest) {?><a href="<?php echo $PAGE->theme->settings->pinterest;?>" title="::: Pinterest :::" target="_blank">
+                <?php if ($haspinterest) {?><a href="<?php echo $PAGE->theme->settings->pinterest;?>" title="&nbsp;:::&nbsp;Pinterest&nbsp;:::&nbsp;" target="_blank">
                 <img src="<?php echo $OUTPUT->pix_url('social/pinterest', 'theme')?>" alt="pinterest"> </a><?php }?>
             </div>
         </div>
@@ -136,10 +136,10 @@ $hasfootnote = (!empty($PAGE->theme->settings->footnote));
         <div class="credits">
             <?php if ($hasmoodlecredit) { 
                 echo get_string('powered','theme_aigne');?>
-                <a href="http://moodle.org" title="   Moodle   " target="_blank">
+                <a href="http://moodle.org" title="&nbsp;:::&nbsp;Moodle&nbsp;:::&nbsp;" target="_blank">
                 <img src="<?php echo $OUTPUT->pix_url('images/moodle-logo','theme')?>" alt="Moodle logo" width="80" height="20"></a>
                 &nbsp;&nbsp;&nbsp;:::&nbsp;&nbsp;&nbsp;
-                <a href="http://moodle.org/plugins/view.php?plugin=theme_afterburner" title="   moodle theme afterburner   "  target="_blank">
+                <a href="http://moodle.org/plugins/view.php?plugin=theme_afterburner" title="&nbsp;:::&nbsp;moodle theme afterburner&nbsp;:::&nbsp;"  target="_blank">
                 <?php echo get_string('original_theme','theme_aigne');?></a>
             <?php } ?>
             <?php if ($hascompatcredit) { ?>
@@ -149,43 +149,43 @@ $hasfootnote = (!empty($PAGE->theme->settings->footnote));
                     break;
                 case 2:
                     // WIA WAI Validator A ?>
-                    <a href="http://www.w3.org/WAI/WCAG1A-Conformance" title="   WIA WAI Validator   " target="_blank">
+                    <a href="http://www.w3.org/WAI/WCAG1A-Conformance" title="&nbsp;:::&nbsp;WIA WAI Validator&nbsp;:::&nbsp;" target="_blank">
                     <img src="<?php echo $OUTPUT->pix_url('images/wcag1A-blue','theme')?>" alt="A Compliance _ WIA WAI Validator" width="57" height="20"></a>
                     <?php break;
                 case 3:
                     // WIA WAI Validator AA ?>
-                    <a href="http://www.w3.org/WAI/WCAG1AA-Conformance" title="   WIA WAI Validator   " target="_blank">
+                    <a href="http://www.w3.org/WAI/WCAG1AA-Conformance" title="&nbsp;:::&nbsp;WIA WAI Validator&nbsp;:::&nbsp;" target="_blank">
                     <img src="<?php echo $OUTPUT->pix_url('images/wcag1AA-blue','theme')?>" alt="AA Compliance _ WIA WAI Validator" width="57" height="20"></a>
                     <?php break;
                 case 4:
                     // WIA WAI Validator AAA ?>
-                    <a href="http://www.w3.org/WAI/WCAG1AAA-Conformance" title="   WIA WAI Validator   " target="_blank">
+                    <a href="http://www.w3.org/WAI/WCAG1AAA-Conformance" title="&nbsp;:::&nbsp;WIA WAI Validator&nbsp;:::&nbsp;" target="_blank">
                     <img src="<?php echo $OUTPUT->pix_url('images/wcag1AAA-blue','theme')?>" alt="AAA Compliance _ WIA WAI Validator" width="57" height="20"></a>
                     <?php break;                                                      
                 default:
                     break;
             } ?>
-                <?php if ($compattested1) { ?>
+                <?php if ($compattested0) { ?>
                     <!-- WIA CSS Validator -->
-                    <a href="http://jigsaw.w3.org/css-validator/#validate_by_upload" title="   WIA CSS Validator   " target="_blank">
+                    <a href="http://jigsaw.w3.org/css-validator/#validate_by_upload" title="&nbsp;:::&nbsp;WIA CSS Validator&nbsp;:::&nbsp;" target="_blank">
                     <img src="<?php echo $OUTPUT->pix_url('images/vcss-blue','theme')?>" alt="WIA CSS Validator" width="57" height="20"></a>
                 <?php } ?>
-                <?php if ($compattested2) { ?>
+                <?php if ($compattested1) { ?>
                     <!-- WIA HTML 4.0 Validator -->
-                    <a href="http://validator.w3.org/check?uri=referer" title="   WIA HTML 4.0 Validator   " target="_blank">
+                    <a href="http://validator.w3.org/check?uri=referer" title="&nbsp;:::&nbsp;WIA HTML 4.0 Validator&nbsp;:::&nbsp;" target="_blank">
                     <img src="<?php echo $OUTPUT->pix_url('images/w3chtml40','theme')?>" alt="WIA HTML 4.0 Validator" width="57" height="20"></a>
                 <?php } ?>
-                <?php if ($compattested3) { ?>
+                <?php if ($compattested2) { ?>
                     <!-- WIA XHTML 1.0 Validator -->
-                    <a href="http://validator.w3.org/check?uri=referer" title="   WIA HTML 4.0 Validator   " target="_blank">
+                    <a href="http://validator.w3.org/check?uri=referer" title="&nbsp;:::&nbsp;WIA HTML 4.0 Validator&nbsp;:::&nbsp;" target="_blank">
                     <img src="<?php echo $OUTPUT->pix_url('images/w3cxhtml10','theme')?>" alt="WIA HTML 4.0 Validator" width="57" height="20"></a>
                 <?php } ?>
-                <?php if ($compattested4) { ?>
+                <?php if ($compattested3) { ?>
                     <!-- Cynthia Validator -->
-                    <a href="http://www.cynthiasays.com/" title="   Cynthia Validator   " target="_blank">
+                    <a href="http://www.cynthiasays.com/" title="&nbsp;:::&nbsp;Cynthia Validator&nbsp;:::&nbsp;" target="_blank">
                     <img src="<?php echo $OUTPUT->pix_url('images/CynthiaTest','theme')?>" alt="Cynthia Validator" width="57" height="20"></a>
                 <?php } ?>
-                <?php if ($compattested5) { ?>
+                <?php if ($compattested4) { ?>
                     <!-- Children Free Validator -->
                 <?php } ?>
             <?php } ?>

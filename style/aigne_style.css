@@ -1,6 +1,15 @@
 /*----- ----- ----- theme_aigne -> PRINCIPAL CSS ----- ----- -----*/
 @font-face {
-    font-family: 'afta_sansregular';
+    font-family: 'eras';
+    src: url('[[setting:fontroot]]erasn.eot');
+    src: url('[[setting:fontroot]]erasn.eot?#iefix') format('embedded-opentype'),
+         url('[[setting:fontroot]]erasn.woff') format('woff'),
+         url('[[setting:fontroot]]erasn.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'aftasans';
     src: url('[[setting:fontroot]]aftasans.eot');
     src: url('[[setting:fontroot]]aftasans.eot?#iefix') format('embedded-opentype'),
          url('[[setting:fontroot]]aftasans.woff') format('woff'),
@@ -18,22 +27,18 @@
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-    font-family: 'titilliumregular';
-    src: url('[[setting:fontroot]]titillium.eot');
-    src: url('[[setting:fontroot]]titillium.eot?#iefix') format('embedded-opentype'),
-         url('[[setting:fontroot]]titillium.woff') format('woff'),
-         url('[[setting:fontroot]]titillium.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}*/
+*/
+BODY {
+    font: 13px "Eras Bk BT"; /* catch the yui style */
+    }
 /*----- ABBR ACRONYM - Abreviaturas -----*/
 abbr, 
 acronym {
-	/*indicating to users that more info is available -> border-bottom: 1px dotted #000000;*/
+	/*border-bottom: 1px dotted #000000;*/
 	border: 0;
 	cursor: help;
-}
+    }
+
 /*----- A - Enlaces -----*/
 A, 
 A:link {
@@ -51,136 +56,222 @@ A:active {
     }
 A:hover {
     background-color: inherit;
-    letter-spacing: 1px;
+    letter-spacing: [[setting:aletters]];
     color: #CC0000;
     }
 A.logoutbtn {
-    padding: 1px 10px 1px 10px;
 	margin: 0px 0px 0px 0px;
-    background-color: #D5E1DD;
-    border-style: solid;
+    padding: 1px 1em 1px 1em;
     border-width: 1px;
+    border-style: solid;
     border-color: #777777;
+    background-color: #D5E1DD;
     color: [[setting:corsch_T]];
     text-decoration: none;
     cursor: pointer;
     }
 A.logoutlink {
-    padding: 0px 0px 0px 0px;
 	margin: 0px 5px 0px 5px;
+    padding: 0px 0px 0px 0px;
     cursor: pointer;
     }
+ 
 /*----- BODY - Cuerpo de la página -----*/
 BODY {
     display: block;
-    min-width: 600px;
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
     background: url([[setting:backbody]]) [[setting:bgposition]] 0 0;
-    background-color:[[setting:backcolor]];
-    color: [[setting:corsch_T]];
-    font-family: "eras Bk BT", "afta_sansregular", sans-serif;
+    background-color: [[setting:backcolor]];
+    font-family: "[[setting:fontfam]]", Helvetica, sans-serif;
     font-size: [[setting:bodyfont]];
     font-style: normal;
     font-weight: normal;
+    color: [[setting:corsch_T]];
     }
-/*----- BUTTON - Botones + Botones Planos + Casillas + Desplegables -----*/
+
+/*----- BUTTON - Cuadros de texto + Botones + Casillas + Desplegables -----*/
 BUTTON, 
 INPUT, 
 SELECT {
-    margin: 0px 0px 0px 0px;
+    margin: 1px 5px 0px 0px;
     border-width: 1px;
     border-style: solid;
     border-color: #777777;
-    background-color: #D5E1DD;
-    font-family: "eras Bk BT", "afta_sansregular", sans-serif;  
+    font-family: "[[setting:fontfam]]", Helvetica, sans-serif;
+    text-decoration: none;
     cursor: pointer;
     }
 BUTTON {
-    padding: 2px 10px 1px 10px;
-    text-decoration: none;
+    margin: 2px 5px 2px 0px;
+    padding: 2px 1em 1px 1em;
+    background-color: #D5E1DD;
     }
 INPUT {
-    padding: 2px 10px 1px 10px;
-    text-decoration: none;
+    padding: 2px 1em 1px 1em;
+    background-color: #D5E1DD;
     }
-SELECT {
-    padding: 1px 1px 1px 5px;
-    text-decoration: none;
-    }
-.ie7 SELECT { /* fixes compatibility view */
-    background-color: #EEEEEE;
-    color: #003366;
-    }
-/*----- Login options ------*/
 INPUT#username, 
-INPUT#password, 
+INPUT#password {
+    margin: 0px 5px 5px 0px;
+    border-width: 1px 1px 1px 1px;
+    border-style: inset;
+    background-color: [[setting:corsch_B]];
+    color: [[setting:corsch_T]];
+    vertical-align: baseline;
+    cursor: default;
+    }
 INPUT[type="text"], 
 INPUT[type="password"] {
+    min-height: 1em;
     margin: 0px 5px 5px 0px;
+    padding: 1px 0.50em 1px 0.50em;
     background-color: [[setting:corsch_B]];
-    border-width: 1px 1px 1px 1px;
-    border-style: inset;   
-    color: [[setting:corsch_T]];
     cursor: default;
-    vertical-align: baseline;
+    }
+INPUT[type="submit"] {
+    background-color: #D5E1DD;
     }
 INPUT[type="image"] {
     margin: 0px 0px 0px 0px;
     vertical-align: bottom;
     }
-.loginform {
-    margin: 5px 0px 5px 0px;
-    text-align:left;
+INPUT[type="checkbox"], 
+INPUT[type="radio"] {
+    padding: 1px 0.70em 1px 0.70em;
+    background-color: [[setting:corsch_3]];
     }
-.loginform .form-label {
-    float: left;
-    width: 30%;
-    margin: 0px 0px 0px 0px;
-    text-align: right;
-    white-space: nowrap;
+/* Customization of width defined in course/renderer.php L#476 + L#480 + L#484 */
+INPUT#navsearchbox {
+    width: 20ex; 
+    margin: 1px 0px 0px 0px;
     }
-.dir-rtl .loginform .form-label {float: right; text-align:left; direction:ltr;}
-.loginform .form-input input {
-    width: 1em;
+INPUT#shortsearchbox {
+    width: 40ex;
     }
-.loginhead {
-    position: relative;
-    float: left;
-    width: 100%;
-    height: 20px;
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
+INPUT#coursesearchbox {
+    width: 50ex;
     }
-.dir-rtl .loginhead {position: relative;float: right;}
-.loginhead .loginform {
-    display: inline;
+SELECT {
+    padding: 1px 1px 1px 0.30em;
+    background-color: [[setting:corsch_3]];
     }
-.userinfohead {
-    position: relative;
-    float: left;
-    width: 100%;
-    height: 15px;
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
-    }
-.userinfohead .userpic {
-    position: relative;
+
+/*----- DIV's like buttons + inputs + selects -----*/
+.navbutton {
     float: right;
-    top: -13px;
-    width: 35px;
-    height: 35px;
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
-    border: 1px [[setting:corsch_1]] solid;
+	margin: 0px 0px 0px 0px;
+    text-align: right;
+    max-height: 1.5em;
     }
+.navbutton .singlebutton input {
+    padding: 1px 1em 1px 1em;
+    background-color: #D5E1DD;
+    font-size: 0.90em;
+    cursor: pointer;
+    }
+#page-admin-tool-installaddon-index #installfromrepobox .singlebutton input[type="submit"] {
+    padding: 5px 1em 5px 1em;
+    }
+.mform .btn-cancel, 
+.mform .btn-cancel:active, 
+.mform .btn-cancel[disabled], 
+.path-mod-survey .reportlink a, 
+.continuebutton a {
+    padding: 2px 1em 1px 1em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #777777;
+    background-color: #D5E1DD;
+    cursor: pointer;
+    }
+.mform .btn-cancel:hover, 
+.mform .btn-cancel:focus {
+    background-color: #FFEEFF;
+    color: #CC0000;
+    }
+INPUT[disabled], 
+.mform .btn-cancel[disabled]:hover, 
+.mform .btn-cancel[disabled]:focus { 
+    background-color: #E0E0E0;
+    color: #AAAAAA;
+    }
+.path-mod-survey .reportlink, 
+.continuebutton {
+    margin: 0.50em 5px 0.50em 5px;
+    }
+/* Button at the end of a Form */
+/*#fgroup_id_buttonar <- si se pone este tipo, algunos botones de los formularios con recuadro tendrán ese borde */
+/*table#form td.submit, 
+.fp-content-center form+div, 
+div.backup-section+form, */
+.form-buttons, 
+.path-admin .buttons {
+    margin: 0px 0px 0px 0px;
+    padding: 1em 1em 1em 1em;
+    border-width: 1px 0px 0px 0px;
+    border-style: dotted;
+    border-color: [[setting:corsch_2]];
+    text-align: center;
+    }
+.groupmanagementtable #buttonscell p.arrow_button {
+	margin: 7em 0px 0px 0px;
+	text-align: center
+	}
+/* hay que definir la font-family porque esta en base/core.css#173 */
+.groupmanagementtable #buttonscell p.arrow_button INPUT {
+    min-width: 70%;
+    width: auto;
+    margin: 1em 0px 0px 0px;
+    font-family: "[[setting:fontfam]]", Helvetica, sans-serif;
+    overflow: hidden;
+    }
+/* Collapse All - Expand All */
+.controls .expandall, 
+.controls .collapseall,
+.collapsible-actions .collapseexpand {
+ 	margin: 1em 0px 1em 1em;
+    padding: 2px 1em 1px 1.50em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #777777;
+    background-color: #D5E1DD;
+    color: [[setting:corsch_T]];
+    text-decoration: none;
+    cursor: pointer;
+}
+.controls .expandall, 
+.controls .collapseall {
+    float: right;
+    }
+.controls .expandall:hover, 
+.controls .collapseall:hover {
+    letter-spacing: [[setting:aletters]];
+    color: #CC0000;
+}
+.collapsible-actions {
+ 	margin: 1em 0.50em 1em 1em;
+}
+
+
+/*----- CODE + PRE -----*/
+code, pre {
+    display: block;
+    margin: 0px 0px 0px 0px;
+    padding: 1em 1em 1em 1em;
+    border-width: 1px;
+    border-style: dashed;
+    border-color: #AAAAAA;
+	font-family: monospace;
+	line-height: 1.20em;
+	background-color: [[setting:corsch_4]];
+    }
+
 /*----- DIV - Divisor de Formatos -----*/
 DIV {
     display: block;
     }
-/*----- DL - -----*/
-DL {
-    }
+
 /*----- H - Titulos -----*/
 H1, 
 H2, 
@@ -227,24 +318,103 @@ H6 {
     font-weight: normal;
     font-size: 0.80em;  
     }
+#pageheading, 
+#adminsettings H2, 
+.path-admin-repository H2 {
+    margin: 1em 0px 0px 0px;
+    padding: 1em 0px 1px 0px;
+    border-width: 0px 0px 1px 0px;
+    border-style: dotted;
+    border-color: [[setting:corsch_2]];
+}
+#adminsettings H3, 
+#page-admin-cache-admin H3 {
+    /*width: 75%;*/
+    margin: 2em 0px 0px 0px;
+    padding: 1px 0px 1em 0px;
+    border-width: 1px 0px 0px 0px;
+    border-style: solid;
+    border-color: #E0E0E0;
+}
+/* Tienen un H3 justo a continuación del H2:
+#page-admin-setting-additionalhtml H2, 
+#page-admin-setting-modsettingchat H2, 
+#page-admin-setting-modsettingglossary H2, 
+#page-admin-setting-modsettinglti H2, 
+#page-admin-setting-modsettingscorm H2, 
+#page-admin-setting-manageformats H2, 
+#page-admin-setting-manageenrols H2, 
+#page-admin-setting-manageeditors H2, 
+#page-admin-setting-editorsettingstinymce H2, 
+#page-admin-setting-webservicesoverview H2, 
+#page-admin-setting-webserviceprotocols H2,  
+#page-admin-cache-admin H2, 
+#page-admin-cache-testperformance H2 */
+
 /*----- HR - Línea horizontal de división -----*/
 HR {
     display: block;
     margin: 3px 0px 3px 0px;
     background-color: inherit;
     border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
     border-bottom: 1px dotted [[setting:corsch_2]];
     }
+
 /*----- HTML -----*/
 HTML {
-    margin: 0;
-    padding: 0;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
     }
-/*----- IL -> elementos de listas horizontales -----*/
-IL {
-    margin-left: 10px;
-    list-style-image: url('');
-    }
+
+/*-----  IMG - Imágenes -----*/
+IMG.userpicture {
+    padding: 0px 0px 0px 0px;
+    border: 1px [[setting:corsch_1]] solid;
+}
+/* Icon styles -> /base/core.css #138 */
+h1 img.icon,
+h1 img.iconhelp,
+h2 img.icon,
+h2 img.iconhelp,
+h3 img.icon,
+h3 img.iconhelp,
+h4 img.icon,
+h4 img.iconhelp,
+h5 img.icon,
+h5 img.iconhelp,
+h6 img.icon,
+h6 img.iconhelp {vertical-align: middle;}
+/* Icon styles -> /base/core.css #99 */
+/* 16px -> 24px  - Icono al lado del nombre de la actividad al insertarla */
+img.icon {height: 24px; width: 24px; padding: 0px 0.50em 0px 0px; vertical-align: baseline;}
+#page-admin-index #plugins-check .displayname .pluginicon {width: 24px;}
+#page-admin-plugins #plugins-control-panel .pluginname .pluginicon {width:24px;}
+.dir-rtl img.icon {padding: 0px 0px 0px 1em;}
+/* 12px */
+img.iconsmall {height: 12px; width: 12px; padding-right: 0.50em; vertical-align:middle;}
+.dir-rtl img.iconsmall {padding-left: 0.50em; padding-right: 0;}
+img.smallicon {height: 12px; width: 12px; padding: 0px 0.25em 0px 1px; vertical-align:middle;}
+.dir-rtl img.smallicon {padding: 0px 1px 0px 0.25em; }
+/* 16px */
+img.iconhelp, 
+.helplink img {height:16px; width:16px; padding-left:3px; vertical-align:text-bottom;}
+.dir-rtl img.iconhelp, 
+.dir-rtl .helplink img {padding-right: 3px; padding-left: 0;}
+/* 32px - Actividades */
+.fp-icon .smallicon, 
+img.iconlarge {height: 32px; width: 32px; vertical-align:middle;}
+
+img.iconsort { vertical-align: text-bottom; padding-left: .3em; margin-bottom: .15em;}
+.dir-rtl img.iconsort { padding-right: .3em; padding-left: 0;}
+img.icontoggle {height:17px; width:50px; vertical-align:middle;}
+img.iconkbhelp {height:17px; width:49px;}
+img.icon-pre, 
+.dir-rtl img.icon-post {padding-right: 3px; padding-left: 0; }
+img.icon-post, 
+.dir-rtl img.icon-pre {padding-left: 3px; padding-right: 0; }
+
 /*----- LI -> elementos de listas verticales -----*/
 LI {
     display: list-item;
@@ -252,17 +422,47 @@ LI {
     margin-left: 5px;      
     list-style-image: url('');
     }
+.dir-rtl LI {text-align: right; margin-left: auto; margin-right: 5px;}
 LI LI { 
     margin-top: 0; 
     margin-bottom: 0;
     margin-left: 10px;        
     list-style-image: url('');
     }
+.dir-rtl LI LI {margin-left: auto; margin-right: 10px;}
 LI LI LI {
     margin-top: 0; 
     margin-bottom: 0;
     margin-left: 15px;
     list-style-image: url('');
+    }
+.dir-rtl LI LI LI {margin-left: auto; margin-right: 15px;}
+/*----- IL -> elementos de listas horizontales (indent-list) -----*/
+IL {
+    margin-left: 10px;
+    list-style-image: url('');
+    }
+.dir-rtl IL {margin-left: auto; margin-right: 10px;}
+/*----- UL -> listas desordenadas -----*/
+UL {
+    display: block;
+    margin-left: 5px;
+    list-style-image: url('');
+    }
+.dir-rtl UL {margin-left: auto; margin-right: 5px;}
+UL UL { 
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style-image: url('');
+    }
+UL UL UL {
+    margin-top: 0; 
+    margin-bottom: 0;
+    list-style-image: url('');
+    } 
+UL OL { 
+    margin-top: 0;
+    margin-bottom: 0;
     }
 /*----- OL -> listas ordenadas -----*/
 OL {
@@ -274,53 +474,59 @@ OL OL {
     margin-top: 0; 
     margin-bottom: 0;
     }
-OL UL { 
-    margin-top: 0; 
-    margin-bottom: 0;
-    }
 OL OL OL { 
     margin-top: 0; 
     margin-bottom: 0;
     }
-/*----- UL -> listas desordenadas -----*/
-UL {
-    display: block;
-    margin-left: 5px;
-    list-style-image: url('');
-    }
-UL UL { 
-    margin-top: 0;
-    margin-bottom: 0;
-    list-style-image: url('');
-    }    
-UL OL { 
-    margin-top: 0;
-    margin-bottom: 0;
-    }
-UL UL UL {
+OL UL { 
     margin-top: 0; 
     margin-bottom: 0;
-    list-style-image: url('');
     }
+
+/*----- DL - Listas de definición / glosario -----*/
+DL {
+    }
+/*----- DT - Término de la lista de definición -----*/
+DT {
+    }
+/*----- DD - Definición de la lista de definición -----*/
+DD {
+    }
+
+/*----- MARQUEE - Texto deslizante -----*/
+MARQUEE {
+    display: block;
+    }
+
 /*----- P - Párrafos -----*/
 P {
     display: block;
     text-align: justify;
     }
+
 /*----- TABLE - Tablas -----*/
+TABLE {
+}
+TABLE A:hover {
+    letter-spacing: normal;
+    }
+/* Header TABLE */
 TABLE.headerop {
     display: block;
     width: 100%;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
     font-size: 14px; /* 'em' excep. <-DESIGN, when highest font size selected */
     }
 TABLE.headerop TD {
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
-    border-width: 1px;
-    border-color: #FFFFFF;
+    border-width: 1px 1px 0px 1px;
     border-style: solid;
+    border-color: #FFFFFF;
     text-align: center;
     }
+.adminsettings .headerop TD {border-bottom-width: 1px;}
 TABLE.headerop TD.color_01 {
     background-color: [[setting:corsch_1]];
     }
@@ -336,24 +542,88 @@ TABLE.headerop TD.color_04 {
 TABLE.headerop TD.color_05 {
     background-color: [[setting:corsch_5]];
     }
-TABLE.headerop BUTTON {
-    width: 23px;
-    height: 20px;
-    padding: 0px 0px 0px 0px;
+TABLE.headerop TD BUTTON {
+    width: 20px;
     margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    border: none;
     background: none;
-    border-style: none;
     }
-/*----- TEXTAREA - Campos de texto, desplegables, etc... -----*/
+
+/* TABLE.ROLECAP -> Site administration -> Users -> Permissions -> Define roles */
+TABLE.rolecap {
+    background-color: [[setting:corsch_4]];
+}
+TABLE.rolecap .rolecapheading {
+    background-color: [[setting:corsch_2]];
+    color: [[setting:corsch_B]];
+}
+TABLE.rolecap .riskconfig {
+    background-color: #F0F0F0;
+}
+TABLE.rolecap .riskxss {
+    background-color: #E8E8E8;
+}
+TABLE.rolecap .riskpersonal {
+    background-color: #E0E0E0;
+}
+TABLE.rolecap .riskspam {
+    background-color: #D0D0D0;
+}
+TABLE.rolecap TR.riskdataloss {
+    background-color: #C8C8C8;
+}
+
+/* Other tables */
+TABLE.admintable {
+    background-color: [[setting:corsch_4]];
+}
+TABLE.rolecap, 
+TABLE.flexible, 
+#trustedhosts TABLE.generaltable, 
+#page-message-edit TABLE.generaltable, 
+#page-mod-data-field- TABLE.generaltable {
+    min-width: 75%;
+}
+TABLE.generaltable THEAD TH, 
+TABLE.surveytable .smalltext TH {
+    background-color: [[setting:corsch_2]];
+    color: [[setting:corsch_B]];
+}
+TABLE.generaltable THEAD A {
+    color: [[setting:corsch_B]];
+}
+#admin-devicedetectregex .generaltable {
+    border-width: 1px;
+    border-style: solid;
+    border-color: [[setting:corsch_2]];
+    }
+.path-mod-survey .surveytable .whitecell {
+    background: none;
+    }
+
+/* Alternate colour in tables */
+/* Don't have r0/r1: #emoticonsetting + .rolecap */
+TABLE.calendarmonth .r0 {background-color: #FFFFFF;}
+TABLE.flexible .r0, 
+TABLE.generaltable .r0, 
+TABLE.collection .r0, 
+TABLE.surveytable .r1, 
+TABLE.calendarmonth .r1  {background-color: [[setting:corsch_4]];}
+TABLE.flexible .r1, 
+TABLE.generaltable .r1, 
+TABLE.collection .r1 {background-color: [[setting:corsch_3]];}
+
+/*----- TEXTAREA - Campos de texto, etc... -----*/
 TEXTAREA {
     width: auto;
-    padding: 0px 0px 0px 0px;
+    padding: 0.50em 0.50em 0.50em 0.50em;
     background-color: [[setting:corsch_B]];
     border-width: 1px 1px 1px 1px;
     border-style: solid;
     border-color: #777777;
+    font-family: "[[setting:fontfam]]", Helvetica, sans-serif;
     color: [[setting:corsch_T]];
-    text-decoration: none;
     cursor: default;
     }
 
@@ -382,6 +652,54 @@ TEXTAREA {
 #standardfooter {
     display: block;
 }
+
+/*----- Login options ------*/
+.loginform {
+    margin: 5px 0px 5px 0px;
+    text-align: left;
+    }
+.dir-rtl .loginform {text-align: right;}
+.loginform .form-label {
+    float: left;
+    width: 30%;
+    margin: 0px 0px 0px 0px;
+    text-align: right;
+    white-space: nowrap;
+    }
+.dir-rtl .loginform .form-label {float: right; text-align:left;}
+.loginform .form-input input {
+    width: 1em;
+    }
+.loginhead {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 20px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    }
+.dir-rtl .loginhead {position: relative; float: right;}
+.loginhead .loginform {
+    display: inline;
+    }
+.userinfohead {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 15px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    }
+.dir-rtl .userinfohead {float: right;}
+.userinfohead .userpic {
+    position: relative;
+    float: right;
+    top: -13px;
+    width: 35px;
+    height: 35px;
+    margin: 0px 0px 0px 0px;
+    }
+.dir-rtl .userinfohead .userpic {float: left;}
 /*----- Zona del logotipo -----*/
 .logo {
     width: 130px;   
@@ -389,44 +707,44 @@ TEXTAREA {
     margin: 10px auto 0px auto;
     background: url([[setting:logo]]) no-repeat center center;
     }
-.dir-rtl .logo {float: right;}
 .slogan {
     display: block;
     margin: 0px 0px 0px 0px;
     padding: 0px 5px 0px 5px;
     color: [[setting:corsch_T]];
-    font-family: "eras Bk BT", "afta_sansregular", sans-serif;
+    font-family: "[[setting:fontfam]]", Helvetica, sans-serif;
     font-size: 0.80em;
     font-style: normal;
     font-weight: normal;
     text-align: center;
-    }  
+    }
 /*----- Selector de idiomas instalados -----*/
 .langmenu {
     float: right;
     width: 98%;
     margin: 0px 0px 0px 0px;
-    padding: 0px 3px 0px 0px;
+    padding: 0px 2px 0px 2px;
     background-color: [[setting:corsch_3]];
     border-style: none;
     color: [[setting:corsch_2]];
     }
-.dir-rtl .langmenu {float: left; padding: 0px 0px 0px 3px;}
-.dir-rtl .langmenu select.select.menulang {margin-left: 0;}
+/*.dir-rtl .langmenu {float: left; padding: 0px 0px 0px 3px;}
 /*----- Barra de Navegación (Breadcrumb) y botones de la barra de navegación -----*/
+.breadcrumb {
+    float: left;
+    color: [[setting:corsch_T]];
+    background-color: [[setting:corsch_3]];
+    }
+.breadcrumb ul {
+    margin: 0px 0px 0px 0px;
+    padding: 1px 0px 0px 0px;
+    text-indent: 0;
+    list-style: none;
+    }
 .breadcrumb li, 
 .navbutton div, 
 .navbutton form {
     display: inline;
-    }
-.breadcrumb {
-    float: left;
-    color: [[setting:corsch_T]];
-    }
-.breadcrumb ul {
-    margin-top: 2px;
-    text-indent: 0;
-    list-style: none;
     }
 /* BREADCRUMB ARROW CUSTOMIZATION */
 .breadcrumb span.arrow {
@@ -434,61 +752,172 @@ TEXTAREA {
 }
 .breadcrumb li:after { 
 	content: "[[setting:bcsep]]";
-	font-size: 1.1em;
 	margin: 0px 0px 0px 10px;
+   	font-size: 1.1em;
 	color: [[setting:corsch_1]];
 }
 .breadcrumb li:last-child:after { 
 	content: none; 
 }
 /* END BREADCRUMB ARROW CUSTOMIZATION */
-.navbutton {
-    float: right;
-	margin: 0px 0px 0px 0px;
-    text-align: right;
-    }
-.navbutton .singlebutton input {
-    padding: 3px 10px 2px 10px;
-    background-color: #D5E1DD;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #777777;
-    color: [[setting:corsch_T]];
-    font-size: 0.90em;
-    cursor: pointer;
-    }
-/*----- Banner de FrontPage -----*/
-.info-banner {
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
-    }
+
+/*----- FrontPage Banner Fixed Image -----*/
 #large_info {
     clear: both;
 	position: relative;
     width: 100%;
     margin: 3px auto 3px auto;
     padding: 0px 0px 0px 0px;
-    /*background: url([[setting:headerinfo]]) repeat-x center center;*/
+    background: repeat-x center center;
     background-color: transparent;
     }
 #large_info img {
     display: block;
     width: 100%;
-    max-height: 150px;
+    max-height: 148px;
+    }
+
+/*----- FrontPage Information Boxes -----*/
+#base_info, 
+.quadro1,
+.quadro2,
+.quadro3 {
+    position: relative;
+    float: left;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    background-color: transparent;
+    overflow: hidden;
     }
 #base_info {
     clear: both;
-	position: relative;
-	width: 99%;
-    margin: 0px auto 0px auto;
-    padding: 0px 0px 0px 0px;
+    width: 100%;
+    }
+.frontmsg {
+    margin: 0px 0px 0px 0px;
+    padding: 1em 1em 1em 1em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: [[setting:corsch_1]];
+    overflow: auto;
+    }
+.quadro1, 
+.quadro2, 
+.quadro3 {
+    width: 33%;
+    }
+.quadro2 {
+    margin: 0px 0.5% 0px 0.5%;
     }
 .quadro1_info, 
 .quadro2_info, 
 .quadro3_info {
-	position: relative;
-	float: left;
-	left: 0%;
+    height: 200px;
+    margin: 3px 0px 0px 0px;
+    padding: 3px 3px 3px 3px;
+    background-color: transparent;
+    }
+.quadro1_info img, 
+.quadro2_info img, 
+.quadro3_info img {
+    width: 100%;
+    max-height: 200px;
+    }
+.quadro1_info {
+    border-width: 1px;
+    border-style: solid;
+    border-color: [[setting:corsch_1]];
+    color: [[setting:corsch_1]];
+    text-align: left;
+    }
+.quadro1_info:hover {
+    background-color: [[setting:corsch_3]];
+    color: [[setting:corsch_T]];
+    cursor: pointer;
+    }
+.quadro1_info object {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    }
+.quadro2_info {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #FFA500;
+    color: #FFA500;
+    text-align: center;
+    height: 200px;
+    overflow: auto;
+    }
+.quadro2_info:hover {
+    background-color: [[setting:corsch_1]];
+    color: [[setting:corsch_4]];
+    cursor: pointer;
+    }
+.quadro3_info {
+    border-width: 1px;
+    border-style: solid;
+    border-color: [[setting:corsch_1]];
+    color: [[setting:corsch_1]];
+    text-align: right;
+    }
+.quadro3_info:hover {
+    background-color: [[setting:corsch_3]];
+    color: [[setting:corsch_T]];
+    cursor: pointer;
+    }
+.quadro3_info img {
+    opacity: 0.50;
+    }
+.quadro3_info img:hover {
+    opacity: 0.75;
+    }
+/*----- FrontPage Information Accordion -----*/
+.acordionh5 {
+    position: relative;
+    float: left;
+    width: 100%;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    box-shadow: 0 10px 10px 1px #BFBFBF;
+    -webkit-box-shadow: 0 10px 10px 1px #BFBFBF;
+    -moz-box-shadow: 0 10px 10px 1px #BFBFBF;
+    overflow: hidden;
+    }
+/* Extra space for the last image, to correct position when hover */
+.acordionh5 ul {width: 150%;}
+/* Visible space of 'un-hovered' images */
+.acordionh5 ul:hover li {width: 40px;}
+/* Visible space of 'hovered' images */
+.acordionh5 ul li:hover {width: 750px;}
+/* Preliminar view */
+.acordionh5 li {
+    position: relative;
+    display: block;
+    float: left;
+    width: 190px;
+    border-width: 0px 0px 0px 1px;
+    border-style: solid;
+    border-color: #AAAAAA;
+    box-shadow: 0 0 25px 10px rgba(90, 90, 90, 0.5);
+    -webkit-box-shadow: 0 0 25px 10px rgba(90, 90, 90, 0.5);
+    -moz-box-shadow: 0 0 25px 10px rgba(90, 90, 90, 0.5);
+    transition: all 0.7s;
+    -webkit-transition: all 0.7s;
+    -moz-transition: all 0.7s;
+    }
+.acordionh5 li img {display: block;}
+.acordionh5 .foottxt {
+    position: absolute;
+    left: 0;
+    bottom: 0; 
+    width: 840px;
+    background: rgba(90, 90, 90, 0.5);
+    }
+.acordionh5 .foottxt A {
+    display: block;
+    padding: 0.50em 0.50em 0.50em 0.50em;
+    color: #FFFFFF;
+    font-size: 1.20em;
     }
 /*----- Footer -----*/
 DIV.navhelp {
@@ -498,6 +927,7 @@ DIV.navhelp {
     }
 DIV.contact {
     padding: 0.50em 2px 0px 2px;
+    color: #E0E0E0;
     }
 DIV.contact#left {
     float: left;
@@ -526,6 +956,7 @@ DIV.credits {
     clear: both;
     line-height: 2em;
     text-align: center;
+    color: #E0E0E0;
     }
 DIV.credits A {
     color: #E0E0E0;
@@ -534,96 +965,315 @@ DIV.copyright {
     line-height: 3em;
     text-align: center;
 }
+DIV.footerhtml {
+    text-align: center;
+}
+/*#page-footer .logininfo,
+#page-footer .sitelink,
+#page-footer .helplink {margin: 0px 0px 0px 0px;}*/
+#page-footer .performanceinfo.siteinfo, 
+#page-footer .performanceinfo.pageinfo, 
+#page-footer .purgecaches, 
+#page-footer .validators {margin: 0.50em auto 0.50em auto; padding-top: 0.50em; border-top: 1px dotted [[setting:corsch_2]];}
+#page-footer .performanceinfo.siteinfo span {display: inline;}
+#page-footer .performanceinfo.siteinfo span:after {content: ' / '}
+#page-footer .performanceinfo.siteinfo .cachesused {display: block; background-color: [[setting:corsch_2]];}
+#page-footer .performanceinfo.siteinfo .cachesused span:after {content: none;}
 /*----- General Box -----*/
 .generalbox {
-    border: 0 none;
+    /*margin: 1em auto 1em auto;*/
+    padding: 0px 0px 0px 0px;
+    border-width: 0px 0px 0px 0px;
 }
-/*----- Coursebox Info & Summary -----*/
+.mform fieldset {
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-color: [[setting:corsch_1]]; 
+}
+.mform fieldset .ftoggler {
+    margin-bottom: 1em;
+    padding: 0px 1em 0px 0.50em;
+    font-size: 1.10em;
+}
+/*----- Coursebox Info + Summary + Sections -----*/
 .coursebox {
-    margin: 10px auto 0px auto;
-    padding: 0px auto 0px 0px;
+    width: 100%;
+    margin: 1em auto 0px auto;
+    padding: 0px 0px 0px 0px;
     border-width: 1px 1px 1px 1px;
     border-style: solid;
     border-color: #E0E0E0;
 }
-.coursebox .info {
-    float: left;
-    width: 98%;
-    margin: 0px auto 0px 0px;
-    padding: 5px auto 0px 5px;
-}
-.coursebox .info  h3.name{
-    text-align: left;
-}
+/* course list - course box for even and odd */
+.coursebox.odd {
+    background-color: [[setting:corsch_4]];
+    }
+.coursebox.even {}
+/* course list - course box for first and last */
+.coursebox.first {}
+.coursebox.last {}
+
+/* course name */
+.coursebox .info .name {
+    margin: 5px 5px 0px 5px;
+    padding: 0px 0px 0px 0px;
+    width: 70%
+    }
+/* condicionado por base/course.css */
+.coursebox .info .name A {
+    display: block;
+    background-image: url([[pix:moodle|i/course]]);
+    background-repeat: no-repeat;
+    background-position: left 0.20em;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 25px;
+    }
+.dir-rtl .coursebox .info .name A {background-position: right 0.20em; padding: 0px 25px 0px 0px;}
+/* course information: summary + coursefile + teachers etc. */
 .coursebox .content {
-    width: 98%;
-    margin: 0px auto 0px 0px;
-    padding: 0px auto 0px 0px;
+    clear: both;
+    width: 90%;
+    margin: 0.50em 5px 0.50em 30px;
+    padding: 0px 0px 0px 0px;
+    overflow: hidden;
 }
+.dir-rtl .coursebox .content {margin: 0.50em 30px 0.50em 5px;}
 .coursebox .content .coursecat, 
 .coursebox .content .summary, 
 .coursebox .content .courseimage, 
 .coursebox .content .coursefile, 
 .coursebox .content .teachers {
     float: left;
-    width: 80%;
-    margin: 0px auto 0px auto;
-    padding: 5px 10px 0px 20px;
+    width: 100%;
+    margin: 0.50em 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
 }
-.coursebox .content .teachers li {
+.dir-rtl .coursebox .content .coursecat, 
+.dir-rtl .coursebox .content .summary, 
+.dir-rtl .coursebox .content .courseimage, 
+.dir-rtl .coursebox .content .coursefile, 
+.dir-rtl .coursebox .content .teachers {float: right;}
+.coursebox .content .summary {
+    max-height: 12em;
+    overflow: auto;
+}
+.coursebox .content .courseimage img {
+    max-width: inherit;
+    width: 100%;
+    max-height: 150px;
+    margin-left: 1px;
+    }
+.dir-rtl .coursebox .content .courseimage img {margin-right: 1px;}
+.coursebox .content .coursefile {
+    margin-left: -1px;
+}
+.dir-rtl .coursebox .content .coursefile {margin-right: -1px;}
+.coursebox .content .teachers LI {
     display: list-item;
-    text-align: left;
-    padding: 0px 0px 0px 9px;
-    margin: 0px 0px 0px 25px;
-    list-style-image: url(/moodle/theme/image.php?theme=aigne&component=core&image=t%2Fteacher);
+    list-style-image: url([[pix:t/teacher]]); /* 16x16 */
+    margin: 0px 0px 0px 33px;
+    padding: 0px 0px 0px 0px;
 }
-#page-course-index-category .generalbox.info {
-    padding: 5px;
-}
-/*----- Course Section Topic & Weekly -----*/
-.course-content ul.topics li.section, 
-.course-content ul.weeks li.section {
-    border: 1px solid #E0E0E0;
-    list-style: none outside none;
-    margin: 5px 0 0;
-    padding: 0;
-}
-.course-content ul.topics li.section {
-  padding-top: 1em;
-}
-.path-course-view .headingblock {
-    display: none; /* hides topic items title or weekly itens title */
-    margin-bottom: 9px;
-}
-/* CAMBIO AÑADIDO */
-.jsenabled .course_category_tree .controls {
-    visibility:visible;
+.dir-rtl .coursebox .content .teachers LI {margin: 0px 33px 0px 0px;}
+/* depends on base/course.css */
+.coursebox .enrolmenticons, 
+.coursebox .moreinfo {
     float: right;
+    padding: 0.20em 0px 0.20em 0px;
+    }
+.dir-rtl .coursebox .enrolmenticons, 
+.dir-rtl .coursebox .moreinfo {float: left;}
+.coursebox .enrolmenticons img,
+.coursebox .moreinfo img {
+    margin: 0px 0.20em 0px 0.20em;
+    }
+/* course sections _ in course */
+.path-course-view .headingblock {
+    margin: 0.50em 0px 1em 0px;
 }
-.category_label {
-    padding-left: 20px;
-}
-/*----- Collapse All - Expand All -----*/
-div.controls .expandall, 
-div.controls .collapseall {
-    background-color: #D5E1DD;
-    color: [[setting:corsch_T]];
-    font-size: 0.90em;    
+
+/* Course Categories */
+/* Categorías desactivadas */
+.dimmed_category,
+.dimmed_category a,
+.dimmed_category a:link,
+.dimmed_category a:visited {
+    color: #AAAAAA;
+    }
+/* listas de categorias que ocupan mas de una página */
+.course_category_tree .subcategories > .paging,
+.courses > .paging { 
+    margin: 0px 0px 0px 0px;
+    padding: 5px 5px 5px 5px;
+    text-align:center;
+    }
+.courses > .paging.paging-morelink,
+.course_category_tree .subcategories > .paging.paging-morelink {
+    text-align:left;
+    }
+.dir-rtl .courses > .paging.paging-morelink,
+.dir-rtl .course_category_tree .subcategories > .paging.paging-morelink {text-align:right;}
+/* Nombre de la categoría */
+.course_category_tree .category > .info .name {
+ 	margin: 3px 3px 3px 3px;
+    padding: 2px 1em 1px 1em;
+    }
+/* todo esto es solo para el triangulo del collapsed */
+.course_category_tree .category > .info .name {background: url([[pix:moodle|t/collapsed_empty]]) no-repeat center left;}
+.dir-rtl .course_category_tree .category > .info .name {background: url([[pix:moodle|t/collapsed_empty_rtl]]) no-repeat center right;}
+.course_category_tree .category.with_children > .info .name {background-image: url([[pix:moodle|t/expanded]]);}
+.course_category_tree .category.with_children.collapsed > .info .name {background-image: url([[pix:moodle|t/collapsed]]);}
+.dir-rtl .course_category_tree .category.with_children.collapsed > .info .name {background-image: url([[pix:moodle|t/collapsed_rtl]]);}
+/* contenido de la categoria -> subcategorías */
+.course_category_tree .category.collapsed > .content {display: none;}
+.course_category_tree .category > .content {padding-left: 1em; overflow: hidden;}
+.dir-rtl .course_category_tree .category > .content {padding-left: 0; padding-right: 1em;}
+/* Número de cursos que posee la categoría */
+.course_category_tree .category .numberofcourse {font-size: 0.85em;}
+/* Botones de expandir y colapsar */
+.course_category_tree .controls {visibility: hidden;}
+.course_category_tree .controls div {display: inline; cursor: pointer;}
+.jsenabled .course_category_tree .controls {clear: both; visibility: visible;}
+
+/* Course Format: Topic + Weekly + Colours + Columns + Collapsed columns + FlexSections + Grid Icons */
+/* each topic */
+.course-content ul.topics li.section, 
+.course-content ul.weeks li.section, 
+.course-content ul.colours li.section { 
+    margin: 0.50em 0px 0px 0px;
+    padding: 1em 0px 0px 0px;
+    }
+.course-content ul.topics li.section, 
+.course-content ul.weeks li.section, 
+.course-content ul.colours li.section, 
+.course-content ul.flexsections li.section ul.flexsections li.section, 
+.course-content ul.icons li .image_holder {
+    border-width: 1px 1px 1px 1px;
     border-style: solid;
-    border-width: 1px;
-    border-color: #777777;
-    padding: 1px 10px 1px 10px;
-	margin: 2px 0px 0px 5px;
-	float: right;
-    cursor: pointer;
-    text-decoration: none;
-    text-transform: capitalize;
-    font-variant: small-caps;    
+    border-color: #E0E0E0;
+    }
+/* the current active topic/weekly */
+.course-content .current {
+    background-color: [[setting:corsch_4]];
+    }
+/* activity block section */
+.course-content ul.topics li.section ul.section, 
+.course-content ul.weeks li.section ul.section, 
+.course-content ul.cntopics li.section.main .content .section {
+    margin: 0.50em 1em 1em 0px;
+    }
+.course-content ul.colours li.section ul.section {
+    margin: 0.50em 1em 1em 3em;
+    }
+.dir-rtl .course-content ul.colours li.section ul.section {margin: 0.50em 3em 1em 1em;}
+.course-content ul #section-0 {
+    border-color: transparent;
+    }
+.course-content ul.cntopics #section-0 {
+    margin-left: 2px;
+    }
+.course-content ul.ctopics #section-0 {
+    margin-left: 3px;
+    }
+.format-flexsections .course-content ul.flexsections li.section H3 {
+    padding-left: 1em;
+    }
+.sitetopic .section .activity img.activityicon,
+.course-content .section .activity img.activityicon {
+    margin: 0px 0.50em 0px 0px;
+    vertical-align: text-bottom;
+    }
+.course-content ul.cntopics .section .activity img.activityicon {
+    height: 24px; 
+    width: 24px;
+    }
+
+/* Course Format: Days */
+.course-content TABLE.days TBODY TH {
+    padding: 5px 0px 5px 0px;
+    border-width: 1px 0px 2px 0px;
+    border-style: solid;
+    border-color: [[setting:corsch_1]];
+    background-color: [[setting:corsch_3]];
 }
+.course-content TABLE.days TBODY TD {
+    border-width: 0px 0px 1px 0px;
+    border-style: solid;
+    border-color: [[setting:corsch_3]];
+    }
+.course-content TABLE.days TBODY TD:hover {
+    background-color: [[setting:corsch_4]];
+    }
+.course-content TABLE.days TBODY TD.weekday-0, 
+.course-content TABLE.days TBODY TD.weekday-6 {
+    background-color: #F0F0F0;
+    color: #CC0000;
+    /*display: block; <- forzar que aparezca, but in element style */
+}
+
+/* Course Format: One TABTREE */
+.course-content ul.single-section .tabtree {
+    padding: 3px 0px 0px 0px;
+}
+.course-content ul.single-section .tabtree ul {
+    margin-bottom: 4px;
+}
+
+/* Course Format: Masonry */
+.course-content ul.topics.masonry {}
+.course-content ul.topics.masonry LI.masonry-brick {} /* each topic, but in element style */
+
+/* Course Format: FlexSections */
+.format-flexsections .course-content ul.flexsections {}
+.format-flexsections .course-content ul.flexsections li.section ul.flexsections li.section {} /* each topic */
+
+/*----- ----- ------ Tabs ----- ------ -----*/
+.tabtree {
+    position: relative;
+    margin: 0px 0px 3em 0px;
+    }
+.tabtree ul {
+    margin: 0px 0px 0px 0px;
+    padding: 2em 0px 6.50px 0px;
+    border-width: 0px 0px 2px 0px;
+    border-style: solid;
+    border-color: [[setting:corsch_1]];
+    text-align: center;
+    }
+.tabtree li {
+    display: inline;
+    margin: 0px 3px 0px 0px;
+    }
+.tabtree ul li a {
+    padding: 0.50em 1.50em 0.50em 1.50em;
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-color: [[setting:corsch_1]];
+    background-color: [[setting:corsch_3]];
+}
+.tabtree ul li a:hover {
+    background-color: [[setting:corsch_4]];
+}
+.tabtree ul li a.nolink {
+    border-bottom: 2px solid transparent;
+    background-color: [[setting:corsch_4]];
+    /*letter-spacing: normal;*/
+    }
+.tabtree ul li.here ul {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    padding: 1em 0px 6.50px 0px;
+    background-color: [[setting:corsch_4]];
+    }
+.tabtree ul li.here .empty {
+    display: none;
+    }
+.tabtree .tabrow1 li a.nolink {
+    border-color: transparent;
+    }
+
 /*----- Theme Selector -----*/
-#page-admin-theme-index .generalbox {
-    border: none;
-}
 .theme_screenshot {
     float: left;
     width: 300px;
@@ -633,131 +1283,6 @@ div.controls .collapseall {
 }
 .theme_description {
     margin-left: 300px;
-}
-.theme_description h2 {
-    padding-top: 0.5em;
-}
-
-/*----- ----- ------ Tabs ----- ------ -----*/
-/* CAMBIADO .here POR .selected <- mas claro */
-.tabtree {
-    position: relative;
-    margin: 25px 0px 0px 0px;
-    padding: 4px 0px 4.50px 0px;
-    border-width: 0px 0px 2px 0px;
-    border-style: solid;
-    border-color: [[setting:corsch_1]];
-}
-.tabtree ul {
-    text-align: center;
-}
-.tabtree ul li {
-    display: inline;
-    list-style: none;
-    margin: 0px 3px 1px 0px;
-}
-.tabtree ul li.selected {
-}
-.tabtree ul li a {
-    background-color: [[setting:corsch_3]];
-    border-width: 1px 1px 1px 1px;
-    border-style: solid;
-    border-color: [[setting:corsch_1]];
-    padding: 10px 15px 10px 15px;
-}
-.tabtree ul li a:hover { /* <- al pasar por las pestañas */
-    background-color: [[setting:corsch_4]];
-}
-.tabtree ul li.selected a {
-    position: relative;
-    z-index: 25;
-    background-color: [[setting:corsch_4]];
-    border-bottom: 2px solid transparent;
-}
-.tabtree ul li.selected a:hover {
-    letter-spacing: normal;
-}
-.tabtree ul li.selected .empty {
-    display: none;
-}
-/**/
-.tabtree .tabrow1 li a, 
-.tabtree .tabrow1 li a:hover, 
-.tabtree .tabrow1 li a span, 
-.tabtree .tabrow1 li a:hover span {
-    background-image: none;
-}
-.tabtree a.nolink, 
-.tabtree .selected ul a.nolink, 
-.tabtree a.nolink:hover, 
-.tabtree .selected ul a.nolink:hover {
-    text-decoration: none;
-}
-.tabtree .selected a.nolink, 
-.tabtree .selected ul .here a.nolink, 
-.tabtree .selected a.nolink:hover, 
-.tabtree .selected ul .here a.nolink:hover {
-    text-decoration: none;
-}
-/*----- tab styles for ie6 & ie7 -----*/
-.ie7 .tabtree .tabrow0 li {
-    margin-left: 0;
-}
-.ie7 .tabtree .tabrow0 li.first {
-    margin-right: -4px;
-}
-.ie7 .tabtree .tabrow0 li.onerow {
-    margin-right: 0;
-}
-.ie7 .tabtree .tabrow0 a {
-    display: inline-block;
-    padding: 8px 0 0.35em 13px;
-    line-height: 1.5em;
-}
-.ie7 .tabtree .tabrow0 a span {
-    padding: 10px 1em 10px 0;
-}
-.ie7 .tabtree .tabrow0 div {
-    top: 2.6em;
-    padding: 0.2em 0;
-}
-.ie7 .tabtree .tabrow0 div.empty {
-    margin-right: 0;
-}
-.ie7.mod-quiz div.tabtree a span img.iconsmall {
-    margin: 0;
-    vertical-align: baseline;
-    position: relative;
-    top: 2px;
-}
-.ie6 .tabtree {
-    height: 100%;
-}
-.ie6 .tabtree .tabrow0 {
-    padding-top: 10px;
-}
-.ie6 .tabtree .tabrow0 li {
-    margin-left: 0;
-}
-.ie6 .tabtree .tabrow0 li.first {
-    margin-left: -4px;
-    margin-right: -4px;
-}
-.ie6 .tabtree .tabrow0 li.last a {
-    margin-right: 0;
-}
-.ie6 .tabtree .tabrow0 li.onerow {
-    margin-right: 0;
-}
-.ie6 .tabtree .tabrow0 a {
-    padding: 0 0 0 13px;
-}
-.ie6 .tabtree .tabrow0 a span {
-    padding: 12px 1em 4px 0;
-}
-.ie6 .tabtree .tabrow0 div {
-    top: 3.5em;
-    padding: 0.2em 0;
 }
 
 /*----- Filemanager -----*/
@@ -769,75 +1294,39 @@ div.controls .collapseall {
 .file-picker input, 
 .file-picker button, 
 .file-picker textarea {
-    background-color: #EEEEEE;
-}
-
-/*----- Moodle forms -----*/
-.mform .btn-cancel {
-    color: [[setting:corsch_2]];
-    text-decoration: none;
-}
-.mform .btn-cancel:hover, 
-.mform .btn-cancel:focus {
-    color: #CC0000;
-    text-decoration: underline;
-}
-/*----- TABLE.ROLECAP -> Site administration -> Users -> Permissions -> Define roles ----- */
-TABLE.rolecap { /* TODO -> alternate row color r0 r1 */
-    width: 90%;
     background-color: [[setting:corsch_4]];
 }
-TABLE.rolecap .rolecapheading {
-    background-color: [[setting:corsch_2]];
-    color: [[setting:corsch_B]];    
-}
-TABLE.rolecap .riskconfig {
-    background-color: #F0F0F0;
-}
-TABLE.rolecap .riskxss {
-    background-color: #E8E8E8;
-}
-TABLE.rolecap .riskpersonal {
-    background-color: #E0E0E0;
-}
-TABLE.rolecap .riskspam {
-    background-color: #D0D0D0;
-}
-TABLE.rolecap TR.riskdataloss {
-    background-color: #C8C8C8;
-    #
-}
+/*----- Admin Pages -----*
+/* Plugins management -> /base/admin.css #300 */
+#page-admin-plugins #plugins-control-panel .disabled .availability {background-color: #AAAAAA; color: [[setting:corsch_4]];}
+#page-admin-plugins #plugins-control-panel .extension .source {background-color: #FFFFCC; color: [[setting:corsch_2]];}
+/* forms */
+#adminsettings .form-item .form-setting .form-multicheckbox ul {padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;}
+#adminsettings .form-item .form-setting .form-multicheckbox li {list-style: none; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;}
+#adminsettings .form-item .form-setting .form-group label {margin: 0px 12px 0px 0px;}
+#adminsettings .form-item .form-setting .form-defaultinfo {display: inline; color: #777777;}
+#adminsettings .form-item .form-label .form-shortname {display:block; color: #777777;}
+.dir-rtl #adminsettings .form-item .form-label .form-shortname {text-align: left;}
 
-/*----- Prevent some interferences of the base theme -----*/
-DIV.notifysuccess {color: #009999; text-align: center; font-size: 1.85em; font-weight: bold;}
-DIV.notifyproblem {color: #CC0000; text-align: center; font-size: 1.85em; font-weight: bold;}
-fieldset.error legend {color: #CC0000; font-weight: bold;}
-fieldset.error {font-weight: bold;}
-.clearfix:after {clear: both; content: ''; display: block; height: 0; min-width: 0; visibility: hidden;}
-#page-admin-plugins #plugins-control-panel .disabled .availability {background-color: [[setting:corsch_2]]; color: [[setting:corsch_B]];}
-#page-admin-plugins #plugins-control-panel .extension .source {background-color: [[setting:corsch_2]]; color: [[setting:corsch_B]];}
-/* A -> letter-spacing move elements */
-TABLE.flexible A:hover, 
-TABLE.generaltable A:hover {letter-spacing: normal;}
-/** Fix IE double margin + float bugs -> base CSS wrong **/
-.ie .mform .fitem .felement {margin-left:0;padding-left:0%;}
-/*----- Alternate colour in tables -----*/
-TABLE.flexible .r0, 
-TABLE.generaltable .r0, 
-TABLE.collection .r0 {background-color: [[setting:corsch_3]];}
-TABLE.calendarmonth .r0 {background-color: #FFFFFF;}
-TABLE.flexible .r1, 
-TABLE.generaltable .r1, 
-TABLE.collection .r1, 
-TABLE.calendarmonth .r1 {background-color: [[setting:corsch_4]];}
-/*----- Corrige un error con el editor tiny_mce -----*/
-TABLE.mceLayout {display: inherit;} 
-/*----- REDIRECT + CONTINUE -----*/
-.redirectmessage, .continuebutton {padding-bottom: 10px; color: [[setting:corsch_T]]; text-align: center; font-size: 1.2em;}
-/*----- Customization of width defined in course/renderer.php L#476 + L#480 + L#484 ----*/
-INPUT#navsearchbox {width: 20ex; margin: 1px 0px 0px 0px;}
-INPUT#shortsearchbox {width: 40ex;}
-INPUT#coursesearchbox {width: 50ex;}
+/* clearer divs */
+.clearer {
+    clear: both;
+    display: block;
+    height: 1px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    border-width: 0;
+    background:transparent;
+    }
+.clearfix:after {
+    clear: both; 
+    content: ''; 
+    display: block; 
+    height: 0; 
+    min-width: 0; 
+    visibility: hidden;
+    }
+
 /*----- Important z-index fixes -----*/
 .yui-skin-sam .yui-panel-container {
     z-index: 999999!important;

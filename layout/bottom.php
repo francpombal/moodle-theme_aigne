@@ -9,17 +9,18 @@
 
 $hasfooter = (empty($PAGE->layout_options['nofooter']));
 
-$hasmoodledocslink = (!empty($PAGE->theme->settings->moodledocslink));
 $navhelpurl = $PAGE->theme->settings->navhelp;
-$haswebmap = (!empty($PAGE->theme->settings->webmap));
-$hashelp = (!empty($PAGE->theme->settings->help));
-$hasfootsearch = (!empty($PAGE->theme->settings->footsearch));
-$hasstats = (!empty($PAGE->theme->settings->stats));
-$hasdisclaimer = (!empty($PAGE->theme->settings->disclaimer));
-$haspolicies = (!empty($PAGE->theme->settings->policies));
-$hasprivacy = (!empty($PAGE->theme->settings->privacy));
-$hassecurity = (!empty($PAGE->theme->settings->security));
-$hasaccessibility = (!empty($PAGE->theme->settings->accessibility));
+$navhelplinks = $PAGE->theme->settings->navhelplinks;
+$navlink0 = (!empty($navhelplinks[0]));
+$navlink1 = (!empty($navhelplinks[1]));
+$navlink2 = (!empty($navhelplinks[2]));
+$navlink3 = (!empty($navhelplinks[3]));
+$navlink4 = (!empty($navhelplinks[4]));
+$navlink5 = (!empty($navhelplinks[5]));
+$navlink6 = (!empty($navhelplinks[6]));
+$navlink7 = (!empty($navhelplinks[7]));
+$navlink8 = (!empty($navhelplinks[8]));
+$navlink9 = (!empty($navhelplinks[9]));
 
 $hascopyrightstg = (!empty($PAGE->theme->settings->copyrightstg));
 $hassitelicensemsg = (!empty($PAGE->theme->settings->sitelicensemsg));
@@ -33,44 +34,44 @@ $hasthanksvisitmsg = (!empty($PAGE->theme->settings->thanksvisitmsg));
         <div id="course-footer"><?php echo $coursefooter; ?></div>
     <?php } ?>
 </div>
-<!-- 02 bottom section _ 'HASFOOTER' variable sensitive -->
+<!-- 02 bottom section _ navhelp links -->
 <div id="bottom_2">
     <!-- Navigation help _ Show NavHelp only if is logged in, whatever show login info link -->
     <div class="navhelp">
         <?php if (!isloggedin() or isguestuser()) { 
             echo $OUTPUT->login_info(); 
         } else { ?>
-            <?php if ($hasmoodledocslink) { echo page_doc_link(get_string('moodledocslink')); } ?>
+            <?php if ($navlink0) { echo page_doc_link(textlib::strtolower(get_string('moodledocslink'))); } ?>
             |
-            <?php if ($hashelp) {?><a href="<?php echo $CFG->wwwroot.$navhelpurl.'?';?>type=2" title="<?php echo get_string('help','theme_aigne');?> ... ">
+            <?php if ($navlink1) {?><a href="<?php echo $CFG->wwwroot.$navhelpurl.'?';?>type=2" title="<?php echo get_string('help','theme_aigne');?> ... ">
             <?php echo get_string('help','theme_aigne');?></a>
             |<?php } ?>
-            <?php if ($haswebmap) {?><a href="<?php echo $CFG->wwwroot.$navhelpurl.'?';?>type=1" title="<?php echo get_string('webmap','theme_aigne');?> ... ">
+            <?php if ($navlink2) {?><a href="<?php echo $CFG->wwwroot.$navhelpurl.'?';?>type=1" title="<?php echo get_string('webmap','theme_aigne');?> ... ">
             <?php echo get_string('webmap','theme_aigne');?></a>
             |<?php } ?>
-            <?php if ($hasfootsearch) {?><a href="<?php echo $CFG->wwwroot.$navhelpurl.'?';?>type=3" title="<?php echo get_string('footsearch','theme_aigne');?> ... ">
+            <?php if ($navlink3) {?><a href="<?php echo $CFG->wwwroot.$navhelpurl.'?';?>type=3" title="<?php echo get_string('footsearch','theme_aigne');?> ... ">
             <?php echo get_string('footsearch','theme_aigne');?></a>
             |<?php } ?>
-            <?php if ($hasstats) {?><a href="<?php echo $CFG->wwwroot.$navhelpurl.'?';?>type=4" title="<?php echo get_string('stats','theme_aigne');?> ... ">
+            <?php if ($navlink4) {?><a href="<?php echo $CFG->wwwroot.$navhelpurl.'?';?>type=4" title="<?php echo get_string('stats','theme_aigne');?> ... ">
             <?php echo get_string('stats','theme_aigne');?></a>
             |<?php } ?>
-            <?php if ($hasdisclaimer) {?><a href="<?php echo $CFG->wwwroot.$navhelpurl.'?';?>type=5" title="<?php echo get_string('disclaimer','theme_aigne');?> ... ">
+            <?php if ($navlink5) {?><a href="<?php echo $CFG->wwwroot.$navhelpurl.'?';?>type=5" title="<?php echo get_string('disclaimer','theme_aigne');?> ... ">
             <?php echo get_string('disclaimer','theme_aigne');?></a>
             |<?php } ?>
-            <?php if ($haspolicies) {?><a href="<?php echo $CFG->wwwroot.$navhelpurl.'?';?>type=6" title="<?php echo get_string('policies','theme_aigne');?> ... ">
+            <?php if ($navlink6) {?><a href="<?php echo $CFG->wwwroot.$navhelpurl.'?';?>type=6" title="<?php echo get_string('policies','theme_aigne');?> ... ">
             <?php echo get_string('policies','theme_aigne');?></a>
             |<?php } ?>           
-            <?php if ($hasprivacy) {?><a href="<?php echo $CFG->wwwroot.$navhelpurl.'?';?>type=7" title="<?php echo get_string('privacy','theme_aigne');?> ... ">
+            <?php if ($navlink7) {?><a href="<?php echo $CFG->wwwroot.$navhelpurl.'?';?>type=7" title="<?php echo get_string('privacy','theme_aigne');?> ... ">
             <?php echo get_string('privacy','theme_aigne');?></a>
             |<?php } ?>
-            <?php if ($hassecurity) {?><a href="<?php echo $CFG->wwwroot.$navhelpurl.'?';?>type=8" title="<?php echo get_string('security','theme_aigne');?> ... ">
+            <?php if ($navlink8) {?><a href="<?php echo $CFG->wwwroot.$navhelpurl.'?';?>type=8" title="<?php echo get_string('security','theme_aigne');?> ... ">
             <?php echo get_string('security','theme_aigne');?></a>
             |<?php } ?>
-            <?php if ($hasaccessibility) {?><a href="<?php echo $CFG->wwwroot.$navhelpurl.'?';?>type=9" title="<?php echo get_string('accessibility','theme_aigne');?> ... ">
+            <?php if ($navlink9) {?><a href="<?php echo $CFG->wwwroot.$navhelpurl.'?';?>type=9" title="<?php echo get_string('accessibility','theme_aigne');?> ... ">
             <?php echo get_string('accessibility','theme_aigne');?></a>
             |<?php } ?>
-            <a href="<?php echo $CFG->wwwroot ?>/login/logout.php?sesskey=<?php echo sesskey(); ?>" title="<?php echo get_string('logout');?>">
-            <?php echo get_string('logout');?></a>
+            <a href="<?php echo $CFG->wwwroot ?>/login/logout.php?sesskey=<?php echo sesskey(); ?>" title="<?php echo get_string('logout');?> ... ">
+            <?php echo textlib::strtolower(get_string('logout'));?></a>
             |
         <?php } ?>
     </div>
@@ -88,15 +89,19 @@ $hasthanksvisitmsg = (!empty($PAGE->theme->settings->thanksvisitmsg));
 <!-- 05 bottom section _ copyright -->
 <div id="bottom_5">
     <div class="copyright">
-    <?php if ($hascopyrightstg) {
-        echo $PAGE->theme->settings->copyrightstg;
-    } else { 
-        echo $SITE->shortname . ' © ' . gmdate("Y");
-    }
-    if ($hassitelicensemsg) { echo '&nbsp;&nbsp;&nbsp;:::&nbsp;&nbsp;&nbsp;' . get_string($CFG->sitedefaultlicense,'license');}
-    if ($haslastmodifiedmsg) { echo '&nbsp;&nbsp;&nbsp;:::&nbsp;&nbsp;&nbsp;' . get_string('lastmodified','moodle').': '.gmdate('d.m.Y');}
-    if ($hasthanksvisitmsg) { echo '&nbsp;&nbsp;&nbsp;:::&nbsp;&nbsp;&nbsp;' . get_string('thanksvisit','theme_aigne');}
-    //echo html_writer::empty_tag('HR');
-    echo $OUTPUT->standard_footer_html(); ?>
+    <?php
+        if ($hascopyrightstg) {
+            echo $PAGE->theme->settings->copyrightstg;
+        } else { 
+            echo $SITE->shortname . ' © ' . gmdate("Y");
+        }
+        $textsep = '&nbsp;&nbsp;&nbsp;:&nbsp;:&nbsp;&nbsp;&nbsp;';
+        if ($hassitelicensemsg) { echo $textsep . get_string($CFG->sitedefaultlicense,'license');}
+        if ($haslastmodifiedmsg) { echo $textsep . get_string('lastmodified','moodle').': '.gmdate('d.m.Y');}
+        if ($hasthanksvisitmsg) { echo $textsep . get_string('thanksvisit','theme_aigne');}
+    ?>
+    </div>
+    <div class="footerhtml">
+        <?php echo $OUTPUT->standard_footer_html(); ?>
     </div>
 </div>

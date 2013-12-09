@@ -7,25 +7,77 @@
  * @license    http: *www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-/* INFORMACIÓN GENERAL */
-$string['pluginname'] = 'aigne';
-$string['configtitle'] = 'Configuración personalizada de aigne';
-$string['region-side-post'] = 'Derecha';
-$string['region-side-pre'] = 'Izquierda';
-$string['notes'] = 'Notas del tema aigne';
-$string['notesdesc'] = 'Para aplicar cualquier cambio en la configuración presione "Guardar cambios" al final de la página. Si no tiene habilitado el "Modo de diseño de temas", quizás necesite forzar la actualización entrando en Administración del sitio ► Desarrollo ►  <a href="purgecaches.php">"Purgar todas las Cachés"</a>.';
-$string['noimplemented'] = 'Opción no implementada. Disculpe las molestías';
-$string['sep_hr'] = '<hr>';
-$string['sep_hr2'] = '<hr width="50%" align="center">';
-$string['sep_br'] = '<br />';
-$string['sep_bhr'] = '<br /><hr>';
-/* STRINGS DEL ENCABEZADO _ TOP */
-$string['defaultfontsizetxt'] = 'Pulse para restaurar el tamaño de la fuente. (Recuperar el tamaño normal del diseño web)';
-$string['decfontsizetxt'] = 'Pulse para disminuir el tamaño de la fuente. (Disminuir el tamaño del texto para mejorar la accesibilidad)';
-$string['incfontsizetxt'] = 'Pulse para aumentar el tamaño de la fuente. (Aumentar el tamaño del texto para mejorar la accesibilidad)';
-$string['defaultstyletxt'] = 'Pulse para recuperar el aspecto original del diseño web';
-$string['styletxt'] = 'Pulse para aplicar una combinación de colores diferente al diseño web';
-/* STRINGS DEL PIÉ DE PÁGINA _ BOTTOM */
+/****************************************************************************/
+/********************_FIRST SECTION_CUSTOMIZABLE STRINGS_********************/
+/****************************************************************************/
+/* ----- ----- ----- -> STRINGS DE LAS ETIQUETAS META ----- */
+$string['metakeywords'] = 'aigne, formación, educación, enseñanza, pedagogía';
+$string['metadescription'] = 'Bienvenido a {$a->sitename}.';
+/* ----- ----- ----- -> STRINGS DE LOS CUADROS DE MENSAJE DE FRONTPAGE ----- */
+/* Strings del banner superior */
+$string['banner1txt'] = 'Escriba aquí el texto que desea que aparezca en el banner';
+$string['banner1ttl'] = 'Escriba aquí el título del banner';
+$string['banner1alt'] = 'Escriba aquí el texto alternativo de la imagen del banner';
+/* Strings del mensaje estático */
+$string['frontmsgtxt'] = 'Aquí puede introducir un mensaje de bienvenida<br />
+Escriba en su editor HTML favorito, a continuación entre en el archivo del idioma /theme/aigne/lang/ xx /theme_aigne.php y péguelo en $string[frontmsgtxt])<br />
+<strong>Puede darle el formato CSS que quiera en el archivo aigne_style.css</strong>';
+$string['frontmsgttl'] = 'Escriba aquí el título del mensaje';
+/* Strings de los cuadros de información */
+$string['quadro1txt'] = '
+<h2>Cuadros de texto:</h2>
+Aquí puede introducir cualquier información<br />
+Escriba un texto en su editor HTML favorito, a continuación entre en el archivo del idioma 
+<MARQUEE>/theme/aigne/lang/ xx /theme_aigne.php</MARQUEE> y péguelo en $string[quadro1txt]<br />
+<strong>Puede darle el formato CSS que quiera en el archivo aigne_style.css</strong>';
+$string['quadro1ttl'] = 'Escriba aquí el título del cuadro 1';
+$string['quadro1alt'] = 'Escriba aquí el texto alternativo de la imagen del cuadro 1';
+$string['quadro2txt'] = '
+<h2>Cuadros de texto:</h2>
+Aquí puede introducir cualquier información<br />
+Escriba un texto en su editor HTML favorito, a continuación entre en el archivo del idioma 
+<MARQUEE>/theme/aigne/lang/ xx /theme_aigne.php</MARQUEE> y péguelo en $string[quadro2txt]<br />
+<strong>Puede darle el formato CSS que quiera en el archivo aigne_style.css</strong>';
+$string['quadro2ttl'] = 'Escriba aquí el título del cuadro 2';
+$string['quadro2alt'] = 'Escriba aquí el texto alternativo de la imagen del cuadro 2';
+$string['quadro3txt'] = '
+<h2>Cuadros de texto:</h2>
+Aquí puede introducir cualquier información<br />
+Escriba un texto en su editor HTML favorito, a continuación entre en el archivo del idioma 
+<MARQUEE>/theme/aigne/lang/ xx /theme_aigne.php</MARQUEE> y péguelo en $string[quadro3txt]<br />
+<strong>Puede darle el formato CSS que quiera en el archivo aigne_style.css</strong>';
+$string['quadro3ttl'] = 'Escriba aquí el título del cuadro 3';
+$string['quadro3alt'] = 'Escriba aquí el texto alternativo de la imagen del cuadro 3';
+/* Strings del acordeón horizontal de información */
+$string['aco5cap1'] = 'Pastenague _ Texto del fuelle 1';
+$string['aco5cap2'] = 'Requin _ Texto del fuelle 2';
+$string['aco5cap3'] = 'Pieuvre _ Texto del fuelle 3';
+$string['aco5cap4'] = 'Poisson _ Texto del fuelle 4';
+$string['aco5cap5'] = 'Bouteilles _ Texto del fuelle 5';
+$string['aco5alt1'] = 'Escriba aquí el texto alternativo de la imagen del fuelle 1';
+$string['aco5alt2'] = 'Escriba aquí el texto alternativo de la imagen del fuelle 2';
+$string['aco5alt3'] = 'Escriba aquí el texto alternativo de la imagen del fuelle 3';
+$string['aco5alt4'] = 'Escriba aquí el texto alternativo de la imagen del fuelle 4';
+$string['aco5alt5'] = 'Escriba aquí el texto alternativo de la imagen del fuelle 5';
+/* ----- ----- ----- -> STRINGS DEL ENCABEZADO ----- */
+$string['sloganaigne'] = '';
+/* ----- ----- ----- -> SALUDOS Y MENSAJES DEL ÁREA DE INFORMACIÓN DEL USUARIO ----- */
+/* Strings de saludos según la hora del día */
+$string['morning_greeting'] = 'Buenos días... !';
+$string['afternoon_greeting'] = 'Buenas tardes... !';
+$string['night_greeting'] = 'Buenas noches... !';
+/* Strings de felicitación según la fecha */
+$string['datemessage'] = 'Mensaje de felicitación';
+$string['datemessage1'] = '¡¡¡Feliz año Nuevo!!!';
+$string['datemessage2'] = '¡Disfruta del Carnaval!';
+$string['datemessage3'] = '¡Buenas Pascuas, y disfruta de la Semana Santa!';
+$string['datemessage4'] = '¡Disfruta del día de la Hispanidad!';
+$string['datemessage5'] = 'Feliz Halloween y celebra el día de todos los Santos';
+$string['datemessage6'] = '¡Feliz Navidad!';
+$string['datemessage7'] = 'Disfruta del puente de ... ';
+$string['datemessage8'] = '¡Qué disfrutes de las Vacaciones de Verano';
+$string['datemessage9'] = '¡Qué disfrutes de las Vacaciones de Invierno';
+/* ----- ----- ----- -> STRINGS DEL PIÉ DE PÁGINA ----- */
 $string['sociallinks'] = '... y en las Redes Sociales: ';
 $string['powered'] = 'Con la potencia de: ';
 $string['original_theme'] = 'Diseño inspirado en un tema original de Patrick Malley & Mary Evans';
@@ -34,7 +86,7 @@ $string['thanksvisit'] = 'Gracias por su confianza';
 $string['reservedrights'] = 'Reservados todos los derechos';
 $string['contact'] = 'Contacte con nosotros: ';
 $string['sendadminemail'] = 'enviar un eMail al administrador del sitio web ... ';
-/* COPYRIGHT PROTECTION STTRINGS */
+/* ----- ----- ----- -> STTRINGS DE LA PROTECCIÓN DEL COPYRIGHT ----- */
 $string['nocontentprint'] = '
 <h2 style="text-align: center">Prevención de impresión</h2>
 <h3><b>Copyright:</b></h3>
@@ -57,7 +109,7 @@ $string['nocontentprint'] = '
   <p style="text-align: center">Disculpe las molestias.</p>';
 $string['nocontentdrag'] = 'Debido a la protección del copyright de nuestros cursos, esta deshabilitado arrastrar (drag & drop) algunos contenidos';
 $string['nocontentselect'] = 'Debido a la protección del copyright de nuestros cursos, esta deshabilitado seleccionar (copy & paste) algunos contenidos';
-/* NAVHELP PAGES STRINGS */
+/* ----- ----- ----- -> STRINGS DE LAS PÁGINAS DE AYUDA A LA NAVEGACIÓN ----- */
 $string['navhelppage'] = 'Página de ayuda';
 $string['navhelppagetitle'] = 'Ayuda a la navegación';
 $string['webmap'] = 'mapa web';
@@ -161,13 +213,40 @@ $string['accessibilitypage'] = '
   <ul>{$a->sendadminemail}</ul> 
   <p>&nbsp;</p>';
 /****************************************************************************/
-/* CONFIGURATION STRINGS */
-$string['csshead'] = 'Personalización de la apariencia general (diseño CSS)';
+/********************_SECOND SECTION_CONFIGURATION STRINGS_******************/
+/****************************************************************************/
+$string['pluginname'] = 'aigne';
+$string['configtitle'] = 'Configuración personalizada de aigne';
+$string['region-side-post'] = 'Derecha';
+$string['region-side-pre'] = 'Izquierda';
+$string['notes'] = 'Notas del tema aigne';
+$string['notesdesc'] = 'Para aplicar cualquier cambio en la configuración presione "Guardar cambios" al final de la página. Si no tiene habilitado el "Modo de diseño de temas", quizás necesite forzar la actualización entrando en Administración del sitio ► Desarrollo ►  <a href="purgecaches.php">"Purgar todas las Cachés"</a>.';
+$string['noimplemented'] = 'Opción no implementada. Disculpe las molestías';
+$string['sep_hr'] = '<hr>';
+$string['sep_hr2'] = '<hr width="50%" align="center">';
+$string['sep_br'] = '<br />';
+$string['sep_bhr'] = '<br /><hr>';
+/**/
+$string['defaultfontsizetxt'] = 'Pulse para restaurar el tamaño de la fuente. (Recuperar el tamaño normal del diseño web)';
+$string['decfontsizetxt'] = 'Pulse para disminuir el tamaño de la fuente. (Disminuir el tamaño del texto para mejorar la accesibilidad)';
+$string['incfontsizetxt'] = 'Pulse para aumentar el tamaño de la fuente. (Aumentar el tamaño del texto para mejorar la accesibilidad)';
+$string['defaultstyletxt'] = 'Pulse para recuperar el aspecto original del diseño web';
+$string['styletxt'] = 'Pulse para aplicar una combinación de colores diferente al diseño web';
+/**/
+$string['generalhead'] = 'General';
+$string['csshead'] = 'Opciones del diseño CSS';
 $string['bodyfont'] = 'Tamaño de fuente';
 $string['bodyfontdesc'] = 'Si lo desea puede configurar un tamaño de letra como referencia. Tenga cuidado con los tamaños de letra mas grandes o mas pequeños, ya que es sabido que causan problemas en algunos bloques, pruébelo y decida';
+$string['fontfam'] = 'Familia de fuentes';
+$string['fontfamdesc'] = 'Si lo desea puede modificar el aspecto del texto, cambiando la familia de fuente de referencia.';
+$string['fontfam1'] = 'Eras Bk Bt';
+$string['fontfam2'] = 'eras';
+$string['fontfam3'] = 'afta';
+$string['fontfam4'] = 'Arial';
+$string['fontfam5'] = 'Tahoma';
 $string['colorsch'] = 'Esquema de color del sitio.';
-$string['colorschdesc'] = 'Seleccione el esquema de color que se usará de forma predeterminado. [The design still unfinished] <br />
-    <table class="headerop" Style="width: 275px; border: 2px solid #322C65;">
+$string['colorschdesc'] = 'Seleccione el esquema de color que se usará de forma predeterminado. [::: en construcción :::] <br />
+    <table class="headerop" Style="width: 325px; border: 2px solid #322C65;">
         <tr Style="height:25px">
             <td Style="background-color:#322C65">&nbsp;</td>
             <td Style="background-color:#007EBA">&nbsp;</td>
@@ -177,19 +256,11 @@ $string['colorschdesc'] = 'Seleccione el esquema de color que se usará de forma
             <td Style="background-color:#FFFFFF; color:#3C3C3C">A</td>
         </tr>
         <tr Style="height:25px">
-            <td Style="background-color:#F3F7FF">&nbsp;</td>
-            <td Style="background-color:#CCDDEE">&nbsp;</td>
-            <td Style="background-color:#322C65">&nbsp;</td>
-            <td Style="background-color:#000033">&nbsp;</td>
-            <td Style="background-color:#FFFFFF">{$a->css_color2}</td>
-            <td Style="background-color:#000033; color:#FFFFFF">A</td>
-        </tr>
-        <tr Style="height:25px">
             <td Style="background-color:#001A1A">&nbsp;</td>
             <td Style="background-color:#004040">&nbsp;</td>
             <td Style="background-color:#4CA9BC">&nbsp;</td>
             <td Style="background-color:#F2FFEB">&nbsp;</td>
-            <td Style="background-color:#FFFFFF">{$a->css_color3}</td>
+            <td Style="background-color:#FFFFFF">{$a->css_color2}</td>
             <td Style="background-color:#FFFFFF; color:#3C3C3C">A</td>
         </tr>
         <tr Style="height:25px">
@@ -197,24 +268,50 @@ $string['colorschdesc'] = 'Seleccione el esquema de color que se usará de forma
             <td Style="background-color:#EB8324">&nbsp;</td>
             <td Style="background-color:#F6CC87">&nbsp;</td>
             <td Style="background-color:#FFFFCC">&nbsp;</td>
+            <td Style="background-color:#FFFFFF">{$a->css_color3}</td>
+            <td Style="background-color:#FFFFFF; color:#3C3C3C">A</td>
+        </tr>
+        <tr Style="height:25px">
+            <td Style="background-color:#520000">&nbsp;</td>
+            <td Style="background-color:#AA0000">&nbsp;</td>
+            <td Style="background-color:#F1A78E">&nbsp;</td>
+            <td Style="background-color:#FFF2F2">&nbsp;</td>
             <td Style="background-color:#FFFFFF">{$a->css_color4}</td>
             <td Style="background-color:#FFFFFF; color:#3C3C3C">A</td>
         </tr>
         <tr Style="height:25px">
-            <td Style="width:25px; background-color:#520000">&nbsp;</td>
-            <td Style="width:25px; background-color:#AA0000">&nbsp;</td>
-            <td Style="width:25px; background-color:#F1A78E">&nbsp;</td>
-            <td Style="width:25px; background-color:#FFF2F2">&nbsp;</td>
-            <td Style="width:150px; background-color:#FFFFFF">{$a->css_color5}</td>
-            <td Style="width:25px; background-color:#FFFFFF; color:#3C3C3C">A</td>
+            <td Style="background-color:#520000">&nbsp;</td>
+            <td Style="background-color:#AA0000">&nbsp;</td>
+            <td Style="background-color:#F1A78E">&nbsp;</td>
+            <td Style="background-color:#FFF2F2">&nbsp;</td>
+            <td Style="background-color:#FFFFFF">{$a->css_color5}</td>
+            <td Style="background-color:#FFFFFF; color:#3C3C3C">A</td>
+        </tr>
+        <tr Style="height:25px">
+            <td Style="background-color:#222222">&nbsp;</td>
+            <td Style="background-color:#666666">&nbsp;</td>
+            <td Style="background-color:#AAAAAA">&nbsp;</td>
+            <td Style="background-color:#F0F0F0">&nbsp;</td>
+            <td Style="background-color:#FBFBFB">{$a->css_color6}</td>
+            <td Style="background-color:#FFFFFF; color:#000000">A</td>
+        </tr>
+        <tr Style="height:25px">
+            <td Style="width:25px; background-color:#F3F7FF">&nbsp;</td>
+            <td Style="width:25px; background-color:#CCDDEE">&nbsp;</td>
+            <td Style="width:25px; background-color:#322C65">&nbsp;</td>
+            <td Style="width:25px; background-color:#000033">&nbsp;</td>
+            <td Style="width:200px; background-color:#FFFFFF">{$a->css_color7}</td>
+            <td Style="width:25px; background-color:#000033; color:#FFFFFF">A</td>
         </tr>
     </table>
 ';
 $string['css_color1'] = 'Azul Claro';
-$string['css_color2'] = 'Azul Marino';
-$string['css_color3'] = 'Verde Musgo';
-$string['css_color4'] = 'Naranja';
-$string['css_color5'] = 'Rojo Rubí';
+$string['css_color2'] = 'Verde Musgo';
+$string['css_color3'] = 'Naranja _ Primavera';
+$string['css_color4'] = 'Rojo Rubí _ Verano';
+$string['css_color5'] = 'Marrón _ Otoño';
+$string['css_color6'] = 'Gris _ Invierno';
+$string['css_color7'] = 'Azul Marino en contraste';
 $string['backbody'] = 'Fondo de la página';
 $string['backbodydesc'] = 'Si lo desea puede añadir una imagen que aparecerá en el fondo de la página.<br />
 Debe ser una imagen JPG/PNG/GIF y según el tamaño, debe configurar la siguiente opción.';
@@ -227,24 +324,15 @@ $string['repeat-y'] = 'Mosaico vertical';
 $string['backcolor'] = 'Color del fondo';
 $string['backcolordesc'] = 'Si lo desea puede configurar un color de fondo, en lugar de imponer una imagen.<br />
 Si desea mantener el color original, seleccione el blanco o escriba #FFFFFF.';
+$string['aletters'] = 'Efecto de espaciado';
+$string['alettersdesc'] = 'Cuando esta sobre un enlace, se puede ejecutar un efecto de espaciado entre las letras. 
+Seleccione aquí ese hueco, y si a usted no le gusta el efecto, seleccione la primera opción. 
+Tenga en cuenta que unos pocos enlaces no tienen ese efecto de forma predeterminada.';
+$string['alettersno'] = 'Sin espaciado';
 $string['customcss'] = 'CSS personalizado';
 $string['customcssdesc'] = 'Cualquiera que sean las normas CSS que añada a esta caja de texto se reflejarán en todas las páginas, lo que facilita la personalización de este tema.';
 /**/
-$string['logohead'] = 'Configuración del logotipo';
-$string['logo'] = 'Logotipo';
-$string['logodesc'] = 'Si lo desea puede añadir un logotipo personalizado.<br />
-El logotipo debe ser una imagen JPG/PNG/GIF con 150px de largo y 55px de alto';
-$string['slogan'] = 'Lema';
-$string['slogandesc'] = 'Si lo desea puede añadir una pequeña frase que aparecerá bajo el logotipo, en forma de lema.<br />
-Tenga en cuenta el tamaño de la frase para mantener el diseño del encabezado.';
-$string['sloganaigne'] = 'aigne';
-$string['backlogo'] = 'Fondo del logotipo';
-$string['backlogodesc'] = 'Si lo desea puede añadir una imagen de fondo para el logotipo.<br />
-Debe ser una imagen JPG/PNG/GIF con 200px de largo y 75px de alto';
-/* Strings para las etiquetas META del HEAD de cada página WEB _ KEYWORDS = 20 palabras */
-$string['metakeywords'] = 'aigne, formación, educación, enseñanza, pedagogía';
-$string['metadescription'] = 'Bienvenido a {$a->sitename}.';
-$string['mtaghead'] = 'Opciones de las Meta Etiquetas';
+$string['mtaghead'] = 'Opciones de las Etiquetas Meta';
 $string['mtagheaddesc'] = 'Las Meta Etiquetas pueden ser utilizadas para mejorar el posicionamiento en algunos buscadores, así como ofrecer 
 información fiable sobre nuestro sitio a multitud de servicios de indexación y clasificación que rondan por Internet.';
 $string['mtkeywords'] = 'Meta Etiqueta Keywords';
@@ -268,16 +356,42 @@ Por favor, tenga en cuenta el formato y el contenido, escribiendo el código ent
 $string['dublinmtag'] = 'Meta Etiquetas Dublin Core ';
 $string['dublinmtagdesc'] = 'Si activa esta opción, se generarán 3 etiquetas básicas (language, description, publisher) compatibles con el estándar "Dublin Core Metadata Initiative"';
 /**/
-$string['marketinghead'] = 'Opciones de diseño en la página de presentación del sitio (frontpage _ marketing)';
-$string['marketingheaddesc'] = '::: en construcción :::';
+$string['marketinghead'] = 'Opciones de la página principal del sitio (frontpage _ marketing)';
+$string['marketingheaddesc'] = 'Esta sección se refiere a elementos que se mostrarán en la página principal del sitio, antes que el usuario se identifique ("entrar" _ "login") en la plataforma. 
+Puede personalizar estas opciones a su gusto para añadir información sobre su institución o sobre el lanzamiento de nuevos cursos.';
 $string['headbanner'] = 'Mostrar Banner del Encabezado';
-$string['headbannerdesc'] = 'Si activa esta opción, se mostrará una imagen en la cabecera de la página principal, antes que los usuarios se identifiquen.';
+$string['headbannerdesc'] = 'Si activa esta opción, se mostrará una imagen en la cabecera de la página principal. [::: en construcción :::]';
 $string['headerinfo'] = 'Encabezado de presentación';
-$string['headerinfodesc'] = 'Si lo desea puede añadir una imagen fija en la cabecera de la página principal, antes que los usuarios se identifiquen.<br />
+$string['headerinfodesc'] = 'Si lo desea puede añadir una imagen fija en la cabecera de la página principal.<br />
 Debe ser una imagen JPG/PNG/GIF con un mínimo de 775px de largo y 100px de alto.';
-$string['quadrobanner'] = 'Mostrar Cuadros de Información';
-$string['quadrobannerdesc'] = 'Si activa esta opción, se mostrarán tres cuadros informativos en la página principal, antes que los usuarios se identifiquen.<br />
-Una vez activado, puede diseñar/ rogramar el contenido que desee entrando directamente en el archivo del layout "frontinfo.php".';
+$string['infobanner'] = 'Cuadros de Información';
+$string['infobannerdesc'] = 'Seleccione el tipo de información que desea que aparezca en la portada de su sitio Web.<br />
+Una vez activado, puede diseñar/programar el contenido que desee entrando directamente en el archivo del layout "frontinfo.php" y en la carpeta theme\aigne\pix\carroussel.';
+$string['infobanner0'] = 'No mostrar ningún tipo de información';
+$string['infobanner1'] = 'Mostrar un cuadro estático con un mensaje fijo';
+$string['infobanner2'] = 'Mostrar tres cuadros estáticos con diferente contenido';
+$string['infobanner3'] = 'Mostrar un cuadro informativo, tipo acordeón horizontal';
+$string['infobanner4'] = 'Mostrar una presentación vertical de dispositivas automática';
+/**/
+$string['moodlehead'] = 'Opciones de personalización de elementos de Moodle';
+$string['catstyle'] = 'Estilo de la lista de Categorias';
+$string['catstyledesc'] = 'Elija el estilo que desea utilizar para las listas de Categorias.<br />
+Recuerde que una vez utilice el estilo de "Parrilla de Imágenes", debe almacenar una imágen para cada categoria en la carpeta theme\aigne\pix\cat, siendo su nombre un número que corresponde al ID de dicha categoría.
+Es recomendable utilizar una imágen no superior a 150px y de preferencia con el fondo transparente. Pruebe a voluntad con las imágenes de ejemplo.';
+$string['catstyle1'] = 'Estilo estándar de Moodle';
+$string['catstyle2'] = 'Estilo parrilla de imágenes';
+/**/
+$string['headerhead'] = 'Encabezado';
+$string['logohead'] = 'Opciones del logotipo';
+$string['logo'] = 'Logotipo';
+$string['logodesc'] = 'Si lo desea puede añadir un logotipo personalizado.<br />
+El logotipo debe ser una imagen JPG/PNG/GIF con 150px de largo y 55px de alto';
+$string['slogan'] = 'Lema';
+$string['slogandesc'] = 'Si lo desea puede añadir una pequeña frase que aparecerá bajo el logotipo, en forma de lema.<br />
+Tenga en cuenta el tamaño de la frase para mantener el diseño del encabezado.';
+$string['backlogo'] = 'Fondo del logotipo';
+$string['backlogodesc'] = 'Si lo desea puede añadir una imagen de fondo para el logotipo.<br />
+Debe ser una imagen JPG/PNG/GIF con 200px de largo y 75px de alto';
 /**/
 $string['custommenuhead'] = 'Opciones del menú personalizado';
 $string['custommenudesc'] = 'Para diseñar un menú personalizado y añadir los ítems necesarios, entre en Administración del sitio ► Apariencia ► Temas ► <a href="settings.php?section=themesettings">"Ajustes de temas"</a> ►  "custommenuitems"  .<br />
@@ -311,9 +425,14 @@ $string['usernavheaddesc'] = 'Las siguientes opciones configuran la información
 Recuerde que el Area de Información del Usuario al estilo moodle es estándar y tiene un formato fijo.<br />
 Si desea que además aparezca la casilla para recordar usuario, vaya a Administración del sitio ► Seguridad ► Políticas del sitio ► "rememberusername"';
 $string['usernavsalut'] = 'Saludo';
-$string['usernavsalutdesc'] = 'Si activa esta opción, aparecerá un saludo condicional en el area de Información del Usuario en el encabezado.';
-$string['welcomemsg'] = 'Mensaje de bienvenida personalizado';
-$string['welcomemsgdesc'] = 'Defina un mensaje de bienvenida, que será mostrado en el area de Información del Usuario en el encabezado';
+$string['usernavsalutdesc'] = 'Si activa esta opción, aparecerá un saludo o un mensaje en el area de Información del Usuario.<br />
+Si deja en blanco el mensaje de bienvenida y la felicitación, se mostrará un mensaje relativo a la hora del día.<br />
+Si desea mostrar un mensaje fijo, definálo en el mensaje de bienvenida.<br />
+Si desea mostrar un mensaje dependiente de una fecha, defina el mensaje de felicitación e indique el inicio y el final para dicho periodo.';
+$string['welcomemsg'] = 'Mensaje de bienvenida';
+$string['welcomemsgdesc'] = 'Defina un mensaje de bienvenida';
+$string['datestart'] = 'Fecha de inicio';
+$string['datefinis'] = 'Fecha de finalización';
 $string['usernavinfo'] = 'Nombre del usuario';
 $string['usernavinfodesc'] = 'Si activa esta opción, aparecerá el nombre del usuario en el area de Información del Usuario en el encabezado.';
 $string['usernavpic'] = 'Foto del usuario';
@@ -323,23 +442,23 @@ $string['usernavoutdesc'] = 'Si activa esta opción, aparecerá un botón de sal
 $string['outbutton'] = 'Opción de salir al estilo de botón';
 $string['outmoodle'] = 'Opción de salir al estilo moodle, con un enlace';
 $string['outnone'] = 'Sin la opción de salir';
-$string['morning_greeting'] = 'Buenos días... !';
-$string['afternoon_greeting'] = 'Buenas tardes... !';
-$string['night_greeting'] = 'Buenas noches... !';
 /**/
-$string['bottomphead'] = 'Configuración del Pié de Página';
+$string['bottomphead'] = 'Pié de Página';
 $string['navhelphead'] = 'Opciones de ayuda a la navegación';
 $string['navhelp'] = 'Enlace de la ayuda a la navegación';
 $string['navhelpdesc'] = 'Dirección de la página donde están configuradas las opciones de la barra de ayuda a la navegación';
-$string['webmapdesc'] = 'Si activa esta opción, aparecerá un enlace en el pié de página al Esquema de páginas de la plataforma, que formará el Mapa Web';
-$string['helpdesc'] = 'Si activa esta opción, aparecerá un enlace en el pié de página a la ayuda general de la plataforma';
-$string['footsearchdesc'] = 'Si activa esta opción, aparecerá un enlace en el pié de página a la búsqueda general dentro de la plataforma';
-$string['statsdesc'] = 'Si activa esta opción, aparecerá un enlace en el pié de página a las estadísticas de uso de la plataforma';
-$string['disclaimerdesc'] = 'Si activa esta opción, aparecerá un enlace en el pié de página al aviso legal obligatorio';
-$string['policiesdesc'] = 'Si activa esta opción, aparecerá un enlace en el pié de página a las política generales de la plataforma';
-$string['privacydesc'] = 'Si activa esta opción, aparecerá un enlace en el pié de página a la información sobre la privacidad en la navegación dentro de la plataforma';
-$string['securitydesc'] = 'Si activa esta opción, aparecerá un enlace en el pié de página a la información sobre la seguridad en la navegación dentro de la plataforma';
-$string['accessibilitydesc'] = 'Si activa esta opción, aparecerá un enlace en el pié de página a la información sobre accesibilidad de la plataforma';
+$string['navhelplinks'] = 'Enlaces a mostrar';
+$string['navhelplinksdesc'] = 'Seleccione los enlaces que desea mostrar en la barra de ayuda a la navegación del pié de página';
+$string['moodledocsdesc'] = 'Enlace a los documentos de ayuda originales (MoodleDocs) en <a href="http://docs.moodle.org/" target="_blank">docs.moodle.org.</a>';
+$string['helpdesc'] = 'Ayuda general de la plataforma';
+$string['webmapdesc'] = 'Esquema de páginas de la plataforma, que formará el Mapa Web';
+$string['footsearchdesc'] = 'Búsqueda general dentro de la plataforma';
+$string['statsdesc'] = 'Estadísticas de uso de la plataforma';
+$string['disclaimerdesc'] = 'Aviso legal obligatorio';
+$string['policiesdesc'] = 'Política general de la plataforma';
+$string['privacydesc'] = 'Información sobre la privacidad en la navegación dentro de la plataforma';
+$string['securitydesc'] = 'Información sobre la seguridad en la navegación dentro de la plataforma';
+$string['accessibilitydesc'] = 'Información sobre accesibilidad de la plataforma';
 /**/
 $string['contacthead'] = 'Opciones de contacto';
 $string['corpweb'] = 'Dirección Web';
@@ -354,7 +473,7 @@ $string['skypedesc'] = 'Introduzca el nombre de usuario de su Organización / In
 $string['contactnote'] = 'Contacto';
 $string['contactnotedesc'] = 'Aquí puede añadir información de contacto que aparecerá en medio de la zona de contacto del pié de página';
 /**/
-$string['socialcontenthead'] = 'Enlaces a las direcciones de las redes sociales, donde comparte contenido';
+$string['socialcontenthead'] = 'Opciones de enlaces a las redes sociales (donde comparte contenido)';
 $string['dropbox'] = 'Enlace a DropBox';
 $string['dropboxdesc'] = 'Introduzca el enlace (URL) a su cuenta en DropBox.
 <a href="http://www.dropbox.com/" target="_blank"> (www.dropbox.com) .</a>';
@@ -401,7 +520,7 @@ $string['myspace'] = 'Enlace a MySpace';
 $string['myspacedesc'] = 'Introduzca el enlace (URL) a su perfil en MySpace.
 <a href="http://www.myspace.com/" target="_blank"> (www.myspace.com) .</a>';
 /**/
-$string['socialhead'] = 'Enlaces a las direcciones propias de las redes sociales';
+$string['socialhead'] = 'Opciones de enlaces a las redes sociales';
 $string['linkedin'] = 'Enlace a LinkedIn';
 $string['linkedindesc'] = 'Introduzca el enlace (URL) a su perfil en LinkedIn.
 <a href="http://www.linkedin.com/" target="_blank"> (www.linkedin.com) .</a>';
@@ -431,11 +550,9 @@ $string['blogger'] = 'Enlace a Blogger';
 $string['bloggerdesc'] = 'Introduzca el enlace (URL) a su blog en Blogger.
 <a href="http://www.blogger.com/" target="_blank"> (www.blogger.com) .</a>';
 /**/
-$string['creditshead'] = 'Mensajes de crédito y mérito';
+$string['creditshead'] = 'Opciones de mensajes de crédito y mérito';
 $string['moodlecredit'] = 'Créditos a Moodle';
 $string['moodlecreditdesc'] = 'Si desea que aparezca en el pié de página un mensaje de agradecimiento y un enlace a la página original de <a href="http://moodle.org/" target="_blank">moodle.org.</a>, active esta opción';
-$string['moodledocslink'] = 'Enlace a Moodle Docs';
-$string['moodledocslinkdesc'] = 'Si desea que aparezca en el pié de página un enlace a los documentos de ayuda de la página original de <a href="http://docs.moodle.org/" target="_blank">docs.moodle.org.</a>, active esta opción';
 $string['compatcredit'] = 'Compatibilidades';
 $string['compatcreditdesc'] = 'Si desea que aparezca en el pié de página una lista con los logotipos de las distintas validaciones conseguidas, active esta opción';
 $string['compatwai'] = 'Validación de Accesibilidad';
@@ -455,7 +572,7 @@ $string['ctested_5'] = 'reserved _ Children Free Validator <a href="http://www.w
 $string['footnote'] = 'Nota al pié de página';
 $string['footnotedesc'] = 'Si desea puede añadir contenido personalizado en el pié de página. Este contenido será insertado a continuación de la zona de créditos.';
 /**/
-$string['cortesyhead'] = 'Mensajes de cortesía';
+$string['cortesyhead'] = 'Opciones de mensajes de cortesía';
 $string['copyrightstg'] = 'Mensaje de Propiedad';
 $string['copyrightstgdesc'] = 'Aquí puede escribir el mensaje que aparecerá al final del pié de página, describiendo la propiedad del sitio Web. 
 Si deja en blanco esta opción, se compondrá un mensaje con el nombre corto del sitio y el año actual. 
@@ -472,6 +589,7 @@ $string['thanksvisitmsgdesc'] = 'Si desea que aparezca un mensaje de agradecimie
 $string['choosereadme'] = '
 <div class="clearfix">
   <div class="theme_screenshot">
+
     <h2>aigne</h2>
     <img src="aigne/pix/screenshot.jpg" />
 
@@ -502,7 +620,7 @@ $string['choosereadme'] = '
       <li>Logotipo personalizado, lema del sitio y una imagen de fondo del logotipo.</li>
     </ul> 
     <h3>Créditos:</h3>
-    <p>This design was created by Franc Pombal (www.piratininga.tk/moodle), improving the AfterBurner Theme in the Moodle core, what was an original design by Mary Evans & Patrick Malley & Rocket Themes.</p>
+    <p>This design was created by Franc Pombal ("www.piratininga.tk/moodle"), improving the AfterBurner Theme in the Moodle core, what was an original design by Mary Evans & Patrick Malley & Rocket Themes.</p>
     <h3>Licencia:</h3>
     <p>This, and all other themes included in the Moodle core, are licensed under the <a href="http://www.gnu.org/licenses/gpl.html">GNU General Public License</a>.</p>
   </div>

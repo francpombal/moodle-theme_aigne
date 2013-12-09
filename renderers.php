@@ -10,29 +10,6 @@
 defined('MOODLE_INTERNAL') || die;
 
 class theme_aigne_core_renderer extends core_renderer {
-    /**      
-     * Get the DOCTYPE declaration that should be used with this page.
-     *  
-     * @return string the DOCTYPE declaration that should be used -> DOCTYPE constant -> moodle\lib\outputlib.php _ #288
-     */
-    // Minimal changes :)... I don't like /n
-    public function doctype() {
-        
-        if ($this->page->theme->doctype === 'html5') {
-            $this->contenttype = 'text/html; charset=utf-8';
-            return "<!DOCTYPE html>";
-
-        } else if ($this->page->theme->doctype === 'xhtml5') {
-            $this->contenttype = 'application/xhtml+xml; charset=utf-8';
-            return "<!DOCTYPE html>";
-
-        } else {
-            // legacy xhtml 1.0
-            $this->contenttype = 'text/html; charset=utf-8';
-            return ('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
-        }
-    }
-
     /**
      * The standard tags that should be included in the <head> tag.
      *
@@ -41,7 +18,7 @@ class theme_aigne_core_renderer extends core_renderer {
     // Included meta tags changes, to beginning with SEO tools in Moodle sites
     public function standard_head_html() {
         global $CFG, $SITE, $SESSION, $PAGE;
-    
+
         $output = '';
         $hasmtkeywords = (!empty($PAGE->theme->settings->mtkeywords));
         $hasmtdescription = (!empty($PAGE->theme->settings->mtdescription));
@@ -54,9 +31,9 @@ class theme_aigne_core_renderer extends core_renderer {
             $data->sitename = $sitens; 
             
         //$output .= '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />' . "\n";
-        $output .= '<META http-equiv="Content-Type" content="' . $this->contenttype . '" />';
-        $output .= '<META http-equiv="Page-Exit" content="blendTrans(Duration=0.1)" />';
-        $output .= '<META http-equiv="imagetoolbar" content="no" />';
+            $output .= '<META http-equiv="Content-Type" content="' . $this->contenttype . '" />';
+            $output .= '<META http-equiv="Page-Exit" content="blendTrans(Duration=0.1)" />';
+            $output .= '<META http-equiv="imagetoolbar" content="no" />';
         if (!$this->page->cacheable) {
             //$output .= '<meta http-equiv="pragma" content="no-cache" />' . "\n";
             $output .= '<META http-equiv="Cache-Control" content="no-cache" />';
@@ -176,13 +153,14 @@ class theme_aigne_core_renderer extends core_renderer {
      * @return string
      */
     protected function render_custom_menu(custom_menu $menu) {
-    $hasmenulogout = (!empty($PAGE->theme->settings->menulogout));
+        global $PAGE;
         // If the menu has no children return an empty string
         if (!$menu->has_children()) {
             return '';
         }
 
         // Add a login or logout link
+        $hasmenulogout = $PAGE->theme->settings->menulogout;
         if ($hasmenulogout) {
             if (isloggedin()) {
                 $branchlabel = get_string('logout');
@@ -404,22 +382,39 @@ protected function navigation_node($items, $attrs=array(), $expansionlimit=null,
     }
 }
 
+/**
+ * Returns the 'User Information Area' over the block 'Navigation', 
+ * while configured in theme settings
+ *
+ */
 public function theme_aigne_user_info() {
-    global $CFG, $OUTPUT, $USER, $SESSION, $PAGE;
+    global $CFG, $OUTPUT, $USER, $PAGE;
     $wwwroot = '';
     $forgot = '';
     $authplugin = '';
     $signup = '';
     $username = '';
     $loginlogout = '';
-    $userph = get_string('username');
-    $passph = get_string('password');
-    $hassalut = (!empty($PAGE->theme->settings->welcomemsg));
-    $hasusernavsalut = (!empty($PAGE->theme->settings->usernavsalut));
-    $hasusernavinfo = (!empty($PAGE->theme->settings->usernavinfo));
-    $hasusernavpic = (!empty($PAGE->theme->settings->usernavpic));
-    $usernavout = ($PAGE->theme->settings->usernavout);
-
+    $haswelsalut =  0;
+    $hassalut = (!empty($PAGE->theme->settings->usernavsalut));
+    $haswelsalut = (!empty($PAGE->theme->settings->welcomemsg));
+/*
+    $today = time();
+    TODO -> Birthday greetings
+    TODO -> Crear campo de 'birthday' en la ficha de alumno
+    If (!empty(TABLA_USER -> CAMPO_BIRTHDATE)) {
+        $hasbirthdate = 1;
+        $birthdate = TABLA_USER -> CAMPO_BIRTHDATE;
+    }
+    TODO -> Special date greetings
+    $hasdatemessage = 0;
+    If (!empty($PAGE->theme->settings->datemessage)) {
+        $hasdatemessage = 1;
+        $datemessage = $PAGE->theme->settings->datemessage;
+        $datestart = $PAGE->theme->settings->datestart;
+        $datefinis = $PAGE->theme->settings->datefinis;
+    }
+*/
     // normal link or https
     if (empty($CFG->loginhttps)) {
         $wwwroot = $CFG->wwwroot;
@@ -451,46 +446,48 @@ public function theme_aigne_user_info() {
     } else {
         $autocomplete = '';
     }
-
-    //TODO -> Birthday greetings
-    // Crear campo de 'birthday' en la ficha de alumno
-    // Entonces, comprobar si esta rellenado y si hoy es el día
-    
+   
     // Set the greeting string
-    if (!isloggedin() or isguestuser()) {
-        $salut = get_string('loggedinnot');
-    //} else if ($hasbirthdate) {
-    //    $salut = get_string('birthday_greeting', 'theme_aigne');
-    } else if ($hassalut) {
-        $salut = ($PAGE->theme->settings->welcomemsg);
-    } else { 
-        $utz = get_user_timezone_offset();
-        if ($utz == 99) {
-            $ut = (date('G')*3600 + date('i')*60 + date('s'))/3600;
-        } else {
-            $ut = ((gmdate('G') + get_user_timezone_offset())*3600 + gmdate('i')*60 + gmdate('s'))/3600;
-            If ($ut <= 0) { $ut = 24 + $ut; }
-            If ($ut > 24) { $ut = $ut - 24; }
-        }
-    // Define the daylight target and search the string in lang/xx/theme_aigne
-        if (($ut >=6 ) and ($ut <12 )) {
-            $salut =  get_string('morning_greeting', 'theme_aigne');
-        } elseif (($ut >=12 ) and ($ut < 18 )) {
-            $salut = get_string('afternoon_greeting', 'theme_aigne');
-        } else {
-            $salut = get_string('night_greeting', 'theme_aigne');              
+    if ($hassalut) {
+        if (!isloggedin() or isguestuser()) {
+            $salut = get_string('loggedinnot');
+        //} else if ($hasbirthdate and ($birthdate = $today)) {
+        //    $salut = get_string('birthday_greeting', 'theme_aigne');
+        //} else if ($hasdatemessage and (($datestart <= $today) and ($datefinis >= $today))) {
+        //    $salut = $today;
+        } else if ($haswelsalut) {
+            $salut = ($PAGE->theme->settings->welcomemsg);
+        } else { 
+            $utz = get_user_timezone_offset();
+            if ($utz == 99) {
+                $ut = (date('G')*3600 + date('i')*60 + date('s'))/3600;
+            } else {
+                $ut = ((gmdate('G') + get_user_timezone_offset())*3600 + gmdate('i')*60 + gmdate('s'))/3600;
+                If ($ut <= 0) { $ut = 24 + $ut; }
+                If ($ut > 24) { $ut = $ut - 24; }
+            }
+        // Define the daylight target and search the string in lang/xx/theme_aigne
+            if (($ut >=6 ) and ($ut <12 )) {
+                $salut =  get_string('morning_greeting', 'theme_aigne');
+            } elseif (($ut >=12 ) and ($ut < 18 )) {
+                $salut = get_string('afternoon_greeting', 'theme_aigne');
+            } else {
+                $salut = get_string('night_greeting', 'theme_aigne');              
+            }
         }
     }
 
     // User Information Area: greeting on the block title <- ISSUE -> No coje el título, porque lo define mucho antes
-    if ($hasusernavsalut) {
-        $this->title = $salut;
-    } else {
-        $this->title = get_string('pluginname', $this->blockname);
-    }
+    //if ($hasusernavsalut) {
+    //    $this->title = $salut;
+    //} else {
+    //    $this->title = get_string('pluginname', $this->blockname);
+    //}
 
     // User not loggedin or guest user
         if (!isloggedin() or isguestuser()) {
+            $userph = get_string('username');
+            $passph = get_string('password');
             $loginlogout .= html_writer::start_tag('div', array('class'=>'loginform'));
             $loginlogout .= html_writer::start_tag('form', array('class'=>'loginform', 'id'=>'login', 'method'=>'post', 'action'=>get_login_url()));
             //$loginlogout .= html_writer::tag('label', get_string('username'), array('class'=>'form-label', 'for'=>'login_username'));
@@ -527,6 +524,10 @@ public function theme_aigne_user_info() {
         $loginlogout .= html_writer::empty_tag('HR');
     // User loggedin
 		} else {
+            $hasusernavsalut = (!empty($PAGE->theme->settings->usernavsalut));
+            $hasusernavinfo = (!empty($PAGE->theme->settings->usernavinfo));
+            $hasusernavpic = (!empty($PAGE->theme->settings->usernavpic));
+            $usernavout = (empty($PAGE->theme->settings->usernavout)) ? false : ($PAGE->theme->settings->usernavout);
             $loginlogout .= html_writer::start_tag('div', array('class'=>'userinfo'));
         // User Information Area: salutation
         if ($hasusernavsalut) {

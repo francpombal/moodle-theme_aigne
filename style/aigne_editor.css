@@ -3,7 +3,7 @@ BODY {
     background-color: [[setting:corsch_B]];
     color: #222222;
     /*color: [[setting:corsch_T]];*/
-    font-family: "eras Bk BT", "afta_sansregular", sans-serif;
+    font-family: "[[setting:fontfam]]", Helvetica, sans-serif;
     font-size: [[setting:bodyfont]];
     font-style: normal;
     font-weight: normal;

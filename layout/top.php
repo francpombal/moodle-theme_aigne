@@ -1,16 +1,24 @@
 <?php 
 /**
  * top-of-the-page section _ Moodle adaptation
- * TODO: I like the nostalgic table, but... 
  * 
  * @package    theme_aigne
  * @copyright  1997 Franc Pombal (www.aigne.com)
  * @license    http: *www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$slogan = $PAGE->theme->settings->slogan;
+If (!empty($PAGE->theme->settings->slogan)) {
+    $slogan = $PAGE->theme->settings->slogan;
+} else {
+    $slogan = get_string('sloganaigne','theme_aigne');
+}
 $hasusernav = $PAGE->theme->settings->usernav;
 $haslangmenu = (!empty($PAGE->layout_options['langmenu']));
+
+
+$userdate = usergetdate((time()+($i*86400)), $timezone);
+            $usermonth = $userdate['mon'];
+            $userday = $userdate['mday'];
 
 ?>
 
@@ -26,7 +34,7 @@ $haslangmenu = (!empty($PAGE->layout_options['langmenu']));
          <tr Style="height:25px">
             <td class="color_01" Style="width:20%;" colspan=5>&nbsp;</td>
             <td class="color_02" Style="width:16%;" colspan=4>&nbsp;</td>
-            <td class="color_03" Style="width:16%;" colspan=4>&nbsp;
+            <td class="color_03" Style="width:16%;" colspan=4>
                 <?php echo ''; ?>
             </td>
             <td class="color_04" Style="width:48%; text-align:right; padding-right:10px" colspan=12>
@@ -36,13 +44,13 @@ $haslangmenu = (!empty($PAGE->layout_options['langmenu']));
                     include('userinfo.php');
                     break;
                 case 2:
-                    echo ' ';
+                    echo '&nbsp;';
                     break;
                 case 3:
                     echo $OUTPUT->login_info();
                     break;
                 case 4:
-                    echo ' ';
+                    echo '&nbsp;';
                     break;
                 default:
                     echo $OUTPUT->login_info();
@@ -52,34 +60,28 @@ $haslangmenu = (!empty($PAGE->layout_options['langmenu']));
         </tr>
         <tr Style="height:25px">
             <td class="color_05" Style="width:8%;" colspan=2>&nbsp;</td>
-            <td class="color_03" Style="width:4%;" colspan=1>&nbsp;</td>
-            <td class="color_03" Style="width:4%; font-size: 90%" colspan=1>
-                <button id="decfontsize" title="<?php echo get_string('decfontsizetxt','theme_aigne'); ?>" onclick="alert('<?php echo get_string('noimplemented','theme_aigne'); ?>')">-A</button>
+            <td class="color_03" Style="width:20%;" colspan=5>
+                <button id="decfontsize" title="<?php echo get_string('decfontsizetxt','theme_aigne'); ?>" onclick="alert('<?php echo get_string('noimplemented','theme_aigne'); ?>')">&nbsp;</button>
+                <button id="defaultfontsize" title="<?php echo get_string('defaultfontsizetxt','theme_aigne'); ?>" onclick="alert('<?php echo get_string('noimplemented','theme_aigne'); ?>')">&nbsp;</button>
+                <button id="incfontsize" title="<?php echo get_string('incfontsizetxt','theme_aigne'); ?>" onclick="alert('<?php echo get_string('noimplemented','theme_aigne'); ?>')">&nbsp;</button>
             </td>
-            <td class="color_03"  Style="width:4%;" colspan=1>
-                <button id="defaultfontsize" title="<?php echo get_string('defaultfontsizetxt','theme_aigne'); ?>" onclick="alert('<?php echo get_string('noimplemented','theme_aigne'); ?>')">A</button>
-            </td>
-            <td class="color_03"  Style="width:4%; font-size: 110%" colspan=1>
-                <button id="incfontsize" title="<?php echo get_string('incfontsizetxt','theme_aigne'); ?>" onclick="alert('<?php echo get_string('noimplemented','theme_aigne'); ?>')">+A</button>
-            </td>
-            <td class="color_03"  Style="width:4%;" colspan=1>&nbsp;</td>
             <td class="color_05"  Style="width:16%" colspan=4>&nbsp;</td>
             <td Style="width:4%; background-color:#CCDDEE" colspan=1>
-                <button id="style1" title="<?php echo get_string('defaultstyletxt','theme_aigne'); ?>" onclick="alert('<?php echo get_string('noimplemented','theme_aigne'); ?>')">   </button>
+                <button id="style1" title="<?php echo get_string('defaultstyletxt','theme_aigne'); ?>" onclick="alert('<?php echo get_string('noimplemented','theme_aigne'); ?>')">&nbsp;</button>
             </td>
             <td Style="width:4%; background-color:#322C65" colspan=1>
-                <button id="style2" title="<?php echo get_string('styletxt','theme_aigne'); ?>" onclick="alert('<?php echo get_string('noimplemented','theme_aigne'); ?>')">   </button>
+                <button id="style2" title="<?php echo get_string('styletxt','theme_aigne'); ?>" onclick="alert('<?php echo get_string('noimplemented','theme_aigne'); ?>')">&nbsp;</button>
             </td>
             <td Style="width:4%; background-color:#004040" colspan=1>
-                <button id="style3" title="<?php echo get_string('styletxt','theme_aigne'); ?>" onclick="alert('<?php echo get_string('noimplemented','theme_aigne'); ?>')">   </button>
+                <button id="style3" title="<?php echo get_string('styletxt','theme_aigne'); ?>" onclick="alert('<?php echo get_string('noimplemented','theme_aigne'); ?>')">&nbsp;</button>
             </td>
             <td Style="width:4%; background-color:#EB8324" colspan=1>
-                <button id="style4" title="<?php echo get_string('styletxt','theme_aigne'); ?>" onclick="alert('<?php echo get_string('noimplemented','theme_aigne'); ?>')">   </button>
+                <button id="style4" title="<?php echo get_string('styletxt','theme_aigne'); ?>" onclick="alert('<?php echo get_string('noimplemented','theme_aigne'); ?>')">&nbsp;</button>
             </td>
             <td Style="width:4%; background-color:#990000" colspan=1>
-                <button id="style5" title="<?php echo get_string('styletxt','theme_aigne'); ?>" onclick="alert('<?php echo get_string('noimplemented','theme_aigne'); ?>')">   </button>
+                <button id="style5" title="<?php echo get_string('styletxt','theme_aigne'); ?>" onclick="alert('<?php echo get_string('noimplemented','theme_aigne'); ?>')">&nbsp;</button>
             </td>
-            <td class="color_03" Style="width:20%; min-width:220px;" colspan=5>
+            <td class="color_03" Style="width:20%; min-width:225px;" colspan=5>
                 <?php if ($haslangmenu) {
                     echo $OUTPUT->lang_menu();
                 } ?>

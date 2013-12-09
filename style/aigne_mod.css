@@ -1,52 +1,41 @@
 /*----- ----- ----- theme_aigne -> MODS & PLUGINS & ... -----*/
-/*----- ----- ----- ----- ----- ----- Calendar ----- ----- ----- ----- -----*/
-/* Main Content Calendar */
+/*----- ----- ----- ----- ----- ----- Comun settings ----- ----- ----- ----- -----*/
+.glossarypost .picture img, 
+.forumpost .picture img {
+    width: 35px;
+    height: 35px;
+    margin: 3px 3px 0px 3px;
+}
+/*----- ----- ----- Calendar -> .path-calendar + .block .minicalendar ----- ----- -----*/
 .calendartable {
-    font-size: 1.1em;
     border-width: 0px 0px 1px 0px;
     border-style: solid;
     border-color: [[setting:corsch_1]];
+    font-size: 1.1em;
 }
 .calendartable th,
 .calendartable td {
+    padding: 5px 0px 0px 0px;
     width: 14%;
     vertical-align: top;
     text-align: center;
-    padding: 5px 0px 0px 0px;
 }
 .calendartable td {
     border-width: 1px 0px 0px 0px;
     border-style: solid;
     border-color: [[setting:corsch_3]];
-    /*background-color: [[setting:corsch_4]];*/
 }
-.path-calendar .calendar-controls .previous,
-.path-calendar .calendar-controls .next,
-.path-calendar .calendar-controls .current {
-    display: block;
-    float: left;
+.calendartable td.weekend {
+    color: #CC0000;
 }
-.path-calendar .calendar-controls .previous {
-    width: 12%;
-    text-align: left;
-}
-.path-calendar .calendar-controls .current {
-    width: 76%;
-    text-align: center;
-    font-size: 2em;
-}
-.path-calendar .calendar-controls .next {
-    float: right;
-    width: 12%;
-    text-align: right;
-}
+/* Main Content Main Calendar */
 .path-calendar .maincalendar {
-    vertical-align: top;
     padding: 0px 0px 0px 0px;
+    vertical-align: top;
 }
 .path-calendar .maincalendar .bottom {
-    text-align: center;
     padding: 10px 0px 10px 0px;
+    text-align: center;
 }
 .path-calendar .maincalendar .heightcontainer {
     height: 100%;
@@ -63,12 +52,6 @@
     list-style-type: none;
     margin-top: 5px;
 }
-.path-calendar .maincalendar .calendarmonth td {
-    height: 5em;
-}
-.path-calendar .maincalendar .calendarmonth td.weekend {
-    color: #CC0000;
-}
 .path-calendar .maincalendar .calendarmonth th {
     padding: 5px 0px 5px 0px;
     border-width: 1px 0px 2px 0px;
@@ -76,44 +59,63 @@
     border-color: [[setting:corsch_1]];
     background-color: [[setting:corsch_3]];
 }
-.path-calendar .maincalendar .calendar-controls .previous,
-.path-calendar .maincalendar .calendar-controls .next {
-    width: 30%;
-}
-.path-calendar .maincalendar .calendar-controls .current {
-    width: 35%;
+.path-calendar .maincalendar .calendarmonth td {
+    height: 6em;
 }
 .path-calendar .maincalendar .controls {
     width:98%;
     margin: 10px auto 0px auto;
 }
+.path-calendar .maincalendar .calendar-controls .previous, 
+.path-calendar .maincalendar .calendar-controls .current, 
+.path-calendar .maincalendar .calendar-controls .next {
+    display: block;
+    float: left;
+    width: 20%;
+    font-size: 1.20em;
+}
+.path-calendar .maincalendar .calendar-controls .previous {
+    text-align: left;
+}
+.dir-rtl.path-calendar .maincalendar .calendar-controls .previous {float: right; text-align: right;}
+.path-calendar .maincalendar .calendar-controls .current {
+    width: 50%;
+    text-align: center;
+    font-size: 2em;
+}
+.path-calendar .maincalendar .calendar-controls .next {
+    float: right;
+    text-align: right;
+}
+.dir-rtl.path-calendar .maincalendar .calendar-controls .next {float: left; text-align: left;}
 .path-calendar .maincalendar .eventlist .event {
     width: 100%;
     margin-bottom: 10px;
-    border-spacing: 0px;
-    border-collapse: separate;
     border-width: 1px;
     border-style: solid;
+    border-spacing: 0px;
+    border-collapse: separate;
 }
 .path-calendar .maincalendar .eventlist .event .topic .name {
     float: left;
 }
+.dir-rtl .path-calendar .maincalendar .eventlist .event .topic .name {float: right;}
 .path-calendar .maincalendar .eventlist .event .topic .date {
     float: right;
 }
-.path-calendar .maincalendar .eventlist .event .subscription {
-    float:left;
-    clear:left;
-}
+.dir-rtl .path-calendar .maincalendar .eventlist .event .topic .date {float: left;}
+.path-calendar .maincalendar .eventlist .event .subscription, 
 .path-calendar .maincalendar .eventlist .event .course {
     float: left;
     clear: left;
 }
+.dir-rtl .path-calendar .maincalendar .eventlist .event .subscription, 
+.dir-rtl .path-calendar .maincalendar .eventlist .event .course {float: right; clear: right;}
 .path-calendar .maincalendar .eventlist .event .side {
     width: 32px;
 }
 .path-calendar .maincalendar .eventlist .event .commands a { 
-    margin: 0 3px;
+    margin: 0px 3px 0px 3px;
 }
 .path-calendar .maincalendar .header {
     overflow: hidden;
@@ -121,6 +123,7 @@
 .path-calendar .maincalendar .header .buttons {
     float: right;
 }
+.dir-rtl .path-calendar .maincalendar .header .buttons {float: left;}
 .path-calendar .filters table {
     width: 100%;
     border-collapse: separate;
@@ -129,74 +132,77 @@
 #page-calendar-export .indent {
     padding-left: 20px;
 }
+.dir-rtl #page-calendar-export .indent {padding-right: 20px;}
 .path-calendar .cal_courses_flt label { 
     margin-right: .45em;
 }
+.dir-rtl .path-calendar .cal_courses_flt label {margin-left: .45em;}
 /* Block Calendar */
 .block .minicalendar {
     width: 100%;
     margin: 10px auto 10px auto;
     border-width: 0px 0px 0px 0px;
 }
-.block .minicalendar th,
+.block .minicalendar th {
+    padding: 3px 0px 3px 0px;
+    border-width: 1px 0px 2px 0px;
+    border-style: solid;
+    border-color: [[setting:corsch_3]];
+    background-color: [[setting:corsch_B]];
+    font-size: 0.80em;
+    font-weight: normal;
+}
 .block .minicalendar td {
-    font-size: 0.85em;
+    font-size: 0.90em;
     padding: 3px 3px 3px 3px;
     border-width: 0px 0px 0px 0px;
     background-color: [[setting:corsch_B]];
 }
-.block .minicalendar th {
-    border-width: 1px 0px 2px 0px;
-    border-style: solid;
-    border-color: [[setting:corsch_3]];
-}
-.block .minicalendar td.weekend {
-    color: #CC0000;
-}
 .block .minicalendar .weekdays {
-    color: [[setting:corsch_2]];
+}
+.block .calendar-controls .previous, 
+.block .calendar-controls .current, 
+.block .calendar-controls .next {
+    display: block;
+    float: left;
+    width: 20%;
 }
 .block .calendar-controls .previous {
     text-align: left;
-    display: block;
-    float: left;
-    width: 12%;
 }
+.dir-rtl .block .calendar-controls .previous {float: right; text-align: right;}
 .block .calendar-controls .current {
-    float: left;
+    width: 50%;
     text-align: center;
-    display: block;
-    width: 76%;
 }
 .block .calendar-controls .next {
+    float: right;
     text-align: right;
-    display: block;
-    float: left;
-    width: 12%;
 }
+.dir-rtl .block .calendar-controls .next {float: left; text-align: left;}
 .block .filters table {
     border-collapse: separate;
     border-spacing: 2px;
-    padding: 2px;
+    padding: 2px 2px 2px 2px;
     width: 100%;
 }
 .block .calendar_filters ul {
     list-style: none; 
-    margin: 0;
+    margin: 0px 0px 0px 0px;
 }
 .block .calendar_filters li { 
     margin-bottom: 0.2em;
-    padding: 0;
+    padding: 0px 0px 0px 0px;
 }
 .block .calendar_filters li span img {
-    padding: 0 .2em;
+    padding: 0px 0.20em 0px 0.20em;
 }
 .block .calendar_filters .eventname {
-    padding-left: .2em;
+    padding-left: 0.20em;
 }
+.dir-rtl .block .calendar_filters .eventname {padding-right: 0.20em;}
 .block .content h3.eventskey {
-    margin-top: 0.5em;
-    margin-bottom: 0;
+    margin: 0.5em 0px 0px 0px;
 }
 /*  Calendar Events Colours */
 #calendar .event_global,
@@ -228,16 +234,248 @@
     background-color: #DCE7EC;
 }
 .fdate_selector {
-    padding: 0;
-    margin: 0;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+/*----- ----- ----- Data Base -> #page-mod-data-xxx + .path-mod-data ----- ----- -----*/
+/* /preset/imagegallery list: DIV#pictures + TABLE.pictureframe */
+/* /preset/imagegallery simple: TABLE#single + #singleimage */ 
+.path-mod-data .tabtree {
+    margin-bottom: 0px;
+}
+#page-mod-data-field- .fieldadd, 
+#page-mod-data-field- .sortdefault, 
+.path-mod-data-field .generalbox {
+    margin: 0px auto 0px auto;
+}
+#page-mod-data-field- .fieldadd, 
+#page-mod-data-field- .sortdefault, 
+.path-mod-data-field .generalbox, 
+#page-mod-data-view .paging, 
+#page-mod-data-view #pictures, 
+#page-mod-data-view #single, 
+#page-mod-data-view .datapreferences, 
+#page-mod-data-edit .generalbox, 
+#page-mod-data-export .mform {
+    padding: 2em 1em 1em 1em;
+    background-color: [[setting:corsch_4]];
+    border-width: 0px 0px 2px 0px;
+    border-style: solid;
+    border-color: [[setting:corsch_1]];
+}
+#page-mod-data-field- .fieldadd {
+    border-width: 0px 0px 1px 0px;
+}
+.path-mod-data-field .generalbox {
+    width: 97%;
+} 
+#page-mod-data-field- TABLE.generaltable {
+    margin: 2em auto 2em auto;
+}
+#page-mod-data-view .paging {
+    border-width: 0px 0px 1px 0px;
+}
+#page-mod-data-view .defaulttemplate {
+    background-color: [[setting:corsch_4]];
+}
+#page-mod-data-view .defaulttemplate TABLE {
+    margin-bottom: 0px;
+}
+#page-mod-data-view #pictures, 
+#page-mod-data-view .datapreferences {
+    width: 97%;
+}
+#page-mod-data-view #single {
+    width: 100%;
+}
+#page-mod-data-view #singleimage img {
+	display: block;
+	width: auto;
+	max-height: 550px; /* Definido en mod\data\preset\imagegallery\jstemplate.js */
+}
+#page-mod-data-view .datapreferences {
+    margin: -1.20em auto 0px auto;
+}
+#page-mod-data-edit .generalbox {
+    width: 97%;
+    margin: 0px auto 0px auto;
+}
+#page-mod-data-templates .template_heading {
+    margin: 4em auto 0px auto;
+}
+#page-mod-data-preset H2.main {
+    display: none;
+}
+#page-mod-data-preset .mform {
+    padding: 3em 1em 1em 1em;
+    background-color: [[setting:corsch_4]];
+}
+#page-mod-data-preset #mform1 {
+    border-width: 0px 0px 2px 0px;
+    border-style: solid;
+    border-color: [[setting:corsch_1]];
+}
+/*----- ----- ----- Chat -> #page-mod-chat-view + #page-mod-chat-gui_ajax- + .path-mod-chat----- ----- -----*/
+
+/*----- ----- ----- Consulta -> #page-mod-choice-view + .path-mod-choice ----- ----- -----*/
+
+/*----- ----- ----- Cuestionario -> #page-mod-quiz-view + .path-mod-quiz ----- ----- -----*/
+/* traidos de base/question.css */
+#page-question-preview #techinfo {
+    margin: 1em 0;
+}
+#page-mod-quiz-edit #categoryquestions .header {
+    background: none;
 }
 
+/*----- ----- ----- Encuesta -> #page-mod-survey-view + .path-mod-survey ----- ----- -----*/
+/* Encuesta Incidentes críticos */
+.path-mod-survey #surveyform .smalltext {
+    text-align: right;
+    font-size: 1em;
+}
+#page-mod-survey-view .generaltable, 
+#page-mod-survey-report .generaltable {
+    width: 100%;
+}
+#page-mod-survey-save .generalbox {
+    padding: 2px 1em 1px 1em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #777777;
+    background-color: #F0F0F0;
+    text-align: center;
+    line-height: 1.50em;
+}
+
+/*--- ----- ----- ----- ----- ----- Forum ----- ----- ----- ----- ----- ---*/
+/* NO TOCAR -> influye theme_base */
+.forumpost {
+    width: 100%;
+    margin: 1em 0px 0px 0px;
+    border-collapse: separate;
+    border-width: 1px 0px 1px 0px;
+    border-style: solid;
+    border-color: [[setting:corsch_1]];
+}
+.forumpost .row.header, 
+.forumpost .row.maincontent, 
+.forumpost .row.side {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+/* Post Header */
+.forumpost .row.header {
+    background-color: [[setting:corsch_3]];
+}
+.forumpost .topic {
+    padding: 2px 1em 1px 1em;
+    color: [[setting:corsch_T]];
+}
+.forumpost .topic .author {
+    font-size: 0.90em;
+}
+/* Post Content */
+.forumpost .row.maincontent {
+    background-color: [[setting:corsch_4]];
+}
+.forumpost .content {
+    max-width: 100%;
+    overflow: auto;
+    padding: 1em 1em 1em 1em;
+}
+/* Post  footer */
+.forumpost .row.side {
+    background-color: [[setting:corsch_3]];
+}
+.forumpost .row.side .options {
+    padding: 2px 1em 1px 1em;
+}
+/* TABLE.forumheaderlist -> Forum post list */
+.path-mod-forum .forumheaderlist {
+    width: 100%;
+    margin: 1em 0px 1em 0px;
+    padding: 0px 0px 0px 0px;
+    border-width: 1px 0px 1px 0px;
+    border-style: solid;
+    border-color: [[setting:corsch_1]];
+}
+.path-mod-forum .forumheaderlist TH.header {
+    border-width: 0px 0px 2px 0px;
+    border-style: solid;
+    border-color: [[setting:corsch_1]];
+    background-color: [[setting:corsch_2]];
+    color: [[setting:corsch_B]];
+}
+.path-mod-forum .forumheaderlist .discussion TD {
+    border-width: 0px 0px 1px 0px;
+    border-style: solid;
+    border-color: [[setting:corsch_1]];
+}
+.path-mod-forum .forumheaderlist .discussion TD.topic.starter {
+    width: 50%;
+}
+.path-mod-forum .forumheaderlist .discussion.r0 {
+    background-color: [[setting:corsch_4]];
+}
+.path-mod-forum .forumheaderlist .discussion.r1 {
+    background-color: [[setting:corsch_3]];
+}
+/* Lista de respuestas en rama */
+.path-mod-forum .indent .forumthread {
+    line-height: 2em;
+}
+#page-mod-forum-search #intro {
+    padding: 0.70em 0px 0.50em 0px;
+    margin: 0px 0px 0px 0px;
+    font-size: 1.30em;
+}
+/* Search Form -> Only in Forum Advanced Search? */
+#searchform {
+    margin: 1em 0px 1em 0px;
+    padding: 2em 1em 2em 1em;
+    border-width: 1px 0px 2px 0px;
+    border-style: solid;
+    border-color: [[setting:corsch_1]];
+    background-color: [[setting:corsch_4]];
+}
+/*----- ----- ----- ----- ----- ----- BLOGS ----- ----- ----- ----- -----*/
+/* Use the same format than FORUM */
+.addbloglink {
+    text-align: center;
+    }
+.blog_entry .content {
+    margin-left: 43px;
+    }
+.blog_entry .audience, 
+.blog_entry .commands, 
+.blog_entry .lastmodified { 
+    text-align: right; 
+    padding: 0px 0px 0px 0px;
+    font-size: 0.90em;
+    }
+.blog_entry .tags {
+    margin-top: 1em;
+    }
+.blog_entry .tags .action-icon img.smallicon { 
+    height: 16px; width: 16px;
+    }
+
+
 /*----- ----- ----- ----- ----- ----- Glossary ----- ----- ----- ----- -----*/
+.path-mod-glossary FORM .boxaligncenter {
+    border-width: 1px 0px 1px 0px;
+    border-style: solid;
+    border-color: [[setting:corsch_1]];;
+}
+.path-mod-glossary .glossaryaddentry {
+    text-align: center;
+}
 .path-mod-glossary .entrybox {
     position: relative;
     width: 97%;
-    margin: -1px auto 0px auto;
-    padding: 12px 12px 12px 12px;
+    margin: -3em auto 0px auto;
+    padding: 1em 1em 1em 1em;
     background-color: [[setting:corsch_4]];
     border-width: 0px 0px 2px 0px;
     border-style: solid;
@@ -253,56 +491,60 @@
     background-color: [[setting:corsch_3]];
 }
 /* Each post with all things included -> glossarypost */
+/* fullwithauthor + fullwithoutauthor + continuous + .encyclopedia + .FAQ + .entrylist + .dictionary */
 .path-mod-glossary .glossarypost {
+    width: 100%;
     border-width: 0px 0px 1px 0px;
     border-style: solid;
     border-color: [[setting:corsch_2]];
 }
-.path-mod-glossary .glossarypost.encyclopedia {
-    width: 100%;
+.path-mod-glossary .glossarypost.entrylist {
+    border-width: 0px 0px 1px 0px;
+    border-style: solid;
+    border-color: [[setting:corsch_5]];
 }
 .dir-rtl .page-mod-glossary .glossarypost {text-align: right;}
-/* All the post entry ¿?¿?¿? */
+/* Header in some types */
+.path-mod-glossary .glossarypost .entryheader {}
+/* The approval zone in header */
+.path-mod-glossary .glossarypost .entryapproval {}
+/* The left bar in some types */
+.path-mod-glossary .glossarypost .left.side {}
+/* All the entry */
 .path-mod-glossary .glossarypost .entry {
     width: 100%;
     margin: 0px 0px 0px 0px;
-    padding: 0px 12px 0px 12px;
-}
-.path-mod-glossary .glossarypost.encyclopedia .entry {
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
-}
-/* Images */
-.path-mod-glossary .glossarypost .entry TABLE {
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
+    padding: 0px 6px 0px 6px;
 }
 /* The Concept */
 .path-mod-glossary .glossarypost .concept H3 {
-    padding: 0px 0px 0px 0px;
     font-weight: bold;
+    padding: 0px 0px 0px 0px;
 }
 /* The Definition */
-.path-mod-glossary .glossarypost .concept {
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
-}
-.path-mod-glossary .encyclopedia img {
+.path-mod-glossary .glossarypost .concept {}
+/* The Image in encyclopedia Definition */
+.path-mod-glossary .encyclopedia TD.entry IMG {
     display: block;
-    width: 100%;
+    width: auto; /* Resolver problema */
     max-height: 600px;
-    margin: 5px 0px 5px 0px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 5px 0px;
 }
 /* The bottom section in each entry, with the buttons */
 .path-mod-glossary .glossarypost .entrylowersection {
     margin: 0px 0px 0px 0px;
-    padding: 0px 12px 0px 12px;
-    float: right;
+    padding: 0px 6px 0px 6px;
 }
-.path-mod-glossary .glossarypost .entrylowersection img {
+.path-mod-glossary .glossarypost .entrylowersection IMG {
     width: 16px;
     height: 16px;
+    display: inline;
 }
+.path-mod-glossary .encyclopedia .entrylowersection {
+    float: right;
+}
+/* other text over the glossary */
 .path-mod-glossary .glossarypost .commands,
 .path-mod-glossary .glossarypost .author,
 .path-mod-glossary .glossarypost .time,
@@ -312,91 +554,96 @@
     font-size: 0.8em;
 }
 
-/*--- ----- ----- ----- ----- ----- Forum ----- ----- ----- ----- ----- ---*/
-.forumpost {
-    width: 100%;
-    border-collapse:separate;
-    border-width: 0px 0px 0px 0px;
-    border-style: solid;
-    border-color: [[setting:corsch_1]];
-    margin-top: 10px;
+/*----- ----- ----- ----- ----- ----- LTI _ no format required ----- ----- ----- ----- -----*/
 
-}
-.forumpost .row.header, 
-.forumpost .row.maincontent, 
-.forumpost .row.side {
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
-}
-.forumpost .row.header {
-    min-height: 43px;
-    background-color: [[setting:corsch_3]];
-    border-width: 1px 0px 0px 0px;
-    border-style: solid;
-    border-color: [[setting:corsch_1]];
-}
-.glossarypost .picture img, 
-.forumpost .picture img {
-    width: 35px;
-    height: 35px;
-    margin: 3px 3px 0px 3px;
-    padding: 0px 0px 0px 0px;
-    border: 1px [[setting:corsch_1]] solid;
-}
-.forumpost .topic .author {
-    font-size: 0.90em;
-}
-.forumpost .row.maincontent {
-    background-color: [[setting:corsch_4]];
-}
-.forumpost .content .posting {
-    padding: 10px 10px 20px 10px;
-    max-width: 100%;
-    overflow:auto;
-}
-.forumpost .topic {
-    padding: 3px 10px 3px 10px;
-    color: [[setting:corsch_T]];
-}
-.forumpost .row.side {
-    background-color: [[setting:corsch_3]];
-}
-.forumpost .row.side .options {
-    padding: 0px 10px 3px 10px;
-}
-
-.path-mod-forum .forumheaderlist {
-    width: 100%;
-    border-width: 1px 0px 1px 0px;
-    border-style: solid;
-    border-color: [[setting:corsch_1]];
-    margin: 10px 0px 10px 0px;
-    padding: 0px 0px 0px 0px;
-}
-.path-mod-forum .forumheaderlist th.header {
-    background-color: [[setting:corsch_2]];
-    color: [[setting:corsch_B]];
+/*----- ----- ----- ----- ----- ----- Lesson ----- ----- ----- ----- -----*/
+.path-mod-lesson .firstpageoptions {
+    width: 97%;
+    margin: -0.30em auto 0px auto;
+    padding: 1em 1em 1em 1em;
     border-width: 0px 0px 2px 0px;
     border-style: solid;
     border-color: [[setting:corsch_1]];
+    background-color: [[setting:corsch_4]];
 }
-.path-mod-forum .forumheaderlist .discussion TD {
-    border-width: 0px 0px 1px 0px;
-    border-style: solid;
-    border-color: [[setting:corsch_1]];
+.path-mod-lesson .firstpageoptions H3,
+.path-mod-lesson .firstpageoptions P {
+    text-align: center;
 }
-.path-mod-forum .forumheaderlist .discussion TD.topic.starter {
+.path-mod-lesson .centerpadded { padding: 5px; text-align: center; }
+.path-mod-lesson .feedback {
+    text-align: center;
+    font-weight: bold;
+}
+.path-mod-lesson .password-form .generalbox {
+    padding: 10px 10px 10px 10px;
     width: 50%;
+    text-align: center;
 }
-.path-mod-forum .forumheaderlist .discussion.r0 {
+.path-mod-lesson .center {
+    text-align: center;
+}
+.path-mod-lesson .ongoing {
+    color: #0000FF;
+    margin: 0 0 1em;
+}
+.path-mod-lesson .clock .content {
+    font-size: 1.2em;
+    padding-left: 15px 15px 15px 15px;
+}
+.path-mod-lesson .leftduring .generalbox {
+    padding: 10px 10px 10px 10px;
+    width: 50%;
+    margin: 0 auto;
+}
+.path-mod-lesson .correctanswer {
+    margin: 1em auto;
+    width: 50%;
+    padding: 10px 10px 10px 10px;
+}
+.path-mod-lesson .correctanswer .correct {
+    color: #008000;
+}
+
+/*----- ----- ----- ----- ----- ----- SCORM _ no format required - FALTA TERMINAR - ----- ----- ----- ----- -----*/
+.path-mod-scorm H2.main {
+    margin: -2.30em auto 0px auto;
+    padding: 3em 1em 1em 1em;
+    background-color: [[setting:corsch_4]];
+}
+/* RESOLVER tabs_informes */
+/*FALTA TERMINAR */
+
+/*----- ----- ----- ----- ----- Simple Certificate - FALTA TERMINAR - ----- ----- ----- ----- -----*/
+.path-mod-simplecertificate DIV.singleselect {
+    margin: -3em auto 0px auto;
+    padding: 2em 1em 1em 1em;
     background-color: [[setting:corsch_4]];
     border-width: 0px 0px 1px 0px;
     border-style: solid;
     border-color: [[setting:corsch_1]];
 }
-.path-mod-forum .forumheaderlist .discussion.r1 {
-    background-color: [[setting:corsch_3]];
-    border-width: 0px 0px 1px 0px;
+.path-mod-simplecertificate BR {
+    display: none;
+}
+.path-mod-simplecertificate FORM#bulkissue {
+    margin: 0px auto 0px auto;
+    padding: 2em 1em 1em 1em;
+    background-color: [[setting:corsch_4]];
+    border-width: 0px 0px 2px 0px;
+    border-style: solid;
+    border-color: [[setting:corsch_1]];
+    text-align: center;
+}
+.path-mod-simplecertificate #bulkissue TABLE {
+    margin: 1em auto 1em auto;
+}
+/*----- ----- ----- ----- ----- Questionnaire - Encuesta - FALTA TERMINAR - ----- ----- ----- ----- -----*/
+.path-mod-questionnaire .mform {
+    margin: -3em auto 0px auto;
+    padding: 2em 1em 2em 1em;
+    background-color: [[setting:corsch_4]];
+    border-width: 0px 0px 2px 0px;
     border-style: solid;
     border-color: [[setting:corsch_1]];
 }

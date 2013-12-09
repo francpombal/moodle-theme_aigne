@@ -1,4 +1,4 @@
-﻿AIGNE THEME _ Version 1.5.1
+AIGNE THEME _ Version 1.7.0
 
 ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- 
 
@@ -26,23 +26,35 @@ Thanks to all and best regards to somes... :P
 
 ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- 
 
- 1.5.1
+ 1.7.0
  =======================
- - Re-Stylized of Moodle Message Base and correct some minor issues
- - Re-Stylized of Glossary activity
- - Re-Stylized of Forum activity
- - Re-Stylized of TABS
- - Re-Stylized of TABLE .rolecap
- - Re-Stylized of custom menu and fixed a poor issue...
- - Cleaned some code at layouts (bottom + navhelp + default)
+ - Revised the appearance and style over all activities/resources
+ - New frontpage information format (message + boxes + accordion)
+ - New (... wow ...) categories list grid format
+ - Fix some issues...
  - Cleaned some code here, there and anywhere...
- - Cleaned some old-fashioned pix
- - Decided to use the plugin original icons, instead customized.
+
+ 1.6.0
+ =======================
+ - Aigne colour adaptation of several Course Formats plug-ins
+ - Revised the appearance and style over all admin pages
+ - Stylized FrontPage, with templates boxes for custom content
+ - Stylized Moodle Message Base and correct some minor issues
+ - Stylized Glossary activity
+ - Stylized Lesson activity
+ - Stylized Forum activity
+ - Stylized TABS
+ - Stylized TABLE ‘rolecap’
+ - Stylized custom menu and fixed a poor issue...
+ - Cleaned some code at layouts (bottom + ‘navhelp’ + default)
+ - Cleaned some code here, there and anywhere...
+ - Cleaned some old-fashioned pixes
+ - Decided to use the plug-in original icons, instead customized.
 
  1.5.0
  =======================
- - Re-Stylized of Calendar and correct some minor issues
- - Re-Stylized of coursebox
+ - Stylized Calendar and correct some minor issues
+ - Stylized coursebox
  - New code aplication to Colour Schema Option
  - Set to work reduce code volume
  - Set to work new icons/graphics
@@ -63,11 +75,10 @@ Thanks to all and best regards to somes... :P
  TODO LIST
  =======================
  - Custom columns width
- - News (Original) Social icons / images
+ - Renew (Original) Social icons / images
  - Finish the Portuguese translation
  - Translate to french
  - Redefine default + frontpage layouts
- - Reduce the code volume
  - Make compliance with early moodle versions.
 
 ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- 

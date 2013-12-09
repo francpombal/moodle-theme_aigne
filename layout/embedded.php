@@ -16,7 +16,9 @@ $courseheader = $coursecontentheader = $coursecontentfooter = $coursefooter = ''
             $coursefooter = $OUTPUT->course_footer();
         }
     }
-    
+
+$bodyclasses = array();
+
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes() ?>>
 <head>

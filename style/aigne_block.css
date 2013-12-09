@@ -4,8 +4,6 @@
     margin: 0px 0px 3px 0px;
     padding: 0px 0px 0px 0px;
     border-width: 0px 0px 0px 0px;
-    border-style: solid;
-    border-color: [[setting:corsch_1]];
     background-color: [[setting:corsch_B]];
     }
 .block .content {
@@ -35,21 +33,21 @@
     font-weight: normal;
     }
 .block-region ul {
-    margin: 0;
-    padding: 0;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
     list-style-type: none;
     }
 .block-region li {
-    padding: 0 0 20px 0;
+    padding: 0px 0px 20px 0px;
     }
 .block-region li li {
     margin: 0px 20px 0px 10px;
-    padding: 8px 0px;
+    padding: 8px 0px 8px 0px;
     }
 .block .region-content {
     width: 100%;
-    margin: 0;
-    padding: 0;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
     }
 /*----- Block Head -----*/
 .block .header {
@@ -62,7 +60,7 @@
     margin: 0px 0px 5px 10px;
     padding: 0px 0px 0px 0px;
     }
-.dir-rtl .block .header H2 {text-align: right; margin: 0px 10px 5px 0px;}
+.dir-rtl .block .header H2 {margin: 0px 10px 5px 0px;}
 .block .header .commands {
     margin-left: 10px; 
     text-align: right; 
@@ -76,20 +74,24 @@
     width:12px;
     height:12px;
     }
-#region-pre .block .header {
-    background-color: #777777;
-    color: [[setting:corsch_B]];
+#region-pre .block {
     border-width: 1px 0px 0px 0px;
     border-style: solid;
     border-color: #000000;
+}
+#region-pre .block .header {
+    background-color: #777777;
+    color: [[setting:corsch_B]];
     }
 .dir-rtl #region-pre .block .header {background-color: [[setting:corsch_2]]; color: [[setting:corsch_B]]; border-color: [[setting:corsch_1]];}
-#region-post .block .header {
-    background-color: [[setting:corsch_2]];
-    color: [[setting:corsch_B]];
+#region-post .block {
     border-width: 1px 0px 0px 0px;
     border-style: solid;
     border-color: [[setting:corsch_1]];
+}
+#region-post .block .header {
+    background-color: [[setting:corsch_2]];
+    color: [[setting:corsch_B]];
     }
 .dir-rtl #region-post .block .header {background-color: #777777; color: [[setting:corsch_B]]; border-color: #000000;}
 /*----- Controles de MINIMIZAR -----*/
@@ -185,12 +187,12 @@
 .block_settings .block_tree li.item_with_icon p img.navicon,
 .block_navigation .block_tree li.item_with_icon p img.smallicon,
 .block_navigation .block_tree li.item_with_icon p img.navicon {
-    margin: 0;
-    padding: 0;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
     vertical-align:middle;
 }
 .block_navigation .block_tree .type_activity > .tree_item.branch img {
-    left:0px;
+    left: 0px;
     bottom: 0px;
     position:absolute;
 }
@@ -216,8 +218,7 @@
     }
 #dock .dockeditem {
     background-color: #E0E0E0;
-    padding: 2px;
-    padding-left: 0px;
+    padding: 2px 2px 2px 0px;
     }
 #dock .dockedtitle {
     padding-bottom: 5px;
@@ -232,7 +233,7 @@
     }
 #dock .dockedtitle h2 {
     margin: 0px 0px 0px 0px;
-    padding: 10px 3px;
+    padding: 10px 3px 10px 3px;
     /*color: #FFFFFF;*/
     color: [[setting:corsch_B]];
     }
@@ -291,7 +292,7 @@
 #dockeditempanel .dockeditempanel_hd {
     border-width: 0px 0px 0px 0px;
     background-color: #abc;
-    padding: 2px;
+    padding: 2px 2px 2px 2px;
     }
 #dockeditempanel .dockeditempanel_bd .block_docked {
     margin: 10px;
@@ -324,3 +325,53 @@
 #dockeditempanel .dockeditempanel_bd .block_navigation .block_tree li {
     overflow: visible;
     }
+/*----- RTL Docking Module -----*/
+.dir-rtl #dock {
+    top: 0;
+    left: auto;
+    right: 0;
+    }
+.dir-rtl #dock .dockeditem.firstdockitem {
+    margin-top: 2.3em;
+    -webkit-border-top-left-radius: 6px;
+    -moz-border-radius-topleft: 6px;
+    border-top-left-radius: 6px;
+}
+.dir-rtl #dock .dockedtitle {
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-border-top-right-radius: 0;
+    -moz-border-radius-topright: 0;
+    border-top-right-radius: 0;
+    -webkit-border-bottom-right-radius: 0;
+    -moz-border-radius-bottomright: 0;
+    border-bottom-right-radius: 0;
+}
+.dir-rtl #dock .dockedtitle.activeitem {
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+.dir-rtl #dock .controls {
+    -webkit-border-bottom-left-radius: 6px;
+    -moz-border-radius-bottomleft: 6px;
+    border-bottom-left-radius: 6px;
+}
+.dir-rtl #dock .controls img {
+    margin: 0px 10px 0px 0px;
+}
+.dir-rtl #dockeditempanel {
+    right: 100%;
+}
+.dir-rtl #dockeditempanel .dockeditempanel_content {
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-border-top-right-radius: 0;
+    -moz-border-radius-topright: 0;
+    border-top-right-radius: 0;
+}
+.dir-rtl.has_dock.side-post-only  #region-main {
+    margin-left:0;
+}

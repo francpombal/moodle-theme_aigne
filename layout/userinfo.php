@@ -9,21 +9,34 @@
  */
 
 // Gets the content
-    global $CFG, $OUTPUT, $USER, $SESSION, $PAGE;
+    global $CFG, $USER, $PAGE;
     $wwwroot = '';
     $forgot = '';
     $authplugin = '';
     $signup = '';
     $username = '';
     $loginlogout = '';
-    $userph = get_string('username');
-    $passph = get_string('password');
-    $hassalut = (!empty($PAGE->theme->settings->welcomemsg));
-    $hasusernavsalut = (!empty($PAGE->theme->settings->usernavsalut));
-    $hasusernavinfo = (!empty($PAGE->theme->settings->usernavinfo));
-    $hasusernavpic = (!empty($PAGE->theme->settings->usernavpic));
-    $usernavout = ($PAGE->theme->settings->usernavout);
-        
+    $haswelsalut =  0;
+    $hassalut = (!empty($PAGE->theme->settings->usernavsalut));
+    $haswelsalut = (!empty($PAGE->theme->settings->welcomemsg));
+/*
+    $today = time();
+    TODO -> Birthday greetings
+    TODO -> Crear campo de 'birthday' en la ficha de alumno
+    If (!empty(TABLA_USER -> CAMPO_BIRTHDATE)) {
+        $hasbirthdate = 1;
+        $birthdate = TABLA_USER -> CAMPO_BIRTHDATE;
+    }
+    TODO -> Special date greetings
+    $hasdatemessage = 0;
+    If (!empty($PAGE->theme->settings->datemessage)) {
+        $hasdatemessage = 1;
+        $datemessage = $PAGE->theme->settings->datemessage;
+        $datestart = $PAGE->theme->settings->datestart;
+        $datefinis = $PAGE->theme->settings->datefinis;
+    }
+*/
+
     // normal link or https
     if (empty($CFG->loginhttps)) {
         $wwwroot = $CFG->wwwroot;
@@ -55,52 +68,47 @@
     } else {
         $autocomplete = '';
     }
-    
-    //TODO -> Birthday greetings
-    // Crear campo de 'birthday' en la ficha de alumno
-    // Entonces, comprobar si esta rellenado y si hoy es el día
 
     // Set the greeting string
-    if (!isloggedin() or isguestuser()) {
-        $salut = get_string('loggedinnot');
-    //} else if ($hasbirthdate) {
-    //    $salut = get_string('birthday_greeting', 'theme_aigne');
-    } else if ($hassalut) {
-        $salut = ($PAGE->theme->settings->welcomemsg);
-    } else { 
-        $utz = get_user_timezone_offset();
-        if ($utz == 99) {
-            $ut = (date('G')*3600 + date('i')*60 + date('s'))/3600;
-        } else {
-            $ut = ((gmdate('G') + get_user_timezone_offset())*3600 + gmdate('i')*60 + gmdate('s'))/3600;
-            If ($ut <= 0) { $ut = 24 + $ut; }
-            If ($ut > 24) { $ut = $ut - 24; }
-        }
-    // Define the daylight target and search the string in lang/xx/theme_aigne
-        if (($ut >=6 ) and ($ut <12 )) {
-            $salut =  get_string('morning_greeting', 'theme_aigne');
-        } elseif (($ut >=12 ) and ($ut < 18 )) {
-            $salut = get_string('afternoon_greeting', 'theme_aigne');
-        } else {
-            $salut = get_string('night_greeting', 'theme_aigne');              
+    if ($hassalut) {
+        if (!isloggedin() or isguestuser()) {
+            $salut = get_string('loggedinnot');
+        //} else if ($hasbirthdate and ($birthdate = $today)) {
+        //    $salut = get_string('birthday_greeting', 'theme_aigne');
+        //} else if ($hasdatemessage and (($datestart <= $today) and ($datefinis >= $today))) {
+        //    $salut = $today;
+        } else if ($haswelsalut) {
+            $salut = ($PAGE->theme->settings->welcomemsg);
+        } else { 
+            $utz = get_user_timezone_offset();
+            if ($utz == 99) {
+                $ut = (date('G')*3600 + date('i')*60 + date('s'))/3600;
+            } else {
+                $ut = ((gmdate('G') + get_user_timezone_offset())*3600 + gmdate('i')*60 + gmdate('s'))/3600;
+                If ($ut <= 0) { $ut = 24 + $ut; }
+                If ($ut > 24) { $ut = $ut - 24; }
+            }
+        // Define the daylight target and search the string in lang/xx/theme_aigne
+            if (($ut >=6 ) and ($ut <12 )) {
+                $salut =  get_string('morning_greeting', 'theme_aigne');
+            } elseif (($ut >=12 ) and ($ut < 18 )) {
+                $salut = get_string('afternoon_greeting', 'theme_aigne');
+            } else {
+                $salut = get_string('night_greeting', 'theme_aigne');              
+            }
         }
     }
-
-    // User Information Area: greeting on the block title <- ISSUE -> No coje el título, porque lo define mucho antes
-    //if ($hasusernavsalut) {
-    //    $this->title = $salut;
-    //} else {
-    //    $this->title = get_string('pluginname', $this->blockname);
-    //}
   
     // User not loggedin or guest user
         if (!isloggedin() or isguestuser()) {
+            $userph = get_string('username');
+            $passph = get_string('password');
             $loginlogout .= html_writer::start_tag('div', array('class'=>'loginhead'));
             $loginlogout .= html_writer::start_tag('form', array('class'=>'loginform', 'id'=>'login', 'method'=>'post', 'action'=>get_login_url()));
 
-            $loginlogout .= html_writer::empty_tag('input', array('class'=>'form-input', 'type'=>'text', 'size'=>'20', 'name'=>'username', 'id'=>'login_username', 'placeholder'=>$userph, 'value'=>$username));
+            $loginlogout .= html_writer::empty_tag('input', array('class'=>'form-input', 'type'=>'text', 'size'=>'17', 'name'=>'username', 'id'=>'login_username', 'placeholder'=>$userph, 'value'=>$username));
             
-            $loginlogout .= html_writer::empty_tag('input', array('class'=>'form-input', 'type'=>'password', 'size'=>'20', 'name'=>'password', 'id'=>'login_password', 'placeholder'=>$passph, 'value'=>'', $autocomplete));
+            $loginlogout .= html_writer::empty_tag('input', array('class'=>'form-input', 'type'=>'password', 'size'=>'17', 'name'=>'password', 'id'=>'login_password', 'placeholder'=>$passph, 'value'=>'', $autocomplete));
 
             if (isset($CFG->rememberusername) and $CFG->rememberusername == 2) {
                 if ($username) {
@@ -114,23 +122,13 @@
             $loginlogout .= html_writer::empty_tag('input', array('type'=>'submit', 'value'=>get_string('login')));
             $loginlogout .= html_writer::end_tag('form');
             $loginlogout .= html_writer::end_tag('div');
-            
-            //$loginlogout .= html_writer::empty_tag('HR');
-    // User not loggedin but forgot password
-            //if (!empty($forgot)) {
-                //$loginlogout .= html_writer::start_tag('div');
-                //$loginlogout .= html_writer::link(new moodle_url($forgot), get_string('forgotten'));
-                //$loginlogout .= html_writer::end_tag('div');
-            //}
-    // User not loggedin but want sign up
-            //if (!empty($signup)) {
-                //$loginlogout .= html_writer::start_tag('div');
-                //$loginlogout .= html_writer::link(new moodle_url($signup), get_string('startsignup'));
-                //$loginlogout .= html_writer::end_tag('div');
-            //}
-        //$loginlogout .= html_writer::empty_tag('HR');
+
     // User loggedin
 		} else {
+            $hasusernavsalut = (!empty($PAGE->theme->settings->usernavsalut));
+            $hasusernavinfo = (!empty($PAGE->theme->settings->usernavinfo));
+            $hasusernavpic = (!empty($PAGE->theme->settings->usernavpic));
+            $usernavout = (empty($PAGE->theme->settings->usernavout)) ? false : ($PAGE->theme->settings->usernavout);
             $loginlogout .= html_writer::start_tag('div', array('class'=>'userinfohead'));
         // User Information Area: salutation
         if ($hasusernavsalut) {
@@ -144,21 +142,12 @@
             $loginlogout .= '&nbsp;&nbsp;&nbsp;';
         //  User Information Area: user picture
         if ($hasusernavpic) {
+            global $OUTPUT;
             $loginlogout .= html_writer::start_tag('div', array('class'=>'userpic'));
             $loginlogout .= $OUTPUT->user_picture($USER, array('size'=>35));
             $loginlogout .= html_writer::end_tag('div');
         }
-
-
-
-
-
-
-
-
-
         // Logout option, select over three cases
-
         switch ($usernavout) {
             case 1:
                 // Logout option in button style
@@ -178,9 +167,6 @@
                 break;
             }
             $loginlogout .= html_writer::end_tag('div');
-
         }
         echo $loginlogout;
-
-
 
