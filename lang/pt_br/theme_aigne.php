@@ -37,7 +37,7 @@ $string['quadro2txt'] = '
 Aquí puede introducir cualquier información<br /><br />
 Escriba un texto en su editor HTML favorito, a continuación entre en el archivo del idioma 
 <MARQUEE>(/theme/aigne/lang/xx/theme_aigne.php -> $string[quadro2txt])</MARQUEE> y pegue allí el texto<br /><br />
-<strong>Puede darle el formato CSS que quiera en el archivo aigne_style.css</strong>';
+<strong>Puede darle el formato CSS en el archivo aigne_style.css</strong>';
 $string['quadro2ttl'] = 'Escriba aquí el título del cuadro 2';
 $string['quadro2alt'] = 'Escriba aquí el texto alternativo de la imagen del cuadro 2';
 $string['quadro3txt'] = '
@@ -54,11 +54,22 @@ $string['aco5cap2'] = 'Tiburón _ Texto do fole 2';
 $string['aco5cap3'] = 'Pulpo _ Texto do fole 3';
 $string['aco5cap4'] = 'Pescado _ Texto do fole 4';
 $string['aco5cap5'] = 'Buceo _ Texto do fole 5';
-$string['aco5alt1'] = 'Escreba aquí o texto alternativo da imaxe do fol 1';
-$string['aco5alt2'] = 'Escreba aquí o texto alternativo da imaxe do fol 2';
-$string['aco5alt3'] = 'Escreba aquí o texto alternativo da imaxe do fol 3';
-$string['aco5alt4'] = 'Escreba aquí o texto alternativo da imaxe do fol 4';
-$string['aco5alt5'] = 'Escreba aquí o texto alternativo da imaxe do fol 5';
+$string['aco5alt1'] = 'Escreba aquí o texto alternativo da imagem do fol 1';
+$string['aco5alt2'] = 'Escreba aquí o texto alternativo da imagem do fol 2';
+$string['aco5alt3'] = 'Escreba aquí o texto alternativo da imagem do fol 3';
+$string['aco5alt4'] = 'Escreba aquí o texto alternativo da imagem do fol 4';
+$string['aco5alt5'] = 'Escreba aquí o texto alternativo da imagem do fol 5';
+/* Strings do slider vertical de informação */
+$string['sli5cap1'] = 'Informação 1';
+$string['sli5cap2'] = 'Informação 2';
+$string['sli5cap3'] = 'Informação 3';
+$string['sli5cap4'] = 'Informação 4';
+$string['sli5cap5'] = 'Informação 5';
+$string['sli5alt1'] = 'Escreba aquí o texto alternativo da imagem da diapositiva 1';
+$string['sli5alt2'] = 'Escreba aquí o texto alternativo da imagem da diapositiva 2';
+$string['sli5alt3'] = 'Escreba aquí o texto alternativo da imagem da diapositiva 3';
+$string['sli5alt4'] = 'Escreba aquí o texto alternativo da imagem da diapositiva 4';
+$string['sli5alt5'] = 'Escreba aquí o texto alternativo da imagem da diapositiva 5';
 /* ----- ----- ----- -> STRINGS DO ENCABEÇALHO ----- */
 $string['sloganaigne'] = '';
 /* ----- ----- ----- -> SAUDAÇÕES E MENSAGENS DA ÁREA DE INFORMAÇÃO DO USUARIO ----- */
@@ -359,21 +370,23 @@ $string['dublinmtagdesc'] = 'Habilitando esta opção, se generarán 3 etiquetas
 /**/
 $string['marketinghead'] = 'Opções de desenho na página principal do site (frontpage _ marketing)';
 $string['marketingheaddesc'] = 'Esta sección se refiere a elementos que se mostrarán en la página principal del sitio, antes que el usuario efectué la entrada (‘login’) a la plataforma. 
-Puede personalizar estas opciones a su gusto para añadir información sobre su institución o sobre el lanzamiento de nuevos cursos.';
+Puede personalizar estas opciones a su gusto para añadir información sobre su institución o sobre el lanzamiento de nuevos cursos. <br />
+Una vez activado, puede diseñar/programar el contenido que desee entrando directamente en el archivo del layout "frontinfo.php" y en la carpeta theme\aigne\pix\carroussel.';
 $string['marketingheaddesc'] = '';
-$string['headbanner'] = 'Mostrar Banner do Encabezado';
-$string['headbannerdesc'] = 'Habilitando esta opção, se mostrará uma imagem na cabecera da página principal. [::: sem terminar :::]';
+$string['headbanner'] = 'Banner do Encabezalho';
+$string['headbannerdesc'] = 'Selecione o tipo de informação para mostrar no encabezalho da página principal.';
+$string['infobanner'] = 'Area de Informação';
+$string['infobannerdesc'] = 'Selecione o tipo de informação para mostrar na primeira página do seu site.';
 $string['headerinfo'] = 'Encabezado de presentación';
 $string['headerinfodesc'] = 'Se você quiser puede añadir uma imagem fija na cabecera da página principal.<br />
 Debe ser uma imagem JPG/PNG/GIF con un mínimo de 775px de largo y 100px de alto.';
-$string['infobanner'] = 'Quadros de Informação';
-$string['infobannerdesc'] = 'Seleccione el tipo de información que desea que aparezca en la portada de su sitio Web.<br />
-Una vez activado, puede diseñar/programar el contenido que desee entrando directamente en el archivo del layout "frontinfo.php" y en la carpeta theme\aigne\pix\carroussel.';
 $string['infobanner0'] = 'No mostrar ningún tipo de información';
 $string['infobanner1'] = 'Mostrar un cuadro estático con un mensaje fijo';
-$string['infobanner2'] = 'Mostrar tres cuadros estáticos con diferente contenido';
-$string['infobanner3'] = 'Mostrar un cuadro informativo, tipo acordeón horizontal';
-$string['infobanner4'] = 'Mostrar una presentación vertical de dispositivas automática';
+$string['infobanner2'] = 'Mostrar una imagen estática';
+$string['infobanner3'] = 'Mostrar tres cuadros estáticos con diferente contenido';
+$string['infobanner4'] = 'Mostrar un cuadro informativo, tipo acordeón horizontal';
+$string['infobanner5'] = 'Mostrar una presentación automática vertical de dispositivas';
+$string['infobanner6'] = 'Mostrar una presentación automática horizontal de dispositivas';
 /**/
 $string['moodlehead'] = 'Opções dos elementos de Moodle';
 $string['catstyle'] = 'Estilo da lista de Categorias';
@@ -382,6 +395,10 @@ Recuerde que una vez utilice el estilo de "Parrilla de Imágenes", debe almacena
 Es recomendable utilizar una imágen no superior a 150px y de preferencia con el fondo transparente. Pruebe a voluntad con las imágenes de ejemplo.';
 $string['catstyle1'] = 'Estilo estándar de Moodle';
 $string['catstyle2'] = 'Estilo cuadricula de imagens';
+$string['contentcur'] = 'Só contido nos cursos';
+$string['contentcurdesc'] = 'Si activa esta opción, solo se mostrará el contenido central en los cursos, sin los bloques laterales, para ganar espacio para el aprendizaje.';
+$string['contentact'] = 'Só contido nas actividades';
+$string['contentactdesc'] = 'Si activa esta opción, solo se mostrará el contenido central en las actividades, sin los bloques laterales, para ganar espacio para el aprendizaje';
 /**/
 $string['headerhead'] = 'Personalização dos elementos do encabeçalho';
 $string['logohead'] = 'Opções do logotipo';
@@ -477,80 +494,112 @@ $string['contactnotedesc'] = 'Aquí puede añadir información de contacto que a
 /**/
 $string['socialcontenthead'] = 'Opções de links às redes sociais (onde compartilha conteúdo)';
 $string['dropbox'] = 'Link para DropBox';
-$string['dropboxdesc'] = 'Digite o link (URL) para sua conta em DropBox.
+$string['dropboxdesc'] = 'Digite o link (URL) para sua conta no DropBox.
 <a href="http://www.dropbox.com/" target="_blank"> (www.dropbox.com) .</a>';
 /**/
 $string['dayviews'] = 'Link para DayViews';
-$string['dayviewsdesc'] = 'Digite o link (URL) para sua página em DayViews.
+$string['dayviewsdesc'] = 'Digite o link (URL) para sua página no DayViews.
 <a href="http://dayviews.com/" target="_blank"> (dayviews.com) .</a>';
 $string['flickr'] = 'Link para Flickr';
-$string['flickrdesc'] = 'Digite o link (URL) para sua página em Flickr.
+$string['flickrdesc'] = 'Digite o link (URL) para sua página no Flickr.
 <a href="http://www.flickr.com" target="_blank"> (www.flickr.com) .</a>';
 $string['fotolog'] = 'Link para FotoLog';
-$string['fotologdesc'] = 'Digite o link (URL) para sua página em FotoLog.
+$string['fotologdesc'] = 'Digite o link (URL) para sua página no FotoLog.
 <a href="http://www.fotolog.com/" target="_blank"> (www.fotolog.com) .</a>';
 $string['instagram'] = 'Link para Instagram';
-$string['instagramdesc'] = 'Digite o link (URL) para sua página em Instagram.
+$string['instagramdesc'] = 'Digite o link (URL) para sua página no Instagram.
 <a href="http://instagram.com/" target="_blank"> (instagram.com) .</a>';
+$string['panoramio'] = 'Link para Panoramio';
+$string['panoramiodesc'] = 'Digite o link (URL) para sua página no Panoramio.
+<a href="http://www.panoramio.com" target="_blank"> (www.panoramio.com) .</a>';
 $string['picasa'] = 'Link para Picasa';
-$string['picasadesc'] = 'Digite o link (URL) para sua página em Picasa.
+$string['picasadesc'] = 'Digite o link (URL) para sua página na Picasa.
 <a href="http://picasa.google.com/" target="_blank"> (picasa.google.com) .</a>';
 $string['pixabay'] = 'Link para PixaBay';
-$string['pixabaydesc'] = 'Digite o link (URL) para sua página em PixaBay.
+$string['pixabaydesc'] = 'Digite o link (URL) para sua página no PixaBay.
 <a href="http://pixabay.com/" target="_blank"> (pixabay.com) .</a>';
+$string['photobucket'] = 'Link para Photobucket';
+$string['photobucketdesc'] = 'Digite o link (URL) para sua página no Photobucket.
+<a href="http://www.photobucket.com/" target="_blank"> (www.photobucket.com) .</a>';
 /**/
 $string['dailymotion'] = 'Link para DailyMotion';
-$string['dailymotiondesc'] = 'Digite o link (URL) para sua página em DailyMotion.
+$string['dailymotiondesc'] = 'Digite o link (URL) para sua página no DailyMotion.
 <a href="http://www.dailymotion.com/" target="_blank"> (www.dailymotion.com) .</a>';
 $string['schooltube'] = 'Link para SchoolTube';
-$string['schooltubedesc'] = 'Digite o link (URL) para sua página em SchoolTube.
+$string['schooltubedesc'] = 'Digite o link (URL) para sua página no SchoolTube.
 <a href="https://www.schooltube.com/" target="_blank"> (www.schooltube.com) .</a>';
 $string['videolog'] = 'Link para VideoLog';
-$string['videologdesc'] = 'Digite o link (URL) para sua página em VideoLog.
+$string['videologdesc'] = 'Digite o link (URL) para sua página no VideoLog.
 <a href="http://videolog.tv/" target="_blank"> (videolog.tv) .</a>';
 $string['vimeo'] = 'Link para Vimeo';
-$string['vimeodesc'] = 'Digite o link (URL) para seu canal em Vimeo.
+$string['vimeodesc'] = 'Digite o link (URL) para seu canal no Vimeo.
 <a href="http://www.vimeo.com/" target="_blank"> (www.vimeo.com) .</a>';
 $string['youtube'] = 'Link para YouTube';
-$string['youtubedesc'] = 'Digite o link (URL) para seu canal em YouTube.
+$string['youtubedesc'] = 'Digite o link (URL) para seu canal no YouTube.
 <a href="http://www.youtube.com/" target="_blank"> (www.youtube.com) .</a>';
 /**/
 $string['deviantart'] = 'Link para DeviantArt';
-$string['deviantartdesc'] = 'Digite o link (URL) para sua conta em DeviantArt.
+$string['deviantartdesc'] = 'Digite o link (URL) para sua conta na DeviantArt.
 <a href="http://www.deviantart.com/" target="_blank"> (www.deviantart.com) .</a>';
 $string['myspace'] = 'Link para MySpace';
-$string['myspacedesc'] = 'Digite o link (URL) para seu perfil em MySpace.
+$string['myspacedesc'] = 'Digite o link (URL) para seu perfil no MySpace.
 <a href="http://www.myspace.com/" target="_blank"> (www.myspace.com) .</a>';
 /**/
 $string['socialhead'] = 'Opções de links às redes sociais';
 $string['linkedin'] = 'Link para LinkedIn';
-$string['linkedindesc'] = 'Digite o link (URL) para seu perfil em LinkedIn.
+$string['linkedindesc'] = 'Digite o link (URL) para seu perfil no LinkedIn.
 <a href="http://www.linkedin.com/" target="_blank"> (www.linkedin.com) .</a>';
+$string['xing'] = 'Link para Xing';
+$string['xingdesc'] = 'Digite o link (URL) para seu perfil no Xing.
+<a href="http://www.xing.com/" target="_blank"> (www.xing.com) .</a>';
+$string['yelp'] = 'Link para Yelp';
+$string['yelpdesc'] = 'Digite o link (URL) para seu perfil no Yelp.
+<a href="http://www.yelp.com/" target="_blank"> (www.yelp.com) .</a>';
+/**/
 $string['facebook'] = 'Link para Facebook';
-$string['facebookdesc'] = 'Digite o link (URL) para sua página em Facebook.
+$string['facebookdesc'] = 'Digite o link (URL) para sua página no Facebook.
 <a href="http://www.facebook.com/" target="_blank"> (www.facebook.com) .</a>';
 $string['twitter'] = 'Link para Twitter';
-$string['twitterdesc'] = 'Digite o link (URL) para sua conta em Twitter.
+$string['twitterdesc'] = 'Digite o link (URL) para sua conta no Twitter.
 <a href="http://twitter.com/" target="_blank"> (twitter.com) .</a>';
-$string['googleplus'] = 'Link para Google+';
-$string['googleplusdesc'] = 'Digite o link (URL) para seu perfil em Google+.
-<a href="http://plus.google.com/" target="_blank"> (plus.google.com) .</a>';
 $string['vkontakte'] = 'Link para VKontakte';
-$string['vkontaktedesc'] = 'Digite o link (URL) para sua página em Vkontakte.
+$string['vkontaktedesc'] = 'Digite o link (URL) para sua página no Vkontakte.
 <a href="http://www.vk.com/" target="_blank"> (www.vk.com) .</a>';
 $string['orkut'] = 'Link para Orkut';
-$string['orkutdesc'] = 'Digite o link (URL) para seu perfil em Orkut.
+$string['orkutdesc'] = 'Digite o link (URL) para seu perfil no Orkut.
 <a href="http://www.orkut.com/" target="_blank"> (www.orkut.com) .</a>';
 $string['pinterest'] = 'Link para Pinterest';
-$string['pinterestdesc'] = 'Digite o link (URL) para sua página em Pinterest.
+$string['pinterestdesc'] = 'Digite o link (URL) para sua página no Pinterest.
 <a href="http://pinterest.com/" target="_blank"> (pinterest.com) .</a>';
 /**/
+$string['aim'] = 'Link para AIM';
+$string['aimdesc'] = 'Digite o link (URL) para seu perfil no AIM.
+<a href="http://www.aim.com/" target="_blank"> (www.aim.com) .</a>';
+$string['googleplus'] = 'Link para Google+';
+$string['googleplusdesc'] = 'Digite o link (URL) para seu perfil no Google+.
+<a href="http://plus.google.com/" target="_blank"> (plus.google.com) .</a>';
+$string['microsoftid'] = 'Link para Microsoft Live';
+$string['microsoftiddesc'] = 'Digite o link (URL) para seu perfil na Microsoft Live.
+<a href="http://profile.live.com/" target="_blank"> (profile.live.com) .</a>';
+$string['openid'] = 'Link para Open ID';
+$string['openiddesc'] = 'Digite o link (URL) para seu perfil no Open ID.
+<a href="http://openid.net/" target="_blank"> (openid.net) .</a>';
+$string['yahooid'] = 'Link para Yahoo';
+$string['yahooiddesc'] = 'Digite o link (URL) para seu perfil no Yahoo.
+<a href="http://profile.yahoo.com/" target="_blank"> (profile.yahoo.com) .</a>';
+/**/
 $string['tumblr'] = 'Link para Tumblr';
-$string['tumblrdesc'] = 'Digite o link (URL) para seu blog em Tumblr.
+$string['tumblrdesc'] = 'Digite o link (URL) para seu blog no Tumblr.
 <a href="http://tumblr.com/" target="_blank"> (tumblr.com) .</a>';
 $string['blogger'] = 'Link para Blogger';
-$string['bloggerdesc'] = 'Digite o link (URL) para seu blog em Blogger.
+$string['bloggerdesc'] = 'Digite o link (URL) para seu blog no Blogger.
 <a href="http://www.blogger.com/" target="_blank"> (www.blogger.com) .</a>';
+/**/
+$string['social1url'] = 'Link para uma rede social';
+$string['social1urldesc'] = 'Aquí pode introducir a ligazón dunha rede social que non esta no listado definido anteriormente.';
+$string['social1ico'] = 'Icono desta rede social';
+$string['social1icodesc'] = 'Digite o nome do icono desta rede social. <br />
+Lembre copiar uma imagem tipo icono de 32x32 com o mesmo nome deste icono em theme/aigne/pix/brands/.';
 /**/
 $string['creditshead'] = 'Opções de mensagens crédito e mérito';
 $string['moodlecredit'] = 'Créditos para Moodle';
@@ -598,7 +647,7 @@ $string['choosereadme'] = '
     <p><a href="http://moodle.org/mod/forum/view.php?id=46">http://moodle.org/mod/forum/view.php?id=46</a></p>
 
     <h3>Informação sobre temas:</h3>
-    <p><a href="http://docs.moodle.org/en/Themes">http://docs.moodle.org/en/Themes</a></p>
+    <p><a href="http://docs.moodle.org/all/es/admin/setting/themesettingaigne">Apostilha oficial do tema Aigne</a></p>
   
     <h3>Para reportar defeitos:</h3>
     <p><a href="http://www.github.com/francpombal/moodle-theme_aigne/">http://www.github.com/francpombal/moodle-theme_aigne/</a></p>
@@ -606,19 +655,24 @@ $string['choosereadme'] = '
  
   <div class="theme_description">
     <h3>Sobre o tema AIGNE:</h3>
-    <p>Tema para o Moodle 2.5.x _ A partir da melhora do tema Afterburner. Funcionalidades principais:</p>
+    <p>Tema para o Moodle 2.x _ Funcionalidades principais:</p>
     <ul>
-      <li>Desenho simples e completamente compatível com CSS.</li>
-      <li>Só usa 3 tonalidades da cor principal.</li>
-      <li>Rodapé com varias seções personalizáveis:</li>
-      <li>Seção NavHelp com todos os links administrativos obrigatórios à páginas personalizáveis dependendo do idioma<br />
-          página nova (mapa web, ajuda, busca, estatísticas, aviso legal, políticas, privacidade, segurança e acessibilidade)</li>
-      <li>Seção de Contato (com adaptação dos links sociais do tema aardvark)</li>
-      <li>Seção dos Créditos</li>
-      <li>Seção dos Direitos de autor</li>
-      <li>Uma home page (inacabada) com blocos para banner e informação geral ou mercadologia.</li>
-      <li>Muitas opções para personalizar em Administração do site -&gt; Aparência -&gt; Temas -&gt; AIGNE</li>
-      <li>Personalização do logotipo, con opção de adicionar um slogan ou uma imagem baixo o logotipo.</li>
+      <li>Desenho simples e completamente compatível com CSS.
+      <li>Só usa 5 tonalidades da cor principal, agora com esquema padrão de cor.
+      <li>Incorporada as opções de @font-face (3 tipos de letra incluidos)
+      <li>Personalização do logotipo, con opção de adicionar um slogan ou uma imagem baixo o logotipo.
+      <li>Novas opções para as header Meta Tags (ferramentas SEO).
+      <li>Uma home page (inacabada) com blocos para banner e informação geral ou mercadologia.
+      <li>Menu personalizado (custommenu) feito só com duas cores.
+      <li>Espaciador da barra de navegação (Breadcrumb) personalizável.
+      <li>Nova Area de Informação do Usuário, que pode ser mostrada no encabeçalho ou no bloco de navegação.
+      <li>Seção NavHelp com todos os links administrativos obrigatórios à páginas personalizáveis dependendo do idioma
+      página nova (mapa web, ajuda, busca, estatísticas, aviso legal, políticas, privacidade, segurança e acessibilidade)
+      <li>Seção de Contato, com adaptação de 30 links sociais
+      <li>Seção dos Créditos, com novas opções para a validação externa nos servidores da w3c
+      <li>Seção dos Direitos de autor
+      <br />
+      <li>Cerca de 70 opções para personalizar em Administração do site -> Aparência -> Temas -> AIGNE
     </ul>
     <h3>Créditos:</h3>
     <p>Este design foi criado pelo Franc Pombal (www.piratininga.tk/moodle), partindo do tema AfterBurner para o Moodle 1.9 por Patrick Malley, Rocket Themes e a Mary Evans.</p>    

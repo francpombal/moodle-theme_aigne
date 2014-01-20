@@ -3,8 +3,8 @@
  * renderers
  * 
  * @package    theme_aigne
- * @copyright  2013 Franc Pombal (www.aigne.com)
- * @license    http: *www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @copyright  2013-2014 Franc Pombal (www.aigne.com)
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die;
@@ -13,7 +13,7 @@ class theme_aigne_core_renderer extends core_renderer {
     /**
      * The standard tags that should be included in the <head> tag.
      *
-     * @return string HTML fragment. CAMBIO: Modificado para agregar componentes de página de AIGNE
+     * @return string HTML fragment.
      */
     // Included meta tags changes, to beginning with SEO tools in Moodle sites
     public function standard_head_html() {
@@ -29,9 +29,19 @@ class theme_aigne_core_renderer extends core_renderer {
         $sitenf = $SITE->fullname;
             $data = new stdClass;
             $data->sitename = $sitens; 
-            
+
+        // Before we output any content, we need to ensure that certain
+        // page components are set up.
+
+        // Blocks must be set up early as they may require javascript which
+        // has to be included in the page header before output is created.  <- A partir de la versión 2.6.x
+        foreach ($this->page->blocks->get_regions() as $region) {
+            $this->page->blocks->ensure_content_created($region, $this);
+        }
+
         //$output .= '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />' . "\n";
             $output .= '<META http-equiv="Content-Type" content="' . $this->contenttype . '" />';
+            $output .= '<META http-equiv="X-UA-Compatible" content="IE=edge" />';
             $output .= '<META http-equiv="Page-Exit" content="blendTrans(Duration=0.1)" />';
             $output .= '<META http-equiv="imagetoolbar" content="no" />';
         if (!$this->page->cacheable) {
@@ -74,7 +84,7 @@ class theme_aigne_core_renderer extends core_renderer {
         if ($hascustommtag) {
             $output .= ($PAGE->theme->settings->custommtag);
         }
-        // COMPATIBILITY WITH 'Dublin Core Metadata Initiative' META TAGs
+        // COMPATIBILITY WITH 'Dublin Core Metadata Initiative'
         if ($hasdublinmtag) {
             $output .= '<META name="dc.language" content="' . current_language() . '" />';
             $output .= '<META name="dc.description" content="' . get_string('metadescription','theme_aigne',$data) . '" />';
@@ -84,10 +94,10 @@ class theme_aigne_core_renderer extends core_renderer {
         // flow player embedding support
         $this->page->requires->js_function_call('M.util.load_flowplayer');
 
-        // Set up help link popups for all links with the helptooltip class
+        // Set up help link popups for all links with the helptooltip class <- A partir de la versión 2.3.x
         $this->page->requires->js_init_call('M.util.help_popups.setup');
 
-        // Setup help icon overlays.
+        // Setup help icon overlays.  <- A partir de la versión 2.5.x
         $this->page->requires->yui_module('moodle-core-popuphelp', 'M.core.init_popuphelp');
         $this->page->requires->strings_for_js(array(
             'morehelp',
@@ -388,7 +398,7 @@ protected function navigation_node($items, $attrs=array(), $expansionlimit=null,
  *
  */
 public function theme_aigne_user_info() {
-    global $CFG, $OUTPUT, $USER, $PAGE;
+    global $CFG, $USER, $PAGE;
     $wwwroot = '';
     $forgot = '';
     $authplugin = '';
@@ -541,6 +551,7 @@ public function theme_aigne_user_info() {
             $loginlogout .= html_writer::empty_tag('br');
         //  User Information Area: user picture
         if ($hasusernavpic) {
+            global $OUTPUT;
 
             $loginlogout .= $OUTPUT->user_picture($USER, array('size'=>70, 'class'=>'profilepicture'));
             $loginlogout .= html_writer::empty_tag('br');

@@ -1,8 +1,4 @@
 /* ----- Moodle Dialogue Settings (moodle-core-dialogue) ----- */
-/** 01 -> Activities/Resources Selector
- *  02 -> Help Tips
- */
-
 .moodle-dialogue-base .moodle-dialogue {
     min-width: 52em;
     z-index: 600;
@@ -269,21 +265,33 @@ DIV.notifyproblem,
     }
 .green, DIV.notifysuccess, 
 .redirectmessage, 
-#page-admin-course-pending #region-main .region-content DIV H2 {
+#page-admin-course-pending #region-main .region-content DIV H2, 
+#page-admin-report-security-index .statusok, 
+#page-admin-report-performance-index .statusok {
     background-color: #EEFFDD;
-    color: #009900;
+    color: #008000;
+    }
+.yellow, 
+#page-admin-report-security-index .statuswarning, 
+#page-admin-report-performance-index .statuswarning {
+    background-color: #FFFFEE;
+    color: #FFFF00;
     }
 .orange, 
-#page-tag-manage #region-main .region-content DIV H2 {
-    background-color: #FFF7ED;
-    color: #FF6600;
+#page-tag-manage #region-main .region-content DIV H2, 
+#page-admin-report-security-index .statusserious, 
+#page-admin-report-performance-index .statusserious {
+    background-color: #FFF7EE;
+    color: #FFA500;
     }
 .red, 
 DIV.notifyproblem, 
 .forumnodiscuss, 
 #page-admin-roles-assign div.box.generalbox, 
 .mform span.error, 
-.mform .fdescription.required {
+.mform .fdescription.required, 
+#page-admin-report-security-index .statuscritical, 
+#page-admin-report-performance-index .statuscritical {
     background-color: #FFEEFF;
     color: #CC0000;
     }
@@ -299,6 +307,14 @@ DIV.notifyproblem,
     color: [[setting:corsch_1]];
     text-align: center;
     }
+/* /base/admin.css #81 */
+#page-admin-report-security-index TR.r1 TD.status, #page-admin-report-performance-index TR.r1 TD.status {background-color: [[setting:corsch_1]];}
+#page-admin-report-security-index TR.r0 TD.status, #page-admin-report-performance-index TR.r0 TD.status {background-color: [[setting:corsch_2]];}
+#page-admin-report-security-index .statusok, #page-admin-report-performance-index .statusok {background-color: transparent;}
+#page-admin-report-security-index .statuswarning, #page-admin-report-performance-index .statuswarning {background-color: transparent;}
+#page-admin-report-security-index .statusserious, #page-admin-report-performance-index .statusserious {background-color: transparent;}
+#page-admin-report-security-index .statuscritical, #page-admin-report-performance-index .statuscritical {background-color: transparent;}
+
 /* /base/admin.css #133 */
 #page-admin-index .adminwarning.maturityinfo.maturity50 {background-color:#FFEEFF;}
 #page-admin-index .adminwarning.maturityinfo.maturity100,

@@ -111,7 +111,7 @@
     margin: 0px 2px 0px 0px;
     padding: 2px 0px 0px 0px;
     background-color: transparent;
-    border: 0px 0px 0px 0px;
+    border-width: 0px 0px 0px 0px;
     vertical-align: baseline;
     }
 .dir-rtl .block .header .block_action img,
@@ -189,7 +189,7 @@
 .block_navigation .block_tree li.item_with_icon p img.navicon {
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
-    vertical-align:middle;
+    vertical-align: middle;
 }
 .block_navigation .block_tree .type_activity > .tree_item.branch img {
     left: 0px;
@@ -212,51 +212,31 @@
     }
 #dock .dockeditem.firstdockitem {
     margin-top: 2.3em;
-    -webkit-border-top-right-radius: 6px;
-    -moz-border-radius-topright: 6px;
-    border-top-right-radius: 6px;
     }
 #dock .dockeditem {
-    background-color: #E0E0E0;
+    background-color: #777777;
     padding: 2px 2px 2px 0px;
     }
 #dock .dockedtitle {
     padding-bottom: 5px;
-    cursor:pointer;
-    background-color: #777777;
-    -webkit-border-top-right-radius: 6px;
-    -moz-border-radius-topright: 6px;
-    border-top-right-radius: 6px;
-    -webkit-border-bottom-right-radius: 6px;
-    -moz-border-radius-bottomright: 6px;
-    border-bottom-right-radius: 6px;
+    cursor: pointer;
+    background-color: [[setting:corsch_2]];
     }
 #dock .dockedtitle h2 {
     margin: 0px 0px 0px 0px;
     padding: 10px 3px 10px 3px;
-    /*color: #FFFFFF;*/
     color: [[setting:corsch_B]];
     }
 .dockedtitle.activeitem h2 {
-    /*color: #FFFFFF;*/
     color: [[setting:corsch_B]];
     }
 #dock .dockedtitle.activeitem {
-    background-color: #abc;
+    background-color: [[setting:corsch_2]];
     width: 35px;
-    -webkit-border-top-right-radius: 0;
-    -moz-border-radius-topright: 0;
-    border-top-right-radius: 0;
-    -webkit-border-bottom-right-radius: 0;
-    -moz-border-radius-bottomright: 0;
-    border-bottom-right-radius: 0;
     }
 #dock .controls {
     bottom: auto;
-    background-color: #E0E0E0;
-    -webkit-border-bottom-right-radius: 6px;
-    -moz-border-radius-bottomright: 6px;
-    border-bottom-right-radius: 6px;
+    background-color: #777777;
     }
 #dock .controls img {
     cursor:pointer;
@@ -274,24 +254,17 @@
     display:none;
     }
 #dockeditempanel .dockeditempanel_content {
-    /*background-color: #FFFFFF;*/
     background-color: [[setting:corsch_B]];
     margin: 0 3px;
     position: relative;
     min-height: 100px;
-    border-color: #abc;
+    border-width: 1px;
     border-style: solid;
-    border-width: 5px;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    border-radius: 6px;
-    -webkit-border-top-left-radius: 0;
-    -moz-border-radius-topleft: 0;
-    border-top-left-radius: 0;
+    border-color: [[setting:corsch_2]];
     }
 #dockeditempanel .dockeditempanel_hd {
     border-width: 0px 0px 0px 0px;
-    background-color: #abc;
+    background-color: [[setting:corsch_2]];
     padding: 2px 2px 2px 2px;
     }
 #dockeditempanel .dockeditempanel_bd .block_docked {
@@ -301,18 +274,20 @@
     text-align: center;
     }
 #dockeditempanel .dockeditempanel_hd {
-    border-bottom:1px dotted #777777;
-    text-align: left;
+    margin: 0px 0px 5px 0px;
     }
 #dockeditempanel .dockeditempanel_hd h2 {
-    display:inline;
-    margin: 0px 0px 0px 0px;
-    padding-left: 1em;
-    /*color: #FFFFFF;*/
+    display: inline;
+    padding: 0px 1em 0px 1em;
+    text-align: left;
+    font-size: 1.20em;
     color: [[setting:corsch_B]];
     }
 #dockeditempanel .dockeditempanel_hd .commands {
-    display:inline;
+    display: inline;
+    margin-left: 10px; 
+    text-align: right; 
+    clear: both;
     }
 #dockeditempanel .dockeditempanel_hd .commands img {
     margin-left: 3px;
@@ -333,44 +308,12 @@
     }
 .dir-rtl #dock .dockeditem.firstdockitem {
     margin-top: 2.3em;
-    -webkit-border-top-left-radius: 6px;
-    -moz-border-radius-topleft: 6px;
-    border-top-left-radius: 6px;
-}
-.dir-rtl #dock .dockedtitle {
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    border-radius: 6px;
-    -webkit-border-top-right-radius: 0;
-    -moz-border-radius-topright: 0;
-    border-top-right-radius: 0;
-    -webkit-border-bottom-right-radius: 0;
-    -moz-border-radius-bottomright: 0;
-    border-bottom-right-radius: 0;
-}
-.dir-rtl #dock .dockedtitle.activeitem {
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    border-radius: 0px;
-}
-.dir-rtl #dock .controls {
-    -webkit-border-bottom-left-radius: 6px;
-    -moz-border-radius-bottomleft: 6px;
-    border-bottom-left-radius: 6px;
 }
 .dir-rtl #dock .controls img {
     margin: 0px 10px 0px 0px;
 }
 .dir-rtl #dockeditempanel {
     right: 100%;
-}
-.dir-rtl #dockeditempanel .dockeditempanel_content {
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    border-radius: 6px;
-    -webkit-border-top-right-radius: 0;
-    -moz-border-radius-topright: 0;
-    border-top-right-radius: 0;
 }
 .dir-rtl.has_dock.side-post-only  #region-main {
     margin-left:0;

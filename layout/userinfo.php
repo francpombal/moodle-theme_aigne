@@ -4,7 +4,7 @@
  * TODO: simplifie the code, join with function in renderers.php
  * 
  * @package    theme_aigne
- * @copyright  1997 Franc Pombal (www.aigne.com)
+ * @copyright  1997-2014 Franc Pombal (www.aigne.com)
  * @license    http: *www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -36,7 +36,6 @@
         $datefinis = $PAGE->theme->settings->datefinis;
     }
 */
-
     // normal link or https
     if (empty($CFG->loginhttps)) {
         $wwwroot = $CFG->wwwroot;

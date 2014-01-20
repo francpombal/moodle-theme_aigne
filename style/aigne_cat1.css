@@ -28,7 +28,7 @@
 .dir-rtl .course_category_tree .category.with_children.collapsed > .info .name {background: none;}
 /* Place image in each category */
 .course_category_tree .category[data-categoryid] {
-    background: url([[pix:theme|cat/default]]) no-repeat center bottom;
+    background: url([[pix:theme|cat/default]]) no-repeat center 90%;
 }
 /* Upload the image from each category */
 .course_category_tree .category[data-categoryid="1"] {background-image: url([[pix:theme|cat/1]]);}

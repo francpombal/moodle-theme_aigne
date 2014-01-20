@@ -1,10 +1,11 @@
-AIGNE THEME _ Version 1.7.0
+AIGNE THEME _ Version 1.8.0
 
 ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- 
 
-EN _ Moodle 2.5.x theme
+EN _ Moodle 2.x theme
 
 Main features:
+
    -> Simple design and full CSS compliance.
    -> Only uses 5 hues of the main color, with a Color Schema tool.
    -> @font-face css options (3 types included)
@@ -25,6 +26,18 @@ Main features:
 Thanks to all and best regards to somes... :P
 
 ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- 
+
+ 1.8.0
+ =======================
+ - New set of icons and revised sizes and positions.
+ - Frontpage Banner & Info Re-Designed with more options and flexibility.
+ - Course Categories List Re-Stylized.
+ - New option to display only content in the courses and activities pages.
+ - New option to display the logout link in the custom menu.
+ - Renew Social icons / images and their settings.
+ - New custom Social Network link.
+ - Make compliance with 2.0 + 2.1 + 2.2 moodle versions.
+ - Cleaned and revised all code and semantic...
 
  1.7.0
  =======================
@@ -75,10 +88,8 @@ Thanks to all and best regards to somes... :P
  TODO LIST
  =======================
  - Custom columns width
- - Renew (Original) Social icons / images
  - Finish the Portuguese translation
  - Translate to french
- - Redefine default + frontpage layouts
  - Make compliance with early moodle versions.
 
 ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- 

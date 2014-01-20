@@ -3,13 +3,11 @@
  * Help pages _ Moodle adaptation
  * 
  * @package    theme_aigne
- * @copyright  1997 Franc Pombal (www.aigne.com)
+ * @copyright  1997-2014 Franc Pombal (www.aigne.com)
  * @license    http: *www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 require_once('../../../config.php');
-require_once($CFG->libdir.'/filelib.php');
-require_once($CFG->libdir.'/resourcelib.php');
 
 $PAGE->set_context(context_system::instance());
 $hasnavhelp = $PAGE->theme->settings->navhelp;

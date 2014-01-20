@@ -3,7 +3,7 @@
  * bottom-of-the-page section _ Moodle adaptation
  * 
  * @package    theme_aigne
- * @copyright  1997 Franc Pombal (www.aigne.com)
+ * @copyright  1997-2014 Franc Pombal (www.aigne.com)
  * @license    http: *www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -21,11 +21,6 @@ $navlink6 = (!empty($navhelplinks[6]));
 $navlink7 = (!empty($navhelplinks[7]));
 $navlink8 = (!empty($navhelplinks[8]));
 $navlink9 = (!empty($navhelplinks[9]));
-
-$hascopyrightstg = (!empty($PAGE->theme->settings->copyrightstg));
-$hassitelicensemsg = (!empty($PAGE->theme->settings->sitelicensemsg));
-$haslastmodifiedmsg = (!empty($PAGE->theme->settings->lastmodifiedmsg));
-$hasthanksvisitmsg = (!empty($PAGE->theme->settings->thanksvisitmsg));
 
 ?>
 <!-- 01 bottom section _ course footer -->
@@ -79,7 +74,7 @@ $hasthanksvisitmsg = (!empty($PAGE->theme->settings->thanksvisitmsg));
 <!-- 03 bottom section _ 'HASFOOTER' variable sensitive -->
 <div id="standardfooter">
     <?php if ($hasfooter) { ?>
-        <?php include('bottomhf.php') ?>
+        <?php include('bottom3.php') ?>
     <?php } ?>
 </div>
 <!-- 04 bottom section _ LEGACY _ leave this empty -->
@@ -87,21 +82,4 @@ $hasthanksvisitmsg = (!empty($PAGE->theme->settings->thanksvisitmsg));
 
 </div>
 <!-- 05 bottom section _ copyright -->
-<div id="bottom_5">
-    <div class="copyright">
-    <?php
-        if ($hascopyrightstg) {
-            echo $PAGE->theme->settings->copyrightstg;
-        } else { 
-            echo $SITE->shortname . ' © ' . gmdate("Y");
-        }
-        $textsep = '&nbsp;&nbsp;&nbsp;:&nbsp;:&nbsp;&nbsp;&nbsp;';
-        if ($hassitelicensemsg) { echo $textsep . get_string($CFG->sitedefaultlicense,'license');}
-        if ($haslastmodifiedmsg) { echo $textsep . get_string('lastmodified','moodle').': '.gmdate('d.m.Y');}
-        if ($hasthanksvisitmsg) { echo $textsep . get_string('thanksvisit','theme_aigne');}
-    ?>
-    </div>
-    <div class="footerhtml">
-        <?php echo $OUTPUT->standard_footer_html(); ?>
-    </div>
-</div>
+    <?php include('bottom5.php') ?>

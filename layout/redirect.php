@@ -3,19 +3,12 @@
  * embeded page. 
  *
  * @package    theme_aigne
- * @copyright  2013 Franc Pombal (www.aigne.com)
+ * @copyright  2013-2014 Franc Pombal (www.aigne.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$hasheading = ($PAGE->heading);
-
 $bodyclasses = array();
 $bodyclasses[] = 'content-only';
-
-$hascopyrightstg = (!empty($PAGE->theme->settings->copyrightstg));
-$hassitelicensemsg = (!empty($PAGE->theme->settings->sitelicensemsg));
-$haslastmodifiedmsg = (!empty($PAGE->theme->settings->lastmodifiedmsg));
-$hasthanksvisitmsg = (!empty($PAGE->theme->settings->thanksvisitmsg));
 
 echo $OUTPUT->doctype() ?>
 <html <?php echo $OUTPUT->htmlattributes() ?>>
@@ -53,20 +46,7 @@ echo $OUTPUT->doctype() ?>
     </div>
 <!-- BOTTOM -->
     <div id="page-footer">
-        <div id="bottom_5">
-            <div class="copyright">
-            <?php if ($hascopyrightstg) {
-                echo $PAGE->theme->settings->copyrightstg;
-            } else { 
-                echo $SITE->shortname . ' © ' . gmdate("Y");
-            }
-            $textsep = '&nbsp;&nbsp;&nbsp;:&nbsp;:&nbsp;&nbsp;&nbsp;';
-            if ($hassitelicensemsg) { echo $textsep . get_string($CFG->sitedefaultlicense,'license');}
-            if ($haslastmodifiedmsg) { echo $textsep . get_string('lastmodified','moodle').': '.gmdate('d.m.Y');}
-            if ($hasthanksvisitmsg) { echo $textsep . get_string('thanksvisit','theme_aigne');}
-            ?>
-            </div>
-        </div>
+        <?php include('bottom5.php') ?>
     </div>
     <?php echo $OUTPUT->standard_end_of_body_html() ?>
     <div class="clearfix"></div>

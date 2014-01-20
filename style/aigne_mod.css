@@ -553,6 +553,11 @@
 .path-mod-glossary .glossarypost .entrylowersection .aliases {
     font-size: 0.8em;
 }
+.path-mod-glossary .glossarycontrol IMG.icon {
+    width: 32px;
+    height: 32px;
+    }
+
 
 /*----- ----- ----- ----- ----- ----- LTI _ no format required ----- ----- ----- ----- -----*/
 

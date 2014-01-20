@@ -111,6 +111,10 @@ INPUT {
     padding: 2px 1em 1px 1em;
     background-color: #D5E1DD;
     }
+SELECT {
+    padding: 1px 1px 1px 0.30em;
+    background-color: [[setting:corsch_3]];
+    }
 INPUT#username, 
 INPUT#password {
     margin: 0px 5px 5px 0px;
@@ -129,9 +133,9 @@ INPUT[type="password"] {
     background-color: [[setting:corsch_B]];
     cursor: default;
     }
-INPUT[type="submit"] {
+/*INPUT[type="submit"] {
     background-color: #D5E1DD;
-    }
+    }*/
 INPUT[type="image"] {
     margin: 0px 0px 0px 0px;
     vertical-align: bottom;
@@ -152,24 +156,26 @@ INPUT#shortsearchbox {
 INPUT#coursesearchbox {
     width: 50ex;
     }
-SELECT {
-    padding: 1px 1px 1px 0.30em;
-    background-color: [[setting:corsch_3]];
-    }
 
 /*----- DIV's like buttons + inputs + selects -----*/
 .navbutton {
     float: right;
 	margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
     text-align: right;
     max-height: 1.5em;
+    overflow: hidden;
     }
-.navbutton .singlebutton input {
+ .navbutton .forumsearch .iconhelp { /*Para ajusta la altura de los anteriore INPUT */
+    padding: 0px 5px 0px 5px;
+}
+.navbutton .singlebutton INPUT, 
+.navbutton .forumsearch INPUT {
     padding: 1px 1em 1px 1em;
-    background-color: #D5E1DD;
     font-size: 0.90em;
     cursor: pointer;
     }
+
 #page-admin-tool-installaddon-index #installfromrepobox .singlebutton input[type="submit"] {
     padding: 5px 1em 5px 1em;
     }
@@ -227,11 +233,15 @@ div.backup-section+form, */
     overflow: hidden;
     }
 /* Collapse All - Expand All */
+.mform .collapseexpand {background: url([[pix:t/more]]) no-repeat 6% center;}
+.dir-rtl .mform .collapseexpand {background-image: url([[pix:t/more]]); background-position: 94% center;}
+.mform .collapse-all {background-image: url([[pix:t/less]]);}
+
 .controls .expandall, 
-.controls .collapseall,
+.controls .collapseall, 
 .collapsible-actions .collapseexpand {
- 	margin: 1em 0px 1em 1em;
-    padding: 2px 1em 1px 1.50em;
+ 	margin: 1em 1em 1em 1em;
+    padding: 2px 1em 1px 2em;
     border-width: 1px;
     border-style: solid;
     border-color: #777777;
@@ -240,19 +250,17 @@ div.backup-section+form, */
     text-decoration: none;
     cursor: pointer;
 }
-.controls .expandall, 
-.controls .collapseall {
-    float: right;
-    }
+.dir-rtl .controls .expandall, .dir-rtl .controls .collapseall, .dir-rtl .collapsible-actions .collapseexpand {padding: 2px 2em 1px 1em;}
+.controls .expandall, .controls .collapseall {float: right;}
+.dir-rtl .controls .expandall, .dir-rtl .controls .collapseall {float: left;}
 .controls .expandall:hover, 
 .controls .collapseall:hover {
     letter-spacing: [[setting:aletters]];
     color: #CC0000;
 }
 .collapsible-actions {
- 	margin: 1em 0.50em 1em 1em;
+ 	margin: 1em 1px 1em 1px;
 }
-
 
 /*----- CODE + PRE -----*/
 code, pre {
@@ -387,33 +395,42 @@ h5 img.iconhelp,
 h6 img.icon,
 h6 img.iconhelp {vertical-align: middle;}
 /* Icon styles -> /base/core.css #99 */
-/* 16px -> 24px  - Icono al lado del nombre de la actividad al insertarla */
+/* 16px -> 24px  - Icono al lado del nombre de la actividad */
 img.icon {height: 24px; width: 24px; padding: 0px 0.50em 0px 0px; vertical-align: baseline;}
-#page-admin-index #plugins-check .displayname .pluginicon {width: 24px;}
-#page-admin-plugins #plugins-control-panel .pluginname .pluginicon {width:24px;}
 .dir-rtl img.icon {padding: 0px 0px 0px 1em;}
-/* 12px */
-img.iconsmall {height: 12px; width: 12px; padding-right: 0.50em; vertical-align:middle;}
+/* 12px -> 16px */
+img.iconsmall {height: 12px; width: 12px; margin-right: 0px; padding-right: 0.50em; vertical-align: middle;}
 .dir-rtl img.iconsmall {padding-left: 0.50em; padding-right: 0;}
-img.smallicon {height: 12px; width: 12px; padding: 0px 0.25em 0px 1px; vertical-align:middle;}
+/* 12px -> 16px */
+img.smallicon {height: 12px; width: 12px; padding: 0px 0.25em 0px 1px; vertical-align: middle;}
 .dir-rtl img.smallicon {padding: 0px 1px 0px 0.25em; }
-/* 16px */
-img.iconhelp, 
-.helplink img {height:16px; width:16px; padding-left:3px; vertical-align:text-bottom;}
-.dir-rtl img.iconhelp, 
-.dir-rtl .helplink img {padding-right: 3px; padding-left: 0;}
-/* 32px - Actividades */
-.fp-icon .smallicon, 
+.fp-icon .smallicon {height: 24px; width: 24px;}
+/* 32px - Ativities */
 img.iconlarge {height: 32px; width: 32px; vertical-align:middle;}
-
+/* help icon -> helplink no existe -> helplinkpopup */
+img.iconhelp, .helplink img {height:16px; width:16px; padding: 3px; vertical-align:text-bottom;}
+.dir-rtl img.iconhelp, .dir-rtl .helplink img {padding-right: 3px; padding-left: 0;}
+/* others */
 img.iconsort { vertical-align: text-bottom; padding-left: .3em; margin-bottom: .15em;}
 .dir-rtl img.iconsort { padding-right: .3em; padding-left: 0;}
 img.icontoggle {height:17px; width:50px; vertical-align:middle;}
 img.iconkbhelp {height:17px; width:49px;}
+/* +class to set paddings */
 img.icon-pre, 
 .dir-rtl img.icon-post {padding-right: 3px; padding-left: 0; }
 img.icon-post, 
 .dir-rtl img.icon-pre {padding-left: 3px; padding-right: 0; }
+/* personalized  _ TODO -> custom height+width -> theme_aigne */
+#page-admin-index #plugins-check .displayname .pluginicon {height: 24px; width: 24px;}
+#page-admin-plugins #plugins-control-panel .pluginname .pluginicon {height: 24px; width: 24px;}
+.path-mod-data IMG.iconsmall {height: 16px; width: 16px; padding: 0px;}
+.block_settings .block_tree li.item_with_icon > p img {width: 16px; height: 16px;} /* <- iconos de los bloques (navegación) */
+
+.mform .moreless-toggler {background: url([[pix:t/more]]) no-repeat left center; padding-left: 22px; line-height: 1.5em;}
+.dir-rtl .moreless-toggler {padding-left: 0; padding-right: 22px; background-position: right center; }
+.mform .moreless-less {background-image: url([[pix:t/less]]);}
+
+.path-admin-roles A IMG:only-child[src*="risk"] {height: 32px; width: 32px;}
 
 /*----- LI -> elementos de listas verticales -----*/
 LI {
@@ -578,15 +595,23 @@ TABLE.rolecap TR.riskdataloss {
 TABLE.admintable {
     background-color: [[setting:corsch_4]];
 }
+TABLE#admindeviceselector IMG, 
+TABLE#adminthemeselector IMG {
+    width: 100%;
+}
 TABLE.rolecap, 
 TABLE.flexible, 
 #trustedhosts TABLE.generaltable, 
 #page-message-edit TABLE.generaltable, 
-#page-mod-data-field- TABLE.generaltable {
+#page-mod-data-field- TABLE.generaltable, 
+#page-admin-course-manage TABLE.category_subcategories, 
+#page-admin-course-manage #movecourses TABLE.generalbox.boxaligncenter {
     min-width: 75%;
 }
 TABLE.generaltable THEAD TH, 
-TABLE.surveytable .smalltext TH {
+TABLE.surveytable .smalltext TH, 
+TABLE.category_subcategories THEAD TH, 
+#page-admin-course-manage #movecourses TABLE.generalbox.boxaligncenter THEAD TH {
     background-color: [[setting:corsch_2]];
     color: [[setting:corsch_B]];
 }
@@ -601,7 +626,9 @@ TABLE.generaltable THEAD A {
 .path-mod-survey .surveytable .whitecell {
     background: none;
     }
-
+TABLE.category_subcategories {
+    margin: 0px auto 2em auto;
+}
 /* Alternate colour in tables */
 /* Don't have r0/r1: #emoticonsetting + .rolecap */
 TABLE.calendarmonth .r0 {background-color: #FFFFFF;}
@@ -609,10 +636,16 @@ TABLE.flexible .r0,
 TABLE.generaltable .r0, 
 TABLE.collection .r0, 
 TABLE.surveytable .r1, 
-TABLE.calendarmonth .r1  {background-color: [[setting:corsch_4]];}
+TABLE.calendarmonth .r1, 
+TABLE.category_subcategories .r0, 
+#page-admin-course-manage #movecourses TABLE.generalbox.boxaligncenter .r0 {background-color: [[setting:corsch_4]];}
+
 TABLE.flexible .r1, 
 TABLE.generaltable .r1, 
-TABLE.collection .r1 {background-color: [[setting:corsch_3]];}
+TABLE.collection .r1, 
+TABLE.category_subcategories .r1, 
+#page-admin-course-manage #movecourses TABLE.generalbox.boxaligncenter .r1 {background-color: [[setting:corsch_3]];}
+
 
 /*----- TEXTAREA - Campos de texto, etc... -----*/
 TEXTAREA {
@@ -702,7 +735,7 @@ TEXTAREA {
 .dir-rtl .userinfohead .userpic {float: left;}
 /*----- Zona del logotipo -----*/
 .logo {
-    width: 130px;   
+    width: 130px;
     height: 50px;
     margin: 10px auto 0px auto;
     background: url([[setting:logo]]) no-repeat center center;
@@ -761,50 +794,61 @@ TEXTAREA {
 }
 /* END BREADCRUMB ARROW CUSTOMIZATION */
 
-/*----- FrontPage Banner Fixed Image -----*/
-#large_info {
-    clear: both;
+/*----- FrontPage Common containers -----*/
+.large_info, 
+.base_info, 
+.acordionh5, 
+.sliderv5, 
+.acordion_aigne {
 	position: relative;
+	display: block;
+    clear: both;
+    float: left;
     width: 100%;
-    margin: 3px auto 3px auto;
+    margin: 0px auto 0px auto;
     padding: 0px 0px 0px 0px;
-    background: repeat-x center center;
-    background-color: transparent;
     }
-#large_info img {
-    display: block;
-    width: 100%;
-    max-height: 148px;
+#page-content .large_info, 
+#page-content .base_info, 
+#page-content .acordionh5, 
+#page-content .sliderv5, 
+#page-content .acordion_aigne {
+    margin: 0px auto 1em auto;
+    border-width: 0px 0px 1px 0px;
+    border-style: solid;
+    border-color: [[setting:corsch_1]];
+    }
+
+.base_info {
+    background-color: transparent;
+    overflow: hidden;
+    }
+
+/*----- FrontPage Text Information -----*/
+.frontmsg {
+    margin: 0px 0px 0px 0px;
+    padding: 1em 1em 1em 1em;
+    overflow: auto;
+    }
+
+/*----- FrontPage Banner Fixed Image -----*/
+.large_info {
+    height: 150px;
+    background: url([[setting:headerinfo]]) no-repeat center center;
+    background-size: 100% auto;
     }
 
 /*----- FrontPage Information Boxes -----*/
-#base_info, 
 .quadro1,
 .quadro2,
 .quadro3 {
     position: relative;
     float: left;
+    width: 33%;
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
     background-color: transparent;
     overflow: hidden;
-    }
-#base_info {
-    clear: both;
-    width: 100%;
-    }
-.frontmsg {
-    margin: 0px 0px 0px 0px;
-    padding: 1em 1em 1em 1em;
-    border-width: 1px;
-    border-style: solid;
-    border-color: [[setting:corsch_1]];
-    overflow: auto;
-    }
-.quadro1, 
-.quadro2, 
-.quadro3 {
-    width: 33%;
     }
 .quadro2 {
     margin: 0px 0.5% 0px 0.5%;
@@ -813,7 +857,7 @@ TEXTAREA {
 .quadro2_info, 
 .quadro3_info {
     height: 200px;
-    margin: 3px 0px 0px 0px;
+    margin: 3px 0px 3px 0px;
     padding: 3px 3px 3px 3px;
     background-color: transparent;
     }
@@ -872,45 +916,44 @@ TEXTAREA {
     opacity: 0.75;
     }
 /*----- FrontPage Information Accordion -----*/
+/* calculated width about 965px (PC full screen) */ 
 .acordionh5 {
-    position: relative;
-    float: left;
-    width: 100%;
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
-    box-shadow: 0 10px 10px 1px #BFBFBF;
-    -webkit-box-shadow: 0 10px 10px 1px #BFBFBF;
-    -moz-box-shadow: 0 10px 10px 1px #BFBFBF;
     overflow: hidden;
     }
 /* Extra space for the last image, to correct position when hover */
-.acordionh5 ul {width: 150%;}
+.acordionh5 ul {
+    width: 150%;
+    margin: 0px 0px 0px -1px;
+}
 /* Visible space of 'un-hovered' images */
-.acordionh5 ul:hover li {width: 40px;}
-/* Visible space of 'hovered' images */
-.acordionh5 ul li:hover {width: 750px;}
+.acordionh5 ul:hover li {width: 44px;}
+/* Visible space of 'hovered' images (less than image real width */
+.acordionh5 ul li:hover {width: 790px;}
 /* Preliminar view */
 .acordionh5 li {
     position: relative;
     display: block;
     float: left;
-    width: 190px;
+    width: 193.20px;
+    margin: 10px 0px 10px 0px;
     border-width: 0px 0px 0px 1px;
     border-style: solid;
-    border-color: #AAAAAA;
-    box-shadow: 0 0 25px 10px rgba(90, 90, 90, 0.5);
-    -webkit-box-shadow: 0 0 25px 10px rgba(90, 90, 90, 0.5);
-    -moz-box-shadow: 0 0 25px 10px rgba(90, 90, 90, 0.5);
+    border-color: #CCCCCC;
+    box-shadow: -10px 0 25px 5px rgba(90, 90, 90, 0.5);
+    -webkit-box-shadow: -10px 0 25px 5px rgba(90, 90, 90, 0.5);
+    -moz-box-shadow: -10px 0 25px 5px rgba(90, 90, 90, 0.5);
     transition: all 0.7s;
     -webkit-transition: all 0.7s;
     -moz-transition: all 0.7s;
     }
-.acordionh5 li img {display: block;}
+.acordionh5 li img {
+    display: block;
+    }
 .acordionh5 .foottxt {
     position: absolute;
     left: 0;
     bottom: 0; 
-    width: 840px;
+    width: 800px;
     background: rgba(90, 90, 90, 0.5);
     }
 .acordionh5 .foottxt A {
@@ -919,6 +962,170 @@ TEXTAREA {
     color: #FFFFFF;
     font-size: 1.20em;
     }
+
+/*----- FrontPage Information Vertical Slider -----*/
+.sliderv5, 
+.sliderv5 #mask {
+	height: 150px; /* image height */
+    overflow: hidden;
+    }
+.sliderv5 ul {
+	position: relative;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+.sliderv5 li {
+	position: absolute;
+    width: 100%;
+	top: -155px; /* image height + 5px */
+	margin: 0px 0px 0px 0px;
+	list-style: none;
+}
+.sliderv5 li img {
+    width: 100%;
+    height: 150px; /* image height */
+}
+.sliderv5 li.firstanimation {
+    animation: cycle1 50s linear infinite;
+	-moz-animation: cycle1 50s linear infinite;	
+	-webkit-animation: cycle1 50s linear infinite;		
+}
+.sliderv5 li.secondanimation {
+    animation: cycle2 50s linear infinite;
+	-moz-animation: cycle2 50s linear infinite;
+	-webkit-animation: cycle2 50s linear infinite;		
+}
+.sliderv5 li.thirdanimation {
+    animation: cycle3 50s linear infinite;
+	-moz-animation: cycle3 50s linear infinite;
+	-webkit-animation: cycle3 50s linear infinite;		
+}
+.sliderv5 li.fourthanimation {
+    animation: cycle4 50s linear infinite;
+	-moz-animation: cycle4 50s linear infinite;
+	-webkit-animation: cycle4 50s linear infinite;		
+}
+.sliderv5 li.fifthanimation {
+	animation: cycle5 50s linear infinite;
+    -moz-animation: cycle5 50s linear infinite;
+	-webkit-animation: cycle5 50s linear infinite;		
+}
+.sliderv5 .tooltip {
+	position: relative;
+	left: -305px; /* tooltip width + 5 px */
+	bottom: 75px;
+	width: 300px;
+    background: rgba(90, 90, 90, 0.5);
+	transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+}
+.sliderv5 .tooltip A {
+    display: block;
+    padding: 0.50em 0.50em 0.50em 2em;
+    color: #FFFFFF;
+    font-size: 1.20em;
+}
+.sliderv5 li:hover .tooltip {
+	left: 0px;
+}
+.sliderv5:hover li, 
+.sliderv5:hover .progress-bar {
+	animation-play-state: paused;
+    -moz-animation-play-state: paused;
+	-webkit-animation-play-state: paused;
+}
+.sliderv5 .progress-bar { 
+    position: relative;
+	top: -3px;
+	height: 3px;
+	background: [[setting:corsch_1]];
+	animation: progressv5 50s ease-out infinite;
+    -moz-animation: progressv5 50s ease-out infinite;
+	-webkit-animation: progressv5 50s ease-out infinite;
+}
+
+/*----- FrontPage Information Accordion -----*/
+.acordion_aigne {
+    width: auto;
+	overflow: hidden;
+}
+.acordion_aigne div {
+	float: left;
+	position: relative;
+}
+.acordion_aigne div .content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 800px;
+	height: 350px;
+	z-index: -1;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+	overflow: hidden;
+	z-index: 500;
+}
+.acordion_aigne div label {
+	display: block;
+	position: relative;
+	width: 35px;
+	height: 350px;
+	background: #777777;
+	box-shadow: inset -25px 0px 30px -10px rgba(0,0,0,0.05);
+	cursor: pointer;
+	color: #FFFFFF;
+	overflow: hidden;
+	z-index: 1000;
+}
+.acordion_aigne div label span {
+	display: block;
+	position: relative;
+	top: 100px;
+	width: 140px;
+	font-size: 1.20em;
+	-webkit-transform: rotate(270deg);
+	-moz-transform: rotate(270deg);
+	-ms-transform: rotate(270deg);
+	-o-transform: rotate(270deg);
+
+}
+.acordion_aigne input[type=radio] {
+	opacity: 0;	
+}
+.acordion_aigne input:checked ~ .content {
+	width: 800px;
+	overflow: hidden;
+	border-right: 1px solid #ddd;
+}
+.acordion_aigne .content, 
+.acordion_aigne label, 
+.acordion_aigne input {
+	-webkit-transition: all 0.1s ease-in;
+	-moz-transition: all 0.1s ease-in;
+	-o-transition: all 0.1s ease-in;
+	-ms-transition: all 0.1s ease-in;
+}
+.acordion_aigne label:hover ~ input:checked + .content {
+	width: 800px;
+}
+.acordion_aigne input:checked {
+	margin-right: 750px;
+}
+.acordion_aigne .content .read-more {
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
+	text-decoration: none;
+	padding: 0.50em 1em 0.50em 1em;
+	text-transform: uppercase;
+	box-shadow:  0px 4px 6px #132732, 0px 4px 0px #1d3846, inset 0px 15px 30px -10px rgba(255,255,255,0.2);
+	background: [[setting:corsch_2]];
+	font-weight: bold;
+	color: [[setting:corsch_B]];
+}
+.acordion_aigne .content .read-more:active {
+	box-shadow: 0px 2px 0px #1d3846, inset 0px 15px 30px -10px rgba(255,255,255,0.2);	
+}
 /*----- Footer -----*/
 DIV.navhelp {
     clear: both;
@@ -944,7 +1151,7 @@ DIV.contact#right {
     width: 30%   
     }
 DIV.contact img:hover {
-    background-color: [[setting:corsch_1]]; 
+    background-color: [[setting:corsch_1]];
     }
 DIV.fisicalsite {
 	position: relative;
@@ -1014,30 +1221,32 @@ DIV.footerhtml {
 .coursebox.last {}
 
 /* course name */
-.coursebox .info .name {
-    margin: 5px 5px 0px 5px;
+.coursebox .info H3.name {
+    margin: 3px 3px 0px 3px;
     padding: 0px 0px 0px 0px;
-    width: 70%
+    width: 75%;
+    line-height: 2em;
     }
 /* condicionado por base/course.css */
-.coursebox .info .name A {
+.coursebox .info H3.name A {
     display: block;
+    background: none;
     background-image: url([[pix:moodle|i/course]]);
     background-repeat: no-repeat;
-    background-position: left 0.20em;
+    background-position: left 0.10em; /* 0.20em if image 16x16 */
     margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 25px;
+    padding: 0px 0px 0px 32px; /* 25px if image 16x16 */
     }
-.dir-rtl .coursebox .info .name A {background-position: right 0.20em; padding: 0px 25px 0px 0px;}
+.dir-rtl .coursebox .info .name A {background-position: right 0.10em; padding: 0px 32px 0px 0px;}
 /* course information: summary + coursefile + teachers etc. */
 .coursebox .content {
     clear: both;
     width: 90%;
-    margin: 0.50em 5px 0.50em 30px;
+    margin: 0.50em 5px 0.50em 35px;
     padding: 0px 0px 0px 0px;
     overflow: hidden;
 }
-.dir-rtl .coursebox .content {margin: 0.50em 30px 0.50em 5px;}
+.dir-rtl .coursebox .content {margin: 0.50em 35px 0.50em 5px;}
 .coursebox .content .coursecat, 
 .coursebox .content .summary, 
 .coursebox .content .courseimage, 
@@ -1056,7 +1265,8 @@ DIV.footerhtml {
 .coursebox .content .summary {
     max-height: 12em;
     overflow: auto;
-}
+    }
+/* course image */
 .coursebox .content .courseimage img {
     max-width: inherit;
     width: 100%;
@@ -1064,28 +1274,42 @@ DIV.footerhtml {
     margin-left: 1px;
     }
 .dir-rtl .coursebox .content .courseimage img {margin-right: 1px;}
+/* course files image */
 .coursebox .content .coursefile {
-    margin-left: -1px;
-}
-.dir-rtl .coursebox .content .coursefile {margin-right: -1px;}
+    line-height: 1.60em;
+    }
+.coursebox .content .coursefile A {
+    margin-left: -8px; /* ??? */
+    }
+.coursebox .fp-icon {
+    line-height: 1.60em;
+    }
+.coursebox .fp-icon .smallicon {
+    margin: 0px 0px 0px -2px;
+    vertical-align: bottom;
+    height: 16px; 
+    width: 16px;
+    }
+/* teacher image */
 .coursebox .content .teachers LI {
     display: list-item;
     list-style-image: url([[pix:t/teacher]]); /* 16x16 */
-    margin: 0px 0px 0px 33px;
-    padding: 0px 0px 0px 0px;
-}
-.dir-rtl .coursebox .content .teachers LI {margin: 0px 33px 0px 0px;}
+    margin: 0px 0px 0px 26px;
+    line-height: 1.60em; 
+    }
+.dir-rtl .coursebox .content .teachers LI {margin: 0px 26px 0px 0px;}
 /* depends on base/course.css */
 .coursebox .enrolmenticons, 
 .coursebox .moreinfo {
     float: right;
-    padding: 0.20em 0px 0.20em 0px;
+    padding: 0px 0px 0px 0px;
     }
-.dir-rtl .coursebox .enrolmenticons, 
-.dir-rtl .coursebox .moreinfo {float: left;}
-.coursebox .enrolmenticons img,
-.coursebox .moreinfo img {
-    margin: 0px 0.20em 0px 0.20em;
+.dir-rtl .coursebox .enrolmenticons, .dir-rtl .coursebox .moreinfo {float: left;}
+.coursebox .enrolmenticons img.smallicon,
+.coursebox .moreinfo img.smallicon {
+    margin: 0.20em 0px 0px 0px;
+    height: 32px;
+    width: 32px; 
     }
 /* course sections _ in course */
 .path-course-view .headingblock {
@@ -1118,7 +1342,7 @@ DIV.footerhtml {
  	margin: 3px 3px 3px 3px;
     padding: 2px 1em 1px 1em;
     }
-/* todo esto es solo para el triangulo del collapsed */
+/* Esto es solo para el triangulo del collapsed */
 .course_category_tree .category > .info .name {background: url([[pix:moodle|t/collapsed_empty]]) no-repeat center left;}
 .dir-rtl .course_category_tree .category > .info .name {background: url([[pix:moodle|t/collapsed_empty_rtl]]) no-repeat center right;}
 .course_category_tree .category.with_children > .info .name {background-image: url([[pix:moodle|t/expanded]]);}
@@ -1134,6 +1358,11 @@ DIV.footerhtml {
 .course_category_tree .controls {visibility: hidden;}
 .course_category_tree .controls div {display: inline; cursor: pointer;}
 .jsenabled .course_category_tree .controls {clear: both; visibility: visible;}
+
+/* Add/Edit Courses -> Categories */
+.categorypicker {
+    margin: 2em 0px 1em 0px;
+}
 
 /* Course Format: Topic + Weekly + Colours + Columns + Collapsed columns + FlexSections + Grid Icons */
 /* each topic */
@@ -1265,6 +1494,10 @@ DIV.footerhtml {
     width: 100%;
     padding: 1em 0px 6.50px 0px;
     background-color: [[setting:corsch_4]];
+    }
+.tabtree ul li.here a {
+    color: [[setting:corsch_T]];
+    letter-spacing: normal;
     }
 .tabtree ul li.here .empty {
     display: none;

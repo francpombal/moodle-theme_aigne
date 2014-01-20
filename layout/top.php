@@ -3,7 +3,7 @@
  * top-of-the-page section _ Moodle adaptation
  * 
  * @package    theme_aigne
- * @copyright  1997 Franc Pombal (www.aigne.com)
+ * @copyright  1997-2014 Franc Pombal (www.aigne.com)
  * @license    http: *www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -14,11 +14,6 @@ If (!empty($PAGE->theme->settings->slogan)) {
 }
 $hasusernav = $PAGE->theme->settings->usernav;
 $haslangmenu = (!empty($PAGE->layout_options['langmenu']));
-
-
-$userdate = usergetdate((time()+($i*86400)), $timezone);
-            $usermonth = $userdate['mon'];
-            $userday = $userdate['mday'];
 
 ?>
 
@@ -40,16 +35,16 @@ $userdate = usergetdate((time()+($i*86400)), $timezone);
             <td class="color_04" Style="width:48%; text-align:right; padding-right:10px" colspan=12>
             <?php 
             switch ($hasusernav) {
-                case 1:
+                case 1: //in head
                     include('userinfo.php');
                     break;
-                case 2:
+                case 2: //in block
                     echo '&nbsp;';
                     break;
-                case 3:
+                case 3: //moodle standard
                     echo $OUTPUT->login_info();
                     break;
-                case 4:
+                case 4: //none
                     echo '&nbsp;';
                     break;
                 default:

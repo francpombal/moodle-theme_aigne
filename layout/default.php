@@ -4,23 +4,20 @@
  * TODO: make two files -> frontpage and default (courses) 
  *
  * @package    theme_aigne
- * @copyright  2013 Franc Pombal (www.aigne.com)
+ * @copyright  2013-2014 Franc Pombal (www.aigne.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 $hasheading = ($PAGE->heading);
 $hasnavbar = (empty($PAGE->layout_options['nonavbar']) && $PAGE->has_navbar());
-//$hasfooter = (empty($PAGE->layout_options['nofooter']));
 $hassidepre = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-pre', $OUTPUT));
 $hassidepost = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-post', $OUTPUT));
-//$haslogininfo = (empty($PAGE->layout_options['nologininfo']));
 $showsidepre = ($hassidepre && !$PAGE->blocks->region_completely_docked('side-pre', $OUTPUT));
 $showsidepost = ($hassidepost && !$PAGE->blocks->region_completely_docked('side-post', $OUTPUT));
 
 $custommenu = $OUTPUT->custom_menu();
 $hascustommenu = (empty($PAGE->layout_options['nocustommenu']) && !empty($custommenu));
 
-//$hasfootnote = (!empty($PAGE->theme->settings->footnote));
-$hasheadbanner = (!empty($PAGE->theme->settings->headbanner));
+$hasinfobanner = ($PAGE->layout_options['infobanner']);
 
 $courseheader = $coursecontentheader = $coursecontentfooter = $coursefooter = '';
     if (empty($PAGE->layout_options['nocourseheaderfooter'])) {
@@ -71,12 +68,10 @@ echo $OUTPUT->doctype() ?>
             <?php include('top.php') ?>
         </div>
     <?php } ?> 
-    <?php if ($hasheadbanner) { ?>
-        <?php if (!isloggedin() or isguestuser()) { ?>
-            <?php include('frontinfoup.php') ?>
-        <?php } ?>
+    <?php if (($hasinfobanner) and (!isloggedin() or isguestuser())) { ?>
+        <?php $infobanner = ($PAGE->theme->settings->headbanner); ?>
+        <?php include('frontinfo.php') ?>
     <?php } ?>
-    
 <!-- START CUSTOMMENU AND NAVBAR -->
     <div id="navcontainer">
         <?php if ($hascustommenu) { ?>
@@ -119,9 +114,10 @@ echo $OUTPUT->doctype() ?>
         <?php } ?>        
 <!-- main center content -->
         <div id="region-main">
-            <?php if (!isloggedin() or isguestuser()) { ?>
-                <?php include('frontinfo.php') ?>
-            <?php } ?>
+                <?php if (($hasinfobanner) and (!isloggedin() or isguestuser())) { ?>
+                    <?php $infobanner = ($PAGE->theme->settings->infobanner); ?>
+                    <?php include('frontinfo.php') ?>
+                <?php } ?>
             <div class="region-content">
                 <?php echo $coursecontentheader; ?>
                 <?php echo $OUTPUT->main_content() ?>

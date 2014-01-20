@@ -3,8 +3,8 @@
  * lib
  * 
  * @package    theme_aigne
- * @copyright  2013 Franc Pombal (www.aigne.com)
- * @license    http: *www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @copyright  2013-2014 Franc Pombal (www.aigne.com)
+ * @license    http://www.gnu.org/copyleft/gpl.html _ GNU GPL v3 or later
  */
  
 defined('MOODLE_INTERNAL') || die();
@@ -45,7 +45,7 @@ function theme_aigne_process_css($css, $theme) {
 
     // Set the background image for the body _ FILE
     if (!empty($theme->settings->backbody)) {
-        $backbody = $theme->setting_file_url('backbody', 'backbody');
+        $backbody = $theme->setting_file_url('backbody','backbody');
     } else {
         $backbody = null;
     }
@@ -75,7 +75,6 @@ function theme_aigne_process_css($css, $theme) {
     }
     $css = theme_aigne_set_aletters($css, $aletters);
 
-
     // Set custom CSS
     if (!empty($theme->settings->customcss)) {
         $customcss = $theme->settings->customcss;
@@ -94,21 +93,29 @@ function theme_aigne_process_css($css, $theme) {
     $css = theme_aigne_set_custommtag($css, $custommtag);
 
 // Marketing Settings
-    // Set the frontpage header info image _ FILE
-    if (!empty($theme->settings->headerinfo)) {
-        $headerinfo = $theme->setting_file_url('headerinfo', 'headerinfo');
-    } else {
-        $headerinfo = $OUTPUT->pix_url('carroussel/04', 'theme');
-    }
-    $css = theme_aigne_set_headerinfo($css, $headerinfo);
-
     // Set frontpage information style
-    /*if (!empty($theme->settings->infobanner)) {
+    if (!empty($theme->settings->headbanner)) {
+        $headbanner = $theme->settings->headbanner;  
+    } else {
+        $headbanner = '0';
+    }
+    $css = theme_aigne_set_headbanner($css, $headbanner);
+    
+    // Set frontpage information style
+    if (!empty($theme->settings->infobanner)) {
         $infobanner = $theme->settings->infobanner;  
     } else {
-        $infobanner = '3';
+        $infobanner = '4';
     }
-    $css = theme_aigne_set_infobanner($css, $infobanner);*/
+    $css = theme_aigne_set_infobanner($css, $infobanner);
+    
+    // Set the frontpage header info image _ FILE
+    if (!empty($theme->settings->headerinfo)) {
+        $headerinfo = $theme->setting_file_url('headerinfo','headerinfo');
+    } else {
+        $headerinfo = $OUTPUT->pix_url('carroussel/01','theme');
+    }
+    $css = theme_aigne_set_headerinfo($css, $headerinfo);
 
 // Moodle Format Settings
     // Set Grid Format for Categories List
@@ -122,7 +129,7 @@ function theme_aigne_process_css($css, $theme) {
 // Logo Options
     // Set the image for the logo _ FILE
     if (!empty($theme->settings->logo)) {
-        $logo = $theme->setting_file_url('logo', 'logo');
+        $logo = $theme->setting_file_url('logo','logo');
     } else {
         $logo = $OUTPUT->pix_url('images/logo','theme');
     }
@@ -130,7 +137,7 @@ function theme_aigne_process_css($css, $theme) {
    
     // Set the background image for the logo _ FILE
     if (!empty($theme->settings->backlogo)) {
-        $backlogo = $theme->setting_file_url('backlogo', 'backlogo');
+        $backlogo = $theme->setting_file_url('backlogo','backlogo');
     } else {
         $backlogo = $OUTPUT->pix_url('images/backlogo','theme');
     }
@@ -175,16 +182,16 @@ function theme_aigne_process_css($css, $theme) {
     if (!empty($theme->settings->usernavout)) {
        $usernavout = $theme->settings->usernavout;
     } else {
-       $usernavout = '3';
+       $usernavout = '1';
     }
     $css = theme_aigne_set_usernavout($css, $usernavout);
 
 // Contact Options
     // Set the eMail Image _ SPAM Protection _ FILE
     if (!empty($theme->settings->emailimg)) {
-        $emailimg = $theme->setting_file_url('emailimg', 'emailimg');
+        $emailimg = $theme->setting_file_url('emailimg','emailimg');
     } else {
-        $emailimg = null;
+        $emailimg = $OUTPUT->pix_url('brands/email_txt','theme');
     }
     $css = theme_aigne_set_emailimg($css, $emailimg);
 
@@ -193,7 +200,7 @@ function theme_aigne_process_css($css, $theme) {
     if (!empty($theme->settings->compatwai)) {
        $compatwai = $theme->settings->compatwai;
     } else {
-       $compatwai = '4';
+       $compatwai = '1';
     }
     $css = theme_aigne_set_compatwai($css, $compatwai);
 
@@ -208,7 +215,7 @@ function theme_aigne_process_css($css, $theme) {
  * Adds objects to the CSS before it is cached.
  *
  * @param string $css The CSS.
- * @param string $logo The URL of the logo.
+ * @param string $settingname The name to call the setting.
  * @return string The parsed CSS
  */
 function theme_aigne_set_bodyfont($css, $bodyfont) {
@@ -216,7 +223,6 @@ function theme_aigne_set_bodyfont($css, $bodyfont) {
     $css = str_replace($tag, $bodyfont.'px', $css);
     return $css;
 }
-
 function theme_aigne_set_fontfam($css, $fontfam) {
     $tag = '[[setting:fontfam]]';
     $css = str_replace($tag, $fontfam, $css);
@@ -353,14 +359,19 @@ function theme_aigne_set_custommtag($css, $custommtag) {
     $css = str_replace($tag, $custommtag, $css);
     return $css;
 }
-function theme_aigne_set_headerinfo($css, $headerinfo) { // _ FILE
-    $tag = '[[setting:headerinfo]]';
-    $css = str_replace($tag, $headerinfo, $css);
+function theme_aigne_set_headbanner($css, $headbanner) {
+    $tag = '[[setting:headbanner]]';
+    $css = str_replace($tag, $headbanner, $css);
     return $css;
 }
 function theme_aigne_set_infobanner($css, $infobanner) {
     $tag = '[[setting:infobanner]]';
     $css = str_replace($tag, $infobanner, $css);
+    return $css;
+}
+function theme_aigne_set_headerinfo($css, $headerinfo) { // _ FILE
+    $tag = '[[setting:headerinfo]]';
+    $css = str_replace($tag, $headerinfo, $css);
     return $css;
 }
 function theme_aigne_set_catstyle($css, $catstyle) {
@@ -440,15 +451,17 @@ function theme_aigne_pluginfile($course, $cm, $context, $filearea, $args, $force
             return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
         } else if ($filearea === 'backlogo') {
             return $theme->setting_file_serve('backlogo', $args, $forcedownload, $options);
+        } else if ($filearea === 'headerinfo') {
+            return $theme->setting_file_serve('headerinfo', $args, $forcedownload, $options);
         } else if ($filearea === 'backbody') {
             return $theme->setting_file_serve('backbody', $args, $forcedownload, $options);
-        } else if ($filearea === 'headerinfo') {
-            return $theme->setting_file_serve('headerinfo', $args, $forcedownload, $options);                
         } else if ($filearea === 'emailimg') {
             return $theme->setting_file_serve('emailimg', $args, $forcedownload, $options);
         } else {
             send_file_not_found();
         }
+    } else {
+        send_file_not_found();
     }
 }
 

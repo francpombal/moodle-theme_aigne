@@ -1,0 +1,11 @@
+a – Icons that are not widely used
+b - big icons?
+c – Calendar-related icons 
+f – File icons for different file types 
+g – Default user icons and thumbnails 
+i – General icons 
+m – Currency symbols 
+s – Smileys 
+t – General icons 
+u – User icons and thumbnails 
+y – YUI icons 

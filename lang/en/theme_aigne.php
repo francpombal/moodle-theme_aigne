@@ -59,6 +59,17 @@ $string['aco5alt2'] = 'Write here the alternative text for the bellows 2 image';
 $string['aco5alt3'] = 'Write here the alternative text for the bellows 3 image';
 $string['aco5alt4'] = 'Write here the alternative text for the bellows 4 image';
 $string['aco5alt5'] = 'Write here the alternative text for the bellows 5 image';
+/**/
+$string['sli5cap1'] = 'Caption 1';
+$string['sli5cap2'] = 'Caption 2';
+$string['sli5cap3'] = 'Caption 3';
+$string['sli5cap4'] = 'Caption 4';
+$string['sli5cap5'] = 'Caption 5';
+$string['sli5alt1'] = 'Write here the alternative text for the slider 1 image';
+$string['sli5alt2'] = 'Write here the alternative text for the slider 2 image';
+$string['sli5alt3'] = 'Write here the alternative text for the slider 3 image';
+$string['sli5alt4'] = 'Write here the alternative text for the slider 4 image';
+$string['sli5alt5'] = 'Write here the alternative text for the slider 5 image';
 /* ----- ----- ----- -> TOP STRINGS ----- */
 $string['sloganaigne'] = '';
 /* ----- ----- ----- -> USER NAV INFO SALUTATIONS ----- */
@@ -233,7 +244,7 @@ $string['incfontsizetxt'] = 'Press to increase the font size. (Increase text siz
 $string['defaultstyletxt'] = 'Press to restore the original appearance of the web design';
 $string['styletxt'] = 'Press to apply a different colour scheme over the web design';
 /**/
-$string['generalhead'] = 'Customization of the general appearance';
+$string['generalhead'] = 'General appearance';
 $string['csshead'] = 'CSS design options';
 $string['bodyfont'] = 'Font Size';
 $string['bodyfontdesc'] = 'If you want you can set a font size reference. It is known to cause display problems with certain blocks if you set highest font size, try it and decide to.';
@@ -358,20 +369,22 @@ $string['dublinmtagdesc'] = 'If enabled, displays COMPATIBILITY WITH "Dublin Cor
 /**/
 $string['marketinghead'] = 'Layout options for the site frontpage';
 $string['marketingheaddesc'] = 'In this section you can customize the elements show in the frontpage, before users logged in. 
-You can set information about your institution or the launch of new courses.';
-$string['headbanner'] = 'Header Banner Show';
-$string['headbannerdesc'] = 'If enabled, displays a Banner in the header of the frontpage. [ ::: under construction ::: ]';
+You can set information about your institution or the launch of new courses. <br />
+That can be maked up / programmed to display any information about the site or courses, in the layout  "frontinfo.php" and in the folder theme\aigne\pix\carroussel.';
+$string['headbanner'] = 'Header Banner';
+$string['headbannerdesc'] = 'Select the type of information to displays in the header of the frontpage.';
+$string['infobanner'] = 'Information Area';
+$string['infobannerdesc'] = 'Select the type of information to displays in the content of the frontpage..<br />';
 $string['headerinfo'] = 'Header Banner';
 $string['headerinfodesc'] = 'If you wish you can add a fixed image in the header of the frontpage. <br />
 This image must be a JPG / PNG / GIF with minimal 1000px wide by 150px max-high.';
-$string['infobanner'] = 'Information Boxes';
-$string['infobannerdesc'] = 'Seleccione el tipo de información que desea que aparezca en la portada de su sitio Web.<br />
-That can be maked up / programmed to display any information about the site or courses, in the layout  "frontinfo.php" and in the folder theme\aigne\pix\carroussel.';
-$string['infobanner0'] = 'None information box';
+$string['infobanner0'] = 'None information banner';
 $string['infobanner1'] = 'Show up one static box with a text message';
-$string['infobanner2'] = 'Show up three static boxes with diferent content type';
-$string['infobanner3'] = 'Show up one information box, in horizontal accordion style';
-$string['infobanner4'] = 'Show up one vertical automated slides presentation';
+$string['infobanner2'] = 'Show up one static image';
+$string['infobanner3'] = 'Show up three static boxes with diferent content type';
+$string['infobanner4'] = 'Show up one information box, in horizontal accordion style';
+$string['infobanner5'] = 'Show up one vertical automated slider presentation';
+$string['infobanner6'] = 'Show up one horizontal automated slider presentation';
 /**/
 $string['moodlehead'] = 'Moodle elements options';
 $string['catstyle'] = 'Categories List Style';
@@ -380,8 +393,12 @@ $string['catstyledesc'] = 'Categories List Style.<br />
 ';
 $string['catstyle1'] = 'Standard Moodle Style';
 $string['catstyle2'] = 'Grid Image Style';
+$string['contentcur'] = 'Content Only in Course Page';
+$string['contentcurdesc'] = 'If enabled, only display the content of the courses, without lateral blocks, to give more space to the course.';
+$string['contentact'] = 'Content Only in Activity Page';
+$string['contentactdesc'] = 'If enabled, only display the content of the activities, without lateral blocks, to give more space to the activity.';
 /**/
-$string['headerhead'] = 'Customization of the Header Elements';
+$string['headerhead'] = 'Header Elements';
 $string['logohead'] = 'Logo Options';
 $string['logo'] = 'Logo';
 $string['logodesc'] = 'Please add your custom logo if you want to replace the default logo for this theme.<br />
@@ -443,7 +460,7 @@ $string['outbutton'] = 'Logout option in button style';
 $string['outmoodle'] = 'Logout option in moodle hyperlink style';
 $string['outnone'] = 'None logout option';
 /**/
-$string['bottomphead'] = 'Customization of the Footer elements';
+$string['bottomphead'] = 'Footer elements';
 $string['navhelphead'] = 'Navigation Aid options';
 $string['navhelp'] = 'Navigation Aid Page Link';
 $string['navhelpdesc'] = 'Web page address of the navigation aid';
@@ -490,12 +507,18 @@ $string['fotologdesc'] = 'Enter the URL of your FotoLog page.
 $string['instagram'] = 'Instagram URL';
 $string['instagramdesc'] = 'Enter the URL of your Instagram page.
 <a href="http://instagram.com/" target="_blank"> (instagram.com) .</a>';
+$string['panoramio'] = 'Panoramio URL';
+$string['panoramiodesc'] = 'Enter the URL of your Panoramio page.
+<a href="http://www.panoramio.com" target="_blank"> (www.panoramio.com) .</a>';
 $string['picasa'] = 'Picasa URL';
 $string['picasadesc'] = 'Enter the URL of your Picasa page.
 <a href="http://picasaweb.google.com/" target="_blank"> (picasaweb.google.com) .</a>';
 $string['pixabay'] = 'PixaBay URL';
 $string['pixabaydesc'] = 'Enter the URL of your PixaBay page.
 <a href="http://pixabay.com/" target="_blank"> (pixabay.com) .</a>';
+$string['photobucket'] = 'Photobucket URL';
+$string['photobucketdesc'] = 'Enter the URL of your Photobucket page.
+<a href="http://www.photobucket.com/" target="_blank"> (www.photobucket.com) .</a>';
 /**/
 $string['dailymotion'] = 'DailyMotion URL';
 $string['dailymotiondesc'] = 'Enter the URL of your DailyMotion channel.
@@ -524,15 +547,19 @@ $string['socialhead'] = 'Social networks link options';
 $string['linkedin'] = 'LinkedIn URL';
 $string['linkedindesc'] = 'Enter the URL of your LinkedIn profile.
 <a href="http://www.linkedin.com/" target="_blank"> (www.linkedin.com) .</a>';
+$string['xing'] = 'Xing URL';
+$string['xingdesc'] = 'Enter the URL of your Xing profile.
+<a href="http://www.xing.com/" target="_blank"> (www.xing.com) .</a>';
+$string['yelp'] = 'Yelp URL';
+$string['yelpdesc'] = 'Enter the URL of your Yelp profile.
+<a href="http://www.yelp.com/" target="_blank"> (www.yelp.com) .</a>';
+/**/
 $string['facebook'] = 'Facebook URL';
 $string['facebookdesc'] = 'Enter the URL of your Facebook page.
 <a href="http://www.facebook.com/" target="_blank"> (www.facebook.com) .</a>';
 $string['twitter'] = 'Twitter URL';
 $string['twitterdesc'] = 'Enter the URL of your Twitter feed.
 <a href="http://twitter.com/" target="_blank"> (twitter.com) .</a>';
-$string['googleplus'] = 'Google+ URL';
-$string['googleplusdesc'] = 'Enter the URL of your Google+ profile.
-<a href="http://plus.google.com/" target="_blank"> (plus.google.com) .</a>';
 $string['vkontakte'] = 'VKontakte URL';
 $string['vkontaktedesc'] = 'Enter the URL of your Vkontakte page.
 <a href="http://www.vk.com/" target="_blank"> (www.vk.com) .</a>';
@@ -543,12 +570,34 @@ $string['pinterest'] = 'Pinterest URL';
 $string['pinterestdesc'] = 'Enter the URL of your Pinterest page.
 <a href="http://pinterest.com/" target="_blank"> (pinterest.com) .</a>';
 /**/
+$string['aim'] = 'AIM URL';
+$string['aimdesc'] = 'Enter the URL of your AIM profile.
+<a href="http://www.aim.com/" target="_blank"> (www.aim.com) .</a>';
+$string['googleplus'] = 'Google+ URL';
+$string['googleplusdesc'] = 'Enter the URL of your Google+ profile.
+<a href="http://plus.google.com/" target="_blank"> (plus.google.com) .</a>';
+$string['microsoftid'] = 'Microsoft Live URL';
+$string['microsoftiddesc'] = 'Enter the URL of your Microsoft Live profile.
+<a href="http://profile.live.com/" target="_blank"> (profile.live.com) .</a>';
+$string['openid'] = 'Open ID URL';
+$string['openiddesc'] = 'Enter the URL of your Open ID profile.
+<a href="http://openid.net/" target="_blank"> (openid.net) .</a>';
+$string['yahooid'] = 'Yahoo URL';
+$string['yahooiddesc'] = 'Enter the URL of your Yahoo profile.
+<a href="http://profile.yahoo.com/" target="_blank"> (profile.yahoo.com) .</a>';
+/**/
 $string['tumblr'] = 'Tumblr URL';
 $string['tumblrdesc'] = 'Enter the URL of your Tumblr page.
 <a href="http://tumblr.com/" target="_blank"> (tumblr.com) .</a>';
 $string['blogger'] = 'Blogger URL';
 $string['bloggerdesc'] = 'Enter the URL of your Blogger page.
 <a href="http://www.blogger.com/" target="_blank"> (www.blogger.com) .</a>';
+/**/
+$string['social1url'] = 'Custom Social Net URL';
+$string['social1urldesc'] = 'Enter the (entire) URL of a Soial Network that is not in the list.';
+$string['social1ico'] = 'Icon for the custom Social Net';
+$string['social1icodesc'] = 'Enter the name of the icon for that custom Social Network. <br />
+Remember to copy a 32x32 iconic image in the folder theme/aigne/pix/brands/ with the same name introduced';
 /**/
 $string['creditshead'] = 'Credit Posts options';
 $string['moodlecredit'] = 'Credits to Moodle';
@@ -596,7 +645,7 @@ $string['choosereadme'] = '
     <p><a href="http://moodle.org/mod/forum/view.php?id=46">http://moodle.org/mod/forum/view.php?id=46</a></p>
 
     <h3>Themes Documentation:</h3>
-    <p><a href="http://docs.moodle.org/en/Themes">http://docs.moodle.org/en/Themes</a></p>
+    <p><a href="http://docs.moodle.org/all/es/admin/setting/themesettingaigne">Theme Aigne Documentation page</a></p>
   
     <h3>Report a bug:</h3>
     <p><a href="http://www.github.com/francpombal/moodle-theme_aigne/">http://www.github.com/francpombal/moodle-theme_aigne/</a></p>
@@ -604,19 +653,24 @@ $string['choosereadme'] = '
  
   <div class="theme_description">
     <h3>About:</h3>
-    <p>Moodle 2.5.x theme _ Afterburner improved theme _ Main features:</p>
+    <p>Moodle 2.x theme _ Main features:</p>
     <ul>
-      <li>Simple design and full CSS compliance.</li>
-      <li>Only uses 3 hues of the main colour.</li>
-      <li>Bottom page (footer) with some customizables sections:</li>
-      <li>NavHelp section with all needed administrative links to totally personalized and language sensitive pages.<br />
-          ... new Moodle page (webmap, help, search, stats, disclaimer, policies, privacy, security and )</li>
-      <li>Contact section (with aardvark theme social links)</li>
-      <li>Credits information section</li>
-      <li>Copyright section</li>
-      <li>A FrontPage (not finished) with banner and marketing information blocks.</li>
-      <li>Lots of customization options at Site Admin -&gt; Appearance -&gt; Themes -&gt; AIGNE</li>
-      <li>Personalized logo, slogan and background logo image.</li>
+      <li>Simple design and full CSS compliance.
+      <li>Only uses 5 hues of the main color, with a Color Schema tool.
+      <li>@font-face css options (3 types included)
+      <li>Personalized logo, slogan and background logo image.
+      <li>New and versatile header Meta Tags options.
+      <li>A FrontPage with banner and marketing information spaces.
+      <li>Only two colours Custom Menu settings.
+      <li>Custom Breadcrumb Spacer setting.
+      <li>Totally brand new User Information Area, to be displayed in head or in navigation block.
+      <li>NavHelp footer section with all needed administrative links to personalized and language sensitive pages.
+       ... new Moodle page (webmap, help, search, stats, disclaimer, policies, privacy, security and accessibility)
+      <li>Brand new Contact section with about 30 Social Network links
+      <li>Credits information section, with new options about external w3c validator servers 
+      <li>Copyright section
+      <br />
+      <li>Over 70 customization options at Site Admin -> Appearance -> Themes -> aigne
     </ul>  
     <h3>Credits:</h3>
     <p>This design was created by Franc Pombal (www.piratininga.tk/moodle), improving the AfterBurner Theme in the Moodle core, what was an original design by Mary Evans & Patrick Malley & Rocket Themes.</p>

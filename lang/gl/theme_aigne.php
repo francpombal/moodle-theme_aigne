@@ -59,6 +59,17 @@ $string['aco5alt2'] = 'Escreba aquí o texto alternativo da imaxe do fol 2';
 $string['aco5alt3'] = 'Escreba aquí o texto alternativo da imaxe do fol 3';
 $string['aco5alt4'] = 'Escreba aquí o texto alternativo da imaxe do fol 4';
 $string['aco5alt5'] = 'Escreba aquí o texto alternativo da imaxe do fol 5';
+/* Strings do slider vertical de información */
+$string['sli5cap1'] = 'Texto informativo 1';
+$string['sli5cap2'] = 'Texto informativo 2';
+$string['sli5cap3'] = 'Texto informativo 3';
+$string['sli5cap4'] = 'Texto informativo 4';
+$string['sli5cap5'] = 'Texto informativo 5';
+$string['sli5alt1'] = 'Escreba aquí o texto alternativo da imaxe da diapositiva 1';
+$string['sli5alt2'] = 'Escreba aquí o texto alternativo da imaxe da diapositiva 2';
+$string['sli5alt3'] = 'Escreba aquí o texto alternativo da imaxe da diapositiva 3';
+$string['sli5alt4'] = 'Escreba aquí o texto alternativo da imaxe da diapositiva 4';
+$string['sli5alt5'] = 'Escreba aquí o texto alternativo da imaxe da diapositiva 5';
 /* ----- ----- ----- -> STRINGS DO ENCABEZADO ----- */
 $string['sloganaigne'] = '';
 /* ----- ----- ----- -> SAÚDOS E MENSAXES DA ÁREA DE INFORMACIÓN DO USUARIO ----- */
@@ -358,20 +369,22 @@ $string['dublinmtagdesc'] = 'Si activa esta opción, xeraránse 3 etiquetas bás
 /**/
 $string['marketinghead'] = 'Opcións de deseño na páxina de presentación do sitio (frontpage _ marketing)';
 $string['marketingheaddesc'] = 'Esta sección refirese ós elementos que mostraránse na páxina principal da web, antes que o usuario se identifique ("entrar" _ "login") na la plataforma. 
-Pode personalizar estas opcións ás súas necesidades, para engadir información sobre a institución ou sobre o lanzamento de novos cursos.';
-$string['headbanner'] = 'Mostrar Banner do Encabezado';
-$string['headbannerdesc'] = 'Si activa esta opción, mostraráse unha imaxe na cabeceira da páxina principal. [::: en construcción :::]';
+Pode personalizar estas opcións ás súas necesidades, para engadir información sobre a institución ou sobre o lanzamento de novos cursos. <br />
+Unha vez activado, pode deseñar/programar editando directamente o contido do arquivo do layout "frontinfo.php" e na carpeta theme\aigne\pix\carroussel.';
+$string['headbanner'] = 'Banner do Encabezado';
+$string['headbannerdesc'] = 'Seleccione o tipo de información que quere que apareza na cabeceira da páxina principal.';
+$string['infobanner'] = 'Zona de Información';
+$string['infobannerdesc'] = 'Seleccione o tipo de información que quere que apareza na portada do sitio Web.<br />';
 $string['headerinfo'] = 'Encabezado de presentación';
 $string['headerinfodesc'] = 'Se quere pode engadir unha imaxe na cabeceira da páxina principal.<br />
 Debe ser unha imaxe JPG/PNG/GIF cun mínimo de 775px de largo e 100px de alto.';
-$string['infobanner'] = 'Cadros de Información';
-$string['infobannerdesc'] = 'Seleccione o tipo de información que quere que apareza na portada do sitio Web.<br />
-Unha vez activado, pode deseñar/programar editando directamente o contido do arquivo do layout "frontinfo.php" e na carpeta theme\aigne\pix\carroussel.';
 $string['infobanner0'] = 'No mostrar ningún tipo de información';
 $string['infobanner1'] = 'Mostrar un cuadro estático con un mensaje fijo';
-$string['infobanner2'] = 'Mostrar tres cuadros estáticos con diferente contenido';
-$string['infobanner3'] = 'Mostrar un cuadro informativo, tipo acordeón horizontal';
-$string['infobanner4'] = 'Mostrar una presentación vertical de dispositivas automática';
+$string['infobanner2'] = 'Mostrar una imagen estática';
+$string['infobanner3'] = 'Mostrar tres cuadros estáticos con diferente contenido';
+$string['infobanner4'] = 'Mostrar un cuadro informativo, tipo acordeón horizontal';
+$string['infobanner5'] = 'Mostrar una presentación automática vertical de dispositivas';
+$string['infobanner6'] = 'Mostrar una presentación automática horizontal de dispositivas';
 /**/
 $string['moodlehead'] = 'Opcións de configuración dos elementos de Moodle';
 $string['catstyle'] = 'Estilo da lista de Categorias';
@@ -380,6 +393,10 @@ Recuerde que una vez utilice el estilo de "Parrilla de Imágenes", debe almacena
 Es recomendable utilizar una imágen no superior a 150px y de preferencia con el fondo transparente. Pruebe a voluntad con las imágenes de ejemplo.';
 $string['catstyle1'] = 'Estilo estándar de Moodle';
 $string['catstyle2'] = 'Estilo parrilla de imaxes';
+$string['contentcur'] = 'Só contido nos cursos';
+$string['contentcurdesc'] = 'Si activa esta opción, solo se mostrará el contenido central en los cursos, sin los bloques laterales, para ganar espacio para el aprendizaje.';
+$string['contentact'] = 'Só contido nas actividades';
+$string['contentactdesc'] = 'Si activa esta opción, solo se mostrará el contenido central en las actividades, sin los bloques laterales, para ganar espacio para el aprendizaje';
 /**/
 $string['headerhead'] = 'Personalización dos elementos do encabezado';
 $string['logohead'] = 'Opcións do logotipo ';
@@ -490,12 +507,18 @@ $string['fotologdesc'] = 'Introduza a ligazón (URL) á súa páxina en FotoLog.
 $string['instagram'] = 'Ligazón a Instagram';
 $string['instagramdesc'] = 'Introduza a ligazón (URL) á súa páxina en Instagram.
 <a href="http://instagram.com/" target="_blank"> (instagram.com) .</a>';
+$string['panoramio'] = 'Ligazón a Panoramio';
+$string['panoramiodesc'] = 'Introduza a ligazón (URL) á súa páxina en Panoramio.
+<a href="http://www.panoramio.com" target="_blank"> (www.panoramio.com) .</a>';
 $string['picasa'] = 'Ligazón a Picasa';
 $string['picasadesc'] = 'Introduza a ligazón (URL) á súa páxina en Picasa.
 <a href="http://picasaweb.google.com/" target="_blank"> (picasaweb.google.com) .</a>';
 $string['pixabay'] = 'Ligazón a PixaBay';
 $string['pixabaydesc'] = 'Introduza a ligazón (URL) á súa páxina en PixaBay.
 <a href="http://pixabay.com/" target="_blank"> (pixabay.com) .</a>';
+$string['photobucket'] = 'Ligazón a Photobucket';
+$string['photobucketdesc'] = 'Introduza a ligazón (URL) á súa páxina en Photobucket.
+<a href="http://www.photobucket.com/" target="_blank"> (www.photobucket.com) .</a>';
 /**/
 $string['dailymotion'] = 'Ligazón a DailyMotion';
 $string['dailymotiondesc'] = 'Introduza a ligazón (URL) ó seu canal en DailyMotion.
@@ -524,15 +547,19 @@ $string['socialhead'] = 'Opcións de ligazóns ás redes sociais';
 $string['linkedin'] = 'Ligazón a LinkedIn';
 $string['linkedindesc'] = 'Introduza a ligazón (URL) ó seu perfil en LinkedIn.
 <a href="http://www.linkedin.com/" target="_blank"> (www.linkedin.com) .</a>';
+$string['xing'] = 'Ligazón a Xing';
+$string['xingdesc'] = 'Introduza a ligazón (URL) ó seu perfil en Xing.
+<a href="http://www.xing.com/" target="_blank"> (www.xing.com) .</a>';
+$string['yelp'] = 'Ligazón a Yelp';
+$string['yelpdesc'] = 'Introduza a ligazón (URL) ó seu perfil en Yelp.
+<a href="http://www.yelp.com/" target="_blank"> (www.yelp.com) .</a>';
+/**/
 $string['facebook'] = 'Ligazón a Facebook';
 $string['facebookdesc'] = 'Introduza a ligazón (URL) á súa páxina en Facebook.
 <a href="http://www.facebook.com/" target="_blank"> (www.facebook.com) .</a>';
 $string['twitter'] = 'Ligazón a Twitter';
 $string['twitterdesc'] = 'Introduza a ligazón (URL) á súa conta de Twitter.
 <a href="http://twitter.com/" target="_blank"> (twitter.com) .</a>';
-$string['googleplus'] = 'Ligazón a Google+';
-$string['googleplusdesc'] = 'Introduza a ligazón (URL) ó seu perfil en Google+.
-<a href="http://plus.google.com/" target="_blank"> (plus.google.com) .</a>';
 $string['vkontakte'] = 'Ligazón a VKontakte';
 $string['vkontaktedesc'] = 'Introduza a ligazón (URL) á súa páxina en Vkontakte.
 <a href="http://www.vk.com/" target="_blank"> (www.vk.com) .</a>';
@@ -543,12 +570,34 @@ $string['pinterest'] = 'Ligazón a Pinterest';
 $string['pinterestdesc'] = 'Introduza a ligazón (URL) á súa páxina en Pinterest.
 <a href="http://pinterest.com/" target="_blank"> (pinterest.com) .</a>';
 /**/
+$string['aim'] = 'Ligazón a AIM';
+$string['aimdesc'] = 'Introduza a ligazón (URL) ó seu perfil en AIM.
+<a href="http://www.aim.com/" target="_blank"> (www.aim.com) .</a>';
+$string['googleplus'] = 'Ligazón a Google+';
+$string['googleplusdesc'] = 'Introduza a ligazón (URL) ó seu perfil en Google+.
+<a href="http://plus.google.com/" target="_blank"> (plus.google.com) .</a>';
+$string['microsoftid'] = 'Ligazón a Microsoft Live';
+$string['microsoftiddesc'] = 'Introduza a ligazón (URL) ó seu perfil en Microsoft Live.
+<a href="http://profile.live.com/" target="_blank"> (profile.live.com) .</a>';
+$string['openid'] = 'Ligazón a Open ID';
+$string['openiddesc'] = 'Introduza a ligazón (URL) ó seu perfil en Open ID.
+<a href="http://openid.net/" target="_blank"> (openid.net) .</a>';
+$string['yahooid'] = 'Ligazón a Yahoo';
+$string['yahooiddesc'] = 'Introduza a ligazón (URL) ó seu perfil en Yahoo.
+<a href="http://profile.yahoo.com/" target="_blank"> (profile.yahoo.com) .</a>';
+/**/
 $string['tumblr'] = 'Ligazón a Tumblr';
 $string['tumblrdesc'] = 'Introduza a ligazón (URL) ó seu blog en Tumblr.
 <a href="http://tumblr.com/" target="_blank"> (tumblr.com) .</a>';
 $string['blogger'] = 'Ligazón a Blogger';
 $string['bloggerdesc'] = 'Introduza a ligazón (URL) ó seu en Blogger.
 <a href="http://www.blogger.com/" target="_blank"> (www.blogger.com) .</a>';
+/**/
+$string['social1url'] = 'Ligazón dunha rede social';
+$string['social1urldesc'] = 'Aquí pode introducir a ligazón dunha rede social que non esta no listado definido anteriormente.';
+$string['social1ico'] = 'Icono para esta rede social';
+$string['social1icodesc'] = 'Introduza o nome do icono da rede social que definiu anteriormente. <br />
+Lembre copiar unha imaxe tipo icono de 32x32 co mesmo nome deste icono na carpeta theme/aigne/pix/brands/.';
 /**/
 $string['creditshead'] = 'Opcións de mensaxes de crédito e mérito';
 $string['moodlecredit'] = 'Créditos a Moodle';
@@ -596,7 +645,7 @@ $string['choosereadme'] = '
     <p><a href="http://moodle.org/mod/forum/view.php?id=46">http://moodle.org/mod/forum/view.php?id=46</a></p>
 
     <h3>Documentación:</h3>
-    <p><a href="http://docs.moodle.org/en/Themes">http://docs.moodle.org/en/Themes</a></p>
+    <p><a href="http://docs.moodle.org/all/es/admin/setting/themesettingaigne">Documentación oficial do tema Aigne</a></p>
   
     <h3>Para informar incidencias:</h3>
     <p><a href="http://www.github.com/francpombal/moodle-theme_aigne/">http://www.github.com/francpombal/moodle-theme_aigne/</a></p>
@@ -604,19 +653,24 @@ $string['choosereadme'] = '
  
   <div class="theme_description">
     <h3>Acerca de:</h3>
-    <p>Tema para Moodle 2.5.x _ Optimización do tema Afterburner. Principais características:</p>
+    <p>Tema para Moodle 2.x _ Principais características:</p>
     <ul>
-      <li>Deseño sinxelo e totalmente compatible con CSS.</li>
-      <li>Só utiliza 3 tons da cor principal.</li>
-      <li>Pé de páxina con varias seccións personalizábeis:</li>
-      <li>Sección NavHelp con tódolos enlaces administrativos requiridos á páxinas personalizábeis segundo o idioma<br />
-          (mapa web, axuda, busca, estatísticas, aviso legal, políticas do sitio, privacidade, seguridade e accesibilidade)</li>
-      <li>Sección de Contacto (coa adaptación dos enlaces sociais do tema aardvark)</li>
-      <li>Sección de Créditos</li>
-      <li>Sección de Dereitos de propiedade intelectual</li>
-      <li>Unha páxina principal (sen rematar) con zonas para banner e información de mercadotecnia.</li>
-      <li>Gran cantidade de opcións de personalización en Administración do sitio -&gt; Aparencia -&gt; Temas -&gt; AIGNE</li>
-      <li>Logotipo personalizado, lema do sitio e unha imaxe de fondo do logotipo.</li>
+      <li>Deseño sinxelo e totalmente compatible con CSS.
+      <li>Só utiliza 5 tons da cor principal, agora con esquemas predeterminados de cor.
+      <li>Añadidas varias opcións de @font-face (3 tipos de letra incluidos)
+      <li>Logotipo personalizado, lema do sitio e unha imaxe de fondo do logotipo.
+      <li>Novas opcións para as etiquetas META do header (ferramentas SEO).
+      <li>Unha páxina principal (sen rematar) con zonas para banner e información de mercadotecnia.
+      <li>Adaptación do menu personalizado (custommenu), realizado so con duas cores.
+      <li>Espaciador da barra de navegación (Breadcrumb) selecionabel.
+      <li>Nova Area de Información do Usuario, que podese amosar no encabezado ou no bloque de navegación.
+      <li>Sección NavHelp con tódolos enlaces administrativos requiridos á páxinas personalizábeis segundo o idioma
+      (mapa web, axuda, busca, estatísticas, aviso legal, políticas do sitio, privacidade, seguridade e accesibilidade)
+      <li>Sección de Contacto, coa adaptación de 30 enlaces sociais
+      <li>Sección de Créditos, con novas opcións para a validación externa en los nos servidores w3cc
+      <li>Sección de Dereitos de propiedade intelectual
+      <br />
+      <li>Unhas 70 opcións de personalización en Administración do sitio -> Aparencia -> Temas -> AIGNE
     </ul>
     <h3>Créditos:</h3>
     <p>This design was created by Franc Pombal (www.piratininga.tk/moodle), improving the AfterBurner Theme in the Moodle core, what was an original design by Mary Evans & Patrick Malley & Rocket Themes.</p>
