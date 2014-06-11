@@ -14,6 +14,7 @@
 $string['metakeywords'] = 'aigne, formación, educación, aprendizaxe, ensino, pedagoxía';
 $string['metadescription'] = 'Benvido {$a->sitename}.';
 /* ----- ----- ----- -> STRINGS DOS CADROS DE INFORMACIÓN NO FRONTPAGE ----- */
+$string['moreinfo'] = 'Mais información... ';
 /* Strings do banner superior */
 $string['banner1txt'] = 'Escreba aquí o texto que quere mostrar no banner';
 $string['banner1ttl'] = 'Escreba aquí o título do banner';
@@ -70,6 +71,49 @@ $string['sli5alt2'] = 'Escreba aquí o texto alternativo da imaxe da diapositiva
 $string['sli5alt3'] = 'Escreba aquí o texto alternativo da imaxe da diapositiva 3';
 $string['sli5alt4'] = 'Escreba aquí o texto alternativo da imaxe da diapositiva 4';
 $string['sli5alt5'] = 'Escreba aquí o texto alternativo da imaxe da diapositiva 5';
+/* Strings del acordeón aigne de información */
+$string['acoacap1'] = 'Pastenague _ Texto del fuelle 1';
+$string['acoacap2'] = 'Requin _ Texto del fuelle 2';
+$string['acoacap3'] = 'Pieuvre _ Texto del fuelle 3';
+$string['acoacap4'] = 'Poisson _ Texto del fuelle 4';
+$string['acoacap5'] = 'Bouteilles _ Texto del fuelle 5';
+$string['acoaalt1'] = 'Escriba aquí el texto alternativo de la imagen del fuelle 1';
+$string['acoaalt2'] = 'Escriba aquí el texto alternativo de la imagen del fuelle 2';
+$string['acoaalt3'] = 'Escriba aquí el texto alternativo de la imagen del fuelle 3';
+$string['acoaalt4'] = 'Escriba aquí el texto alternativo de la imagen del fuelle 4';
+$string['acoaalt5'] = 'Escriba aquí el texto alternativo de la imagen del fuelle 5';
+$string['acoainfo1'] = 'Escriba aquí la información que desea transmitir en el fuelle 1';
+$string['acoainfo2'] = 'Escriba aquí la información que desea transmitir en el fuelle 2';
+$string['acoainfo3'] = 'Escriba aquí la información que desea transmitir en el fuelle 3';
+$string['acoainfo4'] = 'Escriba aquí la información que desea transmitir en el fuelle 4';
+$string['acoainfo5'] = 'Escriba aquí la información que desea transmitir en el fuelle 5';
+/**/
+$string['newsinfo'] = 'Información académica';
+$string['newsinfo1'] = '
+<h2 style="text-align: center">Páxina modelo 1</h2>
+<p>&nbsp;</p>
+<p>Aquí pode introducir información interesante sobre a sua formación.</p>
+<p>&nbsp;</p>';
+$string['newsinfo2'] = '
+<h2 style="text-align: center">Páxina modelo 2</h2>
+<p>&nbsp;</p>
+<p>Aquí pode introducir información interesante sobre a sua formación.</p>
+<p>&nbsp;</p>';
+$string['newsinfo3'] = '
+<h2 style="text-align: center">Páxina modelo 3</h2>
+<p>&nbsp;</p>
+<p>Aquí pode introducir información interesante sobre a sua formación.</p>
+<p>&nbsp;</p>';
+$string['newsinfo4'] = '
+<h2 style="text-align: center">Páxina modelo 4</h2>
+<p>&nbsp;</p>
+<p>Aquí pode introducir información interesante sobre a sua formación.</p>
+<p>&nbsp;</p>';
+$string['newsinfo5'] = '
+<h2 style="text-align: center">Páxina modelo 5</h2>
+<p>&nbsp;</p>
+<p>Aquí pode introducir información interesante sobre a sua formación.</p>
+<p>&nbsp;</p>';
 /* ----- ----- ----- -> STRINGS DO ENCABEZADO ----- */
 $string['sloganaigne'] = '';
 /* ----- ----- ----- -> SAÚDOS E MENSAXES DA ÁREA DE INFORMACIÓN DO USUARIO ----- */
@@ -89,14 +133,16 @@ $string['datemessage7'] = 'Disfruta del puente de ... ';
 $string['datemessage8'] = '¡Qué disfrutes de las Vacaciones de Verano';
 $string['datemessage9'] = '¡Qué disfrutes de las Vacaciones de Invierno';
 /* ----- ----- ----- -> STRINGS DO PÉ DE PÁXINA ----- */
+$string['contactlink'] = 'Contacte connosco: ';
+$string['fisicallink'] = 'Visitános na nosa dirección: ';
 $string['sociallinks'] = '... e nas Redes Sociais: ';
+$string['sendemailsubj'] = 'Información sobre {$a} ';
+$string['sendemailtitle'] = '::: enviar un eMail ao administrador do sitio web :::';
 $string['powered'] = 'Co a potencia de: ';
 $string['original_theme'] = 'Deseño inspirado nun tema orixinal de Patrick Malley & Mary Evans';
 $string['lastpageupdate'] = 'Esta páxina foi modificada por derradeira vez no ';
 $string['thanksvisit'] = 'Grazas pola súa confianza';
 $string['reservedrights'] = 'Reservados tódolos dereitos';
-$string['contact'] = 'Contacte connosco: ';
-$string['sendadminemail'] = 'enviar un eMail ao administrador do sitio web ... ';
 /* ----- ----- ----- -> STTRINGS DE PROTECCIÓN DO COPYRIGHT ----- */
 $string['nocontentprint'] = '
 <h2 style="text-align: center">Prevención de impresión</h2>
@@ -155,7 +201,7 @@ $string['helppage'] = '
 <h2>Parámetros que se pasan:</h2>
   <ul>{$a->link}</ul>
   <ul>{$a->supportemail}</ul>
-  <ul>{$a->sendadminemail}</ul>
+  <ul>{$a->sendemailtitle}</ul>
   <p>&nbsp;</p>';
 $string['footsearchpage'] = '
 <h2 style="text-align: center">Esta é unha páxina modelo</h2>
@@ -180,7 +226,7 @@ $string['disclaimerpage'] = '
   <ul>{$a->sitenamelow}</ul>
   <ul>{$a->sitename}</ul>
   <ul>{$a->supportemail}</ul>
-  <ul>{$a->sendadminemail}</ul>
+  <ul>{$a->sendemailtitle}</ul>
   <p>&nbsp;</p>';
 $string['policiespage'] = '
 <h2 style="text-align: center">Esta é unha páxina modelo</h2>
@@ -198,7 +244,7 @@ $string['privacypage'] = '
 <h2>Parámetros que se pasan:</h2>
   <ul>{$a->sitenamelow}</ul>
   <ul>{$a->supportemail}</ul>
-  <ul>{$a->sendadminemail}</ul>
+  <ul>{$a->sendemailtitle}</ul>
   <ul>{$a->remoteaddr}</ul>
   <ul>{$a->remotehost}</ul>
   <ul>{$a->remoteuser}</ul>
@@ -221,7 +267,7 @@ $string['accessibilitypage'] = '
    facilitar la navegación a personas con dificultades visuales o mobilidad reducida.</p>
 <h2>Parámetros que se pasan:</h2>
   <ul>{$a->supportemail}</ul>
-  <ul>{$a->sendadminemail}</ul> 
+  <ul>{$a->sendemailtitle}</ul> 
   <p>&nbsp;</p>';
 /****************************************************************************/
 /********************_SECOND SECTION_CONFIGURATION STRINGS_******************/
@@ -326,12 +372,30 @@ $string['css_color7'] = 'Azul Mariño en contraste';
 $string['backbody'] = 'Fondo da páxina';
 $string['backbodydesc'] = 'Se quere pode engadir unha imaxe que aparecerá no fondo da páxina.<br />
 Debe ser unha imaxe JPG/PNG/GIF e dependendo do tamaño, debe configurar a seguinte opción.';
+$string['bgrepeat'] = 'Repetición de la imagen del fondo';
+$string['bgrepeatdesc'] = 'Dependiendo del tipo de imagen, puede configurar su comportamiento, seleccionando si se repite, y en que dirección.';
+$string['bgrepeat01'] = 'Imaxe fixa';
+$string['bgrepeat02'] = 'Mosaico';
+$string['bgrepeat03'] = 'Mosaico horizontal';
+$string['bgrepeat04'] = 'Mosaico vertical';
 $string['bgposition'] = 'Posición do fondo';
 $string['bgpositiondesc'] = 'Ó configurar a opción anterior, dependendo do tipo de imaxe, pode configurar o seu comportamento, seleccionando se a repite, e en que dirección.';
-$string['no-repeat'] = 'Imaxe fixa';
-$string['repeat'] = 'Mosaico';
-$string['repeat-x'] = 'Mosaico horizontal';
-$string['repeat-y'] = 'Mosaico vertical';
+$string['bgposition00'] = 'En punto 0.0';
+$string['bgposition01'] = 'Arriba';
+$string['bgposition02'] = 'En el centro';
+$string['bgposition03'] = 'Abajo';
+$string['bgposition04'] = 'A la izquierda';
+$string['bgposition05'] = 'A la derecha';
+$string['bgposition06'] = 'Arriba a la izquierda';
+$string['bgposition07'] = 'Arriba en el centro';
+$string['bgposition08'] = 'Arriba a la derecha';
+$string['bgposition09'] = 'En el centro a la izquierda';
+$string['bgposition10'] = 'En el centro en el centro';
+$string['bgposition11'] = 'En el centro a la derecha';
+$string['bgposition12'] = 'Abajo a la izquierda';
+$string['bgposition13'] = 'Abajo en el centro';
+$string['bgposition14'] = 'Abajo a la derecha';
+$string['bgposition15'] = 'En la mitad de la pantalla';
 $string['backcolor'] = 'Cor do fondo';
 $string['backcolordesc'] = 'Se quere pode configurar unha cor de fondo, no lugar de impoñer unha imaxe.<br />
 Se quere manter a cor orixinal, seleccione o branco ou escriba #FFFFFF.';
@@ -385,6 +449,7 @@ $string['infobanner3'] = 'Mostrar tres cuadros estáticos con diferente contenid
 $string['infobanner4'] = 'Mostrar un cuadro informativo, tipo acordeón horizontal';
 $string['infobanner5'] = 'Mostrar una presentación automática vertical de dispositivas';
 $string['infobanner6'] = 'Mostrar una presentación automática horizontal de dispositivas';
+$string['infobanner10'] = 'Mostrar el acordeón horizontal AIGNE';
 /**/
 $string['moodlehead'] = 'Opcións de configuración dos elementos de Moodle';
 $string['catstyle'] = 'Estilo da lista de Categorias';
@@ -393,10 +458,15 @@ Recuerde que una vez utilice el estilo de "Parrilla de Imágenes", debe almacena
 Es recomendable utilizar una imágen no superior a 150px y de preferencia con el fondo transparente. Pruebe a voluntad con las imágenes de ejemplo.';
 $string['catstyle1'] = 'Estilo estándar de Moodle';
 $string['catstyle2'] = 'Estilo parrilla de imaxes';
+$string['catstyle3'] = 'Estilo estándar tipo lista con iconos 32x32';
 $string['contentcur'] = 'Só contido nos cursos';
 $string['contentcurdesc'] = 'Si activa esta opción, solo se mostrará el contenido central en los cursos, sin los bloques laterales, para ganar espacio para el aprendizaje.';
 $string['contentact'] = 'Só contido nas actividades';
 $string['contentactdesc'] = 'Si activa esta opción, solo se mostrará el contenido central en las actividades, sin los bloques laterales, para ganar espacio para el aprendizaje';
+$string['headactivity'] = 'Mostrar encabezado en las "Actividades"';
+$string['headactivitydesc'] = 'En caso afirmativo, se mostrará un encabezado al principio de todas las Actividades de un curso (solo afecta a la versión 2.7.xx de moodle)';
+$string['sitenewsi'] = 'Mostrar o autor e as opcións nas "Novas"';
+$string['sitenewsidesc'] = 'En caso afirmativo, mostraráse a información do autor e as opcións en cada unha das "Novas do Sitio" (Forum)';
 /**/
 $string['headerhead'] = 'Personalización dos elementos do encabezado';
 $string['logohead'] = 'Opcións do logotipo ';
@@ -489,6 +559,8 @@ $string['skype'] = 'Conta de Skype';
 $string['skypedesc'] = 'Introduza o nome de usuario da súa Organización / Institución educativa / Empresa matriz, na rede de Skype.';
 $string['contactnote'] = 'Contacto';
 $string['contactnotedesc'] = 'Aquí pode engadir información de contacto que aparecerá no medio da zona de contacto do pé de páxina';
+$string['maplink'] = 'Ligazón ó Mapa';
+$string['maplinkdesc'] = 'Introduza a ligazón do mapa coa localización da súa organización. (ex. google maps / bing maps).';
 /**/
 $string['socialcontenthead'] = 'Opcións de ligazóns ás redes sociais (onde comparte contido)';
 $string['dropbox'] = 'Ligazón a DropBox';
@@ -604,6 +676,13 @@ $string['moodlecredit'] = 'Créditos a Moodle';
 $string['moodlecreditdesc'] = 'Se quere que apareza no pé de páxina unha mensaxe de agradecemento e unha ligazón á páxina orixinal de <a href="http://moodle.org/" target="_blank">moodle.org.</a>, active esta opción';
 $string['compatcredit'] = 'Compatibilidades';
 $string['compatcreditdesc'] = 'Se quere que apareza no pé de páxina una lista cos logotipos das distintas validacións conseguidas, active esta opción';
+$string['compatnotedesc'] = 'En esta sección puede activar las compatibilidades que ha superado su sitio web. <br />
+Queda bajo su entera responsabilidad el seguimiento de normativas locales, observar su cumplimiento y mantener la vigencia de estos parámetros';
+$string['compatsocial'] = 'Política social';
+$string['compatsocialdesc'] = 'Política social';
+$string['csocial_1'] = 'Cuidado del contenido para la infancia';
+$string['csocial_2'] = 'Directrizes de igualdad de genero';
+$string['csocial_3'] = 'Directrizes multi culturales';
 $string['compatwai'] = 'Validación de Accesibilidade';
 $string['compatwaidesc'] = 'Seleccione o logotipo de accesibilidade que desexa mostrar, tendo presente que vostede teña validado a súa Web, baixo a súa responsabilidade.
 <a href="http://www.w3.org/WAI/WCAG1AAA-Conformance" target="_blank"> (WAI WCAG AAA) .</a>';
@@ -618,6 +697,28 @@ $string['ctested_2'] = 'Validado co WIA HTML 5.0 ó 4.0 <a href="http://validato
 $string['ctested_3'] = 'Validado co WIA XHTML 1.0 <a href="http://validator.w3.org/check?uri=referer" target="_blank"> (WIA HTML 4.0) .</a>';
 $string['ctested_4'] = 'reserved _ Cynthia Validator <a href="http://www.cynthiasays.com/" target="_blank"> (Cynthia) .</a>';
 $string['ctested_5'] = 'reserved _ Children Free Validator <a href="http://www.w3.org/WAI/WCAG1AAA-Conformance" target="_blank"> (WAI WCAG AAA) .</a>';
+$string['compatbrowser'] = 'Navegadores compatibles';
+$string['compatbrowserdesc'] = 'Navegadores compatibles';
+$string['browser_1'] = 'Microsoft Internet Explorer';
+$string['browser_2'] = 'Firefox (Mozilla)';
+$string['browser_3'] = 'Chrome (Webkit)';
+$string['browser_4'] = 'Opera (Webkit)';
+$string['compatos'] = 'Sistemas Operativos';
+$string['compatosdesc'] = 'Sistemas Operativos';
+$string['osystem_1'] = 'Windows';
+$string['osystem_2'] = 'Linux';
+$string['osystem_3'] = 'Mac';
+$string['osystem_4'] = 'Android';
+$string['osystem_5'] = 'BlackBerry';
+$string['compatdevice'] = 'Dispositivos testeados';
+$string['compatdevicedesc'] = 'Dispositivos testeados';
+$string['device_1'] = 'SmartTV';
+$string['device_2'] = 'Ordenador & Estación de trabajo & Servidor';
+$string['device_3'] = 'Portátil & Notebook & Netbook';
+$string['device_4'] = 'Tablet';
+$string['device_5'] = 'Teléfono Móvil & SmartPhone';
+$string['footnoteshow'] = 'Mostrar nota ó pé';
+$string['footnoteshowdesc'] = 'Se quere amosar o contido da Nota ó pé de páxina definido a continuación, active esta opción.';
 $string['footnote'] = 'Nota ó pé de páxina';
 $string['footnotedesc'] = 'Se quere pode engadir un contido personalizado no pé de páxina. Este contido será inserido a continuación da zona de créditos.';
 /**/

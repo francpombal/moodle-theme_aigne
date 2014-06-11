@@ -11,7 +11,8 @@
 defined('MOODLE_INTERNAL') || die;
 
 // Plugin version (update when tables change)
-$plugin->version   = 2014012018;
+$plugin->version   = 2014062018;
+// siguiente -> 2014092019
 
 // Required Moodle version
 // 1.9.19 -> 2007101592 <-
@@ -39,6 +40,7 @@ $plugin->dependencies = array(
 $plugin->maturity = MATURITY_STABLE;
 
 // User-friendly version number
-$plugin->release = '1.8.0';
+$plugin->release = '1.8.5';
+// siguiente -> 1.9.0
 
 //END OF FILE

@@ -104,9 +104,7 @@
             $passph = get_string('password');
             $loginlogout .= html_writer::start_tag('div', array('class'=>'loginhead'));
             $loginlogout .= html_writer::start_tag('form', array('class'=>'loginform', 'id'=>'login', 'method'=>'post', 'action'=>get_login_url()));
-
             $loginlogout .= html_writer::empty_tag('input', array('class'=>'form-input', 'type'=>'text', 'size'=>'17', 'name'=>'username', 'id'=>'login_username', 'placeholder'=>$userph, 'value'=>$username));
-            
             $loginlogout .= html_writer::empty_tag('input', array('class'=>'form-input', 'type'=>'password', 'size'=>'17', 'name'=>'password', 'id'=>'login_password', 'placeholder'=>$passph, 'value'=>'', $autocomplete));
 
             if (isset($CFG->rememberusername) and $CFG->rememberusername == 2) {
@@ -121,7 +119,6 @@
             $loginlogout .= html_writer::empty_tag('input', array('type'=>'submit', 'value'=>get_string('login')));
             $loginlogout .= html_writer::end_tag('form');
             $loginlogout .= html_writer::end_tag('div');
-
     // User loggedin
 		} else {
             $hasusernavsalut = (!empty($PAGE->theme->settings->usernavsalut));
@@ -147,6 +144,7 @@
             $loginlogout .= html_writer::end_tag('div');
         }
         // Logout option, select over three cases
+
         switch ($usernavout) {
             case 1:
                 // Logout option in button style

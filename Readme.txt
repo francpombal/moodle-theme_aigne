@@ -1,4 +1,4 @@
-AIGNE THEME _ Version 1.8.0
+AIGNE THEME _ Version 1.9.0
 
 ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- 
 
@@ -26,6 +26,17 @@ Main features:
 Thanks to all and best regards to somes... :P
 
 ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- 
+
+ 1.8.5
+ =======================
+ - Moodle 2.7 compliance revised
+ - All standard activities revised for design compliance
+ - Dozen more configuration options
+ - New Course Categories List style with 32x32 icon
+ - New options to compliance with children & eqqual $ multicultural content (not finished)
+ - More options to display compatibility with browsers, O.S. & gadgets
+ - New option to display a icon/link to maps (google, bing, etc...)
+ - Revised some icons
 
  1.8.0
  =======================

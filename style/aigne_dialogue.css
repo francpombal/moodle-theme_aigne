@@ -246,12 +246,14 @@
 
 /* ----- inserted color text messages -> /base/core.css #72 ----- */
 .green, 
-DIV.notifysuccess, 
+.notifysuccess, 
 .red, 
-DIV.notifyproblem, 
+.notifyproblem, 
 .redirectmessage, 
-.forumnodiscuss, 
-#page-admin-roles-assign div.box.generalbox, 
+.forumnodiscuss,
+.nomessages,  
+#page-enrol-index #notice, 
+#page-admin-roles-assign DIV.box.generalbox, 
 #page-admin-course-pending #region-main .region-content DIV H2,
 #page-tag-manage #region-main .region-content DIV H2 { 
     margin: 0.50em 2em 0.50em 2em;
@@ -263,13 +265,26 @@ DIV.notifyproblem,
     font-size: 1.20em; 
     font-weight: bold;
     }
-.green, DIV.notifysuccess, 
+.green, 
+.notifysuccess, 
 .redirectmessage, 
+#page-enrol-index #notice, 
 #page-admin-course-pending #region-main .region-content DIV H2, 
 #page-admin-report-security-index .statusok, 
 #page-admin-report-performance-index .statusok {
     background-color: #EEFFDD;
     color: #008000;
+    }
+.red, 
+.notifyproblem, 
+.forumnodiscuss, 
+#page-admin-roles-assign div.box.generalbox, 
+.mform span.error, 
+.mform .fdescription.required, 
+#page-admin-report-security-index .statuscritical, 
+#page-admin-report-performance-index .statuscritical {
+    background-color: #FFEFEF;
+    color: #CC0000;
     }
 .yellow, 
 #page-admin-report-security-index .statuswarning, 
@@ -284,18 +299,20 @@ DIV.notifyproblem,
     background-color: #FFF7EE;
     color: #FFA500;
     }
-.red, 
-DIV.notifyproblem, 
-.forumnodiscuss, 
-#page-admin-roles-assign div.box.generalbox, 
-.mform span.error, 
-.mform .fdescription.required, 
-#page-admin-report-security-index .statuscritical, 
-#page-admin-report-performance-index .statuscritical {
-    background-color: #FFEEFF;
-    color: #CC0000;
+/* disabled colour */
+.gray, 
+.section .availabilityinfo {
+    /*background-color: #FFF7EE;*/
+    color: #AAAAAA;
+}
+/* Especial notice */
+#notice { 
+    margin: 0.50em 2em 0.50em 2em;
+    padding: 1em 1em 1em 1em;
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-color: #E0E0E0;
     }
-
 /* Mensajes en las páginas de administración */
 .adminwarning { 
     margin: 0.50em 2em 0.50em 2em;
@@ -308,8 +325,8 @@ DIV.notifyproblem,
     text-align: center;
     }
 /* /base/admin.css #81 */
-#page-admin-report-security-index TR.r1 TD.status, #page-admin-report-performance-index TR.r1 TD.status {background-color: [[setting:corsch_1]];}
-#page-admin-report-security-index TR.r0 TD.status, #page-admin-report-performance-index TR.r0 TD.status {background-color: [[setting:corsch_2]];}
+#page-admin-report-security-index tr:nth-of-type(even) TD.status, #page-admin-report-performance-index tr:nth-of-type(even) TD.status {background-color: [[setting:corsch_2]];}
+#page-admin-report-security-index tr:nth-of-type(odd) TD.status, #page-admin-report-performance-index tr:nth-of-type(odd) TD.status {background-color: [[setting:corsch_3]];}
 #page-admin-report-security-index .statusok, #page-admin-report-performance-index .statusok {background-color: transparent;}
 #page-admin-report-security-index .statuswarning, #page-admin-report-performance-index .statuswarning {background-color: transparent;}
 #page-admin-report-security-index .statusserious, #page-admin-report-performance-index .statusserious {background-color: transparent;}
@@ -345,6 +362,7 @@ DIV.notifyproblem,
     border-style: solid;
     border-color: #E0E0E0;
     }
+.mform .fdescription.required {margin: 1em 0px 3px 0px;}
 /* ??? */
 .mform .required .fgroup span label {color:#000;} 
 

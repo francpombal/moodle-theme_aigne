@@ -1,0 +1,67 @@
+/*----- ----- ----- theme_aigne -> Categories List with custom icon ----- ----- -----*/
+/* Change the distance to the 32x32 icon */
+.course_category_tree .category > .info .name {
+    padding: 0.50em 2.30em 0.50em 2.30em ;
+    }
+.course_category_tree .category > .content {padding-left: 2.30em; overflow: hidden;}
+.dir-rtl .course_category_tree .category > .content {padding-left: 0; padding-right: 2.30em;}
+
+/* Hide the defaults icons */
+.course_category_tree .category > .info .name {background: none;}
+.dir-rtl .course_category_tree .category > .info .name {background: none;}
+.course_category_tree .category.with_children > .info .name {background: none;}
+.course_category_tree .category.with_children.collapsed > .info .name {background: none;}
+.dir-rtl .course_category_tree .category.with_children.collapsed > .info .name {background: none;}
+
+/* Place a default image in all categories */
+.course_category_tree .category[data-categoryid] > .info .name, 
+.course_category_tree .category.with_children.collapsed > .info .name  {
+    background: url([[pix:theme|cat/default]]) no-repeat left center;
+    background-size: 2em 2em;
+}
+
+/* Upload the image from each category */
+/* Ooops... there is an error with collapsed categories!!!... why????... snif snif!!! */
+.course_category_tree .category[data-categoryid="1"] > .info .name, 
+.course_category_tree .category[data-categoryid="1"].with_children.collapsed > .info .name {background-image: url([[pix:theme|cat/1]]);}
+.course_category_tree .category[data-categoryid="2"] > .info .name, 
+.course_category_tree .category[data-categoryid="2"].with_children.collapsed > .info .name {background-image: url([[pix:theme|cat/2]]);}
+.course_category_tree .category[data-categoryid="3"] > .info .name, 
+.course_category_tree .category[data-categoryid="3"].with_children.collapsed > .info .name {background-image: url([[pix:theme|cat/3]]);}
+.course_category_tree .category[data-categoryid="4"] > .info .name, 
+.course_category_tree .category[data-categoryid="4"].with_children.collapsed > .info .name {background-image: url([[pix:theme|cat/4]]);}
+.course_category_tree .category[data-categoryid="5"] > .info .name, 
+.course_category_tree .category[data-categoryid="5"].with_children.collapsed > .info .name {background-image: url([[pix:theme|cat/5]]);}
+.course_category_tree .category[data-categoryid="6"] > .info .name, 
+.course_category_tree .category[data-categoryid="6"].with_children.collapsed > .info .name {background-image: url([[pix:theme|cat/6]]);}
+.course_category_tree .category[data-categoryid="7"] > .info .name, 
+.course_category_tree .category[data-categoryid="7"].with_children.collapsed > .info .name {background-image: url([[pix:theme|cat/7]]);}
+.course_category_tree .category[data-categoryid="8"] > .info .name, 
+.course_category_tree .category[data-categoryid="8"].with_children.collapsed > .info .name {background-image: url([[pix:theme|cat/8]]);}
+.course_category_tree .category[data-categoryid="9"] > .info .name, 
+.course_category_tree .category[data-categoryid="9"].with_children.collapsed > .info .name {background-image: url([[pix:theme|cat/9]]);}
+.course_category_tree .category[data-categoryid="10"] > .info .name, 
+.course_category_tree .category[data-categoryid="10"].with_children.collapsed > .info .name {background-image: url([[pix:theme|cat/10]]);}
+.course_category_tree .category[data-categoryid="11"] > .info .name, 
+.course_category_tree .category[data-categoryid="11"].with_children.collapsed > .info .name {background-image: url([[pix:theme|cat/11]]);}
+.course_category_tree .category[data-categoryid="12"] > .info .name, 
+.course_category_tree .category[data-categoryid="12"].with_children.collapsed > .info .name {background-image: url([[pix:theme|cat/12]]);}
+.course_category_tree .category[data-categoryid="13"] > .info .name,
+.course_category_tree .category[data-categoryid="13"].with_children.collapsed > .info .name {background-image: url([[pix:theme|cat/13]]);}
+.course_category_tree .category[data-categoryid="14"] > .info .name,
+.course_category_tree .category[data-categoryid="14"].with_children.collapsed > .info .name {background-image: url([[pix:theme|cat/14]]);}
+.course_category_tree .category[data-categoryid="15"] > .info .name, 
+.course_category_tree .category[data-categoryid="15"].with_children.collapsed > .info .name {background-image: url([[pix:theme|cat/15]]);}
+.course_category_tree .category[data-categoryid="16"] > .info .name, 
+.course_category_tree .category[data-categoryid="16"].with_children.collapsed > .info .name {background-image: url([[pix:theme|cat/16]]);}
+.course_category_tree .category[data-categoryid="17"] > .info .name, 
+.course_category_tree .category[data-categoryid="17"].with_children.collapsed > .info .name {background-image: url([[pix:theme|cat/17]]);}
+.course_category_tree .category[data-categoryid="18"] > .info .name, 
+.course_category_tree .category[data-categoryid="18"].with_children.collapsed > .info .name {background-image: url([[pix:theme|cat/18]]);}
+.course_category_tree .category[data-categoryid="19"] > .info .name, 
+.course_category_tree .category[data-categoryid="19"].with_children.collapsed > .info .name {background-image: url([[pix:theme|cat/19]]);}
+.course_category_tree .category[data-categoryid="20"] > .info .name, 
+.course_category_tree .category[data-categoryid="20"].with_children.collapsed > .info .name {background-image: url([[pix:theme|cat/20]]);}
+/* ... and so on ... */
+
+

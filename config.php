@@ -39,6 +39,9 @@ $THEME->parents_exclude_sheets = array('base'=>array(
         case 1:
             $catstyle = 'aigne_cat1';
             break;
+        case 2:
+            $catstyle = 'aigne_cat2';
+            break;
         default:
             $catstyle = '';
             break;
@@ -71,7 +74,7 @@ $THEME->layouts = array(
         'regions' => array('side-post'),
         'defaultregion' => 'side-post',
         'options' => array('langmenu'=>true, 'nologininfo'=>true, 'nocustommenu'=>true, 'nonavbar'=>false, 
-                           'noblocks'=>true, 'nocourseheaderfooter'=>true, 'nofooter'=>true),         
+                           'noblocks'=>true, 'nocourseheaderfooter'=>true, 'nocoursefooter'=>true, 'nofooter'=>true, 'infobanner'=>false),         
     ),
     // Standard layout with blocks, this is recommended for most pages with default information
     // ► Viewing a profile + Viewing a calendar
@@ -80,7 +83,7 @@ $THEME->layouts = array(
         'regions' => array('side-post'),
         'defaultregion' => 'side-post',
         'options' => array('langmenu'=>true, 'nologininfo'=>true, 'nocustommenu'=>false, 'nonavbar'=>false,
-                           'noblocks'=>false, 'nocourseheaderfooter'=>false, 'nofooter'=>true),                      
+                           'noblocks'=>false, 'nocourseheaderfooter'=>false, 'nocoursefooter'=>false, 'nofooter'=>true, 'infobanner'=>false),                      
     ),
     // ► LOGIN PAGE
     'login' => array(
@@ -88,7 +91,7 @@ $THEME->layouts = array(
         'regions' => array(),
         'defaultregion' => '',
         'options' => array('langmenu'=>true, 'nologininfo'=>true, 'nocustommenu'=>true, 'nonavbar'=>true,
-                           'noblocks'=>true, 'nocourseheaderfooter'=>true, 'nofooter'=>false),
+                           'noblocks'=>true, 'nocourseheaderfooter'=>true, 'nocoursefooter'=>true, 'nofooter'=>false, 'infobanner'=>false),
     ),
     // The site home page. 
     // ► Frontpage before and after login
@@ -97,14 +100,14 @@ $THEME->layouts = array(
         'regions' => array('side-post'),
         'defaultregion' => 'side-post',
         'options' => array('langmenu'=>true, 'nologininfo'=>true, 'nocustommenu'=>false, 'nonavbar'=>false,
-                           'noblocks'=>false, 'nocourseheaderfooter'=>false, 'nofooter'=>false, 'infobanner'=>true),
+                           'noblocks'=>false, 'nocourseheaderfooter'=>true, 'nocoursefooter'=>true, 'nofooter'=>false, 'infobanner'=>true),
     ),
     // ► Help pages, called by the Navigation Help Bar on footer.
-    'navhelppage' => array(
-        'file' => 'default.php',
+    'aigne1' => array(
+        'file' => 'page2.php',
         'regions' => array(),
         'options' => array('langmenu'=>true, 'nologininfo'=>true, 'nocustommenu'=>true, 'nonavbar'=>false,
-                           'noblocks'=>true, 'nocourseheaderfooter'=>true, 'nofooter'=>false),
+                           'noblocks'=>true, 'nocourseheaderfooter'=>true, 'nocoursefooter'=>true, 'nofooter'=>false, 'infobanner'=>false),
     ),   
     // ► Only categories list or courses list in specific category page
     'coursecategory' => array(
@@ -112,7 +115,7 @@ $THEME->layouts = array(
         'regions' => array('side-post'),
         'defaultregion' => 'side-post',
         'options' => array('langmenu'=>true, 'nologininfo'=>true, 'nocustommenu'=>false, 'nonavbar'=>false,
-                           'noblocks'=>false, 'nocourseheaderfooter'=>false, 'nofooter'=>false, 'infobanner'=>true),
+                           'noblocks'=>false, 'nocourseheaderfooter'=>false, 'nocoursefooter'=>false, 'nofooter'=>false, 'infobanner'=>true),
     ),
     // ► Main course page
     'course' => array(
@@ -120,7 +123,7 @@ $THEME->layouts = array(
         'regions' => array('side-post'),
         'defaultregion' => 'side-post',
         'options' => array('langmenu'=>false, 'nologininfo'=>true, 'nocustommenu'=>true, 'nonavbar'=>false,
-                           'noblocks'=>$coursall, 'nocourseheaderfooter'=>false, 'nofooter'=>true),
+                           'noblocks'=>$coursall, 'nocourseheaderfooter'=>false, 'nocoursefooter'=>false, 'nofooter'=>true, 'infobanner'=>false),
     ),
     // Part of course, typical for modules 
     // ► ACTIVITY OR RESOURCE PAGE
@@ -129,7 +132,7 @@ $THEME->layouts = array(
         'regions' => array('side-post'),
         'defaultregion' => 'side-post',
         'options' => array('langmenu'=>false, 'nologininfo'=>true, 'nocustommenu'=>true, 'nonavbar'=>false,
-                           'noblocks'=>$activall, 'nocourseheaderfooter'=>true, 'nofooter'=>true),
+                           'noblocks'=>$activall, 'nocourseheaderfooter'=>false, 'nocoursefooter'=>false, 'nofooter'=>true, 'infobanner'=>false),
     ),
     // ► My Moodle (Personal Area) page
     'mydashboard' => array(
@@ -137,7 +140,7 @@ $THEME->layouts = array(
         'regions' => array('side-post'),
         'defaultregion' => 'side-post',
         'options' => array('langmenu'=>true, 'nologininfo'=>true, 'nocustommenu'=>false, 'nonavbar'=>false,
-                           'noblocks'=>false, 'nocourseheaderfooter'=>false, 'nofooter'=>true),
+                           'noblocks'=>false, 'nocourseheaderfooter'=>false, 'nocoursefooter'=>false, 'nofooter'=>true, 'infobanner'=>false),
     ),
     // ► My (Public) Profile page
     'mypublic' => array(
@@ -145,7 +148,7 @@ $THEME->layouts = array(
         'regions' => array('side-post'),
         'defaultregion' => 'side-post',
         'options' => array('langmenu'=>true, 'nologininfo'=>true, 'nocustommenu'=>false, 'nonavbar'=>false,
-                           'noblocks'=>false, 'nocourseheaderfooter'=>false, 'nofooter'=>false),
+                           'noblocks'=>false, 'nocourseheaderfooter'=>false, 'nocoursefooter'=>false, 'nofooter'=>false, 'infobanner'=>false),
     ), 
     // ► Server administration scripts.
     'admin' => array(
@@ -153,7 +156,7 @@ $THEME->layouts = array(
         'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
         'options' => array('langmenu'=>true, 'nologininfo'=>true, 'nocustommenu'=>false, 'nonavbar'=>false,
-                           'noblocks'=>false, 'nocourseheaderfooter'=>true, 'nofooter'=>true),
+                           'noblocks'=>false, 'nocourseheaderfooter'=>true, 'nocoursefooter'=>true, 'nofooter'=>true, 'infobanner'=>false),
     ),
     // The pagelayout used for reports. 
     // ► Site Administration -> Reports...
@@ -162,29 +165,29 @@ $THEME->layouts = array(
         'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
         'options' => array('langmenu'=>false, 'nologininfo'=>true, 'nocustommenu'=>true, 'nonavbar'=>false,
-                           'noblocks'=>false, 'nocourseheaderfooter'=>true, 'nofooter'=>false),
+                           'noblocks'=>false, 'nocourseheaderfooter'=>true, 'nocoursefooter'=>true, 'nofooter'=>false, 'infobanner'=>false),
     ),
     // Embedded pages, like iframe/object embeded in moodleform - it needs as much space as possible
     'embedded' => array(
-        'file' => 'redirect.php',
+        'file' => 'page1.php',
         'regions' => array(),
         'options' => array('langmenu'=>false, 'nologininfo'=>true, 'nocustommenu'=>true, 'nonavbar'=>true,
-                           'noblocks'=>true, 'nocourseheaderfooter'=>true, 'nofooter'=>true),
+                           'noblocks'=>true, 'nocourseheaderfooter'=>true, 'nocoursefooter'=>true, 'nofooter'=>true, 'infobanner'=>false),
     ),
     // The pagelayout used when a redirection is occuring.
     // ► Purge cache + Send forum message
     'redirect' => array(
-        'file' => 'redirect.php',
+        'file' => 'page1.php',
         'regions' => array(),
         'options' => array('langmenu'=>false, 'nologininfo'=>true, 'nocustommenu'=>true, 'nonavbar'=>true,
-                           'noblocks'=>true, 'nocourseheaderfooter'=>true, 'nofooter'=>true),
+                           'noblocks'=>true, 'nocourseheaderfooter'=>true, 'nocoursefooter'=>true, 'nofooter'=>true, 'infobanner'=>false),
     ),
     // POPUP _ Used during upgrade and install, and for the 'This site is undergoing maintenance' message.
     'maintenance' => array(
         'file' => 'default.php',
         'regions' => array(),
         'options' => array('langmenu'=>false, 'nologininfo'=>true, 'nocustommenu'=>true, 'nonavbar'=>true,
-                           'noblocks'=>true, 'nocourseheaderfooter'=>true, 'nofooter'=>true),
+                           'noblocks'=>true, 'nocourseheaderfooter'=>true, 'nocoursefooter'=>true, 'nofooter'=>true, 'infobanner'=>false),
     ),
     // POPUP _ Pages that appear in pop-up windows
     // ► ADMIN -> REPORTS + 
@@ -192,7 +195,7 @@ $THEME->layouts = array(
         'file' => 'default.php',
         'regions' => array(),
         'options' => array('langmenu'=>false, 'nologininfo'=>true, 'nocustommenu'=>true, 'nonavbar'=>false,
-                           'noblocks'=>true, 'nocourseheaderfooter'=>true, 'nofooter'=>true),
+                           'noblocks'=>true, 'nocourseheaderfooter'=>true, 'nocoursefooter'=>true, 'nofooter'=>true, 'infobanner'=>false),
     ),
     // The pagelayout used for safebrowser and securewindow.
     'secure' => array(
@@ -200,7 +203,7 @@ $THEME->layouts = array(
         'regions' => array('side-post'),
         'defaultregion' => 'side-post',
         'options' => array('langmenu'=>false, 'nologininfo'=>true, 'nocustommenu'=>true, 'nonavbar'=>true,
-                           'noblocks'=>false, 'nocourseheaderfooter'=>true, 'nofooter'=>false),
+                           'noblocks'=>false, 'nocourseheaderfooter'=>true, 'nocoursefooter'=>true, 'nofooter'=>false, 'infobanner'=>false),
     ),
     // No blocks and minimal footer - used for legacy frame layouts only!
     // Actividades Externas + 
@@ -208,14 +211,14 @@ $THEME->layouts = array(
         'file' => 'default.php',
         'regions' => array(),
         'options' => array('langmenu'=>false, 'nologininfo'=>true, 'nocustommenu'=>true, 'nonavbar'=>false,
-                           'noblocks'=>true, 'nocourseheaderfooter'=>true, 'nofooter'=>true),
+                           'noblocks'=>true, 'nocourseheaderfooter'=>true, 'nocoursefooter'=>true, 'nofooter'=>true, 'infobanner'=>false),
     ),
     // Should display the content and basic headers only.
     'print' => array(
         'file' => 'default.php',
         'regions' => array(),
         'options' => array('langmenu'=>false, 'nologininfo'=>true, 'nocustommenu'=>true, 'nonavbar'=>true,
-                           'noblocks'=>true, 'nocourseheaderfooter'=>true, 'nofooter'=>false),
+                           'noblocks'=>true, 'nocourseheaderfooter'=>true, 'nocoursefooter'=>true, 'nofooter'=>false, 'infobanner'=>false),
     ),
 );
 
@@ -251,6 +254,14 @@ $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 
 // Allows the user to provide the name of a function that all CSS should be passed to before being delivered.
 $THEME->csspostprocess = 'theme_aigne_process_css';
+
+// New in moodle 2.7.0
+// $THEME->supportscssoptimisation = false;
+// $THEME->yuicssmodules = array();
+// $THEME->blockrtlmanipulations = array(
+//     'side-pre' => 'side-post',
+//     'side-post' => 'side-pre'
+// );
 
 //TODO
 //COURSECAT_SHOW_COURSES_NONE = 0; /* do not show courses at all */

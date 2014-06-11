@@ -51,11 +51,19 @@ function theme_aigne_process_css($css, $theme) {
     }
     $css = theme_aigne_set_backbody($css, $backbody);
 
+    // Set the background image repeat
+    if (!empty($theme->settings->bgrepeat)) {
+       $bgrepeat = $theme->settings->bgrepeat;
+    } else {
+       $bgrepeat = 'no-repeat';
+    }
+    $css = theme_aigne_set_bgrepeat($css, $bgrepeat);
+
     // Set the background image position
     if (!empty($theme->settings->bgposition)) {
        $bgposition = $theme->settings->bgposition;
     } else {
-       $bgposition = 'no-repeat';
+       $bgposition = '0 0';
     }
     $css = theme_aigne_set_bgposition($css, $bgposition);
 
@@ -125,6 +133,22 @@ function theme_aigne_process_css($css, $theme) {
        $catstyle = '0';
     }
     $css = theme_aigne_set_catstyle($css, $catstyle);
+
+    // Set to Display mode of the Activity Head on moodle 2.7 version
+    if (!empty($theme->settings->headactivity)) {
+       $headactivity = $theme->settings->headactivity;
+    } else {
+       $headactivity = 'block';
+    }
+    $css = theme_aigne_set_headactivity($css, $headactivity);
+
+    // Set to Display author info & row options in Site News Forum
+    if (!empty($theme->settings->sitenewsi)) {
+       $sitenewsi = $theme->settings->sitenewsi;
+    } else {
+       $sitenewsi = 'none';
+    }
+    $css = theme_aigne_set_sitenewsi($css, $sitenewsi);
 
 // Logo Options
     // Set the image for the logo _ FILE
@@ -334,6 +358,11 @@ function theme_aigne_set_backbody($css, $backbody) { // _ FILE
     $css = str_replace($tag, $backbody, $css);
     return $css;
 }
+function theme_aigne_set_bgrepeat($css, $bgrepeat) {
+    $tag = '[[setting:bgrepeat]]';
+    $css = str_replace($tag, $bgrepeat, $css);
+    return $css;
+}
 function theme_aigne_set_bgposition($css, $bgposition) {
     $tag = '[[setting:bgposition]]';
     $css = str_replace($tag, $bgposition, $css);
@@ -377,6 +406,16 @@ function theme_aigne_set_headerinfo($css, $headerinfo) { // _ FILE
 function theme_aigne_set_catstyle($css, $catstyle) {
     $tag = '[[setting:catstyle]]';
     $css = str_replace($tag, $catstyle, $css);
+    return $css;
+}
+function theme_aigne_set_headactivity($css, $headactivity) {
+    $tag = '[[setting:headactivity]]';
+    $css = str_replace($tag, $headactivity, $css);
+    return $css;
+}
+function theme_aigne_set_sitenewsi($css, $sitenewsi) {
+    $tag = '[[setting:sitenewsi]]';
+    $css = str_replace($tag, $sitenewsi, $css);
     return $css;
 }
 function theme_aigne_set_logo($css, $logo) { // _ FILE

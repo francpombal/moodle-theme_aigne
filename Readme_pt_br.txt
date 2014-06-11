@@ -1,4 +1,4 @@
-AIGNE THEME _ Version 1.8.0
+AIGNE THEME _ Version 1.9.0
 
 ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- 
 
@@ -14,7 +14,7 @@ Funcionalidades principais:
    -> Uma home page (inacabada) com blocos para banner e informação geral ou mercadologia.
    -> Menu personalizado (custommenu) feito só com duas cores.
    -> Espaciador da barra de navegação (Breadcrumb) personalizável.
-   -> Nova Area de Informação do Usuário, que pode ser mostrada no encabeçalho ou no bloco de navegação.
+   -> Nova Área de Informação do Usuário, que pode ser mostrada no encabeçalho ou no bloco de navegação.
    -> Seção 'NavHelp' com todos os links administrativos obrigatórios à páginas personalizáveis dependendo do idioma
       página nova (mapa web, ajuda, busca, estatísticas, aviso legal, políticas, privacidade, segurança e acessibilidade)
    -> Seção de 'Contato', com adaptação de 30 links sociais

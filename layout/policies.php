@@ -15,7 +15,7 @@ $PAGE->set_popup_notification_allowed(false);
 
     if ((!isloggedin() or isguestuser())) {
         $strpolicies = (get_string('policies','theme_aigne'));
-        $PAGE->set_pagelayout('login');
+        $PAGE->set_pagelayout('aigne1');
         $PAGE->set_title($SITE->shortname.' _ '.$strpolicies);
         $PAGE->set_heading($strpolicies);
         // Añadir opciones a la barra de navegación breadcumb

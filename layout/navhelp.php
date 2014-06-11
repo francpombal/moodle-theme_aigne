@@ -61,7 +61,7 @@ switch ($navhelptype) {
 // Start the Page 
 $PAGE->set_url(new moodle_url('/theme/aigne/layout/navhelp.php'));
 $PAGE->set_popup_notification_allowed(false);
-$PAGE->set_pagelayout('navhelppage');
+$PAGE->set_pagelayout('aigne1');
 $PAGE->set_title($SITE->shortname.' _ '.$strnavhelp);
 $PAGE->set_heading($strnavhelp);
 // Añadir opciones a la barra de navegación breadcumb
@@ -70,7 +70,6 @@ $PAGE->navbar->add(get_string('navhelppagetitle','theme_aigne'));
 $PAGE->navbar->add($strnavhelp);
 // Inciar publicación
 echo $OUTPUT->header();
-echo $OUTPUT->heading($strnavhelp);
 
 // Comprobar si se ha identificado o es 'invitado'. En tal caso, mostrar página con las políticas del sitio
 if ((!isloggedin()) or (isguestuser())) {
@@ -78,12 +77,12 @@ if ((!isloggedin()) or (isguestuser())) {
     $data->sitenamelow = strtolower($SITE->shortname);
     $data->sitename = format_string($SITE->shortname);
     $data->supportemail = get_config('moodle','supportemail');
-    $data->sendadminemail = get_string('sendadminemail','theme_aigne');
+    $data->sendemailtitle = get_string('sendemailtitle','theme_aigne');
     echo get_string('disclaimerpage','theme_aigne', $data);
     break;
 }
 
-// SELECT CASE _ integer optinal param in the page
+// SELECT CASE _ integer optional param in the page
 switch ($navhelptype) {
     case 1:
         $data = new stdClass;
@@ -94,7 +93,7 @@ switch ($navhelptype) {
         $data = new stdClass;
         $data->link = $CFG->wwwroot.'/local/';
         $data->supportemail = get_config('moodle','supportemail');
-        $data->sendadminemail = get_string('sendadminemail','theme_aigne');
+        $data->sendemailtitle = get_string('sendemailtitle','theme_aigne');
         echo get_string('helppage','theme_aigne', $data);
         break;
     case 3:
@@ -108,7 +107,7 @@ switch ($navhelptype) {
         $data->sitenamelow = strtolower($SITE->shortname);
         $data->sitename = format_string($SITE->shortname);
         $data->supportemail = get_config('moodle','supportemail');
-        $data->sendadminemail = get_string('sendadminemail','theme_aigne');
+        $data->sendemailtitle = get_string('sendemailtitle','theme_aigne');
         echo get_string('disclaimerpage','theme_aigne', $data);
         break;
     case 6:
@@ -118,7 +117,7 @@ switch ($navhelptype) {
         $data = new stdClass;
         $data->sitenamelow = strtolower($SITE->shortname);
         $data->supportemail = get_config('moodle','supportemail');
-        $data->sendadminemail = get_string('sendadminemail','theme_aigne');
+        $data->sendemailtitle = get_string('sendemailtitle','theme_aigne');
 		$data->remoteaddr = $_SERVER['REMOTE_ADDR'];
 		$data->remotehost = 'equipo';
 		$data->remoteuser = 'usuario';
@@ -133,7 +132,7 @@ switch ($navhelptype) {
     case 9:
         $data = new stdClass;
         $data->supportemail = get_config('moodle','supportemail');
-        $data->sendadminemail = get_string('sendadminemail','theme_aigne');
+        $data->sendemailtitle = get_string('sendemailtitle','theme_aigne');
         echo get_string('accessibilitypage','theme_aigne', $data);
         break;                                                        
     default:

@@ -5,6 +5,12 @@
  * @package    theme_aigne
  * @copyright  2013-2014 Franc Pombal (www.aigne.com)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * 
+ * General Settings: 21
+ * Head Settings: 19
+ * Footer Settings: 78
+ * Total Settings: 118 (grouped 90)
+ *     
  */
 
 // Null the standard construct for admin settings page
@@ -25,7 +31,7 @@ defined('MOODLE_INTERNAL') || die;
     $settemp = new admin_settingpage($name, $heading);
 
 //Theme note box for all the settings pages
-    $name = 'theme_aigne/notes';
+    $name = 'theme_aigne/note1';
     $heading = '';
     $information = get_string('notesdesc', 'theme_aigne');
     $setting = new admin_setting_heading($name, $heading, $information);
@@ -37,7 +43,7 @@ defined('MOODLE_INTERNAL') || die;
     $information = '';
     $setting = new admin_setting_heading($name, $heading, $information);
     $settemp->add($setting);
-    // Font Size setting
+    // Font Size _ Setting 1_01
         $name = 'theme_aigne/bodyfont';
         $title = get_string('bodyfont','theme_aigne');
         $description = get_string('bodyfontdesc', 'theme_aigne');
@@ -55,7 +61,7 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Font Family setting
+    // Font Family _ Setting 1_02
         $name = 'theme_aigne/fontfam';
         $title = get_string('fontfam','theme_aigne');
         $description = get_string('fontfamdesc', 'theme_aigne');
@@ -73,7 +79,7 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Default CSS Colour Scheme <- PENDIENTE ARREGLAR
+    // Default CSS Colour Scheme _ Setting 1_03 _ TODO
         $name = 'theme_aigne/colorsch';
         $title = get_string('colorsch' , 'theme_aigne');
         $css_color1 = get_string('css_color1', 'theme_aigne');
@@ -109,26 +115,70 @@ defined('MOODLE_INTERNAL') || die;
     //TODO: +theme_aigne/color4 -> admin_setting_configcolourpicker
     //TODO: +theme_aigne/color5 -> admin_setting_configcolourpicker
     //TODO: +theme_aigne/fontcolor -> admin_setting_configcolourpicker
-    // Background (Body Image) setting
+    // Background (Body Image) _ Setting 1_04
         $name = 'theme_aigne/backbody';
         $title = get_string('backbody', 'theme_aigne');
         $description = get_string('backbodydesc', 'theme_aigne'); 
         $setting = new admin_setting_configstoredfile($name, $title, $description, 'backbody');
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Background (Body Image) Position setting
-        $name = 'theme_aigne/bgposition';
-        $title = get_string('bgposition','theme_aigne');
-        $description = get_string('bgpositiondesc', 'theme_aigne');
+    // Background (Body Image) Repeat Position _ Setting 1_05
+        $name = 'theme_aigne/bgrepeat';
+        $title = get_string('bgrepeat','theme_aigne');
+        $bgrepeat01 = get_string('bgrepeat01', 'theme_aigne');
+        $bgrepeat02 = get_string('bgrepeat02', 'theme_aigne');
+        $bgrepeat03 = get_string('bgrepeat03', 'theme_aigne');
+        $bgrepeat04 = get_string('bgrepeat04', 'theme_aigne');
+        $description = get_string('bgrepeatdesc', 'theme_aigne');
         $default = 'no-repeat';
-        $choices = array('no-repeat'=>get_string('no-repeat','theme_aigne'), 
-                         'repeat'=>get_string('repeat','theme_aigne'), 
-                         'repeat-x'=>get_string('repeat-x','theme_aigne'), 
-                         'repeat-y'=>get_string('repeat-y','theme_aigne'));
+        $choices = array('no-repeat'=>$bgrepeat01, 
+                         'repeat'=>$bgrepeat02, 
+                         'repeat-x'=>$bgrepeat03, 
+                         'repeat-y'=>$bgrepeat04);
         $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Background Colour setting
+    // Background (Body Image) Static Position _ Setting 1_06.
+        $name = 'theme_aigne/bgposition';
+        $title = get_string('bgposition', 'theme_aigne');
+        $bgposition00 = get_string('bgposition00', 'theme_aigne');
+        $bgposition01 = get_string('bgposition01', 'theme_aigne');
+        $bgposition02 = get_string('bgposition02', 'theme_aigne');
+        $bgposition03 = get_string('bgposition03', 'theme_aigne');
+        $bgposition04 = get_string('bgposition04', 'theme_aigne');
+        $bgposition05 = get_string('bgposition05', 'theme_aigne');
+        $bgposition06 = get_string('bgposition06', 'theme_aigne');
+        $bgposition07 = get_string('bgposition07', 'theme_aigne');
+        $bgposition08 = get_string('bgposition08', 'theme_aigne');
+        $bgposition09 = get_string('bgposition09', 'theme_aigne');
+        $bgposition10 = get_string('bgposition10', 'theme_aigne');
+        $bgposition11 = get_string('bgposition11', 'theme_aigne');
+        $bgposition12 = get_string('bgposition12', 'theme_aigne');
+        $bgposition13 = get_string('bgposition13', 'theme_aigne');
+        $bgposition14 = get_string('bgposition14', 'theme_aigne');
+        $bgposition15 = get_string('bgposition15', 'theme_aigne');
+        $description = get_string('bgpositiondesc', 'theme_aigne');
+        $default = '0 0';
+        $choices = array('0 0'=>$bgposition00,
+                         'top'=>$bgposition01,
+                         'center'=>$bgposition02,
+                         'bottom'=>$bgposition03,
+                         'left'=>$bgposition04,
+                         'right'=>$bgposition05,
+                         'left top'=>$bgposition06,
+                         'center top'=>$bgposition07,
+                         'right top'=>$bgposition08,
+                         'left center'=>$bgposition09,
+                         'center center'=>$bgposition10,
+                         'right center'=>$bgposition11,
+                         'left bottom'=>$bgposition12,
+                         'center bottom'=>$bgposition13,
+                         'right bottom'=>$bgposition14,
+                         '50% 50%'=>$bgposition15);
+        $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $settemp->add($setting);
+    // Background Colour _ Setting 1_07
         $name = 'theme_aigne/backcolor';
         $title = get_string('backcolor', 'theme_aigne');
         $description = get_string('backcolordesc', 'theme_aigne');
@@ -137,11 +187,11 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Link letter spacing efect setting
+    // Link letter spacing efect _ Setting 1_08
         $name = 'theme_aigne/aletters';
         $title = get_string('aletters','theme_aigne');
         $description = get_string('alettersdesc', 'theme_aigne');
-        $default = '1';
+        $default = 'normal';
         $choices = array('normal'=>get_string('alettersno','theme_aigne'), 
                          1=>'1px', 
                          2=>'2px', 
@@ -151,7 +201,7 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Custom CSS file
+    // Custom CSS file _ Setting 1_09
         $name = 'theme_aigne/customcss';
         $title = get_string('customcss', 'theme_aigne');
         $description = get_string('customcssdesc', 'theme_aigne');
@@ -166,7 +216,7 @@ defined('MOODLE_INTERNAL') || die;
     $information = get_string('mtagheaddesc', 'theme_aigne');
     $setting = new admin_setting_heading($name, $heading, $information);
     $settemp->add($setting);
-    // Keywords Meta Tag Setting
+    // Keywords Meta Tag Setting _ Setting 1_10
         $name = 'theme_aigne/mtkeywords';
         $title = get_string('mtkeywords', 'theme_aigne');
         $description = get_string('mtkeywordsdesc', 'theme_aigne');
@@ -174,7 +224,7 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configtextarea($name, $title, $description, $default, PARAM_TEXT, 100, 3);  
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Description Meta Tag Setting
+    // Description Meta Tag _ Setting 1_11
         $name = 'theme_aigne/mtdescription';
         $title = get_string('mtdescription', 'theme_aigne');
         $description = get_string('mtdescriptiondesc', 'theme_aigne');
@@ -182,7 +232,7 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configtextarea($name, $title, $description, $default, PARAM_TEXT, 100, 3);  
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // OPTIONAL META TAGs _ Show
+    // OPTIONAL META TAGs _ Show _ Setting 1_12
         $name = 'theme_aigne/optionalmtag';
         $title = get_string('optionalmtag','theme_aigne');
         $description = get_string('optionalmtagdesc', 'theme_aigne');
@@ -190,7 +240,7 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Custom META TAGs
+    // Custom META TAGs _ Setting 1_13
         $name = 'theme_aigne/custommtag';
         $title = get_string('custommtag', 'theme_aigne');
         $description = get_string('custommtagdesc', 'theme_aigne');
@@ -198,11 +248,11 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configtextarea($name, $title, $description, $default, PARAM_RAW, 100, 5);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // COMPATIBILITY WITH 'Dublin Core Metadata Initiative' META TAGs _ Show
+    // COMPATIBILITY WITH 'Dublin Core Metadata Initiative' META TAGs _ Show _ Setting 1_14
         $name = 'theme_aigne/dublinmtag';
         $title = get_string('dublinmtag','theme_aigne');
         $description = get_string('dublinmtagdesc', 'theme_aigne');
-        $default = '1';
+        $default = '0';
         $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
@@ -213,7 +263,7 @@ defined('MOODLE_INTERNAL') || die;
     $information = get_string('marketingheaddesc', 'theme_aigne');
     $setting = new admin_setting_heading($name, $heading, $information);
     $settemp->add($setting);
-    // The FrontPage Banner _ Select
+    // The FrontPage Banner _ Setting 1_15
         $name = 'theme_aigne/headbanner';
         $title = get_string('headbanner', 'theme_aigne');
         $description = get_string('headbannerdesc', 'theme_aigne');
@@ -234,7 +284,7 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // The FrontPage Box Information _ Show
+    // The FrontPage Box Information _ Setting 1_16
         $name = 'theme_aigne/infobanner';
         $title = get_string('infobanner','theme_aigne');
         $description = get_string('infobannerdesc', 'theme_aigne');
@@ -255,7 +305,7 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // The FrontPage Banner Information Image setting
+    // The FrontPage Banner Information Image _ Setting 1_17
         $name = 'theme_aigne/headerinfo';
         $title = get_string('headerinfo', 'theme_aigne');
         $description = get_string('headerinfodesc', 'theme_aigne');
@@ -269,17 +319,18 @@ defined('MOODLE_INTERNAL') || die;
     $information = '';
     $setting = new admin_setting_heading($name, $heading, $information);
     $settemp->add($setting);
-    // Grid Format for Categories List
+    // Grid Format for Categories List _ Setting 1_18
         $name = 'theme_aigne/catstyle';
         $title = get_string('catstyle','theme_aigne');
         $description = get_string('catstyledesc', 'theme_aigne');
         $default = '0';
         $choices = array(0=>get_string('catstyle1', 'theme_aigne'), 
-                         1=>get_string('catstyle2', 'theme_aigne'));
+                         1=>get_string('catstyle2', 'theme_aigne'),
+                         2=>get_string('catstyle3', 'theme_aigne'));
         $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Content Only in course page _ Show
+    // Content Only in course page _ Show _ Setting 1_19
         $name = 'theme_aigne/contentcur';
         $title = get_string('contentcur','theme_aigne');
         $description = get_string('contentcurdesc', 'theme_aigne');
@@ -287,12 +338,32 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Content Only in activity page _ Show
+    // Content Only in activity page _ Show _ Setting 1_20
         $name = 'theme_aigne/contentact';
         $title = get_string('contentact','theme_aigne');
         $description = get_string('contentactdesc', 'theme_aigne');
         $default = '0';
         $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $settemp->add($setting);
+    // Display mode of the Activity Head on moodle 2.7 version _ Show _ Setting 1_21
+        $name = 'theme_aigne/headactivity';
+        $title = get_string('headactivity','theme_aigne');
+        $description = get_string('headactivitydesc', 'theme_aigne');
+        $default = 'block';
+        $choices = array('block'=>get_string('yes', 'moodle'),
+                         'none'=>get_string('no', 'moodle'));
+        $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $settemp->add($setting);
+    // Display author info & row options in Site News Forum _ Show _ Setting 1_21
+        $name = 'theme_aigne/sitenewsi';
+        $title = get_string('sitenewsi','theme_aigne');
+        $description = get_string('sitenewsidesc', 'theme_aigne');
+        $default = 'none';
+        $choices = array('none'=>get_string('no', 'moodle'), 
+                         'block'=>get_string('yes', 'moodle'));
+        $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
 
@@ -306,7 +377,7 @@ defined('MOODLE_INTERNAL') || die;
     $settemp = new admin_settingpage($name, $heading);
 
 //Theme note box for all the settings pages
-    $name = 'theme_aigne/notes';
+    $name = 'theme_aigne/note2';
     $heading = '';
     $information = get_string('notesdesc', 'theme_aigne');
     $setting = new admin_setting_heading($name, $heading, $information);
@@ -318,29 +389,29 @@ defined('MOODLE_INTERNAL') || die;
     $information = '';
     $setting = new admin_setting_heading($name, $heading, $information);
     $settemp->add($setting);
-    // Logo file setting
+    // Logo file _ Setting 2_01
         $name = 'theme_aigne/logo';
         $title = get_string('logo', 'theme_aigne');
         $description = get_string('logodesc', 'theme_aigne');
         $setting = new admin_setting_configstoredfile($name, $title, $description, 'logo');
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Slogan Text (under logo)
+    // Slogan Text (under logo) _ Setting 2_02
         $name = 'theme_aigne/slogan';
         $title = get_string('slogan', 'theme_aigne');
         $description = get_string('slogandesc', 'theme_aigne');
-        $default = 'slogan';
+        $default = get_string('sloganaigne', 'theme_aigne');
         $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_TEXT, 35);  
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);        
-    // Background Logo file setting
+    // Background Logo file setting _ Setting 2_03
         $name = 'theme_aigne/backlogo';
         $title = get_string('backlogo', 'theme_aigne');
         $description = get_string('backlogodesc', 'theme_aigne');
         $setting = new admin_setting_configstoredfile($name, $title, $description, 'backlogo');
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Icon file setting <- TODO
+    // Icon file setting _ Setting 2_04 _ TODO
         //$name = 'theme_aigne/icon';
         //$title = get_string('icon', 'theme_aigne');
         //$description = get_string('icondesc', 'theme_aigne');
@@ -354,7 +425,7 @@ defined('MOODLE_INTERNAL') || die;
     $information = get_string('custommenudesc', 'theme_aigne');
     $setting = new admin_setting_heading($name, $heading, $information);
     $settemp->add($setting);
-    // Menu colour base setting
+    // Menu colour base _ Setting 2_05
         $name = 'theme_aigne/menucolor';
         $title = get_string('menucolor', 'theme_aigne');
         $description = get_string('menucolordesc', 'theme_aigne');
@@ -363,7 +434,7 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Menu colour contrast setting
+    // Menu colour contrast _ Setting 2_06
         $name = 'theme_aigne/menucolorhl';
         $title = get_string('menucolorhl', 'theme_aigne');
         $description = get_string('menucolorhldesc', 'theme_aigne');
@@ -372,7 +443,7 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, $previewconfig);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Display 'logout' option in custom menu _ Show
+    // Display 'logout' option in custom menu _ Show _ Setting 2_07
         $name = 'theme_aigne/menulogout';
         $title = get_string('menulogout','theme_aigne');
         $description = get_string('menulogoutdesc', 'theme_aigne');
@@ -380,7 +451,7 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Display 'Dashboard' option in custom menu _ Show <- TODO
+    // Display 'Dashboard' option in custom menu _ Show <- TODO _ Setting 2_08
         //$name = 'theme_aigne/menudashboard';
         //$title = get_string('menudashboard','theme_aigne');
         //$description = get_string('menudashboarddesc', 'theme_aigne');
@@ -388,7 +459,7 @@ defined('MOODLE_INTERNAL') || die;
         //$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
         //$setting->set_updatedcallback('theme_reset_all_caches');
         //$settemp->add($setting);
-    // Display 'My courses' option in custom menu _ Show <- TODO
+    // Display 'My courses' option in custom menu _ Show <- TODO _ Setting 2_09
         //$name = 'theme_aigne/menucourses';
         //$title = get_string('menucourses','theme_aigne');
         //$description = get_string('menucoursesdesc', 'theme_aigne');
@@ -403,7 +474,7 @@ defined('MOODLE_INTERNAL') || die;
     $information = '';
     $setting = new admin_setting_heading($name, $heading, $information);
     $settemp->add($setting);
-    // BreadCrumb Navigation Seperator
+    // BreadCrumb Navigation Seperator _ Setting 2_10
         $name = 'theme_aigne/bcsep';
         $title = get_string('bcsep' , 'theme_aigne');
         $description = get_string('bcsepdesc', 'theme_aigne');
@@ -426,7 +497,7 @@ defined('MOODLE_INTERNAL') || die;
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
 
-// User Login Area Settings
+// User Login Area Settings _ Setting 2_11
     $name = 'theme_aigne/usernavhead';
     $heading = get_string('usernavhead', 'theme_aigne');
     $information = '';
@@ -445,13 +516,13 @@ defined('MOODLE_INTERNAL') || die;
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
 
-//Descriptor for the following user nav settings
+//Descriptor for the following user nav
     $name = 'theme_aigne/usernavheaddesc';
     $heading = '';
     $information = get_string('usernavheaddesc', 'theme_aigne');
     $setting = new admin_setting_heading($name, $heading, $information);
     $settemp->add($setting);
-    // Greeting _ Show
+    // Greeting _ Show _ Setting 2_12
         $name = 'theme_aigne/usernavsalut';
         $title = get_string('usernavsalut','theme_aigne');
         $description = get_string('usernavsalutdesc', 'theme_aigne');
@@ -459,7 +530,7 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Custom Welcome message
+    // Custom Welcome message _ Setting 2_13
         $name = 'theme_aigne/welcomemsg';
         $title = get_string('welcomemsg','theme_aigne');
         $description = '';
@@ -468,21 +539,21 @@ defined('MOODLE_INTERNAL') || die;
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
 /* TODO TODO TODO
-    // Date 1 message _ datemessage
+    // Date 1 message _ datemessage _ Setting 2_14
         $name = 'theme_aigne/datemessage';
         $title = get_string('datemessage','theme_aigne');
         $default = '';
         $setting = new admin_setting_configtext($name, $title, '', $default, PARAM_TEXT, 35);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Date 1 message _ datestart
+    // Date 1 message _ datestart _ Setting 2_15
         $name = 'theme_aigne/datestart';
         $title = get_string('datestart','theme_aigne');
         $default = '15/12/2013';
         $setting = new admin_setting_configtext($name, $title, '', $default, PARAM_TEXT, 35);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Date 1 message _ datefinis
+    // Date 1 message _ datefinis _ Setting 2_16
         $name = 'theme_aigne/datefinis';
         $title = get_string('datefinis','theme_aigne');
         $default = '26/12/2013';
@@ -490,7 +561,7 @@ defined('MOODLE_INTERNAL') || die;
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
 */
-    // User information _ Show
+    // User information _ Show _ Setting 2_17
         $name = 'theme_aigne/usernavinfo';
         $title = get_string('usernavinfo','theme_aigne');
         $description = get_string('usernavinfodesc', 'theme_aigne');
@@ -498,7 +569,7 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // User Picture _ Show
+    // User Picture _ Show _ Setting 2_18
         $name = 'theme_aigne/usernavpic';
         $title = get_string('usernavpic','theme_aigne');
         $description = get_string('usernavpicdesc', 'theme_aigne');
@@ -506,7 +577,7 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Logout Buttom/Option
+    // Logout Buttom/Option _ Setting 2_19
         $name = 'theme_aigne/usernavout';
         $title = get_string('usernavout','theme_aigne');
         $description = get_string('usernavoutdesc', 'theme_aigne');
@@ -528,7 +599,7 @@ defined('MOODLE_INTERNAL') || die;
     $settemp = new admin_settingpage($name, $heading);
 
 //Theme note box for all the settings pages
-    $name = 'theme_aigne/notes';
+    $name = 'theme_aigne/note3';
     $heading = '';
     $information = get_string('notesdesc', 'theme_aigne');
     $setting = new admin_setting_heading($name, $heading, $information);
@@ -540,7 +611,7 @@ defined('MOODLE_INTERNAL') || die;
     $information = '';
     $setting = new admin_setting_heading($name, $heading, $information);
     $settemp->add($setting);
-    // Navigation Help Page url
+    // Navigation Help Page url _ Setting 3_01
         $name = 'theme_aigne/navhelp';
         $title = get_string('navhelp','theme_aigne');
         $description = get_string('navhelpdesc', 'theme_aigne');
@@ -548,7 +619,7 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_PATH, 35);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // tested compatibility _ Select
+    // tested compatibility _ Setting 3_02
         $name = 'theme_aigne/navhelplinks';
         $title = get_string('navhelplinks','theme_aigne');
         $description = get_string('navhelplinksdesc', 'theme_aigne');
@@ -562,7 +633,7 @@ defined('MOODLE_INTERNAL') || die;
         $nav_7 = get_string('privacydesc', 'theme_aigne');
         $nav_8 = get_string('securitydesc', 'theme_aigne');
         $nav_9 = get_string('accessibilitydesc', 'theme_aigne');
-        $default = '1100010111';
+        $default = '1100010001';
         $choices = array('0'=>$nav_0, 
                          '1'=>$nav_1, 
                          '2'=>$nav_2, 
@@ -583,7 +654,7 @@ defined('MOODLE_INTERNAL') || die;
     $information = '';
     $setting = new admin_setting_heading($name, $heading, $information);
     $settemp->add($setting);
-    // Corporation/Institution Web Site url setting
+    // Corporation/Institution Web Site url _ Setting 3_12
         $name = 'theme_aigne/corpweb';
         $title = get_string('corpweb', 'theme_aigne');
         $description = get_string('corpwebdesc', 'theme_aigne');
@@ -591,14 +662,14 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // email image setting _ To prevent spam copy of email info
+    // email image _ To prevent spam copy of email info _ Setting 3_13
         $name = 'theme_aigne/emailimg';
         $title = get_string('emailimg','theme_aigne');
         $description = get_string('emailimgdesc', 'theme_aigne');
         $setting = new admin_setting_configstoredfile($name, $title, $description, 'emailimg');
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Skype url setting
+    // Skype url _ Setting 3_14
         $name = 'theme_aigne/skype';
         $title = get_string('skype', 'theme_aigne');
         $description = get_string('skypedesc', 'theme_aigne');
@@ -606,15 +677,22 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configtext($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Contact note setting
+    // Contact note _ Setting 3_15
         $name = 'theme_aigne/contactnote';
         $title = get_string('contactnote','theme_aigne');
         $description = get_string('contactnotedesc', 'theme_aigne');
-        $default = '';
+        $default = 'São Paulo - Brasil';
         $setting = new admin_setting_confightmleditor($name, $title, $description, $default, PARAM_RAW, 80, 15);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-
+    // Map (Google maps / Bing Maps) url _ Setting 3_16
+        $name = 'theme_aigne/maplink';
+        $title = get_string('maplink', 'theme_aigne');
+        $description = get_string('maplinkdesc', 'theme_aigne');
+        $default = '';
+        $setting = new admin_setting_configtext($name, $title, $description, $default);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $settemp->add($setting);
 // Social Networks settings
     $name = 'theme_aigne/socialcontenthead';
     $heading = get_string('socialcontenthead', 'theme_aigne');
@@ -633,7 +711,7 @@ defined('MOODLE_INTERNAL') || die;
 //GENERAL CONTENT:
     // Wikimedia <-moodle repository -> http://www.wikimedia.com/ ***
 // PHOTOS:
-    // DayViews url setting (Svenska) -> http://dayviews.com/
+    // DayViews url (Svenska) -> http://dayviews.com/ _ Setting 3_17
         $name = 'theme_aigne/dayviews';
         $title = get_string('dayviews','theme_aigne');
         $description = get_string('dayviewsdesc','theme_aigne');
@@ -641,7 +719,7 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Flickr url setting <-moodle repository -> http://www.flickr.com -> CANAL
+    // Flickr url <-moodle repository -> http://www.flickr.com _ Setting 3_18
         $name = 'theme_aigne/flickr';
         $title = get_string('flickr','theme_aigne');
         $description = get_string('flickrdesc','theme_aigne');
@@ -649,7 +727,7 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // FotoLog url setting (France) -> http://www.fotolog.com
+    // FotoLog url (France) -> http://www.fotolog.com _ Setting 3_19
         $name = 'theme_aigne/fotolog';
         $title = get_string('fotolog','theme_aigne');
         $description = get_string('fotologdesc','theme_aigne');
@@ -657,7 +735,7 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Instagram url setting  -> http://instagram.com
+    // Instagram url  -> http://instagram.com _ Setting 3_20
         $name = 'theme_aigne/instagram';
         $title = get_string('instagram','theme_aigne');
         $description = get_string('instagramdesc','theme_aigne');
@@ -665,7 +743,7 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Panoramio url setting (Spain-USA) -> http://www.panoramio.com -> CANAL
+    // Panoramio url (Spain-USA) -> http://www.panoramio.com _ Setting 3_21
         $name = 'theme_aigne/panoramio';
         $title = get_string('panoramio','theme_aigne');
         $description = get_string('panoramiodesc','theme_aigne');
@@ -673,7 +751,7 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Picasa url setting <-moodle repository -> http://picasa.google.com/
+    // Picasa url <-moodle repository -> http://picasa.google.com/ _ Setting 3_22
         $name = 'theme_aigne/picasa';
         $title = get_string('picasa','theme_aigne');
         $description = get_string('picasadesc','theme_aigne');
@@ -681,7 +759,7 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // PixaBay url setting (Deutschland) -> http://pixabay.com/ -> CANAL
+    // PixaBay url (Deutschland) -> http://pixabay.com/ _ Setting 3_23
         $name = 'theme_aigne/pixabay';
         $title = get_string('pixabay','theme_aigne');
         $description = get_string('pixabaydesc','theme_aigne');
@@ -689,7 +767,7 @@ defined('MOODLE_INTERNAL') || die;
         $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Photobucket url setting () -> http://www.photobucket.com -> CANAL
+    // Photobucket url () -> http://www.photobucket.com _ Setting 3_24
         $name = 'theme_aigne/photobucket';
         $title = get_string('photobucket','theme_aigne');
         $description = get_string('photobucketdesc','theme_aigne');
@@ -700,7 +778,7 @@ defined('MOODLE_INTERNAL') || die;
     // imageShack -> http://imageshack.us -> PAYED
 $settemp->add(new admin_setting_heading('sep21d', new lang_string('sep_br','theme_aigne'), ''));
 //VIDEO:
-    // DailyMotion url setting (France) -> http://www.dailymotion.com
+    // DailyMotion url (France) -> http://www.dailymotion.com _ Setting 3_25
         $name = 'theme_aigne/dailymotion';
         $title = get_string('dailymotion','theme_aigne');
         $description = get_string('dailymotiondesc','theme_aigne');
@@ -708,7 +786,7 @@ $settemp->add(new admin_setting_heading('sep21d', new lang_string('sep_br','them
         $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // SchoolTube url setting (USA) -> https://www.schooltube.com
+    // SchoolTube url (USA) -> https://www.schooltube.com _ Setting 3_26
         $name = 'theme_aigne/schooltube';
         $title = get_string('schooltube','theme_aigne');
         $description = get_string('schooltubedesc','theme_aigne');
@@ -716,7 +794,7 @@ $settemp->add(new admin_setting_heading('sep21d', new lang_string('sep_br','them
         $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // VideoLog url setting (Brasil) -> http://videolog.tv
+    // VideoLog url (Brasil) -> http://videolog.tv _ Setting 3_27
         $name = 'theme_aigne/videolog';
         $title = get_string('videolog','theme_aigne');
         $description = get_string('videologdesc','theme_aigne');
@@ -724,7 +802,7 @@ $settemp->add(new admin_setting_heading('sep21d', new lang_string('sep_br','them
         $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Vimeo url setting -> https://vimeo.com/
+    // Vimeo url -> https://vimeo.com/ _ Setting 3_28
         $name = 'theme_aigne/vimeo';
         $title = get_string('vimeo','theme_aigne');
         $description = get_string('vimeodesc','theme_aigne');
@@ -732,7 +810,7 @@ $settemp->add(new admin_setting_heading('sep21d', new lang_string('sep_br','them
         $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // YouTube url setting -> http://www.youtube.com/ -> CANAL
+    // YouTube url -> http://www.youtube.com/ _ Setting 3_29
         $name = 'theme_aigne/youtube';
         $title = get_string('youtube','theme_aigne');
         $description = get_string('youtubedesc','theme_aigne');
@@ -746,7 +824,7 @@ $settemp->add(new admin_setting_heading('sep21d', new lang_string('sep_br','them
     // youku -> ONLY in chinese
 $settemp->add(new admin_setting_heading('sep22d', new lang_string('sep_br','theme_aigne'), ''));
 // ART
-    // deviantART url setting -> http://www.deviantart.com/
+    // deviantART url -> http://www.deviantart.com/ _ Setting 3_30
         $name = 'theme_aigne/deviantart';
         $title = get_string('deviantart','theme_aigne');
         $description = get_string('deviantartdesc','theme_aigne');
@@ -754,7 +832,7 @@ $settemp->add(new admin_setting_heading('sep22d', new lang_string('sep_br','them
         $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // myspace url setting
+    // myspace url _ Setting 3_31
         $name = 'theme_aigne/myspace';
         $title = get_string('myspace','theme_aigne');
         $description = get_string('myspacedesc','theme_aigne');
@@ -769,7 +847,7 @@ $settemp->add(new admin_setting_heading('sep22d', new lang_string('sep_br','them
     $information = '';
     $setting = new admin_setting_heading($name, $heading, $information);
     $settemp->add($setting);
-    // LinkedIn url setting (USA)
+    // LinkedIn url (USA) _ Setting 3_32
         $name = 'theme_aigne/linkedin';
         $title = get_string('linkedin','theme_aigne');
         $description = get_string('linkedindesc','theme_aigne');
@@ -777,7 +855,7 @@ $settemp->add(new admin_setting_heading('sep22d', new lang_string('sep_br','them
         $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Xing url setting (deutschland)
+    // Xing url (deutschland) _ Setting 3_33
         $name = 'theme_aigne/xing';
         $title = get_string('xing','theme_aigne');
         $description = get_string('xingdesc','theme_aigne');
@@ -785,7 +863,7 @@ $settemp->add(new admin_setting_heading('sep22d', new lang_string('sep_br','them
         $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Yelp url setting (USA)
+    // Yelp url (USA) _ Setting 3_34
         $name = 'theme_aigne/yelp';
         $title = get_string('yelp','theme_aigne');
         $description = get_string('yelpdesc','theme_aigne');
@@ -795,7 +873,7 @@ $settemp->add(new admin_setting_heading('sep22d', new lang_string('sep_br','them
         $settemp->add($setting);
 
 $settemp->add(new admin_setting_heading('sep23d', new lang_string('sep_br','theme_aigne'), ''));
-    // Facebook url setting
+    // Facebook url setting _ Setting 3_35
         $name = 'theme_aigne/facebook';
         $title = get_string('facebook','theme_aigne');
         $description = get_string('facebookdesc','theme_aigne');
@@ -803,7 +881,7 @@ $settemp->add(new admin_setting_heading('sep23d', new lang_string('sep_br','them
         $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Twitter url setting
+    // Twitter url setting _ Setting 3_36
         $name = 'theme_aigne/twitter';
         $title = get_string('twitter','theme_aigne');
         $description = get_string('twitterdesc','theme_aigne');
@@ -822,7 +900,7 @@ $settemp->add(new admin_setting_heading('sep23d', new lang_string('sep_br','them
     // NetLog (FaceBox/NetBox)
     // Nimbuzz
     // Odnoklassniki
-    // Orkut url setting
+    // Orkut url setting _ Setting 3_37
         $name = 'theme_aigne/orkut';
         $title = get_string('orkut','theme_aigne');
         $description = get_string('orkutdesc','theme_aigne');
@@ -830,7 +908,7 @@ $settemp->add(new admin_setting_heading('sep23d', new lang_string('sep_br','them
         $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Pinterest url setting
+    // Pinterest url setting _ Setting 3_38
         $name = 'theme_aigne/pinterest';
         $title = get_string('pinterest','theme_aigne');
         $description = get_string('pinterestdesc','theme_aigne');
@@ -843,7 +921,7 @@ $settemp->add(new admin_setting_heading('sep23d', new lang_string('sep_br','them
     // Sonico.com
     // Tagged
     // Viadeo
-    // VKontakte url setting
+    // VKontakte url setting _ Setting 3_39
         $name = 'theme_aigne/vkontakte';
         $title = get_string('vkontakte','theme_aigne');
         $description = get_string('vkontaktedesc','theme_aigne');
@@ -854,7 +932,7 @@ $settemp->add(new admin_setting_heading('sep23d', new lang_string('sep_br','them
     // Weibo (China)
 
 $settemp->add(new admin_setting_heading('sep24d', new lang_string('sep_br','theme_aigne'), ''));
-    // AIM url setting
+    // AIM url _ Setting 3_40
         $name = 'theme_aigne/aim';
         $title = get_string('aim','theme_aigne');
         $description = get_string('aimdesc', 'theme_aigne');
@@ -862,7 +940,7 @@ $settemp->add(new admin_setting_heading('sep24d', new lang_string('sep_br','them
         $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Google+ url setting
+    // Google+ url _ Setting 3_41
         $name = 'theme_aigne/googleplus';
         $title = get_string('googleplus','theme_aigne');
         $description = get_string('googleplusdesc', 'theme_aigne');
@@ -870,7 +948,7 @@ $settemp->add(new admin_setting_heading('sep24d', new lang_string('sep_br','them
         $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Microsoft url setting
+    // Microsoft url _ Setting 3_42
         $name = 'theme_aigne/microsoftid';
         $title = get_string('microsoftid','theme_aigne');
         $description = get_string('microsoftiddesc', 'theme_aigne');
@@ -878,7 +956,7 @@ $settemp->add(new admin_setting_heading('sep24d', new lang_string('sep_br','them
         $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Openid url setting
+    // Openid url _ Setting 3_43
         $name = 'theme_aigne/openid';
         $title = get_string('openid','theme_aigne');
         $description = get_string('openiddesc', 'theme_aigne');
@@ -886,7 +964,7 @@ $settemp->add(new admin_setting_heading('sep24d', new lang_string('sep_br','them
         $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Yahoo url setting
+    // Yahoo url _ Setting 3_44
         $name = 'theme_aigne/yahooid';
         $title = get_string('yahooid','theme_aigne');
         $description = get_string('yahooiddesc', 'theme_aigne');
@@ -901,7 +979,7 @@ $settemp->add(new admin_setting_heading('sep24d', new lang_string('sep_br','them
     // LiveJournal (Russia)
 
 $settemp->add(new admin_setting_heading('sep25d', new lang_string('sep_br','theme_aigne'), ''));
-    // 1. Custom social url setting
+    // 1. Custom social url _ Setting 3_45
         $name = 'theme_aigne/social1url';
         $title = get_string('social1url','theme_aigne');
         $description = get_string('social1urldesc', 'theme_aigne');
@@ -909,7 +987,7 @@ $settemp->add(new admin_setting_heading('sep25d', new lang_string('sep_br','them
         $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL, 80);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Social Icon for the 1. custom social url setting
+    // Social Icon for the 1. custom social url _ Setting 3_46
         $name = 'theme_aigne/social1ico';
         $title = get_string('social1ico','theme_aigne');
         $description = get_string('social1icodesc', 'theme_aigne');
@@ -924,7 +1002,7 @@ $settemp->add(new admin_setting_heading('sep25d', new lang_string('sep_br','them
     $information = '';
     $setting = new admin_setting_heading($name, $heading, $information);
     $settemp->add($setting);
-    // moodlecredit _ Show
+    // moodlecredit _ Show _ Setting 3_47
         $name = 'theme_aigne/moodlecredit';
         $title = get_string('moodlecredit','theme_aigne');
         $description = get_string('moodlecreditdesc','theme_aigne');
@@ -932,7 +1010,7 @@ $settemp->add(new admin_setting_heading('sep25d', new lang_string('sep_br','them
         $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // compatcredit _ Show
+    // compatcredit _ Show _ Setting 3_48
         $name = 'theme_aigne/compatcredit';
         $title = get_string('compatcredit','theme_aigne');
         $description = get_string('compatcreditdesc','theme_aigne');
@@ -940,7 +1018,29 @@ $settemp->add(new admin_setting_heading('sep25d', new lang_string('sep_br','them
         $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // Accessibility tested _ Select
+//Nota para aclarar las responsabilidades de usar estos iconos
+    $name = 'theme_aigne/compatnote';
+    $heading = '';
+    $information = get_string('compatnotedesc', 'theme_aigne');
+    $setting = new admin_setting_heading($name, $heading, $information);
+    $settemp->add($setting);
+    // Child + Woman + Race + Adult compatibility _ Setting 3_49
+        $name = 'theme_aigne/compatsocial';
+        $title = get_string('compatsocial','theme_aigne');
+        $description = get_string('compatsocialdesc', 'theme_aigne');
+        $csocial_0 = get_string('csocial_1', 'theme_aigne'); // child protect
+        $csocial_1 = get_string('csocial_2', 'theme_aigne'); // eqqual woman
+        $csocial_2 = get_string('csocial_3', 'theme_aigne'); // blind compliance
+        //$csocial_3 = get_string('csocial_4', 'theme_aigne'); // racism free
+        //$csocial_4 = get_string('csocial_5', 'theme_aigne'); // violence free
+        $default = '011';
+        $choices = array('0'=>$csocial_0, 
+                         '1'=>$csocial_1, 
+                         '2'=>$csocial_2);
+        $setting = new admin_setting_configmulticheckbox2($name, $title, $description, $default, $choices);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $settemp->add($setting);
+    // Accessibility tested _ Setting 3_52
         $name = 'theme_aigne/compatwai';
         $title = get_string('compatwai' , 'theme_aigne');
         $description = get_string('compatwaidesc', 'theme_aigne');
@@ -948,23 +1048,21 @@ $settemp->add(new admin_setting_heading('sep25d', new lang_string('sep_br','them
         $compatwai2 = get_string('compatwai2', 'theme_aigne');
         $compatwai3 = get_string('compatwai3', 'theme_aigne');
         $compatwai4 = get_string('compatwai4', 'theme_aigne');
-        $default = '1';
-        $choices = array('1'=>$compatwai1, 
-                         '2'=>$compatwai2, 
-                         '3'=>$compatwai3, 
-                         '4'=>$compatwai4);
+        $default = '0';
+        $choices = array('0'=>$compatwai1, 
+                         '1'=>$compatwai2, 
+                         '2'=>$compatwai3, 
+                         '3'=>$compatwai4);
         $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // tested compatibility _ Select
+    // Programming compatibility _ Setting 3_56
         $name = 'theme_aigne/compattested';
         $title = get_string('compattested','theme_aigne');
         $description = get_string('compattesteddesc', 'theme_aigne');
         $ctested_0 = get_string('ctested_1', 'theme_aigne');
         $ctested_1 = get_string('ctested_2', 'theme_aigne');
         $ctested_2 = get_string('ctested_3', 'theme_aigne');
-        //$ctested_3 = get_string('ctested_4', 'theme_aigne');
-        //$ctested_4 = get_string('ctested_5', 'theme_aigne');
         $default = '100';
         $choices = array('0'=>$ctested_0, 
                          '1'=>$ctested_1, 
@@ -972,22 +1070,67 @@ $settemp->add(new admin_setting_heading('sep25d', new lang_string('sep_br','them
         $setting = new admin_setting_configmulticheckbox2($name, $title, $description, $default, $choices);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // TODO        
-    // Browser compatibility _ Select
-        //$name = 'theme_aigne/compatbrowse';
-        //$title = get_string('compatbrowse','theme_aigne');
-        //$description = get_string('compatbrowsedesc', 'theme_aigne');
-        //$cbrowse_0 = get_string('browse_1', 'theme_aigne');
-        //$cbrowse_1 = get_string('browse_2', 'theme_aigne');
-        //$cbrowse_2 = get_string('browse_3', 'theme_aigne');
-        //$default = '111';
-        //$choices = array('0'=>$cbrowse_0, 
-        //                 '1'=>$cbrowse_1, 
-        //                 '2'=>$cbrowse_2);
-        //$setting = new admin_setting_configmulticheckbox2($name, $title, $description, $default, $choices);
-        //$setting->set_updatedcallback('theme_reset_all_caches');
-        //$settemp->add($setting);
-    // Foot note setting
+    // Browser compatibility _ Setting 3_59
+        $name = 'theme_aigne/compatbrowser';
+        $title = get_string('compatbrowser','theme_aigne');
+        $description = get_string('compatbrowserdesc', 'theme_aigne');
+        $cbrowser_0 = get_string('browser_1', 'theme_aigne');
+        $cbrowser_1 = get_string('browser_2', 'theme_aigne');
+        $cbrowser_2 = get_string('browser_3', 'theme_aigne');
+        $cbrowser_3 = get_string('browser_4', 'theme_aigne');
+        $default = '1100';
+        $choices = array('0'=>$cbrowser_0, 
+                         '1'=>$cbrowser_1, 
+                         '2'=>$cbrowser_2, 
+                         '3'=>$cbrowser_3);
+        $setting = new admin_setting_configmulticheckbox2($name, $title, $description, $default, $choices);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $settemp->add($setting);
+    // Operating System compatibility _ Setting 3_63
+        $name = 'theme_aigne/compatos';
+        $title = get_string('compatos','theme_aigne');
+        //$description = get_string('compatosdesc', 'theme_aigne');
+        $cosystem_0 = get_string('osystem_1', 'theme_aigne');
+        $cosystem_1 = get_string('osystem_2', 'theme_aigne');
+        $cosystem_2 = get_string('osystem_3', 'theme_aigne');
+        $cosystem_3 = get_string('osystem_4', 'theme_aigne');
+        $cosystem_4 = get_string('osystem_5', 'theme_aigne');
+        $default = '00000';
+        $choices = array('0'=>$cosystem_0, 
+                         '1'=>$cosystem_1, 
+                         '2'=>$cosystem_2, 
+                         '3'=>$cosystem_3, 
+                         '4'=>$cosystem_4);
+        $setting = new admin_setting_configmulticheckbox2($name, $title, $description, $default, $choices);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $settemp->add($setting);
+    // Device compatibility _ Setting 3_68
+        $name = 'theme_aigne/compatdevice';
+        $title = get_string('compatdevice','theme_aigne');
+        $description = get_string('compatdevicedesc', 'theme_aigne');
+        $cdevice_0 = get_string('device_1', 'theme_aigne');
+        $cdevice_1 = get_string('device_2', 'theme_aigne');
+        $cdevice_2 = get_string('device_3', 'theme_aigne');
+        $cdevice_3 = get_string('device_4', 'theme_aigne');
+        $cdevice_4 = get_string('device_5', 'theme_aigne');
+        $default = '01100';
+        $choices = array('0'=>$cdevice_0, 
+                         '1'=>$cdevice_1, 
+                         '2'=>$cdevice_2, 
+                         '3'=>$cdevice_3, 
+                         '4'=>$cdevice_4);
+        $setting = new admin_setting_configmulticheckbox2($name, $title, $description, $default, $choices);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $settemp->add($setting);
+    // Foot note _ Show _ Setting 3_73
+        $name = 'theme_aigne/footnoteshow';
+        $title = get_string('footnoteshow','theme_aigne');
+        $description = get_string('footnoteshowdesc','theme_aigne');
+        $default = '0';
+        $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+        $setting->set_updatedcallback('theme_reset_all_caches');
+        $settemp->add($setting);
+    // Foot note _ Setting 3_74
         $name = 'theme_aigne/footnote';
         $title = get_string('footnote','theme_aigne');
         $description = get_string('footnotedesc', 'theme_aigne');
@@ -1002,7 +1145,7 @@ $settemp->add(new admin_setting_heading('sep25d', new lang_string('sep_br','them
     $information = '';
     $setting = new admin_setting_heading($name, $heading, $information);
     $settemp->add($setting);
-    // Copyright setting.
+    // Copyright _ Setting 3_75
         $name = 'theme_aigne/copyrightstg';
         $title = get_string('copyrightstg', 'theme_aigne');
         $description = get_string('copyrightstgdesc', 'theme_aigne');
@@ -1010,7 +1153,7 @@ $settemp->add(new admin_setting_heading('sep25d', new lang_string('sep_br','them
         $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_TEXT, 35);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // sitelicensemsg message _ Show
+    // sitelicensemsg message _ Show _ Setting 3_76
         $name = 'theme_aigne/sitelicensemsg';
         $title = get_string('sitelicensemsg','theme_aigne');
         $description = get_string('sitelicensemsgdesc','theme_aigne');
@@ -1018,7 +1161,7 @@ $settemp->add(new admin_setting_heading('sep25d', new lang_string('sep_br','them
         $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // lastmodifiedmsg message _ Show
+    // lastmodifiedmsg message _ Show _ Setting 3_77
         $name = 'theme_aigne/lastmodifiedmsg';
         $title = get_string('lastmodifiedmsg','theme_aigne');
         $description = get_string('lastmodifiedmsgdesc','theme_aigne');
@@ -1026,11 +1169,11 @@ $settemp->add(new admin_setting_heading('sep25d', new lang_string('sep_br','them
         $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);
-    // thanksvisitmsg message _ Show
+    // thanksvisitmsg message _ Show _ Setting 3_78
         $name = 'theme_aigne/thanksvisitmsg';
         $title = get_string('thanksvisitmsg','theme_aigne');
         $description = get_string('thanksvisitmsgdesc','theme_aigne');
-        $default = '1';
+        $default = '0';
         $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settemp->add($setting);

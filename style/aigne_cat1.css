@@ -1,6 +1,7 @@
 /*----- ----- ----- theme_aigne -> Grid Format for Categories List ----- ----- -----*/
 /* Create box for each category */
-.course_category_tree .category {
+.course_category_tree .category, 
+.categorypicker ~ .course_category_tree .subcategories .category {
     position: relative;
     float: left;
     width: 180px;
@@ -20,6 +21,17 @@
     padding: 0px 0px 0px 0px;
     text-align: center;
 }
+.categorypicker ~ .course_category_tree .subcategories .category > .info .name {
+    width: 100%;
+    margin: 3px 3px 3px 3px;
+}
+.categorypicker ~ .course_category_tree .subcategories .category > .info .name A {
+    padding: 0px 0px 0px 0px;
+    line-height: 1.20em;
+}
+.course_category_tree .courses {
+    padding-top: 1px;
+    }
 /* Hide icon 'colapsed' because it makes no sense here */
 .course_category_tree .category > .info .name {background: none;}
 .dir-rtl .course_category_tree .category > .info .name {background: none;}
@@ -29,6 +41,7 @@
 /* Place image in each category */
 .course_category_tree .category[data-categoryid] {
     background: url([[pix:theme|cat/default]]) no-repeat center 90%;
+    background-size: 128px 128px;
 }
 /* Upload the image from each category */
 .course_category_tree .category[data-categoryid="1"] {background-image: url([[pix:theme|cat/1]]);}
@@ -43,7 +56,7 @@
 .course_category_tree .category[data-categoryid="10"] {background-image: url([[pix:theme|cat/10]]);}
 .course_category_tree .category[data-categoryid="11"] {background-image: url([[pix:theme|cat/11]]);}
 .course_category_tree .category[data-categoryid="12"] {background-image: url([[pix:theme|cat/12]]);}
-.course_category_tree .category[data-categoryid="13"] {background-image: url([[pix:theme|cat/13]]);}
+/*.course_category_tree .category[data-categoryid="13"] {background-image: url([[pix:theme|cat/13]]);}
 .course_category_tree .category[data-categoryid="14"] {background-image: url([[pix:theme|cat/14]]);}
 .course_category_tree .category[data-categoryid="15"] {background-image: url([[pix:theme|cat/15]]);}
 .course_category_tree .category[data-categoryid="16"] {background-image: url([[pix:theme|cat/16]]);}
@@ -56,3 +69,4 @@
 .course_category_tree .category .content {display: none;}
 /* Hide buttons to expand and collapse */
 .jsenabled .course_category_tree .controls {display: none;}
+.course_category_tree .collapsible-actions {display: none;}

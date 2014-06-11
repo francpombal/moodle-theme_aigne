@@ -271,25 +271,26 @@ public function navigation_tree(global_navigation $navigation, $expansionlimit, 
         
 }
 
-/**
- * Produces a navigation node for the navigation tree
- *
- * @param array $items
- * @param array $attrs
- * @param int $expansionlimit
- * @param array $options
- * @param int $depth
- * @return string
- */
-protected function navigation_node($items, $attrs=array(), $expansionlimit=null, array $options = array(), $depth=1) {
-    // exit if empty, we don't want an empty ul element
-    if (count($items)==0) {
-        return '';
-    }
-
-    // array of nested li elements
-    $lis = array();
-    foreach ($items as $item) {
+    /**
+     * Produces a navigation node for the navigation tree
+     *
+     * @param array $items
+     * @param array $attrs
+     * @param int $expansionlimit
+     * @param array $options
+     * @param int $depth
+     * @return string
+     */
+    protected function navigation_node($items, $attrs=array(), $expansionlimit=null, array $options = array(), $depth=1) {
+    
+        // exit if empty, we don't want an empty ul element
+        if (count($items)==0) {
+            return '';
+        }
+    
+        // array of nested li elements
+        $lis = array();
+        foreach ($items as $item) {
             if (!$item->display && !$item->contains_active_node()) {
                 continue;
             }
@@ -327,7 +328,9 @@ protected function navigation_node($items, $attrs=array(), $expansionlimit=null,
             if ($item->hidden) {
                 $attributes['class'] = 'dimmed_text';
             }
-            if (is_string($item->action) || empty($item->action) || ($item->type === navigation_node::TYPE_CATEGORY && empty($options['linkcategories']))) {
+            if (is_string($item->action) || empty($item->action) ||
+                    (($item->type === navigation_node::TYPE_CATEGORY || $item->type === navigation_node::TYPE_MY_CATEGORY) &&
+                    empty($options['linkcategories']))) {
                 $attributes['tabindex'] = '0'; //add tab support to span but still maintain character stream sequence.
                 $content = html_writer::tag('span', $content, $attributes);
             } else if ($item->action instanceof action_link) {
@@ -383,18 +386,17 @@ protected function navigation_node($items, $attrs=array(), $expansionlimit=null,
             }
             $content = html_writer::tag('li', $content, $liattr);
             $lis[] = $content;
+        }
+    
+        if (count($lis)) {
+            return html_writer::tag('ul', implode("\n", $lis), $attrs);
+        } else {
+            return '';
+        }
     }
-
-    if (count($lis)) {
-        return html_writer::tag('ul', implode("\n", $lis), $attrs);
-    } else {
-        return '';
-    }
-}
 
 /**
- * Returns the 'User Information Area' over the block 'Navigation', 
- * while configured in theme settings
+ * Returns the 'User Information Area' data
  *
  */
 public function theme_aigne_user_info() {
@@ -500,9 +502,7 @@ public function theme_aigne_user_info() {
             $passph = get_string('password');
             $loginlogout .= html_writer::start_tag('div', array('class'=>'loginform'));
             $loginlogout .= html_writer::start_tag('form', array('class'=>'loginform', 'id'=>'login', 'method'=>'post', 'action'=>get_login_url()));
-            //$loginlogout .= html_writer::tag('label', get_string('username'), array('class'=>'form-label', 'for'=>'login_username'));
             $loginlogout .= html_writer::empty_tag('input', array('class'=>'form-input', 'type'=>'text', 'size'=>'25', 'name'=>'username', 'id'=>'login_username', 'placeholder'=>$userph, 'value'=>$username));
-            //$loginlogout .= html_writer::tag('label', get_string('password'), array('class'=>'form-label', 'for'=>'login_password'));
             $loginlogout .= html_writer::empty_tag('input', array('class'=>'form-input', 'type'=>'password', 'size'=>'25', 'name'=>'password', 'id'=>'login_password', 'placeholder'=>$passph, 'value'=>'', $autocomplete));
             $loginlogout .= '<DIV class="clearer"><!-- --></DIV>';
             if (isset($CFG->rememberusername) and $CFG->rememberusername == 2) {
@@ -556,15 +556,6 @@ public function theme_aigne_user_info() {
             $loginlogout .= $OUTPUT->user_picture($USER, array('size'=>70, 'class'=>'profilepicture'));
             $loginlogout .= html_writer::empty_tag('br');
         }
-        // Enlace para editar el perfil del usuario en modo avanzado
-            //$loginlogout .= html_writer::link(new moodle_url('/user/editadvanced.php', array('id'=>$USER->id)), get_string('updatemyprofile'));
-            //$loginlogout .= html_writer::empty_tag('br');
-        // Información de la última sesión (Se podría mostrar el tiempo que lleva conectado)
-            //if($USER->lastlogin){
-                //$lastloginfo ='('.get_string('lastlogin').': '.userdate($USER->lastlogin, get_string('strftimerecent')).')';
-                //$loginlogout .= html_writer::tag('div', $lastloginfo, array('class'=>'lastloginfo'));
-            //}
-            //$loginlogout .= html_writer::empty_tag('br');
         // Logout option, select over three cases
             $loginlogout .= html_writer::empty_tag('HR');
         switch ($usernavout) {

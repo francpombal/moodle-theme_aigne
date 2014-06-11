@@ -135,7 +135,6 @@ switch ($infobanner) {
     </div>
     <div class="progress-bar"></div>
 </div>
-
 <?php
         break;
     case 6:
@@ -173,6 +172,6 @@ switch ($infobanner) {
     default:
         break;
 }
-?>
 
+?>
 

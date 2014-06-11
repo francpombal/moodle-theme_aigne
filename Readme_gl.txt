@@ -1,4 +1,4 @@
-AIGNE THEME _ Version 1.8.0
+AIGNE THEME _ Version 1.9.0
 
 ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- X ----- 
 
